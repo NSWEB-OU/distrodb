@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { GithubIcon, TwitterIcon } from "@hugeicons/core-free-icons";
+import { Coffee01Icon, GithubIcon, TwitterIcon } from "@hugeicons/core-free-icons";
 import { Separator } from "@/components/ui/separator";
 
 const explore = [
@@ -53,6 +53,15 @@ export function Footer() {
                 aria-label="Twitter / X"
               >
                 <HugeiconsIcon icon={TwitterIcon} size="1rem" />
+              </Link>
+              <Link
+                href="https://buymeacoffee.com/nsweb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground hover:bg-muted flex h-8 w-8 items-center justify-center rounded-md transition-colors"
+                aria-label="Buy Me a Coffee"
+              >
+                <HugeiconsIcon icon={Coffee01Icon} size="1rem" />
               </Link>
             </div>
           </div>

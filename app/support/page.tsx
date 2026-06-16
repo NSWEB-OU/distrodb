@@ -32,51 +32,41 @@ const ways = [
     icon: Coffee01Icon,
     title: "Buy us a coffee",
     description: "A small donation helps cover hosting, domain, and development time.",
-    cta: {
-      label: "Donate on Ko-fi",
-      href: "https://ko-fi.com/distrodb",
-      external: true,
-    },
+    ctas: [
+      {
+        label: "Buy Me a Coffee",
+        href: "https://buymeacoffee.com/nsweb",
+        external: true,
+      },
+    ],
   },
   {
     icon: SourceCodeIcon,
     title: "Contribute code",
     description:
       "Found a bug? Have a feature idea? The codebase is open on GitHub — pull requests are always welcome.",
-    cta: {
-      label: "View repository",
-      href: "https://github.com/NSWEB-OU/distrodb",
-      external: true,
-    },
+    ctas: [{ label: "View repository", href: "https://github.com/NSWEB-OU/distrodb", external: true }],
   },
   {
     icon: HandHeart,
     title: "Improve distro data",
     description:
       "All distribution data lives in a plain JSON file. You can open a PR to add a missing distro, fix incorrect info, or add screenshots.",
-    cta: {
-      label: "Edit data on GitHub",
-      href: "https://github.com/NSWEB-OU/distrodb",
-      external: true,
-    },
+    ctas: [{ label: "Edit data on GitHub", href: "https://github.com/NSWEB-OU/distrodb", external: true }],
   },
   {
     icon: StarIcon,
     title: "Star the repo",
     description:
       "Starring the GitHub repository helps others discover the project and motivates continued development.",
-    cta: {
-      label: "Star on GitHub",
-      href: "https://github.com/NSWEB-OU/distrodb",
-      external: true,
-    },
+    ctas: [{ label: "Star on GitHub", href: "https://github.com/NSWEB-OU/distrodb", external: true }],
   },
   {
     icon: Share08Icon,
     title: "Spread the word",
     description:
       "Share DistroDB with your Linux-curious friends, post it in communities, or mention it in your blog. It helps more than you think.",
-    cta: null,
+    ctas: [],
   },
 ];
 
@@ -95,25 +85,29 @@ export default function SupportPage() {
 
         {/* Ways to support */}
         <div className="mb-10 flex flex-col gap-3">
-          {ways.map(({ icon, title, description, cta }) => (
+          {ways.map(({ icon, title, description, ctas }) => (
             <div key={title} className="border-border flex flex-col gap-3 rounded-sm border p-5">
               <div className="flex items-center gap-2 text-sm font-medium">
                 <HugeiconsIcon icon={icon} size="1rem" />
                 {title}
               </div>
               <p className="text-muted-foreground text-xs leading-relaxed">{description}</p>
-              {cta && (
-                <Link
-                  href={cta.href}
-                  {...(cta.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className={buttonVariants({
-                    variant: "outline",
-                    size: "sm",
-                    className: "self-start",
-                  })}
-                >
-                  {cta.label}
-                </Link>
+              {ctas.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {ctas.map((cta) => (
+                    <Link
+                      key={cta.href}
+                      href={cta.href}
+                      {...(cta.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      className={buttonVariants({
+                        variant: "outline",
+                        size: "sm",
+                      })}
+                    >
+                      {cta.label}
+                    </Link>
+                  ))}
+                </div>
               )}
             </div>
           ))}

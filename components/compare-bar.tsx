@@ -23,7 +23,7 @@ export function CompareBar() {
     <div
       aria-hidden={!visible}
       className={[
-        "fixed right-0 bottom-0 left-0 z-50 transition-transform duration-300 ease-in-out",
+        "fixed right-0 bottom-0 left-0 z-[200] transition-transform duration-300 ease-in-out",
         visible ? "translate-y-0" : "translate-y-full",
       ].join(" ")}
     >

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-const LAST_UPDATED = "16 June 2025";
+const LAST_UPDATED = "16 June 2026";
 const OPERATOR = "NSWEB OÜ (Reg. 17522369)";
 const CONTACT_EMAIL = "hello@distrodb.xyz";
 const SITE_URL = "https://distrodb.xyz";
