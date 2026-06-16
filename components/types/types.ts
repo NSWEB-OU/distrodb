@@ -5,6 +5,7 @@ export type GridDistro = {
   description: string;
   tags: string[];
   img: string | undefined;
+  imgFit?: "cover" | "contain";
 };
 
 export type ReleaseModel = "rolling" | "fixed" | "semi-rolling";
@@ -17,6 +18,7 @@ export type DistroDetail = {
   description: string;
   longDescription: string;
   img: string | undefined;
+  imgFit?: "cover" | "contain";
   screenshots: string[];
   tags: string[];
   base: string | null;

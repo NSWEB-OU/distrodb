@@ -20,8 +20,9 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button-variants";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { Menu01Icon } from "@hugeicons/core-free-icons";
+import { GithubIcon, HeartAddIcon, Menu01Icon } from "@hugeicons/core-free-icons";
 
 const wizardHref = "/wizard";
 
@@ -58,6 +59,26 @@ const project: { title: string; href: string; description: string }[] = [
 export function HeaderNav() {
   return (
     <div className="flex items-center">
+      {/* Icon links */}
+      <div className="hidden items-center gap-1 md:flex">
+        <Link
+          href="https://github.com/NSWEB-OU/distrodb"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub repository"
+          className={buttonVariants({ variant: "ghost", size: "icon-sm" })}
+        >
+          <HugeiconsIcon icon={GithubIcon} size="1.125rem" />
+        </Link>
+        <Link
+          href="/support"
+          aria-label="Support us"
+          className={buttonVariants({ variant: "ghost", size: "icon-sm" })}
+        >
+          <HugeiconsIcon icon={HeartAddIcon} size="1.125rem" />
+        </Link>
+      </div>
+
       {/* Desktop navigation */}
       <NavigationMenu className="hidden md:flex">
         <NavigationMenuList>
