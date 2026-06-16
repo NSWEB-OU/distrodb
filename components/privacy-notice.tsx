@@ -31,7 +31,7 @@ export function PrivacyNotice() {
   if (!visible) return null;
 
   return (
-    <div className="border-border bg-background/95 fixed right-0 bottom-0 left-0 z-50 border-t backdrop-blur-sm">
+    <div className="border-border bg-background/95 fixed right-0 bottom-0 left-0 z-[110] border-t backdrop-blur-sm">
       <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-muted-foreground text-xs">
           We don&apos;t use tracking or advertising cookies. Your theme preference is stored locally
