@@ -12,9 +12,9 @@
     "tags": [
       "beginner-friendly",
       "desktop",
-      "immutable",
-      "server",
-      "live"
+      "live",
+      "mutable",
+      "server"
     ],
     "base": "Debian",
     "desktopEnvironments": [
@@ -37,7 +37,9 @@
     "website": "https://www.ubuntu.com/",
     "docs": "https://docs.ubuntu.com/",
     "download": "https://www.ubuntu.com/download/",
-    "highlights": [],
+    "highlights": [
+      "World standard for server and cloud environments. Native Snap container integration."
+    ],
     "difficulty": "beginner"
   },
   {
@@ -53,7 +55,8 @@
     "tags": [
       "beginner-friendly",
       "desktop",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "Debian (Stable), Ubuntu (LTS)",
     "desktopEnvironments": [
@@ -73,7 +76,9 @@
     "website": "https://linuxmint.com/",
     "docs": "https://community.linuxmint.com/",
     "download": "https://www.linuxmint.com/download.php",
-    "highlights": [],
+    "highlights": [
+      "Traditional interface, X-Apps utilities, complete absence of forced Snap usage."
+    ],
     "difficulty": "beginner"
   },
   {
@@ -89,6 +94,7 @@
     "tags": [
       "desktop",
       "live",
+      "mutable",
       "server"
     ],
     "base": null,
@@ -142,7 +148,9 @@
     "website": "https://www.debian.org/",
     "docs": "https://www.debian.org/doc/",
     "download": "https://www.debian.org/CD/",
-    "highlights": [],
+    "highlights": [
+      "One of the oldest OSes, serving as the stability foundation for hundreds of distributions."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -157,9 +165,9 @@
     ],
     "tags": [
       "desktop",
-      "immutable",
-      "server",
-      "live"
+      "live",
+      "mutable",
+      "server"
     ],
     "base": null,
     "desktopEnvironments": [
@@ -194,7 +202,9 @@
     "website": "https://fedoraproject.org/",
     "docs": "https://docs.fedoraproject.org/",
     "download": "https://fedoraproject.org/",
-    "highlights": [],
+    "highlights": [
+      "Red Hat's technology proving ground. Latest software stack, out-of-the-box Btrfs support."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -207,6 +217,7 @@
     "screenshots": [],
     "tags": [
       "desktop",
+      "mutable",
       "server"
     ],
     "base": null,
@@ -220,7 +231,7 @@
       "MATE",
       "Xfce"
     ],
-    "packageManager": "pkg",
+    "packageManager": "pacman",
     "initSystem": "systemd",
     "architecture": [
       "x86_64"
@@ -231,7 +242,9 @@
     "website": "http://www.archlinux.org/",
     "docs": "http://wiki.archlinux.org/",
     "download": "http://www.archlinux.org/download/",
-    "highlights": [],
+    "highlights": [
+      "Implementation of the KISS principle. Access to the AUR (Arch User Repository). Full control over system assembly."
+    ],
     "difficulty": "advanced"
   },
   {
@@ -247,6 +260,7 @@
     "tags": [
       "desktop",
       "live",
+      "mutable",
       "raspberry-pi"
     ],
     "base": "Arch",
@@ -272,7 +286,9 @@
     "website": "https://manjaro.org/",
     "docs": "https://wiki.manjaro.org/",
     "download": "https://manjaro.org/products/download/x86",
-    "highlights": [],
+    "highlights": [
+      "Proprietary package testing repositories, MHWD hardware auto-detection utility."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -287,6 +303,7 @@
     "tags": [
       "desktop",
       "live",
+      "mutable",
       "raspberry-pi"
     ],
     "base": "Debian, Ubuntu (LTS)",
@@ -306,7 +323,9 @@
     "website": "https://system76.com/pop",
     "docs": "https://support.system76.com/#pop",
     "download": "https://system76.com/pop",
-    "highlights": [],
+    "highlights": [
+      "Developed by System76. Automatic window tiling, built-in hybrid NVIDIA graphics support."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -321,6 +340,7 @@
       "desktop",
       "from-ram",
       "live",
+      "mutable",
       "old-computers",
       "raspberry-pi"
     ],
@@ -342,7 +362,9 @@
     "website": "https://mxlinux.org/",
     "docs": "https://mxlinux.org/manuals",
     "download": "https://mxlinux.org/download-links#Mirrors",
-    "highlights": [],
+    "highlights": [
+      "Proprietary MX Tools configuration utilities, lightweight design, exceptional stability."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -356,6 +378,7 @@
     "tags": [
       "desktop",
       "live",
+      "mutable",
       "raspberry-pi"
     ],
     "base": "Arch",
@@ -381,7 +404,9 @@
     "website": "https://endeavouros.com/",
     "docs": "https://endeavouros.com/wiki/",
     "download": "https://endeavouros.com/",
-    "highlights": [],
+    "highlights": [
+      "User-friendly terminal-oriented Arch with Calamares graphical installer."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -394,10 +419,10 @@
     "screenshots": [],
     "tags": [
       "desktop",
-      "immutable",
-      "server",
       "live",
-      "raspberry-pi"
+      "mutable",
+      "raspberry-pi",
+      "server"
     ],
     "base": null,
     "desktopEnvironments": [
@@ -430,7 +455,9 @@
     "website": "https://www.opensuse.org/",
     "docs": "https://en.opensuse.org/Portal:Documentation",
     "download": "https://get.opensuse.org/",
-    "highlights": [],
+    "highlights": [
+      "Legendary YaST system configurator, Btrfs filesystem snapshots via Snapper."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -446,6 +473,7 @@
       "data-rescue",
       "forensics",
       "live",
+      "mutable",
       "raspberry-pi",
       "security"
     ],
@@ -467,7 +495,9 @@
     "website": "https://www.kali.org/",
     "docs": "https://www.kali.org/kali-linux-documentation/",
     "download": "https://www.kali.org/downloads/",
-    "highlights": [],
+    "highlights": [
+      "Leading platform for penetration testing, forensics, and reverse engineering."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -482,6 +512,7 @@
     "tags": [
       "declarative",
       "desktop",
+      "immutable",
       "live",
       "server"
     ],
@@ -514,7 +545,9 @@
     "website": "https://nixos.org/",
     "docs": "https://wiki.nixos.org/wiki/NixOS_Wiki",
     "download": "https://nixos.org/download/",
-    "highlights": [],
+    "highlights": [
+      "Fully declarative system state management via the Nix configuration language."
+    ],
     "difficulty": "advanced"
   },
   {
@@ -527,6 +560,7 @@
     "screenshots": [],
     "tags": [
       "desktop",
+      "mutable",
       "server"
     ],
     "base": "Fedora",
@@ -548,7 +582,9 @@
     "website": "http://www.redhat.com/",
     "docs": "https://access.redhat.com/documentation/en/red-hat-enterprise-linux/",
     "download": "https://access.redhat.com/site/downloads/",
-    "highlights": [],
+    "highlights": [
+      "Enterprise sector standard, guaranteeing 10 years of commercial support."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -561,6 +597,7 @@
     "screenshots": [],
     "tags": [
       "desktop",
+      "mutable",
       "server"
     ],
     "base": "Fedora, Red Hat",
@@ -582,7 +619,9 @@
     "website": "https://rockylinux.org/",
     "docs": "https://wiki.rockylinux.org/",
     "download": "https://rockylinux.org/download",
-    "highlights": [],
+    "highlights": [
+      "Free 100% compatible RHEL clone, created by CentOS founder Gregory Kurtzer."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -596,8 +635,9 @@
     "screenshots": [],
     "tags": [
       "desktop",
-      "server",
-      "raspberry-pi"
+      "mutable",
+      "raspberry-pi",
+      "server"
     ],
     "base": "Fedora, Red Hat",
     "desktopEnvironments": [
@@ -619,7 +659,9 @@
     "website": "https://almalinux.org/",
     "docs": "https://wiki.almalinux.org/",
     "download": "https://almalinux.org/get-almalinux",
-    "highlights": [],
+    "highlights": [
+      "Independent non-profit distribution created by the community as a free CentOS replacement."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -633,6 +675,7 @@
     "tags": [
       "desktop",
       "live",
+      "mutable",
       "server"
     ],
     "base": "Fedora, Red Hat",
@@ -653,7 +696,9 @@
     "website": "https://www.centos.org/",
     "docs": "https://docs.centos.org/en-US/docs/",
     "download": "https://www.centos.org/download/",
-    "highlights": [],
+    "highlights": [
+      "Transitioned to RHEL Stream, serving as a testing ground for commercial releases."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -688,7 +733,9 @@
     "website": "https://bazzite.gg/",
     "docs": "https://docs.bazzite.gg/",
     "download": "https://bazzite.gg/#image-picker",
-    "highlights": [],
+    "highlights": [
+      "Gaming distribution. Perfectly optimized for handheld PCs (Steam Deck, ROG Ally)."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -697,11 +744,13 @@
     "name": "CachyOS",
     "description": "CachyOS is a Linux distribution based on Arch Linux. It focuses on speed and security optimisations - the default Linux kernel is heavily optimised using the BORE (Burst-Oriented Response Enhancer) scheduler, while the desktop packages are compiled with LTO, x86-64-v3 and x86-64-v4, Zen 4 optimization, security flags and performance improvements.",
     "longDescription": "CachyOS is a Linux distribution based on Arch Linux. It focuses on speed and security optimisations - the default Linux kernel is heavily optimised using the BORE (Burst-Oriented Response Enhancer) scheduler, while the desktop packages are compiled with LTO, x86-64-v3 and x86-64-v4, Zen 4 optimization, security flags and performance improvements. The available desktop environments, window managers and Wayland compositors include bspwm, Budgie, Cinnamon, COSMIC, GNOME, Hyprland, i3, KDE Plasma, LXDE, LXQt, MATE, Niri, Openbox, Qtile, Sway, UKUI, Wayfire and Xfce. CachyOS also ships with both graphical and command-line system installers.",
-    "img": "/repos/cachyos/logo.png",
+    "img": "/repos/cachyos/logo.jpeg",
     "screenshots": [],
     "tags": [
       "desktop",
-      "live"
+      "gaming",
+      "live",
+      "mutable"
     ],
     "base": "Arch",
     "desktopEnvironments": [
@@ -736,7 +785,9 @@
     "website": "https://cachyos.org/",
     "docs": "https://wiki.cachyos.org/",
     "download": "https://cachyos.org/download",
-    "highlights": [],
+    "highlights": [
+      "Custom package compilation targeting x86-64-v3/v4 instructions for increased FPS in games."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -750,7 +801,8 @@
     "tags": [
       "beginner-friendly",
       "desktop",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "Debian, Ubuntu (LTS)",
     "desktopEnvironments": [
@@ -768,7 +820,9 @@
     "website": "https://zorin.com/os/",
     "docs": "https://help.zorin.com/",
     "download": "https://zorinos.com/download",
-    "highlights": [],
+    "highlights": [
+      "Zorin Appearance module for precise Windows/macOS interface imitation, Wine integration."
+    ],
     "difficulty": "beginner"
   },
   {
@@ -782,7 +836,8 @@
     "tags": [
       "beginner-friendly",
       "desktop",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "Debian, Ubuntu (LTS)",
     "desktopEnvironments": [
@@ -799,7 +854,9 @@
     "website": "https://elementary.io/",
     "docs": "https://elementary.io/docs/learning-the-basics",
     "download": "https://elementary.io/",
-    "highlights": [],
+    "highlights": [
+      "Unique Pantheon desktop environment built on Vala/GTK. Pay-what-you-want model in AppCenter."
+    ],
     "difficulty": "beginner"
   },
   {
@@ -812,7 +869,8 @@
     "screenshots": [],
     "tags": [
       "desktop",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "Debian, Ubuntu",
     "desktopEnvironments": [
@@ -829,7 +887,9 @@
     "website": "https://kubuntu.org/",
     "docs": "https://community.kde.org/Kubuntu",
     "download": "https://www.kubuntu.org/getkubuntu",
-    "highlights": [],
+    "highlights": [
+      "Official Ubuntu spin with an unmodified KDE Plasma desktop environment."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -841,7 +901,10 @@
     "img": "/repos/xubuntu/logo.png",
     "screenshots": [],
     "tags": [
-      "desktop"
+      "desktop",
+      "live",
+      "mutable",
+      "old-computers"
     ],
     "base": "Debian, Ubuntu",
     "desktopEnvironments": [
@@ -858,7 +921,9 @@
     "website": "https://www.xubuntu.org/",
     "docs": "https://docs.xubuntu.org/",
     "download": "https://xubuntu.org/getxubuntu/",
-    "highlights": [],
+    "highlights": [
+      "Optimal balance of performance and visual aesthetics on older computers."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -871,7 +936,9 @@
     "screenshots": [],
     "tags": [
       "desktop",
-      "live"
+      "developer",
+      "live",
+      "mutable"
     ],
     "base": "Debian, Ubuntu (LTS)",
     "desktopEnvironments": [
@@ -889,7 +956,9 @@
     "website": "https://neon.kde.org/",
     "docs": "https://community.kde.org/Neon",
     "download": "https://neon.kde.org/download",
-    "highlights": [],
+    "highlights": [
+      "Direct distribution of the latest KDE software from upstream developers on top of a stable LTS base."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -903,7 +972,9 @@
     "tags": [
       "desktop",
       "live",
-      "netbooks"
+      "mutable",
+      "netbooks",
+      "old-computers"
     ],
     "base": "Debian, Ubuntu",
     "desktopEnvironments": [
@@ -920,7 +991,9 @@
     "website": "https://lubuntu.me/",
     "docs": "https://help.ubuntu.com/community/Lubuntu/Documentation",
     "download": "https://help.ubuntu.com/community/Lubuntu/GetLubuntu",
-    "highlights": [],
+    "highlights": [
+      "Minimalist Qt-based interface, optimized for low-specification computers."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -934,6 +1007,7 @@
     "tags": [
       "from-ram",
       "live",
+      "mutable",
       "privacy",
       "security"
     ],
@@ -952,7 +1026,9 @@
     "website": "https://tails.net/",
     "docs": "https://tails.net/doc/index.en.html",
     "download": "https://tails.net/install/index.en.html",
-    "highlights": [],
+    "highlights": [
+      "Live system for bypassing censorship and preserving anonymity. Clears RAM on shutdown."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -966,9 +1042,10 @@
     "tags": [
       "firewall",
       "from-ram",
+      "mutable",
       "raspberry-pi",
-      "server",
       "security",
+      "server",
       "telephony"
     ],
     "base": null,
@@ -998,7 +1075,9 @@
     "website": "https://www.alpinelinux.org/",
     "docs": "https://wiki.alpinelinux.org/",
     "download": "https://alpinelinux.org/downloads",
-    "highlights": [],
+    "highlights": [
+      "Built on musl libc and BusyBox. Minimal image size, containerization standard."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -1013,6 +1092,7 @@
     "tags": [
       "desktop",
       "firewall",
+      "mutable",
       "raspberry-pi",
       "server"
     ],
@@ -1052,7 +1132,9 @@
     "website": "https://www.freebsd.org/",
     "docs": "https://www.freebsd.org/docs/",
     "download": "https://docs.freebsd.org/en/books/handbook/mirrors/",
-    "highlights": [],
+    "highlights": [
+      "Full-featured non-Linux OS. High-efficiency networking subsystem, ZFS out of the box."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -1065,6 +1147,7 @@
     "screenshots": [],
     "tags": [
       "desktop",
+      "mutable",
       "server",
       "source-based"
     ],
@@ -1105,7 +1188,9 @@
     "website": "https://www.gentoo.org/",
     "docs": "https://www.gentoo.org/support/documentation/",
     "download": "https://www.gentoo.org/downloads/mirrors/",
-    "highlights": [],
+    "highlights": [
+      "Compiling software from source, deepest system optimization for a specific processor."
+    ],
     "difficulty": "advanced"
   },
   {
@@ -1118,6 +1203,8 @@
     "screenshots": [],
     "tags": [
       "desktop",
+      "mutable",
+      "privacy",
       "security"
     ],
     "base": "Debian, Fedora",
@@ -1135,7 +1222,9 @@
     "website": "https://qubes-os.org/",
     "docs": "https://doc.qubes-os.org/",
     "download": "https://www.qubes-os.org/downloads/",
-    "highlights": [],
+    "highlights": [
+      "All processes (USB, Network, Apps) are isolated into separate Xen virtual domains."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -1150,6 +1239,7 @@
     "tags": [
       "desktop",
       "live",
+      "mutable",
       "raspberry-pi"
     ],
     "base": null,
@@ -1171,7 +1261,9 @@
     "website": "https://voidlinux.org/",
     "docs": "https://docs.voidlinux.org/",
     "download": "https://voidlinux.org/download/",
-    "highlights": [],
+    "highlights": [
+      "Distribution written from scratch. Uses the independent XBPS package manager and runit init system."
+    ],
     "difficulty": "advanced"
   },
   {
@@ -1185,7 +1277,8 @@
     "tags": [
       "beginner-friendly",
       "desktop",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": null,
     "desktopEnvironments": [
@@ -1205,7 +1298,9 @@
     "website": "https://getsol.us/",
     "docs": "https://help.getsol.us/",
     "download": "https://getsol.us/download/",
-    "highlights": [],
+    "highlights": [
+      "Desktop system developing its own innovative Budgie graphical shell."
+    ],
     "difficulty": "beginner"
   },
   {
@@ -1218,7 +1313,8 @@
     "screenshots": [],
     "tags": [
       "desktop",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "Arch",
     "desktopEnvironments": [
@@ -1240,7 +1336,9 @@
     "website": "https://artixlinux.org/",
     "docs": "",
     "download": "https://artixlinux.org/download.php",
-    "highlights": [],
+    "highlights": [
+      "Arch Linux without systemd. Offers a choice of five alternative init systems."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -1253,6 +1351,7 @@
     "screenshots": [],
     "tags": [
       "desktop",
+      "mutable",
       "server"
     ],
     "base": null,
@@ -1279,7 +1378,9 @@
     "website": "http://www.slackware.com/",
     "docs": "http://docs.slackware.com/",
     "download": "http://www.slackware.com/getslack/",
-    "highlights": [],
+    "highlights": [
+      "Oldest active distribution. No automatic dependency resolution."
+    ],
     "difficulty": "advanced"
   },
   {
@@ -1292,7 +1393,9 @@
     "screenshots": [],
     "tags": [
       "desktop",
-      "live"
+      "gaming",
+      "live",
+      "mutable"
     ],
     "base": "Arch",
     "desktopEnvironments": [
@@ -1316,7 +1419,9 @@
     "website": "https://garudalinux.org/",
     "docs": "https://garudalinux.org/installation",
     "download": "https://garudalinux.org/editions",
-    "highlights": [],
+    "highlights": [
+      "Default Btrfs with zstd compression, Zen kernel scheduler for reduced latency."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -1329,8 +1434,9 @@
     "screenshots": [],
     "tags": [
       "desktop",
+      "large-language-model",
       "live",
-      "large-language-model"
+      "mutable"
     ],
     "base": "Debian",
     "desktopEnvironments": [
@@ -1350,7 +1456,9 @@
     "website": "https://deepin.org/",
     "docs": "https://wiki.deepin.org/",
     "download": "https://www.deepin.org/en/download/",
-    "highlights": [],
+    "highlights": [
+      "Chinese national distribution with its own unique DDE desktop environment and utility suite."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -1363,7 +1471,8 @@
     "screenshots": [],
     "tags": [
       "desktop",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "Debian (Stable), Debian (Testing)",
     "desktopEnvironments": [
@@ -1384,7 +1493,9 @@
     "website": "https://sparkylinux.org/",
     "docs": "https://wiki.sparkylinux.org/",
     "download": "https://sparkylinux.org/download/",
-    "highlights": [],
+    "highlights": [
+      "Offers a choice between Debian's stable and continuously-updated rolling branches."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -1398,7 +1509,8 @@
     "tags": [
       "desktop",
       "gaming",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "Fedora",
     "desktopEnvironments": [
@@ -1416,7 +1528,9 @@
     "website": "https://nobaraproject.org/",
     "docs": "https://wiki.nobaraproject.org/",
     "download": "https://nobaraproject.org/download.html",
-    "highlights": [],
+    "highlights": [
+      "Developed by GloriousEggroll. Pre-installed kernel latency patches, Proton translators, and GPU drivers."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -1430,6 +1544,8 @@
     "tags": [
       "forensics",
       "live",
+      "mutable",
+      "privacy",
       "raspberry-pi",
       "security"
     ],
@@ -1454,7 +1570,9 @@
     "website": "https://parrotsec.org/",
     "docs": "https://parrotsec.org/docs",
     "download": "https://parrotsec.org/download/",
-    "highlights": [],
+    "highlights": [
+      "Distribution for ethical hacking, secure software development, and private web browsing."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -1468,7 +1586,8 @@
     "tags": [
       "beginner-friendly",
       "desktop",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": null,
     "desktopEnvironments": [
@@ -1491,7 +1610,9 @@
     "website": "https://www.pclinuxos.com/",
     "docs": "https://pclosusers.com/",
     "download": "https://ftp.nluug.nl/os/Linux/distr/pclinuxos/iso/",
-    "highlights": [],
+    "highlights": [
+      "Traditional distribution without systemd, using an RPM package base with APT manager."
+    ],
     "difficulty": "beginner"
   },
   {
@@ -1503,9 +1624,10 @@
     "img": null,
     "screenshots": [],
     "tags": [
-      "from-ram",
       "desktop",
+      "from-ram",
       "live",
+      "mutable",
       "old-computers"
     ],
     "base": "Debian (Stable)",
@@ -1526,7 +1648,9 @@
     "website": "https://antixlinux.com/",
     "docs": "https://download.tuxfamily.org/antix/docs-antiX-17/FAQ/index.html",
     "download": "https://antixlinux.com/antix/download/",
-    "highlights": [],
+    "highlights": [
+      "Runs without systemd. Optimal for critically outdated systems (Pentium III / 256 MB RAM)."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -1540,6 +1664,7 @@
     "tags": [
       "desktop",
       "live",
+      "mutable",
       "server"
     ],
     "base": null,
@@ -1574,7 +1699,9 @@
     "website": "https://www.mageia.org/",
     "docs": "https://wiki.mageia.org/",
     "download": "https://mageia.org/en/downloads/",
-    "highlights": [],
+    "highlights": [
+      "Inherits Mandriva traditions. Mageia Control Center for easy system configuration."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -1588,8 +1715,9 @@
     "tags": [
       "desktop",
       "live",
-      "server",
-      "raspberry-pi"
+      "mutable",
+      "raspberry-pi",
+      "server"
     ],
     "base": "Debian",
     "desktopEnvironments": [
@@ -1616,7 +1744,9 @@
     "website": "https://devuan.org/",
     "docs": "https://devuan.org/os/documentation/",
     "download": "https://files.devuan.org/",
-    "highlights": [],
+    "highlights": [
+      "Debian fork created in opposition to the widespread adoption of systemd."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -1630,7 +1760,8 @@
     "tags": [
       "beginner-friendly",
       "desktop",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "Debian, Ubuntu (LTS)",
     "desktopEnvironments": [
@@ -1647,7 +1778,9 @@
     "website": "https://www.linuxliteos.com/",
     "docs": "https://www.linuxliteos.com/manual/",
     "download": "https://www.linuxliteos.com/download.php",
-    "highlights": [],
+    "highlights": [
+      "Pre-installed Lite Software quick-setup scripts to simplify onboarding for beginners."
+    ],
     "difficulty": "beginner"
   },
   {
@@ -1660,6 +1793,7 @@
     "screenshots": [],
     "tags": [
       "desktop",
+      "developer",
       "immutable",
       "live"
     ],
@@ -1678,7 +1812,9 @@
     "website": "https://kde.org/linux/",
     "docs": "https://kde.org/linux/install/",
     "download": "https://files.kde.org/kde-linux/",
-    "highlights": [],
+    "highlights": [
+      "Codename Project Banana. Immutable reference distribution from the KDE upstream."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -1692,7 +1828,8 @@
     "tags": [
       "beginner-friendly",
       "desktop",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "Debian, Ubuntu (LTS)",
     "desktopEnvironments": [
@@ -1709,7 +1846,9 @@
     "website": "https://www.tuxedocomputers.com/os",
     "docs": "",
     "download": "https://os.tuxedocomputers.com/",
-    "highlights": [],
+    "highlights": [
+      "Integration with the TUXEDO Control Center hardware software for fan and power management."
+    ],
     "difficulty": "beginner"
   },
   {
@@ -1740,7 +1879,9 @@
     "website": "https://getaurora.dev/",
     "docs": "https://docs.getaurora.dev/",
     "download": "https://getaurora.dev/",
-    "highlights": [],
+    "highlights": [
+      "Cloud-oriented OS, automatic proprietary driver installation and background updates."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -1753,6 +1894,7 @@
     "screenshots": [],
     "tags": [
       "desktop",
+      "immutable",
       "live",
       "old-computers"
     ],
@@ -1771,7 +1913,9 @@
     "website": "https://chromeos.google/intl/en_ca/products/chromeos-flex/",
     "docs": "https://support.google.com/chromeosflex/",
     "download": "https://chromiumdash.appspot.com/serving-builds?deviceCategory=ChromeOS%20Flex",
-    "highlights": [],
+    "highlights": [
+      "Cloud-based system from Google for reviving old laptops and office PCs."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -1784,7 +1928,8 @@
     "screenshots": [],
     "tags": [
       "desktop",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": null,
     "desktopEnvironments": [
@@ -1802,7 +1947,9 @@
     "website": "https://kaosx.us/",
     "docs": "",
     "download": "https://kaosx.us/download/",
-    "highlights": [],
+    "highlights": [
+      "Strict focus exclusively on Qt libraries and KDE Plasma, complete absence of GTK software."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -1816,9 +1963,10 @@
     "tags": [
       "desktop",
       "from-ram",
-      "old-computers",
       "live",
-      "netbooks"
+      "mutable",
+      "netbooks",
+      "old-computers"
     ],
     "base": null,
     "desktopEnvironments": [
@@ -1837,7 +1985,9 @@
     "website": "https://puppylinux-woof-ce.github.io/",
     "docs": "https://wikka.puppylinux.com/HomePage",
     "download": "https://puppylinux-woof-ce.github.io/index.html#download",
-    "highlights": [],
+    "highlights": [
+      "Modular distribution that boots entirely into the host machine's RAM."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -1850,7 +2000,8 @@
     "screenshots": [],
     "tags": [
       "desktop",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "Arch",
     "desktopEnvironments": [
@@ -1869,7 +2020,9 @@
     "website": "https://archcraft.io/",
     "docs": "https://archcraft.io/wiki",
     "download": "https://sourceforge.net/projects/archcraft/files/",
-    "highlights": [],
+    "highlights": [
+      "Deep pre-configuration of lightweight window managers, excellent visual design."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -1882,8 +2035,10 @@
     "imgFit": "contain",
     "screenshots": [],
     "tags": [
+      "beginner-friendly",
       "desktop",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "FreeBSD",
     "desktopEnvironments": [
@@ -1902,7 +2057,9 @@
     "website": "https://www.ghostbsd.org/",
     "docs": "https://wiki.ghostbsd.org/",
     "download": "https://ghostbsd.org/download/",
-    "highlights": [],
+    "highlights": [
+      "BSD with a graphical installer, pre-configured networking and audio environment."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -1915,7 +2072,9 @@
     "screenshots": [],
     "tags": [
       "desktop",
-      "live"
+      "live",
+      "mutable",
+      "old-computers"
     ],
     "base": "Arch, Manjaro",
     "desktopEnvironments": [
@@ -1932,7 +2091,9 @@
     "website": "https://maboxlinux.org/",
     "docs": "https://maboxlinux.org/users-guide/",
     "download": "https://sourceforge.net/projects/mabox-linux/files/",
-    "highlights": [],
+    "highlights": [
+      "Ultra-fast response on low-spec PCs via Openbox, side panels, and Conky widgets."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -1945,7 +2106,9 @@
     "screenshots": [],
     "tags": [
       "desktop",
-      "live"
+      "live",
+      "multimedia",
+      "mutable"
     ],
     "base": "Arch",
     "desktopEnvironments": [
@@ -1962,7 +2125,9 @@
     "website": "https://sourceforge.net/projects/bluestarlinux/",
     "docs": "https://sourceforge.net/projects/bluestarlinux/index.php?action=articles",
     "download": "https://sourceforge.net/projects/bluestarlinux/files/distro/",
-    "highlights": [],
+    "highlights": [
+      "Ready-to-use multimedia workstation with an integrated driver and application suite."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -1994,7 +2159,9 @@
     "website": "https://blendos.co/",
     "docs": "https://blendos.co/faq/",
     "download": "https://blendos.co/download",
-    "highlights": [],
+    "highlights": [
+      "Created by Rudra Saraswat. Seamless integration of Ubuntu, Fedora, and Arch packages in a single session."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2008,6 +2175,7 @@
     "tags": [
       "desktop",
       "live",
+      "mutable",
       "netbooks",
       "old-computers"
     ],
@@ -2026,7 +2194,9 @@
     "website": "https://www.bodhilinux.com/",
     "docs": "https://www.bodhilinux.com/w/wiki/",
     "download": "https://www.bodhilinux.com/download/",
-    "highlights": [],
+    "highlights": [
+      "High-efficiency Moksha graphical shell with a unique minimalist pre-configured concept."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2040,6 +2210,7 @@
     "tags": [
       "desktop",
       "live",
+      "mutable",
       "old-computers"
     ],
     "base": "Debian (Stable)",
@@ -2059,7 +2230,9 @@
     "website": "https://q4os.org/",
     "docs": "https://q4os.org/documents.html",
     "download": "https://q4os.org/downloads1.html",
-    "highlights": [],
+    "highlights": [
+      "Careful integration of the classic Trinity desktop environment, recreating the Windows XP interface."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2071,6 +2244,7 @@
     "img": null,
     "screenshots": [],
     "tags": [
+      "atomic",
       "desktop",
       "live"
     ],
@@ -2091,7 +2265,9 @@
     "website": "https://aerynos.com/",
     "docs": "https://aerynos.dev/aerynos/",
     "download": "https://aerynos.com/download",
-    "highlights": [],
+    "highlights": [
+      "Transactional moss package manager. Atomic updates without strict write restrictions to /usr."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2105,7 +2281,8 @@
     "tags": [
       "desktop",
       "gaming",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "Debian (Unstable)",
     "desktopEnvironments": [
@@ -2126,7 +2303,9 @@
     "website": "http://pika-os.com/",
     "docs": "https://wiki.pika-os.com/en/installation/getting-started",
     "download": "http://pika-os.com/",
-    "highlights": [],
+    "highlights": [
+      "Gaming-focused. Real-time kernel with CFS scheduler patches, fast driver installation."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2157,7 +2336,9 @@
     "website": "https://nxos.org/",
     "docs": "https://nxos.org/tutorial/",
     "download": "https://nxos.org/#download",
-    "highlights": [],
+    "highlights": [
+      "Free from systemd. Full dominance of AppImage and Flatpak formats for application software."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2174,8 +2355,9 @@
       "desktop",
       "education",
       "live",
-      "raspberry-pi",
+      "mutable",
       "old-computers",
+      "raspberry-pi",
       "security",
       "server"
     ],
@@ -2215,7 +2397,9 @@
     "website": "https://www.basealt.ru/",
     "docs": "https://en.altlinux.org/Main_Page",
     "download": "https://getalt.org/",
-    "highlights": [],
+    "highlights": [
+      "Russian distribution. Based on its own \"Sisyphus\" repository, supports the \"Elbrus\" CPU architecture."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2230,6 +2414,7 @@
     "tags": [
       "desktop",
       "live",
+      "mutable",
       "server"
     ],
     "base": null,
@@ -2254,7 +2439,9 @@
     "website": "https://www.openmandriva.org/",
     "docs": "https://wiki.openmandriva.org/",
     "download": "https://www.openmandriva.org/download",
-    "highlights": [],
+    "highlights": [
+      "Compiled with LLVM/Clang instead of GCC, increasing performance on Ryzen CPUs."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2294,7 +2481,9 @@
     "website": "https://www.mocaccino.org/",
     "docs": "https://www.mocaccino.org/docs/",
     "download": "https://sourceforge.net/projects/mocaccino/files/",
-    "highlights": [],
+    "highlights": [
+      "Static Luet package manager based on Docker containers, musl stack in the Micro edition."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2306,9 +2495,10 @@
     "img": null,
     "screenshots": [],
     "tags": [
-      "declarative",
+      "beginner-friendly",
       "desktop",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "Debian, Ubuntu",
     "desktopEnvironments": [
@@ -2325,7 +2515,9 @@
     "website": "https://www.anduinos.com/",
     "docs": "https://docs.anduinos.com/",
     "download": "https://download.anduinos.com/",
-    "highlights": [],
+    "highlights": [
+      "Detailed Windows 11 interface replication via 18 GNOME extensions, out-of-the-box Wine support."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2342,8 +2534,8 @@
     ],
     "tags": [
       "desktop",
-      "immutable",
-      "developer"
+      "developer",
+      "mutable"
     ],
     "base": "Arch",
     "desktopEnvironments": [
@@ -2360,7 +2552,9 @@
     "website": "https://omarchy.org/",
     "docs": "https://learn.omacom.io/2/the-omarchy-manual",
     "download": "https://omarchy.org/",
-    "highlights": [],
+    "highlights": [
+      "DHH's own distribution. Carefully configured environment for software developers."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2374,7 +2568,8 @@
     "tags": [
       "desktop",
       "live",
-      "multimedia"
+      "multimedia",
+      "mutable"
     ],
     "base": "Debian (Stable), MX Linux",
     "desktopEnvironments": [
@@ -2392,7 +2587,9 @@
     "website": "https://www.bandshed.net/avlinux/",
     "docs": "",
     "download": "https://www.bandshed.net/avlinux/",
-    "highlights": [],
+    "highlights": [
+      "Media production studio based on a real-time (RT) kernel, pre-configured Pipewire/JACK."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2423,7 +2620,9 @@
     "website": "https://vanillaos.org/",
     "docs": "https://documentation.vanillaos.org/",
     "download": "https://github.com/Vanilla-OS/os/releases/",
-    "highlights": [],
+    "highlights": [
+      "Immutability based on A/B transactions (abroot). Package installation into isolated containers via apx."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2437,7 +2636,8 @@
     "tags": [
       "age-declaration-(passive)",
       "desktop",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "Arch, Manjaro",
     "desktopEnvironments": [
@@ -2454,7 +2654,9 @@
     "website": "https://www.biglinux.com.br/",
     "docs": "",
     "download": "https://www.biglinux.com.br/download/",
-    "highlights": [],
+    "highlights": [
+      "Brazilian build. Advanced integration of cloud folders and automatic system backups."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2466,8 +2668,10 @@
     "img": "/repos/linuxfx/logo.jpg",
     "screenshots": [],
     "tags": [
+      "beginner-friendly",
       "desktop",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "Ubuntu (LTS)",
     "desktopEnvironments": [
@@ -2484,7 +2688,9 @@
     "website": "https://www.linuxfx.org/",
     "docs": "",
     "download": "https://linuxfx.org/download/",
-    "highlights": [],
+    "highlights": [
+      "Windows 11/10 interface clone with voice assistant integration and extended .exe/MSI support."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2497,8 +2703,11 @@
     "imgFit": "contain",
     "screenshots": [],
     "tags": [
-      "specialist",
-      "live"
+      "from-ram",
+      "immutable",
+      "live",
+      "server",
+      "specialist"
     ],
     "base": "Solaris",
     "desktopEnvironments": [
@@ -2515,7 +2724,9 @@
     "website": "https://www.tritondatacenter.com/smartos",
     "docs": "https://wiki.smartos.org/",
     "download": "http://wiki.smartos.org/display/DOC/Download+SmartOS",
-    "highlights": [],
+    "highlights": [
+      "Hypervisor that runs from RAM. OS-level containerization (Solaris Zones) + KVM."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2548,7 +2759,9 @@
     "website": "https://www.talos.dev/",
     "docs": "https://www.talos.dev/docs/latest/",
     "download": "https://github.com/siderolabs/talos/releases",
-    "highlights": [],
+    "highlights": [
+      "Shellless (no SSH/Bash) atomic OS for deploying Kubernetes nodes."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2561,8 +2774,9 @@
     "screenshots": [],
     "tags": [
       "desktop",
+      "large-language-model",
       "live",
-      "large-language-model"
+      "mutable"
     ],
     "base": "Debian, Xubuntu",
     "desktopEnvironments": [
@@ -2580,7 +2794,9 @@
     "website": "https://voyagerlive.org/",
     "docs": "",
     "download": "https://sourceforge.net/projects/voyagerlive/",
-    "highlights": [],
+    "highlights": [
+      "French art distribution with avant-garde Conky widget design and switchable styles."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2593,6 +2809,7 @@
     "screenshots": [],
     "tags": [
       "desktop",
+      "immutable",
       "live",
       "old-computers",
       "raspberry-pi"
@@ -2613,7 +2830,9 @@
     "website": "https://fydeos.io/",
     "docs": "https://fydeos.io/help/manual/",
     "download": "https://fydeos.io/download/",
-    "highlights": [],
+    "highlights": [
+      "Chromium OS variant with Android and Linux container integration."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2645,7 +2864,9 @@
     "website": "https://os.gnome.org/",
     "docs": "https://gitlab.gnome.org/GNOME/gnome-build-meta/-/wikis/gnome_os/",
     "download": "https://os.gnome.org/",
-    "highlights": [],
+    "highlights": [
+      "Official testing distribution from the GNOME Foundation for verifying desktop integrity."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2659,6 +2880,7 @@
     "tags": [
       "desktop",
       "live",
+      "mutable",
       "server"
     ],
     "base": "Debian (Stable), Debian (Testing)",
@@ -2681,7 +2903,9 @@
     "website": "https://synex.ar/",
     "docs": "https://downloads.sourceforge.net/synex/Synex%20-%20Installation%20Guide.pdf",
     "download": "https://synex.ar/descargas",
-    "highlights": [],
+    "highlights": [
+      "Custom Calamares installer with automatic LVM-on-LUKS2 partitioning, proprietary synex control panel."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2694,7 +2918,8 @@
     "screenshots": [],
     "tags": [
       "desktop",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "Debian (Stable)",
     "desktopEnvironments": [
@@ -2714,7 +2939,9 @@
     "website": "https://cuerdos.github.io/",
     "docs": "https://cuerdoswiki.blogspot.com/",
     "download": "https://cuerdos.github.io/#descarga",
-    "highlights": [],
+    "highlights": [
+      "Patched kernel for CPU/GPU/RAM optimization, CuerdToken update utility, ZRam out of the box."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2727,7 +2954,9 @@
     "screenshots": [],
     "tags": [
       "desktop",
-      "live"
+      "from-ram",
+      "live",
+      "mutable"
     ],
     "base": "ROSA",
     "desktopEnvironments": [
@@ -2745,7 +2974,9 @@
     "website": "https://magos-linux.ru/",
     "docs": "https://github.com/magos-linux/magos-linux/wiki",
     "download": "https://magos-linux.ru/",
-    "highlights": [],
+    "highlights": [
+      "Russian modular system. Allows booting the OS from the network and saving session state."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2757,8 +2988,10 @@
     "img": null,
     "screenshots": [],
     "tags": [
+      "beginner-friendly",
       "desktop",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "Debian, Ubuntu (LTS)",
     "desktopEnvironments": [
@@ -2775,7 +3008,9 @@
     "website": "https://www.vailux.de/",
     "docs": "https://forum.vailux.de/faq-question-list/",
     "download": "https://forum.vailux.de/downloads/",
-    "highlights": [],
+    "highlights": [
+      "Designed for migration from Windows, includes a native graphical Samba access configurator."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2789,6 +3024,7 @@
     "tags": [
       "desktop",
       "live",
+      "mutable",
       "old-computers"
     ],
     "base": "Arch",
@@ -2806,7 +3042,9 @@
     "website": "https://omega-linux.github.io/page/",
     "docs": "",
     "download": "https://github.com/omega-linux/page/releases",
-    "highlights": [],
+    "highlights": [
+      "\"Goodbye Lubuntu\" release. Extremely low hardware requirements (1 GB RAM)."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2819,7 +3057,8 @@
     "screenshots": [],
     "tags": [
       "desktop",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "Void",
     "desktopEnvironments": [
@@ -2841,7 +3080,9 @@
     "website": "https://agarimos.sourceforge.io/",
     "docs": "",
     "download": "https://sourceforge.net/projects/agarimos/files/",
-    "highlights": [],
+    "highlights": [
+      "Austrian Void respin. Free from systemd. Integrates Catppuccin design and WezTerm terminal."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2854,8 +3095,10 @@
     "screenshots": [],
     "tags": [
       "desktop",
+      "large-language-model",
       "live",
-      "large-language-model"
+      "mutable",
+      "privacy"
     ],
     "base": "Debian (Testing)",
     "desktopEnvironments": [
@@ -2874,7 +3117,9 @@
     "website": "https://gnoppix.org/",
     "docs": "https://wiki.gnoppix.org/",
     "download": "https://gnoppix.org/download",
-    "highlights": [],
+    "highlights": [
+      "Privacy-focused with local AI tools, pre-installed LibreWolf browser."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2887,6 +3132,7 @@
     "screenshots": [],
     "tags": [
       "live",
+      "mutable",
       "privacy",
       "security"
     ],
@@ -2905,7 +3151,9 @@
     "website": "https://www.kodachi.cloud/wiki/bina/desktop-debian.html",
     "docs": "",
     "download": "https://sourceforge.net/projects/linuxkodachi/files/",
-    "highlights": [],
+    "highlights": [
+      "Integration of anti-forensics utilities, one-click RAM presence trace erasure."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2919,6 +3167,7 @@
     "tags": [
       "desktop",
       "live",
+      "mutable",
       "specialist"
     ],
     "base": "Debian, Ubuntu (LTS)",
@@ -2936,7 +3185,9 @@
     "website": "https://sourceforge.net/projects/dragonos-focal/",
     "docs": "https://sourceforge.net/p/dragonos-focal/wiki/",
     "download": "https://sourceforge.net/projects/dragonos-focal/files/",
-    "highlights": [],
+    "highlights": [
+      "Deeply integrated driver and software suite for software-defined radio (SDR)."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2949,7 +3200,8 @@
     "screenshots": [],
     "tags": [
       "desktop",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "Arch, Manjaro",
     "desktopEnvironments": [
@@ -2966,7 +3218,9 @@
     "website": "https://www.tromjaro.com/",
     "docs": "",
     "download": "https://www.tromjaro.com/download/",
-    "highlights": [],
+    "highlights": [
+      "Trade-free philosophy. Native emulation of the classic Unity shell interface."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -2981,6 +3235,7 @@
       "desktop",
       "gaming",
       "live",
+      "mutable",
       "security"
     ],
     "base": "Debian (Testing)",
@@ -3000,7 +3255,9 @@
     "website": "https://hackeros-linux-system.github.io/HackerOS-Website/Home-page.html",
     "docs": "",
     "download": "https://hackeros-linux-system.github.io/HackerOS-Website/download.html",
-    "highlights": [],
+    "highlights": [
+      "Quick kernel switcher chker (XanMod/Liquorix), built-in pentesting tools and game launchers."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -3013,7 +3270,9 @@
     "screenshots": [],
     "tags": [
       "desktop",
-      "live"
+      "live",
+      "mutable",
+      "privacy"
     ],
     "base": "Devuan",
     "desktopEnvironments": [
@@ -3040,7 +3299,9 @@
     "website": "https://vendefoul-wolf-linux.sourceforge.io/",
     "docs": "",
     "download": "https://sourceforge.net/projects/vendefoul-wolf-linux/files/",
-    "highlights": [],
+    "highlights": [
+      "Categorical rejection of systemd and Wayland. XLibre display server (Xorg fork), LibreWolf browser."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -3052,8 +3313,10 @@
     "img": null,
     "screenshots": [],
     "tags": [
+      "data-rescue",
       "desktop",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "Arch",
     "desktopEnvironments": [
@@ -3071,7 +3334,9 @@
     "website": "https://archbang.org/",
     "docs": "https://archbang.org/guide/",
     "download": "http://sourceforge.net/projects/archbang/files/",
-    "highlights": [],
+    "highlights": [
+      "Lightweight live system for recovering broken systems based on Arch Linux."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -3084,7 +3349,8 @@
     "screenshots": [],
     "tags": [
       "desktop",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "Arch",
     "desktopEnvironments": [
@@ -3101,7 +3367,9 @@
     "website": "https://pearos.xyz/",
     "docs": "https://pearos.xyz/install",
     "download": "https://pearos.xyz/downloads",
-    "highlights": [],
+    "highlights": [
+      "Built by Alexandru Bălan. Precisely replicates the Apple macOS design."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -3114,7 +3382,10 @@
     "screenshots": [],
     "tags": [
       "desktop",
-      "live"
+      "live",
+      "mutable",
+      "privacy",
+      "security"
     ],
     "base": "Debian (Stable), MX Linux",
     "desktopEnvironments": [
@@ -3131,7 +3402,9 @@
     "website": "https://ideal-os.xyz/",
     "docs": "",
     "download": "https://ideal-os.xyz/download-en",
-    "highlights": [],
+    "highlights": [
+      "iDeal DNS Switcher with 16 providers, Safe File encryption, parental NSFW filter."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -3145,6 +3418,7 @@
     "tags": [
       "desktop",
       "live",
+      "mutable",
       "specialist"
     ],
     "base": null,
@@ -3162,7 +3436,9 @@
     "website": "https://easyos.org/",
     "docs": "https://easyos.org/",
     "download": "http://distro.ibiblio.org/easyos/amd64/releases/",
-    "highlights": [],
+    "highlights": [
+      "Frugal 3-file installation, isolated \"Easy Containers\" sandbox."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -3176,7 +3452,8 @@
     "tags": [
       "desktop",
       "gaming",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "Debian (Stable), antiX",
     "desktopEnvironments": [
@@ -3193,7 +3470,9 @@
     "website": "https://www.commodoreusa.net",
     "docs": "",
     "download": "https://www.commodoreos.net/",
-    "highlights": [],
+    "highlights": [
+      "35 GB image with Amiga/C64 retro emulators, games, and Commodore OS BASIC V1."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -3207,6 +3486,7 @@
     "tags": [
       "desktop",
       "live",
+      "mutable",
       "old-computers"
     ],
     "base": "Debian, Ubuntu",
@@ -3224,7 +3504,9 @@
     "website": "https://funos.org/",
     "docs": "https://funos.org/documentation/",
     "download": "https://funos.org/download/",
-    "highlights": [],
+    "highlights": [
+      "No Snap packages, Ubuntu HWE kernel integration, only 230 MB RAM usage at idle."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -3238,7 +3520,8 @@
     "tags": [
       "data-rescue",
       "desktop",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "Debian (Stable)",
     "desktopEnvironments": [
@@ -3255,7 +3538,9 @@
     "website": "https://minios.dev/",
     "docs": "https://github.com/minios-linux/minios-live/wiki",
     "download": "https://minios.dev/",
-    "highlights": [],
+    "highlights": [
+      "Highly optimized live distribution. Modular squashfs compression allows building the OS on a USB drive in minutes."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -3268,7 +3553,8 @@
     "screenshots": [],
     "tags": [
       "live",
-      "multimedia"
+      "multimedia",
+      "mutable"
     ],
     "base": "Debian (Stable)",
     "desktopEnvironments": [
@@ -3285,7 +3571,9 @@
     "website": "https://www.modiciaos.cloud/",
     "docs": "",
     "download": "https://www.modiciaos.cloud/#iso",
-    "highlights": [],
+    "highlights": [
+      "Swappiness tuning, ZRAM compression, Pipewire/JACK, RT kernel compiled with -Ofast optimization flag."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -3298,8 +3586,9 @@
     "screenshots": [],
     "tags": [
       "desktop",
+      "gaming",
       "live",
-      "gaming"
+      "mutable"
     ],
     "base": "Ubuntu (LTS)",
     "desktopEnvironments": [
@@ -3316,7 +3605,9 @@
     "website": "https://nebios.org/",
     "docs": "",
     "download": "https://nebios.org/download/",
-    "highlights": [],
+    "highlights": [
+      "Unique graphical widget-oriented NebiDE desktop, proprietary .napp binary format."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -3330,6 +3621,7 @@
     "tags": [
       "desktop",
       "live",
+      "mutable",
       "old-computers"
     ],
     "base": "Debian (Stable)",
@@ -3347,7 +3639,9 @@
     "website": "https://besgnulinux.blogspot.com/",
     "docs": "",
     "download": "https://sourceforge.net/projects/besgnulinux/files/",
-    "highlights": [],
+    "highlights": [
+      "Suite of 40 custom configuration tools, Conky monitoring, ClamTK antivirus."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -3359,8 +3653,9 @@
     "img": "/repos/zimaos/logo.png",
     "screenshots": [],
     "tags": [
-      "server",
-      "nas"
+      "immutable",
+      "nas",
+      "server"
     ],
     "base": null,
     "desktopEnvironments": [
@@ -3378,7 +3673,9 @@
     "website": "https://www.zimaspace.com/docs/zimaos/#ZimaOS",
     "docs": "https://www.zimaspace.com/docs/zimaos/",
     "download": "https://github.com/IceWhaleTech/ZimaOS/releases",
-    "highlights": [],
+    "highlights": [
+      "NAS OS. Excludes native application software in favor of Docker, ZVM support."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -3392,7 +3689,8 @@
     "tags": [
       "desktop",
       "gaming",
-      "live"
+      "live",
+      "mutable"
     ],
     "base": "Arch",
     "desktopEnvironments": [
@@ -3412,7 +3710,9 @@
     "website": "https://sourceforge.net/projects/ultimateedition/",
     "docs": "",
     "download": "https://sourceforge.net/projects/ultimateedition/files/",
-    "highlights": [],
+    "highlights": [
+      "Extremely well-stocked with out-of-the-box software, heavy pre-installed 3D graphics."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -3426,6 +3726,7 @@
     "tags": [
       "desktop",
       "live",
+      "mutable",
       "raspberry-pi"
     ],
     "base": "Debian (Stable), Devuan",
@@ -3443,7 +3744,9 @@
     "website": "https://peppermintos.com/",
     "docs": "https://peppermint_os.codeberg.page/html/",
     "download": "https://peppermintos.com/download",
-    "highlights": [],
+    "highlights": [
+      "Minimalist base OS. Proprietary Ice/Kumo app for running websites as isolated web applications."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -3458,6 +3761,7 @@
       "desktop",
       "from-ram",
       "live",
+      "mutable",
       "old-computers",
       "raspberry-pi"
     ],
@@ -3486,7 +3790,9 @@
     "website": "http://www.tinycorelinux.net/",
     "docs": "",
     "download": "http://www.tinycorelinux.net/downloads.html",
-    "highlights": [],
+    "highlights": [
+      "Hyper-minimalist system (17 MB). Operates exclusively in RAM."
+    ],
     "difficulty": "intermediate"
   },
   {
@@ -3499,9 +3805,11 @@
     "screenshots": [],
     "tags": [
       "desktop",
+      "from-ram",
       "gaming",
       "live",
-      "multimedia"
+      "multimedia",
+      "mutable"
     ],
     "base": "Arch, CRUX, Debian, deepin, Fedora, Gentoo, openSUSE, Puppy, Slackware",
     "desktopEnvironments": [
@@ -3526,7 +3834,9 @@
     "website": "https://www.exton.se/",
     "docs": "https://www.exton.se/how-to-multi-boot-linux/",
     "download": "https://www.exton.se/download/",
-    "highlights": [],
+    "highlights": [
+      "Runs entirely from RAM, Refracta Snapshot utility for rebuilding custom ISO images."
+    ],
     "difficulty": "intermediate"
   }
 ]

@@ -26,6 +26,39 @@ import { GithubIcon, HeartAddIcon, Menu01Icon } from "@hugeicons/core-free-icons
 
 const wizardHref = "/wizard";
 
+const comparisons: { title: string; href: string; description: string }[] = [
+  {
+    title: "Ubuntu vs Fedora",
+    href: "/vs/ubuntu-vs-fedora",
+    description: "Compare the two most popular Linux distributions side by side.",
+  },
+  {
+    title: "Ubuntu vs Debian",
+    href: "/vs/ubuntu-vs-debian",
+    description: "Explore the differences between Ubuntu and its upstream parent, Debian.",
+  },
+  {
+    title: "Ubuntu vs Arch Linux",
+    href: "/vs/ubuntu-vs-arch-linux",
+    description: "Beginner-friendly Ubuntu versus the highly customizable Arch Linux.",
+  },
+  {
+    title: "Ubuntu vs Linux Mint",
+    href: "/vs/ubuntu-vs-linux-mint",
+    description: "Two beginner-focused distros with different desktop philosophies.",
+  },
+  {
+    title: "Ubuntu vs Pop!_OS",
+    href: "/vs/ubuntu-vs-pop-os",
+    description: "Ubuntu versus System76's developer- and gamer-oriented spin.",
+  },
+  {
+    title: "Arch Linux vs Manjaro",
+    href: "/vs/arch-linux-vs-manjaro-linux",
+    description: "Pure Arch versus Manjaro's user-friendly Arch-based experience.",
+  },
+];
+
 const project: { title: string; href: string; description: string }[] = [
   {
     title: "About",
@@ -89,6 +122,18 @@ export function HeaderNav() {
             />
           </NavigationMenuItem>
           <NavigationMenuItem>
+            <NavigationMenuTrigger>Comparison</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid w-100 gap-2 md:w-125 md:grid-cols-2 lg:w-150">
+                {comparisons.map((item) => (
+                  <ListItem key={item.title} title={item.title} href={item.href}>
+                    {item.description}
+                  </ListItem>
+                ))}
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
             <NavigationMenuTrigger>Project</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-100 gap-2 md:w-125 md:grid-cols-2 lg:w-150">
@@ -122,6 +167,27 @@ export function HeaderNav() {
                 </Link>
               }
             />
+            <div>
+              <p className="text-muted-foreground mb-1 text-xs font-medium tracking-wider uppercase">
+                Comparison
+              </p>
+              <div className="flex flex-col">
+                {comparisons.map((item) => (
+                  <SheetClose
+                    key={item.title}
+                    nativeButton={false}
+                    render={
+                      <Link
+                        href={item.href}
+                        className="hover:bg-muted rounded-sm px-2 py-2 text-sm"
+                      >
+                        {item.title}
+                      </Link>
+                    }
+                  />
+                ))}
+              </div>
+            </div>
             <div>
               <p className="text-muted-foreground mb-1 text-xs font-medium tracking-wider uppercase">
                 Project

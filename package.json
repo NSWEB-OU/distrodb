@@ -8,6 +8,7 @@
     "lint": "eslint",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "generate:sitemap": "node scripts/generate-sitemap.mjs",
     "prepare": "husky"
   },
   "dependencies": {
