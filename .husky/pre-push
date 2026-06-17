@@ -1,0 +1,2 @@
+node scripts/generate-sitemap.mjs
+git add public/sitemap.xml

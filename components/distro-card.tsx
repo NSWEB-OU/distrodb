@@ -6,14 +6,21 @@ import Link from "next/link";
 import { CompareToggleButton } from "./compare-toggle-button";
 
 export const DistroCard = (props: GridDistro & { priority?: boolean }) => {
-  const { name, description, tags, img, slug, priority = false } = props;
+  const { name, description, tags, img, slug, imgFit = "cover", priority = false } = props;
+  const isContain = imgFit === "contain";
 
   return (
     <Link href={`/distros/${slug}`} className="h-full w-full transition-transform hover:scale-98">
       <Card className="relative flex h-full w-full flex-col overflow-hidden pt-0">
-        <div className="relative">
+        <div className="relative aspect-video w-full overflow-hidden">
+          {isContain && (
+            <div
+              className="absolute inset-0 scale-110 bg-cover bg-center opacity-40 blur-xl"
+              style={{ backgroundImage: `url(${img || "/placeholder.png"})` }}
+            />
+          )}
           <Image
-            className="relative z-20 aspect-video w-full object-cover"
+            className={`relative z-20 h-full w-full ${isContain ? "object-contain" : "object-cover"}`}
             src={img || "/placeholder.png"}
             alt={name}
             title={name}
