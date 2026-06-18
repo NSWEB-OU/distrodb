@@ -163,12 +163,14 @@ const ROWS: RowConfig[] = [
   {
     label: "Release Date",
     key: "releaseDate",
-    format: (v) =>
-      new Date(v as string).toLocaleDateString("en-US", {
+    format: (v) => {
+      if (!v) return "N/A";
+       return new Date(v as string).toLocaleDateString("en-US", {
         year: "numeric",
         month: "long",
         day: "numeric",
-      }),
+      });
+    },
     highlight: (a, b) => {
       const da = new Date(a.releaseDate).getTime();
       const db = new Date(b.releaseDate).getTime();

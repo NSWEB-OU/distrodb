@@ -411,11 +411,65 @@
   },
   {
     "id": "opensuse-160",
-    "slug": "opensuse",
-    "name": "openSUSE",
-    "description": "The openSUSE project is a community program sponsored by SUSE Linux and other companies. Promoting the use of Linux everywhere, this program provides free, easy access to openSUSE, a complete Linux distribution.",
+    "slug": "opensuse-tumbleweed",
+    "name": "openSUSE Tumbleweed",
+    "description": "openSUSE Tumbleweed is a flagship Linux distribution from the openSUSE Project. Unlike traditional operating systems that release major versions every few years, Tumbleweed follows a rolling release model.",
     "longDescription": "The openSUSE project is a community program sponsored by SUSE Linux and other companies. Promoting the use of Linux everywhere, this program provides free, easy access to openSUSE, a complete Linux distribution. The openSUSE project has three main goals: make openSUSE the easiest Linux for anyone to obtain and the most widely used Linux distribution; leverage open source collaboration to make openSUSE the world's most usable Linux distribution and desktop environment for new and experienced Linux users; dramatically simplify and open the development and packaging processes to make openSUSE the platform of choice for Linux developers and software vendors.",
-    "img": null,
+    "img": "/repos/opensuse-tumbleweed/logo.png",
+    "screenshots": [],
+    "tags": [
+      "desktop",
+      "live",
+      "mutable",
+      "raspberry-pi",
+      "server",
+      "developer"
+    ],
+    "base": null,
+    "desktopEnvironments": [
+      "Cinnamon",
+      "Enlightenment",
+      "GNOME",
+      "IceWM",
+      "KDE Plasma",
+      "labwc",
+      "LXDE",
+      "LXQt",
+      "MATE",
+      "Wayfire",
+      "Xfce"
+    ],
+    "packageManager": "rpm (zypper)",
+    "initSystem": "systemd",
+    "architecture": [
+      "x86_64",
+      "aarch64",
+      "armv7hl",
+      "ppc64le",
+      "s390x",
+      "riscv64",
+      "IA-32"
+    ],
+    "releaseModel": "rolling",
+    "latestVersion": "-",
+    "releaseDate": null,
+    "website": "https://www.opensuse.org/",
+    "docs": "https://en.opensuse.org/Portal:Documentation",
+    "download": "https://get.opensuse.org/tumbleweed/",
+    "highlights": [
+      "Legendary YaST system configurator, Btrfs filesystem snapshots via Snapper.",
+      "Bleeding Edge, But Stable: It provides the latest Linux kernels, drivers, and desktop environments (like KDE Plasma and GNOME) mere days after they are officially released.",
+      "Automated Testing (openQA): The biggest fear with rolling releases is that an update will break the system. openSUSE combats this with openQA, a massive, fully automated testing framework. "
+    ],
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "opensuse-161",
+    "slug": "opensuse-leap",
+    "name": "openSUSE Leap",
+    "description": "openSUSE Leap is the traditional, regular-release counterpart to Tumbleweed. It shares a common base system with SUSE Linux Enterprise (SLE), making it a great choice for users who want stability and long-term support.",
+    "longDescription": "While Tumbleweed is a constantly moving target with the newest software, Leap is built for predictability, rock-solid stability, and long-term consistency. It follows a standard release cycle where new major versions come out every few years, accompanied by annual \"minor\" point updates (similar to Ubuntu LTS or Rocky Linux). What makes Leap unique in the Linux world is how it is built. It isn't just a community project; it shares its \"DNA\" directly with SUSE Linux Enterprise (SLE), the heavy-duty, commercial operating system used by global banks, data centers, and supercomputers. The openSUSE team takes the exact same core source code and binaries from the enterprise version, adds community packages, desktop environments, and multimedia codecs on top, and packages it as Leap. Because of this, Leap is essentially a free, community-supported enterprise operating system.",
+    "img": "/repos/opensuse-leap/logo.png",
     "screenshots": [],
     "tags": [
       "desktop",
@@ -441,22 +495,21 @@
     "packageManager": "rpm (zypper)",
     "initSystem": "systemd",
     "architecture": [
-      "ARM64",
-      "ARMhf",
-      "i686",
-      "ppc64",
-      "ppc64el",
-      "s390x",
-      "x86_64"
+      "x86_64",
+      "aarch64",
+      "ppc64le",
+      "s390x"
     ],
-    "releaseModel": "rolling",
+    "releaseModel": "fixed",
     "latestVersion": "16.0",
     "releaseDate": "2025-10-01",
     "website": "https://www.opensuse.org/",
     "docs": "https://en.opensuse.org/Portal:Documentation",
-    "download": "https://get.opensuse.org/",
+    "download": "https://get.opensuse.org/leap/16.0/",
     "highlights": [
-      "Legendary YaST system configurator, Btrfs filesystem snapshots via Snapper."
+      "Massive Support Windows: Each minor point release gets 24 months of support. The overall major series is built to last for years, giving you a set-and-forget experience.",
+      "Stable and Predictable: Leap provides a reliable platform with long-term support, making it ideal for production environments.",
+      "Easy Enterprise Migration: If you are a business running Leap on your servers and decide you want official, 24/7 paid tech support, you can migrate the system directly to SUSE Linux Enterprise with a single command—no reinstallation required."
     ],
     "difficulty": "intermediate"
   },

@@ -226,14 +226,14 @@ export default async function DistroPage({ params }: { params: Promise<{ slug: s
                 <MetaRow label="Init System" value={<TechTokenBadges value={distro.initSystem} />} />
                 <MetaRow label="Latest Version" value={distro.latestVersion} />
                 <MetaRow label="Release Model" value={RELEASE_LABEL[distro.releaseModel]} />
-                <MetaRow
+                {distro.releaseDate ? <MetaRow
                   label="Release Date"
                   value={new Date(distro.releaseDate).toLocaleDateString("en-US", {
                     year: "numeric",
                     month: "long",
                     day: "numeric",
                   })}
-                />
+                /> : null}
               </div>
 
               <Separator className="my-5" />
