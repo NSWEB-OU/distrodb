@@ -47,6 +47,7 @@ New distributions should follow this folder-per-slug convention for better maint
 | `/distros/[slug]` | `app/distros/[slug]/page.tsx` | Full distro detail page                              |
 | `/vs/[slugs]`     | `app/vs/[slugs]/page.tsx`     | Side-by-side comparison, e.g. `/vs/ubuntu-vs-fedora` |
 | `/wizard`         | `app/wizard/page.tsx`         | Interactive 6-step distro recommendation quiz        |
+| `/glossary`       | `app/glossary/page.tsx`       | Tag definitions with anchor links (`/glossary#atomic`) |
 | `/sitemap.xml`    | `app/sitemap.ts`              | Auto-generated sitemap (all distros + all VS pairs)  |
 | `/robots.txt`     | `app/robots.ts`               | Robots directives pointing to sitemap                |
 

@@ -12,6 +12,8 @@ import { buttonVariants } from "@/components/ui/button-variants";
 import { BackButton } from "@/components/back-button";
 import { DistroGallery } from "@/components/distro-gallery";
 import { SuggestChangesButton } from "@/components/suggest-changes-button";
+import { TagBadge } from "@/components/tag-badge";
+import { GlossaryBadge } from "@/components/glossary-badge";
 
 const BASE_URL = "https://distrodb.xyz";
 
@@ -96,11 +98,22 @@ const RELEASE_LABEL: Record<ReleaseModel, string> = {
   "semi-rolling": "Semi-Rolling",
 };
 
-function MetaRow({ label, value }: { label: string; value: string }) {
+function MetaRow({ label, value }: { label: string; value: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-0.5">
       <span className="text-muted-foreground text-xs tracking-wider uppercase">{label}</span>
-      <span className="text-sm font-medium">{value}</span>
+      <div className="text-sm font-medium">{value}</div>
+    </div>
+  );
+}
+
+function TechTokenBadges({ value }: { value: string }) {
+  const tokens = value.split(/[,/]+/).map((s) => s.trim()).filter(Boolean);
+  return (
+    <div className="flex flex-wrap gap-1.5">
+      {tokens.map((token) => (
+        <GlossaryBadge key={token} label={token} />
+      ))}
     </div>
   );
 }
@@ -188,11 +201,9 @@ export default async function DistroPage({ params }: { params: Promise<{ slug: s
           <Badge variant={DIFFICULTY_VARIANT[distro.difficulty]}>
             {DIFFICULTY_LABEL[distro.difficulty]}
           </Badge>
-          <Badge variant="outline">{RELEASE_LABEL[distro.releaseModel]}</Badge>
+          <GlossaryBadge label={RELEASE_LABEL[distro.releaseModel]} glossaryKey={distro.releaseModel} />
           {distro.tags.map((tag) => (
-            <Badge key={tag} variant="secondary">
-              {tag}
-            </Badge>
+            <TagBadge key={tag} tag={tag} />
           ))}
         </div>
       </div>
@@ -211,8 +222,8 @@ export default async function DistroPage({ params }: { params: Promise<{ slug: s
             <CardContent>
               <div className="grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-3">
                 <MetaRow label="Base" value={distro.base ?? "Independent"} />
-                <MetaRow label="Package Manager" value={distro.packageManager} />
-                <MetaRow label="Init System" value={distro.initSystem} />
+                <MetaRow label="Package Manager" value={<TechTokenBadges value={distro.packageManager} />} />
+                <MetaRow label="Init System" value={<TechTokenBadges value={distro.initSystem} />} />
                 <MetaRow label="Latest Version" value={distro.latestVersion} />
                 <MetaRow label="Release Model" value={RELEASE_LABEL[distro.releaseModel]} />
                 <MetaRow
@@ -246,9 +257,7 @@ export default async function DistroPage({ params }: { params: Promise<{ slug: s
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {distro.desktopEnvironments.map((de) => (
-                    <Badge key={de} variant="secondary">
-                      {de}
-                    </Badge>
+                    <GlossaryBadge key={de} label={de} />
                   ))}
                 </div>
               </div>
