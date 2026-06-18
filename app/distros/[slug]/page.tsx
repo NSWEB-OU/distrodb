@@ -108,11 +108,14 @@ function MetaRow({ label, value }: { label: string; value: React.ReactNode }) {
 }
 
 function TechTokenBadges({ value }: { value: string }) {
-  const tokens = value.split(/[,/]+/).map((s) => s.trim()).filter(Boolean);
+  const tokens = value
+    .split(/[,/]+/)
+    .map((s) => s.trim())
+    .filter(Boolean);
   return (
     <div className="flex flex-wrap gap-1.5">
-      {tokens.map((token) => (
-        <GlossaryBadge key={token} label={token} />
+      {tokens.map((token, i) => (
+        <GlossaryBadge key={`${token}-${i}`} label={token} />
       ))}
     </div>
   );
@@ -201,7 +204,10 @@ export default async function DistroPage({ params }: { params: Promise<{ slug: s
           <Badge variant={DIFFICULTY_VARIANT[distro.difficulty]}>
             {DIFFICULTY_LABEL[distro.difficulty]}
           </Badge>
-          <GlossaryBadge label={RELEASE_LABEL[distro.releaseModel]} glossaryKey={distro.releaseModel} />
+          <GlossaryBadge
+            label={RELEASE_LABEL[distro.releaseModel]}
+            glossaryKey={distro.releaseModel}
+          />
           {distro.tags.map((tag) => (
             <TagBadge key={tag} tag={tag} />
           ))}
@@ -222,18 +228,26 @@ export default async function DistroPage({ params }: { params: Promise<{ slug: s
             <CardContent>
               <div className="grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-3">
                 <MetaRow label="Base" value={distro.base ?? "Independent"} />
-                <MetaRow label="Package Manager" value={<TechTokenBadges value={distro.packageManager} />} />
-                <MetaRow label="Init System" value={<TechTokenBadges value={distro.initSystem} />} />
+                <MetaRow
+                  label="Package Manager"
+                  value={<TechTokenBadges value={distro.packageManager} />}
+                />
+                <MetaRow
+                  label="Init System"
+                  value={<TechTokenBadges value={distro.initSystem} />}
+                />
                 <MetaRow label="Latest Version" value={distro.latestVersion} />
                 <MetaRow label="Release Model" value={RELEASE_LABEL[distro.releaseModel]} />
-                {distro.releaseDate ? <MetaRow
-                  label="Release Date"
-                  value={new Date(distro.releaseDate).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                /> : null}
+                {distro.releaseDate ? (
+                  <MetaRow
+                    label="Release Date"
+                    value={new Date(distro.releaseDate).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  />
+                ) : null}
               </div>
 
               <Separator className="my-5" />

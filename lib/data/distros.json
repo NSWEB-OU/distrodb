@@ -6,31 +6,13 @@
     "description": "Ubuntu is a complete desktop Linux operating system, freely available with both community and professional support. The Ubuntu community is built on the ideas enshrined in the Ubuntu Manifesto: that software should be available free of charge, that software tools should be usable by people in their local language and despite any disabilities, and that people should have the freedom to customise and alter their software in whatever way they see fit.",
     "longDescription": "Ubuntu is a complete desktop Linux operating system, freely available with both community and professional support. The Ubuntu community is built on the ideas enshrined in the Ubuntu Manifesto: that software should be available free of charge, that software tools should be usable by people in their local language and despite any disabilities, and that people should have the freedom to customise and alter their software in whatever way they see fit. \"Ubuntu\" is an ancient African word, meaning \"humanity to others\". The Ubuntu distribution brings the spirit of Ubuntu to the software world.",
     "img": "/repos/ubuntu/logo.png",
-    "screenshots": [
-      "/repos/ubuntu/screenshot-1.png"
-    ],
-    "tags": [
-      "beginner-friendly",
-      "desktop",
-      "live",
-      "mutable",
-      "server"
-    ],
+    "screenshots": ["/repos/ubuntu/screenshot-1.png"],
+    "tags": ["beginner-friendly", "desktop", "live", "mutable", "server"],
     "base": "Debian",
-    "desktopEnvironments": [
-      "GNOME",
-      "Unity"
-    ],
+    "desktopEnvironments": ["GNOME", "Unity"],
     "packageManager": "apt / deb, snap",
     "initSystem": "systemd",
-    "architecture": [
-      "ARM64",
-      "ARMhf",
-      "ppc64el",
-      "RISC-V",
-      "s390x",
-      "x86_64"
-    ],
+    "architecture": ["ARM64", "ARMhf", "ppc64el", "RISC-V", "s390x", "x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "26.04",
     "releaseDate": "2026-04-23",
@@ -49,27 +31,13 @@
     "description": "Linux Mint is an Ubuntu-based distribution whose goal is to provide a classic desktop experience with many convenient, custom tools and optional out-of-the-box multimedia support. It also adds a custom desktop and menus, several unique configuration tools, and a web-based package installation interface.",
     "longDescription": "Linux Mint is an Ubuntu-based distribution whose goal is to provide a classic desktop experience with many convenient, custom tools and optional out-of-the-box multimedia support. It also adds a custom desktop and menus, several unique configuration tools, and a web-based package installation interface. Linux Mint is compatible with Ubuntu software repositories. Besides its Ubuntu-based flavour, the project also produces a separate \"Debian\" edition (called LMDE), based on the latest stable Debian version.",
     "img": "/repos/linux-mint/logo.webp",
-    "screenshots": [
-      "/repos/linux-mint/screenshot-1.png"
-    ],
-    "tags": [
-      "beginner-friendly",
-      "desktop",
-      "live",
-      "mutable"
-    ],
+    "screenshots": ["/repos/linux-mint/screenshot-1.png"],
+    "tags": ["beginner-friendly", "desktop", "live", "mutable"],
     "base": "Debian (Stable), Ubuntu (LTS)",
-    "desktopEnvironments": [
-      "Cinnamon",
-      "MATE",
-      "Xfce"
-    ],
+    "desktopEnvironments": ["Cinnamon", "MATE", "Xfce"],
     "packageManager": "deb, flatpak",
     "initSystem": "systemd",
-    "architecture": [
-      "i686",
-      "x86_64"
-    ],
+    "architecture": ["i686", "x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "22.3",
     "releaseDate": "2026-01-13",
@@ -88,15 +56,8 @@
     "description": "The Debian Project is an association of individuals who have made common cause to create a free operating system. This operating system is called Debian.",
     "longDescription": "The Debian Project is an association of individuals who have made common cause to create a free operating system. This operating system is called Debian. Debian systems currently use the Linux kernel. Linux is a completely free piece of software started by Linus Torvalds and supported by thousands of programmers worldwide. Of course, the thing that people want is application software: programs to help them get what they want to do done, from editing documents to running a business to playing games to writing more software. Debian comes with over 50,000 packages (precompiled software that is bundled up in a nice format for easy installation on your machine) - all of it free. It's a bit like a tower. At the base is the kernel. On top of that are all the basic tools. Next is all the software that you run on the computer. At the top of the tower is Debian -- carefully organizing and fitting everything so it all works together.",
     "img": "/repos/debian/logo.png",
-    "screenshots": [
-      "/repos/debian/screenshot-1.png"
-    ],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "server"
-    ],
+    "screenshots": ["/repos/debian/screenshot-1.png"],
+    "tags": ["desktop", "live", "mutable", "server"],
     "base": null,
     "desktopEnvironments": [
       "AfterStep",
@@ -134,14 +95,7 @@
     ],
     "packageManager": "apt / deb",
     "initSystem": "systemd",
-    "architecture": [
-      "ARM64",
-      "ARMhf",
-      "ppc64el",
-      "RISC-V",
-      "s390x",
-      "x86_64"
-    ],
+    "architecture": ["ARM64", "ARMhf", "ppc64el", "RISC-V", "s390x", "x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "13",
     "releaseDate": "2025-08-09",
@@ -160,15 +114,8 @@
     "description": "Fedora Linux (formerly Fedora, formerly Fedora Core) is a Linux distribution developed by the community-supported Fedora Project and owned by Red Hat. Fedora Linux contains software distributed under a free and open-source license and aims to be on the leading edge of such technologies.",
     "longDescription": "Fedora Linux (formerly Fedora, formerly Fedora Core) is a Linux distribution developed by the community-supported Fedora Project and owned by Red Hat. Fedora Linux contains software distributed under a free and open-source license and aims to be on the leading edge of such technologies. Fedora has a reputation for focusing on innovation, integrating new technologies early on and working closely with upstream Linux communities. The default desktop in Fedora Linux is the GNOME desktop environment and the default interface is the GNOME Shell. Other desktop environments, including KDE, Xfce, LXDE, MATE and Cinnamon, are available. The Fedora project also distributes custom variations of Fedora called Fedora spins. These are built with specific sets of software packages, offering alternative desktop environments or targeting specific interests such as gaming, security, design, scientific computing and robotics.",
     "img": "/repos/fedora/logo.webp",
-    "screenshots": [
-      "/repos/fedora/screenshot-1.webp"
-    ],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "server"
-    ],
+    "screenshots": ["/repos/fedora/screenshot-1.webp"],
+    "tags": ["desktop", "live", "mutable", "server"],
     "base": null,
     "desktopEnvironments": [
       "Awesome",
@@ -189,13 +136,7 @@
     ],
     "packageManager": "dnf / flatpak, rpm",
     "initSystem": "systemd",
-    "architecture": [
-      "ARM64",
-      "arm",
-      "ppc64el",
-      "s390x",
-      "x86_64"
-    ],
+    "architecture": ["ARM64", "arm", "ppc64el", "s390x", "x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "44",
     "releaseDate": "2026-04-28",
@@ -215,11 +156,7 @@
     "longDescription": "Arch Linux is an independently developed, x86_64-optimised Linux distribution targeted at competent Linux users. It uses 'pacman', its home-grown package manager, to provide updates to the latest software applications with full dependency tracking. Operating on a rolling release system, Arch can be installed from a CD image or via an FTP server. The default install provides a solid base that enables users to create a custom installation. In addition, the Arch Build System (ABS) provides a way to easily build new packages, modify the configuration of stock packages, and share these packages with other users via the Arch Linux user repository.",
     "img": "/repos/arch-linux/logo.webp",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "mutable",
-      "server"
-    ],
+    "tags": ["desktop", "mutable", "server"],
     "base": null,
     "desktopEnvironments": [
       "Cinnamon",
@@ -233,9 +170,7 @@
     ],
     "packageManager": "pacman",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "2012.11.01",
     "releaseDate": "2012-11-02",
@@ -254,15 +189,8 @@
     "description": "Manjaro Linux is a fast, user-friendly, desktop-oriented operating system based on Arch Linux. Key features include intuitive installation process, automatic hardware detection, stable rolling-release model, ability to install multiple kernels, special Bash scripts for managing graphics drivers and extensive desktop configurability.",
     "longDescription": "Manjaro Linux is a fast, user-friendly, desktop-oriented operating system based on Arch Linux. Key features include intuitive installation process, automatic hardware detection, stable rolling-release model, ability to install multiple kernels, special Bash scripts for managing graphics drivers and extensive desktop configurability. Manjaro Linux offers Xfce as the core desktop options, as well as KDE, GNOME and a minimalist Net edition for more advanced users. Community-supported desktop flavours are also available.",
     "img": "/repos/manjaro-linux/logo.avif",
-    "screenshots": [
-      "/repos/manjaro-linux/screenshot-1.webp"
-    ],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "raspberry-pi"
-    ],
+    "screenshots": ["/repos/manjaro-linux/screenshot-1.webp"],
+    "tags": ["desktop", "live", "mutable", "raspberry-pi"],
     "base": "Arch",
     "desktopEnvironments": [
       "Cinnamon",
@@ -276,10 +204,7 @@
     ],
     "packageManager": "pacman / flatpak, pkg, snap",
     "initSystem": "systemd",
-    "architecture": [
-      "ARM64",
-      "x86_64"
-    ],
+    "architecture": ["ARM64", "x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "26.0",
     "releaseDate": "2026-01-04",
@@ -300,23 +225,12 @@
     "img": "/repos/pop-os/logo.png",
     "imgFit": "contain",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "raspberry-pi"
-    ],
+    "tags": ["desktop", "live", "mutable", "raspberry-pi"],
     "base": "Debian, Ubuntu (LTS)",
-    "desktopEnvironments": [
-      "COSMIC",
-      "GNOME"
-    ],
+    "desktopEnvironments": ["COSMIC", "GNOME"],
     "packageManager": "deb, flatpak, PackageKit",
     "initSystem": "systemd",
-    "architecture": [
-      "ARM64",
-      "x86_64"
-    ],
+    "architecture": ["ARM64", "x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "24.04",
     "releaseDate": "2025-12-11",
@@ -335,27 +249,13 @@
     "description": "MX Linux, a desktop-oriented Linux distribution based on Debian's \"Stable\" branch, is a cooperative venture between the antiX and former MEPIS Linux communities. Using Xfce as the default desktop (with separate KDE Plasma and Fluxbox editions also available), it is a mid-weight operating system designed to combine an elegant and efficient desktop with simple configuration, high stability, solid performance and medium-sized footprint.",
     "longDescription": "MX Linux, a desktop-oriented Linux distribution based on Debian's \"Stable\" branch, is a cooperative venture between the antiX and former MEPIS Linux communities. Using Xfce as the default desktop (with separate KDE Plasma and Fluxbox editions also available), it is a mid-weight operating system designed to combine an elegant and efficient desktop with simple configuration, high stability, solid performance and medium-sized footprint.",
     "img": "/repos/mx-linux/logo.png",
-    "screenshots": [],
-    "tags": [
-      "desktop",
-      "from-ram",
-      "live",
-      "mutable",
-      "old-computers",
-      "raspberry-pi"
-    ],
+    "screenshots": ["/repos/mx-linux/screenshot-1.png"],
+    "tags": ["desktop", "from-ram", "live", "mutable", "old-computers", "raspberry-pi"],
     "base": "Debian (Stable), antiX",
-    "desktopEnvironments": [
-      "Fluxbox",
-      "KDE Plasma",
-      "Xfce"
-    ],
+    "desktopEnvironments": ["Fluxbox", "KDE Plasma", "Xfce"],
     "packageManager": "apt / deb, flatpak",
     "initSystem": "systemd, SysV",
-    "architecture": [
-      "ARMhf",
-      "x86_64"
-    ],
+    "architecture": ["ARMhf", "x86_64"],
     "releaseModel": "semi-rolling",
     "latestVersion": "25.2",
     "releaseDate": "2026-05-25",
@@ -374,13 +274,8 @@
     "description": "EndeavourOS is a rolling-release Linux distribution based on Arch Linux. The project aims to be a spiritual successor to Antergos, providing an easy setup and a pre-configured desktop environment on an Arch base.",
     "longDescription": "EndeavourOS is a rolling-release Linux distribution based on Arch Linux. The project aims to be a spiritual successor to Antergos, providing an easy setup and a pre-configured desktop environment on an Arch base. EndeavourOS offers both off-line and on-line install options. The off-line installer, Calamares, uses the KDE Plasma desktop by default. The on-line installer can install optional software components, including most popular desktop environments.",
     "img": "/repos/endeavouros/logo.png",
-    "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "raspberry-pi"
-    ],
+    "screenshots": ["/repos/endeavouros/screenshot-1.png"],
+    "tags": ["desktop", "live", "mutable", "raspberry-pi"],
     "base": "Arch",
     "desktopEnvironments": [
       "Budgie",
@@ -394,19 +289,14 @@
     ],
     "packageManager": "pacman / pkg",
     "initSystem": "systemd",
-    "architecture": [
-      "ARM64",
-      "x86_64"
-    ],
+    "architecture": ["ARM64", "x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "2026.03.06",
     "releaseDate": "2026-03-12",
     "website": "https://endeavouros.com/",
     "docs": "https://endeavouros.com/wiki/",
     "download": "https://endeavouros.com/",
-    "highlights": [
-      "User-friendly terminal-oriented Arch with Calamares graphical installer."
-    ],
+    "highlights": ["User-friendly terminal-oriented Arch with Calamares graphical installer."],
     "difficulty": "intermediate"
   },
   {
@@ -417,14 +307,7 @@
     "longDescription": "The openSUSE project is a community program sponsored by SUSE Linux and other companies. Promoting the use of Linux everywhere, this program provides free, easy access to openSUSE, a complete Linux distribution. The openSUSE project has three main goals: make openSUSE the easiest Linux for anyone to obtain and the most widely used Linux distribution; leverage open source collaboration to make openSUSE the world's most usable Linux distribution and desktop environment for new and experienced Linux users; dramatically simplify and open the development and packaging processes to make openSUSE the platform of choice for Linux developers and software vendors.",
     "img": "/repos/opensuse-tumbleweed/logo.png",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "raspberry-pi",
-      "server",
-      "developer"
-    ],
+    "tags": ["desktop", "live", "mutable", "raspberry-pi", "server", "developer"],
     "base": null,
     "desktopEnvironments": [
       "Cinnamon",
@@ -441,15 +324,7 @@
     ],
     "packageManager": "rpm (zypper)",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64",
-      "aarch64",
-      "armv7hl",
-      "ppc64le",
-      "s390x",
-      "riscv64",
-      "IA-32"
-    ],
+    "architecture": ["x86_64", "aarch64", "armv7hl", "ppc64le", "s390x", "riscv64", "IA-32"],
     "releaseModel": "rolling",
     "latestVersion": "-",
     "releaseDate": null,
@@ -471,13 +346,7 @@
     "longDescription": "While Tumbleweed is a constantly moving target with the newest software, Leap is built for predictability, rock-solid stability, and long-term consistency. It follows a standard release cycle where new major versions come out every few years, accompanied by annual \"minor\" point updates (similar to Ubuntu LTS or Rocky Linux). What makes Leap unique in the Linux world is how it is built. It isn't just a community project; it shares its \"DNA\" directly with SUSE Linux Enterprise (SLE), the heavy-duty, commercial operating system used by global banks, data centers, and supercomputers. The openSUSE team takes the exact same core source code and binaries from the enterprise version, adds community packages, desktop environments, and multimedia codecs on top, and packages it as Leap. Because of this, Leap is essentially a free, community-supported enterprise operating system.",
     "img": "/repos/opensuse-leap/logo.png",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "raspberry-pi",
-      "server"
-    ],
+    "tags": ["desktop", "live", "mutable", "raspberry-pi", "server"],
     "base": null,
     "desktopEnvironments": [
       "Cinnamon",
@@ -494,12 +363,7 @@
     ],
     "packageManager": "rpm (zypper)",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64",
-      "aarch64",
-      "ppc64le",
-      "s390x"
-    ],
+    "architecture": ["x86_64", "aarch64", "ppc64le", "s390x"],
     "releaseModel": "fixed",
     "latestVersion": "16.0",
     "releaseDate": "2025-10-01",
@@ -519,38 +383,21 @@
     "name": "Kali Linux",
     "description": "Kali Linux (formerly known as BackTrack) is a Debian-based distribution with a collection of security and forensics tools. It features timely security updates, support for the ARM architecture, a choice of four popular desktop environments, and seamless upgrades to newer versions.",
     "longDescription": "Kali Linux (formerly known as BackTrack) is a Debian-based distribution with a collection of security and forensics tools. It features timely security updates, support for the ARM architecture, a choice of four popular desktop environments, and seamless upgrades to newer versions.",
-    "img": "/repos/kali-linux/logo.svg",
-    "imgFit": "contain",
+    "img": "/repos/kali-linux/logo.png",
     "screenshots": [],
-    "tags": [
-      "data-rescue",
-      "forensics",
-      "live",
-      "mutable",
-      "raspberry-pi",
-      "security"
-    ],
+    "tags": ["data-rescue", "forensics", "live", "mutable", "raspberry-pi", "security"],
     "base": "Debian (Testing)",
-    "desktopEnvironments": [
-      "GNOME",
-      "KDE Plasma",
-      "Xfce"
-    ],
+    "desktopEnvironments": ["GNOME", "KDE Plasma", "Xfce"],
     "packageManager": "apt / deb",
     "initSystem": "systemd",
-    "architecture": [
-      "ARM64",
-      "x86_64"
-    ],
+    "architecture": ["ARM64", "x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "2026.1",
     "releaseDate": "2026-03-24",
     "website": "https://www.kali.org/",
     "docs": "https://www.kali.org/kali-linux-documentation/",
     "download": "https://www.kali.org/downloads/",
-    "highlights": [
-      "Leading platform for penetration testing, forensics, and reverse engineering."
-    ],
+    "highlights": ["Leading platform for penetration testing, forensics, and reverse engineering."],
     "difficulty": "intermediate"
   },
   {
@@ -562,13 +409,7 @@
     "img": "/repos/nixos/logo.png",
     "imgFit": "contain",
     "screenshots": [],
-    "tags": [
-      "declarative",
-      "desktop",
-      "immutable",
-      "live",
-      "server"
-    ],
+    "tags": ["declarative", "desktop", "immutable", "live", "server"],
     "base": null,
     "desktopEnvironments": [
       "Awesome",
@@ -588,19 +429,14 @@
     ],
     "packageManager": "nix / nixpkg",
     "initSystem": "systemd",
-    "architecture": [
-      "ARM64",
-      "x86_64"
-    ],
+    "architecture": ["ARM64", "x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "26.05",
     "releaseDate": "2026-05-30",
     "website": "https://nixos.org/",
     "docs": "https://wiki.nixos.org/wiki/NixOS_Wiki",
     "download": "https://nixos.org/download/",
-    "highlights": [
-      "Fully declarative system state management via the Nix configuration language."
-    ],
+    "highlights": ["Fully declarative system state management via the Nix configuration language."],
     "difficulty": "advanced"
   },
   {
@@ -611,33 +447,19 @@
     "longDescription": "Red Hat Enterprise Linux (RHEL) is a Linux distribution developed by Red Hat and targeted toward the commercial market. Red Hat Enterprise Linux is released in server editions for x86, x86_64, Itanium, PowerPC and IBM System z architectures, and desktop editions for x86 and x86_64 processors. All of Red Hat's official support and training and the Red Hat Certification Program centres around the Red Hat Enterprise Linux platform. Red Hat uses strict trademark rules to restrict free re-distribution of its officially supported versions of Red Hat Enterprise Linux, but still freely provides its source code. Third-party derivatives can be built and redistributed by stripping away non-free components.",
     "img": "/repos/red-hat-enterprise-linux/logo.png",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "mutable",
-      "server"
-    ],
+    "tags": ["desktop", "mutable", "server"],
     "base": "Fedora",
-    "desktopEnvironments": [
-      "GNOME"
-    ],
+    "desktopEnvironments": ["GNOME"],
     "packageManager": "dnf, yum / flatpak, rpm",
     "initSystem": "systemd",
-    "architecture": [
-      "ARM64",
-      "ppc64el",
-      "s390x",
-      "x86_64",
-      "x86-64-v2"
-    ],
+    "architecture": ["ARM64", "ppc64el", "s390x", "x86_64", "x86-64-v2"],
     "releaseModel": "fixed",
     "latestVersion": "10.2",
     "releaseDate": "2026-05-20",
     "website": "http://www.redhat.com/",
     "docs": "https://access.redhat.com/documentation/en/red-hat-enterprise-linux/",
     "download": "https://access.redhat.com/site/downloads/",
-    "highlights": [
-      "Enterprise sector standard, guaranteeing 10 years of commercial support."
-    ],
+    "highlights": ["Enterprise sector standard, guaranteeing 10 years of commercial support."],
     "difficulty": "intermediate"
   },
   {
@@ -648,33 +470,19 @@
     "longDescription": "Rocky Linux is a community enterprise operating system designed to be 100% bug-for-bug compatible with Red Hat Enterprise Linux. It is available for the x86_64 and AArch64 processor architectures.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "mutable",
-      "server"
-    ],
+    "tags": ["desktop", "mutable", "server"],
     "base": "Fedora, Red Hat",
-    "desktopEnvironments": [
-      "GNOME"
-    ],
+    "desktopEnvironments": ["GNOME"],
     "packageManager": "flatpak, rpm (dnf)",
     "initSystem": "systemd",
-    "architecture": [
-      "ARM64",
-      "ppc64el",
-      "RISC-V",
-      "s390x",
-      "x86_64"
-    ],
+    "architecture": ["ARM64", "ppc64el", "RISC-V", "s390x", "x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "9.8",
     "releaseDate": "2026-05-28",
     "website": "https://rockylinux.org/",
     "docs": "https://wiki.rockylinux.org/",
     "download": "https://rockylinux.org/download",
-    "highlights": [
-      "Free 100% compatible RHEL clone, created by CentOS founder Gregory Kurtzer."
-    ],
+    "highlights": ["Free 100% compatible RHEL clone, created by CentOS founder Gregory Kurtzer."],
     "difficulty": "intermediate"
   },
   {
@@ -686,26 +494,12 @@
     "img": "/repos/almalinux-os/logo.png",
     "imgFit": "contain",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "mutable",
-      "raspberry-pi",
-      "server"
-    ],
+    "tags": ["desktop", "mutable", "raspberry-pi", "server"],
     "base": "Fedora, Red Hat",
-    "desktopEnvironments": [
-      "GNOME",
-      "KDE Plasma",
-      "MATE"
-    ],
+    "desktopEnvironments": ["GNOME", "KDE Plasma", "MATE"],
     "packageManager": "dnf / flatpak, rpm",
     "initSystem": "systemd",
-    "architecture": [
-      "ARM64",
-      "ppc64el",
-      "s390x",
-      "x86_64"
-    ],
+    "architecture": ["ARM64", "ppc64el", "s390x", "x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "10.1",
     "releaseDate": "2025-11-24",
@@ -725,24 +519,12 @@
     "longDescription": "CentOS as a group is a community of open source contributors and users which started in 2003 and has been sponsored by Red Hat since 2014. CentOS Linux versions up to CentOS Linux 8 are 100% compatible rebuilds of Red Hat Enterprise Linux, in full compliance with Red Hat's redistribution requirements. In 2020 it was announced CentOS Linux is being discontinued and replaced with CentOS Stream, a developer-focused distribution which acts as a middle-stream between Fedora and Red Hat Enterprise Linux.",
     "img": "/repos/centos/logo.png",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "server"
-    ],
+    "tags": ["desktop", "live", "mutable", "server"],
     "base": "Fedora, Red Hat",
-    "desktopEnvironments": [
-      "GNOME"
-    ],
+    "desktopEnvironments": ["GNOME"],
     "packageManager": "dnf / flatpak, rpm",
     "initSystem": "systemd",
-    "architecture": [
-      "ARM64",
-      "ppc64el",
-      "x86_64",
-      "x86-64-v2"
-    ],
+    "architecture": ["ARM64", "ppc64el", "x86_64", "x86-64-v2"],
     "releaseModel": "semi-rolling",
     "latestVersion": "10 Stream",
     "releaseDate": "2024-12-13",
@@ -761,25 +543,13 @@
     "description": "Bazzite is an immutable Linux distribution based on Fedora and designed with gaming in mind. It can run on desktop computers, the Steam Deck, and other handheld gaming devices.",
     "longDescription": "Bazzite is an immutable Linux distribution based on Fedora and designed with gaming in mind. It can run on desktop computers, the Steam Deck, and other handheld gaming devices. The base system is read-only and packages are usually supplied using Flatpak bundles. Bazzite is available in GNOME and KDE Plasma desktop variants.",
     "img": "/repos/bazzite/logo.png",
-    "screenshots": [
-      "/repos/bazzite/screenshot-1.png"
-    ],
-    "tags": [
-      "desktop",
-      "gaming",
-      "immutable",
-      "live"
-    ],
+    "screenshots": ["/repos/bazzite/screenshot-1.png"],
+    "tags": ["desktop", "gaming", "immutable", "live"],
     "base": "Fedora",
-    "desktopEnvironments": [
-      "GNOME",
-      "KDE Plasma"
-    ],
-    "packageManager": "flatpak / flatpak, rpm",
+    "desktopEnvironments": ["GNOME", "KDE Plasma"],
+    "packageManager": "flatpak, rpm",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "44",
     "releaseDate": "2026-04-29",
@@ -799,12 +569,7 @@
     "longDescription": "CachyOS is a Linux distribution based on Arch Linux. It focuses on speed and security optimisations - the default Linux kernel is heavily optimised using the BORE (Burst-Oriented Response Enhancer) scheduler, while the desktop packages are compiled with LTO, x86-64-v3 and x86-64-v4, Zen 4 optimization, security flags and performance improvements. The available desktop environments, window managers and Wayland compositors include bspwm, Budgie, Cinnamon, COSMIC, GNOME, Hyprland, i3, KDE Plasma, LXDE, LXQt, MATE, Niri, Openbox, Qtile, Sway, UKUI, Wayfire and Xfce. CachyOS also ships with both graphical and command-line system installers.",
     "img": "/repos/cachyos/logo.jpeg",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "gaming",
-      "live",
-      "mutable"
-    ],
+    "tags": ["desktop", "gaming", "live", "mutable"],
     "base": "Arch",
     "desktopEnvironments": [
       "bspwm",
@@ -828,10 +593,7 @@
     ],
     "packageManager": "pacman / pkg",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64",
-      "x86-64-v3"
-    ],
+    "architecture": ["x86_64", "x86-64-v3"],
     "releaseModel": "rolling",
     "latestVersion": "260426",
     "releaseDate": "2026-04-26",
@@ -851,22 +613,12 @@
     "longDescription": "Zorin OS is an Ubuntu-based Linux distribution designed especially for newcomers to Linux. It has a Windows-like graphical user interface and many programs similar to those found in Windows. Zorin OS also comes with an application that lets users run many Windows programs. The distribution's ultimate goal is to provide a Linux alternative to Windows and let Windows users enjoy all the features of Linux without complications.",
     "img": "/repos/zorin-os/logo.png",
     "screenshots": [],
-    "tags": [
-      "beginner-friendly",
-      "desktop",
-      "live",
-      "mutable"
-    ],
+    "tags": ["beginner-friendly", "desktop", "live", "mutable"],
     "base": "Debian, Ubuntu (LTS)",
-    "desktopEnvironments": [
-      "GNOME",
-      "Xfce"
-    ],
+    "desktopEnvironments": ["GNOME", "Xfce"],
     "packageManager": "apt / deb, flatpak, snap",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "18.1",
     "releaseDate": "2026-04-15",
@@ -886,21 +638,12 @@
     "longDescription": "elementary OS is an Ubuntu-based desktop distribution. Some of its more interesting features include a custom desktop environment called Pantheon and many custom apps including Photos, Music, Videos, Calendar, Terminal, Files, and more. It also comes with some familiar apps like the Epiphany web browser and a fork of Geary mail.",
     "img": "/repos/elementary-os/logo.png",
     "screenshots": [],
-    "tags": [
-      "beginner-friendly",
-      "desktop",
-      "live",
-      "mutable"
-    ],
+    "tags": ["beginner-friendly", "desktop", "live", "mutable"],
     "base": "Debian, Ubuntu (LTS)",
-    "desktopEnvironments": [
-      "Pantheon"
-    ],
+    "desktopEnvironments": ["Pantheon"],
     "packageManager": "apt / deb, flatpak",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "8.1",
     "releaseDate": "2025-12-22",
@@ -920,29 +663,19 @@
     "longDescription": "Kubuntu is a free, user-friendly Linux distribution based on KDE's desktop software and on the Ubuntu operating system. It has a biannual release cycle. Besides providing an up-to-date version of the KDE desktop at the time of the release, the project also releases updated KDE packages throughout the lifetime of each release.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable"
-    ],
+    "tags": ["desktop", "live", "mutable"],
     "base": "Debian, Ubuntu",
-    "desktopEnvironments": [
-      "KDE Plasma"
-    ],
+    "desktopEnvironments": ["KDE Plasma"],
     "packageManager": "apt / deb, snap",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "26.04",
     "releaseDate": "2026-04-24",
     "website": "https://kubuntu.org/",
     "docs": "https://community.kde.org/Kubuntu",
     "download": "https://www.kubuntu.org/getkubuntu",
-    "highlights": [
-      "Official Ubuntu spin with an unmodified KDE Plasma desktop environment."
-    ],
+    "highlights": ["Official Ubuntu spin with an unmodified KDE Plasma desktop environment."],
     "difficulty": "intermediate"
   },
   {
@@ -953,30 +686,19 @@
     "longDescription": "Xubuntu is a community-developed operating system based on Ubuntu. It comes with Xfce, which is a stable, light and configurable desktop environment.",
     "img": "/repos/xubuntu/logo.png",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "old-computers"
-    ],
+    "tags": ["desktop", "live", "mutable", "old-computers"],
     "base": "Debian, Ubuntu",
-    "desktopEnvironments": [
-      "Xfce"
-    ],
+    "desktopEnvironments": ["Xfce"],
     "packageManager": "apt / deb, snap",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "26.04",
     "releaseDate": "2026-04-24",
     "website": "https://www.xubuntu.org/",
     "docs": "https://docs.xubuntu.org/",
     "download": "https://xubuntu.org/getxubuntu/",
-    "highlights": [
-      "Optimal balance of performance and visual aesthetics on older computers."
-    ],
+    "highlights": ["Optimal balance of performance and visual aesthetics on older computers."],
     "difficulty": "intermediate"
   },
   {
@@ -987,22 +709,12 @@
     "longDescription": "KDE neon is a Ubuntu-based Linux distribution and live DVD featuring the latest KDE Plasma desktop and other KDE community software. Besides the installable DVD image, the project provides a rapidly-evolving software repository with all the latest KDE software. Two editions of the product are available - a \"User\" edition, designed for those interested in checking out the latest KDE software as it gets released, and a \"Developer's\" edition, created as a platform for testing cutting-edge KDE applications.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "developer",
-      "live",
-      "mutable"
-    ],
+    "tags": ["desktop", "developer", "live", "mutable"],
     "base": "Debian, Ubuntu (LTS)",
-    "desktopEnvironments": [
-      "KDE Plasma"
-    ],
+    "desktopEnvironments": ["KDE Plasma"],
     "packageManager": "deb",
     "initSystem": "systemd",
-    "architecture": [
-      "ARM64",
-      "x86_64"
-    ],
+    "architecture": ["ARM64", "x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "5.8",
     "releaseDate": "2024-02-29",
@@ -1022,31 +734,19 @@
     "longDescription": "Lubuntu is a variant of Ubuntu that uses the LXQt desktop environment. (Versions prior to 18.10 shipped with the LXDE desktop.) It includes essential applications and services for daily use, including office suite, PDF reader, image editor and multimedia players. A distribution available for both 32-bit and 64-bit computers, Lubuntu is intended to be user-friendly, lightweight and energy efficient.",
     "img": "/repos/lubuntu/logo.jpg",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "netbooks",
-      "old-computers"
-    ],
+    "tags": ["desktop", "live", "mutable", "netbooks", "old-computers"],
     "base": "Debian, Ubuntu",
-    "desktopEnvironments": [
-      "LXQt"
-    ],
+    "desktopEnvironments": ["LXQt"],
     "packageManager": "apt / deb, snap",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "26.04",
     "releaseDate": "2026-04-23",
     "website": "https://lubuntu.me/",
     "docs": "https://help.ubuntu.com/community/Lubuntu/Documentation",
     "download": "https://help.ubuntu.com/community/Lubuntu/GetLubuntu",
-    "highlights": [
-      "Minimalist Qt-based interface, optimized for low-specification computers."
-    ],
+    "highlights": ["Minimalist Qt-based interface, optimized for low-specification computers."],
     "difficulty": "intermediate"
   },
   {
@@ -1057,22 +757,12 @@
     "longDescription": "The Amnesic Incognito Live System (Tails) is a Debian-based live DVD/USB with the goal of providing complete Internet anonymity for the user. The product ships with several Internet applications, including web browser, IRC client, mail client and instant messenger, all pre-configured with security in mind and with all traffic anonymised. To achieve this, Incognito uses the Tor network to make Internet traffic very hard to trace.",
     "img": "/repos/tails/logo.png",
     "screenshots": [],
-    "tags": [
-      "from-ram",
-      "live",
-      "mutable",
-      "privacy",
-      "security"
-    ],
+    "tags": ["from-ram", "live", "mutable", "privacy", "security"],
     "base": "Debian (Stable)",
-    "desktopEnvironments": [
-      "GNOME"
-    ],
+    "desktopEnvironments": ["GNOME"],
     "packageManager": "apt / deb, flatpak",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "7.0",
     "releaseDate": "2025-09-18",
@@ -1092,24 +782,9 @@
     "longDescription": "Alpine Linux is a community developed operating system designed for routers, firewalls, VPNs, VoIP boxes, containers, and servers. It was designed with security in mind; it has proactive security features like PaX and SSP that prevent security holes in the software to be exploited. The C library used is musl and the base tools are all in BusyBox. Those are normally found in embedded systems and are smaller than the tools found in GNU/Linux systems.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "firewall",
-      "from-ram",
-      "mutable",
-      "raspberry-pi",
-      "security",
-      "server",
-      "telephony"
-    ],
+    "tags": ["firewall", "from-ram", "mutable", "raspberry-pi", "security", "server", "telephony"],
     "base": null,
-    "desktopEnvironments": [
-      "GNOME",
-      "KDE Plasma",
-      "LXQt",
-      "MATE",
-      "Sway",
-      "Xfce"
-    ],
+    "desktopEnvironments": ["GNOME", "KDE Plasma", "LXQt", "MATE", "Sway", "Xfce"],
     "packageManager": "apk",
     "initSystem": "Busybox, OpenRC",
     "architecture": [
@@ -1141,12 +816,7 @@
     "longDescription": "Gentoo Linux is a versatile and fast, completely free Linux distribution geared towards developers and network professionals. Unlike other distros, Gentoo Linux has an advanced package management system called Portage. Portage is a true ports system in the tradition of BSD ports, but is Python-based and sports a number of advanced features including dependencies, fine-grained package management, \"fake\" (OpenBSD-style) installs, safe unmerging, system profiles, virtual packages, config file management, and more.",
     "img": "/repos/gentoo-linux/logo.jpg",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "mutable",
-      "server",
-      "source-based"
-    ],
+    "tags": ["desktop", "mutable", "server", "source-based"],
     "base": null,
     "desktopEnvironments": [
       "Awesome",
@@ -1197,21 +867,12 @@
     "longDescription": "Qubes OS is a free and open-source, security-oriented operating system for single-user desktop computing. Qubes OS leverages Xen-based virtualization to allow for the creation and management of isolated compartments called qubes. These qubes are implemented as virtual machines (VMs). This allows each component of the operating system to be isolated from other pieces, preventing compromises from spreading or information from leaking.",
     "img": "/repos/qubes-os/logo.png",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "mutable",
-      "privacy",
-      "security"
-    ],
+    "tags": ["desktop", "mutable", "privacy", "security"],
     "base": "Debian, Fedora",
-    "desktopEnvironments": [
-      "Xfce"
-    ],
+    "desktopEnvironments": ["Xfce"],
     "packageManager": "dnf / rpm",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "4.3.0",
     "releaseDate": "2025-12-21",
@@ -1232,25 +893,12 @@
     "img": "/repos/void/logo.png",
     "imgFit": "contain",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "raspberry-pi"
-    ],
+    "tags": ["desktop", "live", "mutable", "raspberry-pi"],
     "base": null,
-    "desktopEnvironments": [
-      "Xfce"
-    ],
+    "desktopEnvironments": ["Xfce"],
     "packageManager": "xbps",
     "initSystem": "runit",
-    "architecture": [
-      "ARM64",
-      "armv6l",
-      "armv7l",
-      "i686",
-      "x86_64"
-    ],
+    "architecture": ["ARM64", "armv6l", "armv7l", "i686", "x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "20250202",
     "releaseDate": "2025-02-02",
@@ -1270,33 +918,19 @@
     "longDescription": "Solus is a Linux distribution built from scratch. It uses a forked version of the PiSi package manager, maintained as \"eopkg\" within Solus, and its flagship edition uses the Budgie desktop environment. Budgie was originally developed-in-house, but is now maintained as a separate project by the Buddies of Budgie team. Solus is available in GNOME, KDE Plasma and Xfce editions.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "beginner-friendly",
-      "desktop",
-      "live",
-      "mutable"
-    ],
+    "tags": ["beginner-friendly", "desktop", "live", "mutable"],
     "base": null,
-    "desktopEnvironments": [
-      "Budgie",
-      "GNOME",
-      "KDE Plasma",
-      "Xfce"
-    ],
+    "desktopEnvironments": ["Budgie", "GNOME", "KDE Plasma", "Xfce"],
     "packageManager": "eopkg, flatpak",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "4.9",
     "releaseDate": "2026-04-18",
     "website": "https://getsol.us/",
     "docs": "https://help.getsol.us/",
     "download": "https://getsol.us/download/",
-    "highlights": [
-      "Desktop system developing its own innovative Budgie graphical shell."
-    ],
+    "highlights": ["Desktop system developing its own innovative Budgie graphical shell."],
     "difficulty": "beginner"
   },
   {
@@ -1307,34 +941,19 @@
     "longDescription": "Artix Linux is a fork (or continuation as an autonomous project) of the Arch-OpenRC and Manjaro-OpenRC projects. Artix Linux offers a lightweight, rolling-release operating system featuring the OpenRC init software. (Alternative spins feature the runit and s6 init software.) Several editions of Artix Linux are available, featuring either a plain command line or one of several desktop environments.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable"
-    ],
+    "tags": ["desktop", "live", "mutable"],
     "base": "Arch",
-    "desktopEnvironments": [
-      "Cinnamon",
-      "LXDE",
-      "LXQt",
-      "MATE",
-      "KDE Plasma",
-      "Xfce"
-    ],
+    "desktopEnvironments": ["Cinnamon", "LXDE", "LXQt", "MATE", "KDE Plasma", "Xfce"],
     "packageManager": "pacman / pkg",
     "initSystem": "Dinit, OpenRC, runit, s6",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "",
     "releaseDate": "2026-04-02",
     "website": "https://artixlinux.org/",
     "docs": "",
     "download": "https://artixlinux.org/download.php",
-    "highlights": [
-      "Arch Linux without systemd. Offers a choice of five alternative init systems."
-    ],
+    "highlights": ["Arch Linux without systemd. Offers a choice of five alternative init systems."],
     "difficulty": "intermediate"
   },
   {
@@ -1345,38 +964,19 @@
     "longDescription": "The Official Release of Slackware Linux by Patrick Volkerding is an advanced Linux operating system, designed with the twin goals of ease of use and stability as top priorities. Including the latest popular software while retaining a sense of tradition, providing simplicity and ease of use alongside flexibility and power, Slackware brings the best of all worlds to the table. Originally developed by Linus Torvalds in 1991, the UNIX-like Linux operating system now benefits from the contributions of millions of users and developers around the world. Slackware Linux provides new and experienced users alike with a fully-featured system, equipped to serve in any capacity from desktop workstation to machine-room server. Web, ftp, and email servers are ready to go out of the box, as are a wide selection of popular desktop environments. A full range of development tools, editors, and current libraries is included for users who wish to develop or compile additional software.",
     "img": "/repos/slackware-linux/logo.png",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "mutable",
-      "server"
-    ],
+    "tags": ["desktop", "mutable", "server"],
     "base": null,
-    "desktopEnvironments": [
-      "Blackbox",
-      "Fluxbox",
-      "FVWM",
-      "KDE",
-      "labwc",
-      "WMaker",
-      "Xfce"
-    ],
+    "desktopEnvironments": ["Blackbox", "Fluxbox", "FVWM", "KDE", "labwc", "WMaker", "Xfce"],
     "packageManager": "txz",
     "initSystem": "SysV",
-    "architecture": [
-      "arm",
-      "i586",
-      "s390",
-      "x86_64"
-    ],
+    "architecture": ["arm", "i586", "s390", "x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "15.0",
     "releaseDate": "2022-02-03",
     "website": "http://www.slackware.com/",
     "docs": "http://docs.slackware.com/",
     "download": "http://www.slackware.com/getslack/",
-    "highlights": [
-      "Oldest active distribution. No automatic dependency resolution."
-    ],
+    "highlights": ["Oldest active distribution. No automatic dependency resolution."],
     "difficulty": "advanced"
   },
   {
@@ -1387,12 +987,7 @@
     "longDescription": "Garuda Linux is a rolling distribution based on the Arch Linux operating system. Unlike Arch Linux, Garuda Linux comes with a graphical installer (Calamares) for easy installation, and other advanced graphical tools for managing your system. Garuda is a performance-oriented distro with many performance enhancing tweaks. Some of the many tweaks include using zram, a performance CPU governor, along with custom memory management software. Garuda Linux has striven to provide system stability by including the Timeshift backup utility.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "gaming",
-      "live",
-      "mutable"
-    ],
+    "tags": ["desktop", "gaming", "live", "mutable"],
     "base": "Arch",
     "desktopEnvironments": [
       "Cinnamon",
@@ -1406,9 +1001,7 @@
     ],
     "packageManager": "pacman / pkg",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "",
     "releaseDate": "2026-03-09",
@@ -1428,24 +1021,12 @@
     "longDescription": "deepin (formerly, Deepin, Linux Deepin, Hiweed GNU/Linux) is a Debian-based distribution (it was Ubuntu-based until version 15 released in late 2015) that aims to provide an elegant, user-friendly and reliable operating system. It does not only include the best the open source world has to offer, but it has also created its own desktop environment called DDE or Deepin Desktop Environment which is based on the Qt 5 toolkit. Deepin focuses much of its attention on intuitive design. Its home-grown applications, like Deepin Software Centre, DMusic and DPlayer are tailored to the average user. Being easy to install and use, deepin can be a good Windows alternative for office and home use.",
     "img": "/repos/deepin/logo.webp",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "large-language-model",
-      "live",
-      "mutable"
-    ],
+    "tags": ["desktop", "large-language-model", "live", "mutable"],
     "base": "Debian",
-    "desktopEnvironments": [
-      "Deepin"
-    ],
+    "desktopEnvironments": ["Deepin"],
     "packageManager": "apt / deb",
     "initSystem": "systemd",
-    "architecture": [
-      "ARM64",
-      "LoongArch64",
-      "RISC-V",
-      "x86_64"
-    ],
+    "architecture": ["ARM64", "LoongArch64", "RISC-V", "x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "25.1.0",
     "releaseDate": "2026-04-10",
@@ -1465,24 +1046,12 @@
     "longDescription": "SparkyLinux is a set of Debian-based desktop Linux distributions. The project provides separate editions with KDE Plasma, LXQt, MATE and Xfce desktops, as well as a lightweight flavour featuring the Openbox window manager. It offers two variants of its products - a conservative one based on Debian's \"Stable\" branch, and a more up-to-date one derived from Debian \"Testing\".",
     "img": "/repos/sparkylinux/logo.png",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable"
-    ],
+    "tags": ["desktop", "live", "mutable"],
     "base": "Debian (Stable), Debian (Testing)",
-    "desktopEnvironments": [
-      "KDE Plasma",
-      "LXQt",
-      "MATE",
-      "Openbox",
-      "Xfce"
-    ],
+    "desktopEnvironments": ["KDE Plasma", "LXQt", "MATE", "Openbox", "Xfce"],
     "packageManager": "apt / deb",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "semi-rolling",
     "latestVersion": "2026.03",
     "releaseDate": "2026-03-15",
@@ -1502,22 +1071,12 @@
     "longDescription": "Nobara Project is a modified version of Fedora Linux with user-friendly fixes added to it. The distribution comes with certain features that do not ship with the regular Fedora, such as WINE dependencies, OBS Studio, 3rd party codec packages for GStreamer, NVIDIA drivers, and some package fixes. Nobara aims to fix most of those issues and offer a better gaming, streaming and content creation experience out of the box. The project's official release comes with a custom-themed GNOME desktop, but it also offers separate editions with standard GNOME and KDE desktops.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "gaming",
-      "live",
-      "mutable"
-    ],
+    "tags": ["desktop", "gaming", "live", "mutable"],
     "base": "Fedora",
-    "desktopEnvironments": [
-      "GNOME",
-      "KDE Plasma"
-    ],
+    "desktopEnvironments": ["GNOME", "KDE Plasma"],
     "packageManager": "rpm",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "",
     "releaseDate": "2025-12-27",
@@ -1537,29 +1096,12 @@
     "longDescription": "Parrot (formerly Parrot Security OS) is a Debian-based, security-oriented distribution featuring a collection of utilities designed for penetration testing, computer forensics, reverse engineering, hacking, privacy, anonymity and cryptography. The product, developed by Frozenbox, comes with MATE as the default desktop environment.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "forensics",
-      "live",
-      "mutable",
-      "privacy",
-      "raspberry-pi",
-      "security"
-    ],
+    "tags": ["forensics", "live", "mutable", "privacy", "raspberry-pi", "security"],
     "base": "Debian (Stable)",
-    "desktopEnvironments": [
-      "Enlightenment",
-      "KDE Plasma",
-      "LXQt",
-      "MATE"
-    ],
+    "desktopEnvironments": ["Enlightenment", "KDE Plasma", "LXQt", "MATE"],
     "packageManager": "apt / deb, flatpak",
     "initSystem": "systemd",
-    "architecture": [
-      "ARM64",
-      "ARMhf",
-      "RISC-V",
-      "x86_64"
-    ],
+    "architecture": ["ARM64", "ARMhf", "RISC-V", "x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "7.2",
     "releaseDate": "2026-05-09",
@@ -1579,27 +1121,12 @@
     "longDescription": "PCLinuxOS is a user-friendly Linux distribution with out-of-the-box support for many popular graphics and sound cards, as well as other peripheral devices. The bootable live DVD provides an easy-to-use graphical installer and the distribution sports a wide range of popular applications for the typical desktop user, including browser plugins and full multimedia playback. The intuitive system configuration tools include Synaptic for package management, Addlocale to add support to many languages and Mylivecd to create a customised live CD.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "beginner-friendly",
-      "desktop",
-      "live",
-      "mutable"
-    ],
+    "tags": ["beginner-friendly", "desktop", "live", "mutable"],
     "base": null,
-    "desktopEnvironments": [
-      "JWM",
-      "KDE Plasma",
-      "labwc",
-      "LXDE",
-      "LXQt",
-      "MATE",
-      "Xfce"
-    ],
+    "desktopEnvironments": ["JWM", "KDE Plasma", "labwc", "LXDE", "LXQt", "MATE", "Xfce"],
     "packageManager": "dnf / flatpak, rpm",
     "initSystem": "SysV",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "2023.07",
     "releaseDate": "2023-07-30",
@@ -1619,25 +1146,12 @@
     "longDescription": "antiX is a fast, lightweight and easy-to-install Linux live CD distribution based on Debian's \"Stable\" branch for x86 compatible systems. antiX offers users the \"antiX Magic\" in an environment suitable for old computers. The goal of antiX is to provide a light, but fully functional and flexible free operating system for both newcomers and experienced users of Linux. It should run on most computers, ranging from 256 MB old PIII systems with pre-configured swap to the latest powerful boxes. 256 MB RAM is recommended minimum for antiX. The installer needs minimum 2.7 GB hard disk size. antiX can also be used as a fast-booting rescue CD, or run \"live\" on a USB stick, with or without persistent file storage.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "from-ram",
-      "live",
-      "mutable",
-      "old-computers"
-    ],
+    "tags": ["desktop", "from-ram", "live", "mutable", "old-computers"],
     "base": "Debian (Stable)",
-    "desktopEnvironments": [
-      "Fluxbox",
-      "IceWM",
-      "JWM"
-    ],
+    "desktopEnvironments": ["Fluxbox", "IceWM", "JWM"],
     "packageManager": "apt / deb",
     "initSystem": "dinit, runit, s6, s6-66, SysV",
-    "architecture": [
-      "i686",
-      "x86_64"
-    ],
+    "architecture": ["i686", "x86_64"],
     "releaseModel": "semi-rolling",
     "latestVersion": "26",
     "releaseDate": "2026-03-21",
@@ -1657,12 +1171,7 @@
     "longDescription": "Mageia is a fork of Mandriva Linux formed in September 2010 by former employees and contributors to the popular French Linux distribution. Unlike Mandriva, which is a commercial entity, Mageia is a community project and a non-profit organisation whose goal is to develop a free Linux-based operating system.",
     "img": "/repos/mageia/logo.png",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "server"
-    ],
+    "tags": ["desktop", "live", "mutable", "server"],
     "base": null,
     "desktopEnvironments": [
       "Awesome",
@@ -1683,12 +1192,7 @@
     ],
     "packageManager": "dnf, urpmi",
     "initSystem": "systemd",
-    "architecture": [
-      "ARM64",
-      "ARMv7",
-      "i686",
-      "x86_64"
-    ],
+    "architecture": ["ARM64", "ARMv7", "i686", "x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "9",
     "releaseDate": "2023-08-27",
@@ -1708,41 +1212,19 @@
     "longDescription": "Devuan GNU+Linux is a Linux distribution forked from Debian in 2015. The project's primary goal is to provide a variant of Debian without the complexities and dependencies of systemd, an init system and services manager originally developed by Red Hat and later adopted by most other Linux distributions. Devuan's initial beta release was made available in April 2016, together with an upgrade path from Debian 7.0 \"Wheezy\" and a possibility to switch to Devuan from Debian 8.0 \"Jessie\". The distribution adopted Xfce as its default desktop.",
     "img": "/repos/devuan-gnu-linux/logo.jpg",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "raspberry-pi",
-      "server"
-    ],
+    "tags": ["desktop", "live", "mutable", "raspberry-pi", "server"],
     "base": "Debian",
-    "desktopEnvironments": [
-      "Cinnamon",
-      "KDE Plasma",
-      "labwc",
-      "LXQt",
-      "MATE",
-      "Wayfire",
-      "Xfce"
-    ],
+    "desktopEnvironments": ["Cinnamon", "KDE Plasma", "labwc", "LXQt", "MATE", "Wayfire", "Xfce"],
     "packageManager": "apt / deb",
     "initSystem": "OpenRC, runit, SysV",
-    "architecture": [
-      "ARM64",
-      "armel",
-      "ARMhf",
-      "i686",
-      "x86_64"
-    ],
+    "architecture": ["ARM64", "armel", "ARMhf", "i686", "x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "6.0.0",
     "releaseDate": "2025-11-03",
     "website": "https://devuan.org/",
     "docs": "https://devuan.org/os/documentation/",
     "download": "https://files.devuan.org/",
-    "highlights": [
-      "Debian fork created in opposition to the widespread adoption of systemd."
-    ],
+    "highlights": ["Debian fork created in opposition to the widespread adoption of systemd."],
     "difficulty": "intermediate"
   },
   {
@@ -1753,21 +1235,12 @@
     "longDescription": "Linux Lite is a beginner-friendly Linux distribution based on Ubuntu's long-term support (LTS) release and featuring the Xfce desktop. Linux Lite primarily targets Windows users. It aims to provide a complete set of applications to assist users with their everyday computing needs, including a full office suite, media players and other essential daily software.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "beginner-friendly",
-      "desktop",
-      "live",
-      "mutable"
-    ],
+    "tags": ["beginner-friendly", "desktop", "live", "mutable"],
     "base": "Debian, Ubuntu (LTS)",
-    "desktopEnvironments": [
-      "Xfce"
-    ],
+    "desktopEnvironments": ["Xfce"],
     "packageManager": "apt / deb",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "8.0",
     "releaseDate": "2026-06-01",
@@ -1787,21 +1260,12 @@
     "longDescription": "KDE Linux is a user-focused, general-purpose Linux distribution. It is built by KDE and it is meant to showcase the best implementation of everything KDE has to offer, using the most advanced technologies. The distribution's base packages come from Arch Linux, while everything else is either compiled by the kde-builder tool or included as Flatpak packages. KDE Linux does not come with any traditional package manager, but supports installing Flatpak, Snap or AppImage applications. As it has an immutable base, system updates involve replacing the operating system image with an entirely new one.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "developer",
-      "immutable",
-      "live"
-    ],
+    "tags": ["desktop", "developer", "immutable", "live"],
     "base": null,
-    "desktopEnvironments": [
-      "KDE Plasma"
-    ],
+    "desktopEnvironments": ["KDE Plasma"],
     "packageManager": "flatpak",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "",
     "releaseDate": "2026-06-01",
@@ -1821,21 +1285,12 @@
     "longDescription": "TUXEDO OS is an Ubuntu-based distribution developed in Germany by TUXEDO Computers GmbH, designed and optimised for the company's own range of Linux-friendly personal computers and notebooks. The distribution uses KDE Plasma as the preferred desktop. Some of the differences between Ubuntu and TUXEDO OS include custom boot menu, the TUXEDO Control Centre, Calamares installer, availability of the Lutris open gaming platform, preference for the PipeWire audio daemon (over PulseAudio), removal of Ubuntu's snap daemon and snap packages, and various other tweaks and enhancements.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "beginner-friendly",
-      "desktop",
-      "live",
-      "mutable"
-    ],
+    "tags": ["beginner-friendly", "desktop", "live", "mutable"],
     "base": "Debian, Ubuntu (LTS)",
-    "desktopEnvironments": [
-      "KDE Plasma"
-    ],
+    "desktopEnvironments": ["KDE Plasma"],
     "packageManager": "apt / deb",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "",
     "releaseDate": "2026-04-21",
@@ -1855,20 +1310,12 @@
     "longDescription": "Aurora is a Fedora Silverblue-based Linux distribution with the goal of being a general-purpose workstation. It uses the KDE Plasma desktop. Like Fedora Silverblue, Aurora's root filesystem is immutable (read-only), which makes the system more stable, less prone to bugs, and easier to test and develop. Updates, upgrades and rollbacks to a previous image are available via the rpm-ostree utility. The distribution also features Flatpak applications and Toolbox containers.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "immutable",
-      "live"
-    ],
+    "tags": ["desktop", "immutable", "live"],
     "base": "Fedora",
-    "desktopEnvironments": [
-      "KDE Plasma"
-    ],
+    "desktopEnvironments": ["KDE Plasma"],
     "packageManager": "flatpak / rpm",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "43",
     "releaseDate": "2025-11-19",
@@ -1888,30 +1335,19 @@
     "longDescription": "ChromeOS Flex, developed by Google, is a free and lightweight Linux distribution based on Gentoo-derived ChromeOS. Unlike ChromeOS which is designed specifically for Chromebook computers, ChromeOS Flex can be installed on most x86_64 devices with a AMD or Intel processors, offering a Chromebook-like experience. The product's functionality can be further extended by installing a Debian-based Linux subsystem with a complete Linux development environment. ChromeOS Flex is available as a BIN image that can be transferred to a bootable USB Flash drive; it can be used in a \"live\" mode or it can be permanently installed to a computer's hard disk.",
     "img": "/repos/chromeos-flex/logo.jpg",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "immutable",
-      "live",
-      "old-computers"
-    ],
+    "tags": ["desktop", "immutable", "live", "old-computers"],
     "base": "Gentoo, ChromeOS",
-    "desktopEnvironments": [
-      "ChromeOS Desktop"
-    ],
+    "desktopEnvironments": ["ChromeOS Desktop"],
     "packageManager": "(deb)",
     "initSystem": "",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "",
     "releaseDate": "2026-05-26",
     "website": "https://chromeos.google/intl/en_ca/products/chromeos-flex/",
     "docs": "https://support.google.com/chromeosflex/",
     "download": "https://chromiumdash.appspot.com/serving-builds?deviceCategory=ChromeOS%20Flex",
-    "highlights": [
-      "Cloud-based system from Google for reviving old laptops and office PCs."
-    ],
+    "highlights": ["Cloud-based system from Google for reviving old laptops and office PCs."],
     "difficulty": "intermediate"
   },
   {
@@ -1922,21 +1358,12 @@
     "longDescription": "KaOS is a desktop Linux distribution that features the latest version of the Noctalia desktop environment, the Calligra office suite, and other popular software applications that use the Qt toolkit. It was inspired by Arch Linux, but the developers build their own packages which are available from in-house repositories. KaOS employs a rolling-release development model and is built exclusively for 64-bit computer systems.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable"
-    ],
+    "tags": ["desktop", "live", "mutable"],
     "base": null,
-    "desktopEnvironments": [
-      "niri",
-      "Noctalia"
-    ],
+    "desktopEnvironments": ["niri", "Noctalia"],
     "packageManager": "pacman / pkg",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "2026.02",
     "releaseDate": "2026-02-15",
@@ -1956,34 +1383,19 @@
     "longDescription": "Puppy Linux is yet another Linux distribution. What's different here is that Puppy is extraordinarily small, yet quite full-featured. Puppy boots into a ramdisk and, unlike live CD distributions that have to keep pulling stuff off the CD, it loads into RAM. This means that all applications start in the blink of an eye and respond to user input instantly. Puppy Linux has the ability to boot off a flash card or any USB memory device, CDROM, Zip disk or LS/120/240 Superdisk, floppy disks, internal hard drive. It can even use a multisession formatted CD-RW/DVD-RW to save everything back to the CD/DVD with no hard drive required at all.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "from-ram",
-      "live",
-      "mutable",
-      "netbooks",
-      "old-computers"
-    ],
+    "tags": ["desktop", "from-ram", "live", "mutable", "netbooks", "old-computers"],
     "base": null,
-    "desktopEnvironments": [
-      "JWM",
-      "labwc",
-      "Openbox"
-    ],
+    "desktopEnvironments": ["JWM", "labwc", "Openbox"],
     "packageManager": "ppm / deb, flatpak, pet",
     "initSystem": "BusyBox",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "22.12",
     "releaseDate": "2022-12-10",
     "website": "https://puppylinux-woof-ce.github.io/",
     "docs": "https://wikka.puppylinux.com/HomePage",
     "download": "https://puppylinux-woof-ce.github.io/index.html#download",
-    "highlights": [
-      "Modular distribution that boots entirely into the host machine's RAM."
-    ],
+    "highlights": ["Modular distribution that boots entirely into the host machine's RAM."],
     "difficulty": "intermediate"
   },
   {
@@ -1994,22 +1406,12 @@
     "longDescription": "Archcraft is a minimal Linux distribution based on Arch Linux. The project provides a graphical user interface using minimal window managers rather than full featured desktop environments. Archcraft is installed using the Calamares system installer and includes the yay package manager to facilitate fetching software from the Arch User Repository.",
     "img": "/repos/archcraft/logo.jpg",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable"
-    ],
+    "tags": ["desktop", "live", "mutable"],
     "base": "Arch",
-    "desktopEnvironments": [
-      "bspwm",
-      "MATE",
-      "Openbox"
-    ],
+    "desktopEnvironments": ["bspwm", "MATE", "Openbox"],
     "packageManager": "pacman / pkg",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "2026.05.12",
     "releaseDate": "2026-05-13",
@@ -2030,23 +1432,12 @@
     "img": "/repos/ghostbsd/logo.png",
     "imgFit": "contain",
     "screenshots": [],
-    "tags": [
-      "beginner-friendly",
-      "desktop",
-      "live",
-      "mutable"
-    ],
+    "tags": ["beginner-friendly", "desktop", "live", "mutable"],
     "base": "FreeBSD",
-    "desktopEnvironments": [
-      "Gershwin",
-      "MATE",
-      "Xfce"
-    ],
+    "desktopEnvironments": ["Gershwin", "MATE", "Xfce"],
     "packageManager": "pkg / txz",
     "initSystem": "RC",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "",
     "releaseDate": "2026-04-18",
@@ -2066,21 +1457,12 @@
     "longDescription": "Mabox Linux is a Manjaro-based rolling-release distribution. It features the Openbox window manager as its default user interface and provides a welcome screen with access to utilities which add additional software to the operating system.",
     "img": "/repos/mabox-linux/logo.png",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "old-computers"
-    ],
+    "tags": ["desktop", "live", "mutable", "old-computers"],
     "base": "Arch, Manjaro",
-    "desktopEnvironments": [
-      "Openbox"
-    ],
+    "desktopEnvironments": ["Openbox"],
     "packageManager": "pacman / pkg",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "25.12",
     "releaseDate": "2025-12-16",
@@ -2100,21 +1482,12 @@
     "longDescription": "Bluestar Linux is a GNU/Linux distribution that is based on Arch Linux. The Bluestar distribution features up to date packages, a full range of desktop and multimedia software in the default installation and a live desktop DVD.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "multimedia",
-      "mutable"
-    ],
+    "tags": ["desktop", "live", "multimedia", "mutable"],
     "base": "Arch",
-    "desktopEnvironments": [
-      "KDE Plasma"
-    ],
+    "desktopEnvironments": ["KDE Plasma"],
     "packageManager": "pacman / flatpak, pkg",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "",
     "releaseDate": "2026-06-09",
@@ -2134,21 +1507,12 @@
     "longDescription": "blendOS is an Arch Linux-based, rolling-release distribution which automates installing software from supported distributions (Arch Linux, Fedora and Ubuntu) into containers. blendOS tries to make software management in across containers feel native and provides access to the user's home directory for each container.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "declarative",
-      "desktop",
-      "immutable",
-      "live"
-    ],
+    "tags": ["declarative", "desktop", "immutable", "live"],
     "base": "Arch",
-    "desktopEnvironments": [
-      "GNOME"
-    ],
+    "desktopEnvironments": ["GNOME"],
     "packageManager": "pacman / flatpak, pkg",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "3",
     "releaseDate": "2023-07-08",
@@ -2168,22 +1532,12 @@
     "longDescription": "Bodhi Linux is an elegant and lightweight Debian/Ubuntu-based distribution featuring Moksha, an Enlightenment-17-based desktop environment. The project takes a decidedly minimalist approach by offering modularity, high levels of customisation, and choice of themes. Bodhi releases come in several editions, including Standard (64-bit) and Legacy (32-bit) which are minimalist, only including a web browser, terminal, file manger, text editor and photo GUI applications, while the AppPack edition includes more applications and tools preinstalled. Additional software can be added with Bodhi's web-based AppCenter, Synaptic, and APT.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "netbooks",
-      "old-computers"
-    ],
+    "tags": ["desktop", "live", "mutable", "netbooks", "old-computers"],
     "base": "Debian, Ubuntu",
-    "desktopEnvironments": [
-      "Moksha (Enlightenment)"
-    ],
+    "desktopEnvironments": ["Moksha (Enlightenment)"],
     "packageManager": "deb",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "7.0.0",
     "releaseDate": "2023-08-21",
@@ -2203,23 +1557,12 @@
     "longDescription": "Q4OS is a Debian-based desktop Linux distribution offering a choice of a classic-style user interface (Trinity) and a modern desktop environment (KDE Plasma). The project also develops various utilities, such as Desktop Profiler and Software Center, as well as installers for third-party applications.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "old-computers"
-    ],
+    "tags": ["desktop", "live", "mutable", "old-computers"],
     "base": "Debian (Stable)",
-    "desktopEnvironments": [
-      "KDE Plasma",
-      "Trinity"
-    ],
+    "desktopEnvironments": ["KDE Plasma", "Trinity"],
     "packageManager": "apt / deb",
     "initSystem": "systemd",
-    "architecture": [
-      "i686",
-      "x86_64"
-    ],
+    "architecture": ["i686", "x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "6.1",
     "releaseDate": "2025-09-12",
@@ -2239,22 +1582,12 @@
     "longDescription": "AerynOS is an independently-developed, rolling-release Linux distribution designed for general desktop use. Its main features include the GNOME desktop, a custom package manager called \"moss\", atomic updates with rollback options, a package build system called \"boulder\", and smart boot management with complex EFI configuration through a utility called \"blsforme\".",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "atomic",
-      "desktop",
-      "live"
-    ],
+    "tags": ["atomic", "desktop", "live"],
     "base": null,
-    "desktopEnvironments": [
-      "COSMIC",
-      "GNOME",
-      "KDE Plasma"
-    ],
+    "desktopEnvironments": ["COSMIC", "GNOME", "KDE Plasma"],
     "packageManager": "moss / flatpak, moss",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "2026.01",
     "releaseDate": "2026-01-31",
@@ -2274,25 +1607,12 @@
     "longDescription": "PikaOS Linux is a Linux distribution based on Debian's cutting-edge \"Unstable\" branch, optimised for gaming. It is designed to provide out-of-the-box gaming experience, excellent performance with up-to-date drivers and custom-tweaked Linux kernel, and a choice of GNOME or KDE Plasma desktops, with separate editions that use the Hyprland Wayland compositor.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "gaming",
-      "live",
-      "mutable"
-    ],
+    "tags": ["desktop", "gaming", "live", "mutable"],
     "base": "Debian (Unstable)",
-    "desktopEnvironments": [
-      "COSMIC",
-      "GNOME",
-      "Hyprland",
-      "KDE Plasma",
-      "niri"
-    ],
+    "desktopEnvironments": ["COSMIC", "GNOME", "Hyprland", "KDE Plasma", "niri"],
     "packageManager": "deb, flatpak",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "",
     "releaseDate": "2026-04-04",
@@ -2312,20 +1632,12 @@
     "longDescription": "Nitrux is a desktop Linux distribution built from Debian, but with an immutable base system, the OpenRC init system, and without any traditional Debian package management tools. It uses the Calamares system installer and includes the Hyprland window manager, Hypr utilities, the greetd+QtGreet login manager, and the Waybar Wayland bar. Nitrux emphasizes the use of AppBox to manage end-user software and it also supports AppImage and Flatpak package formats.",
     "img": "/repos/nitrux/logo.png",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "immutable",
-      "live"
-    ],
+    "tags": ["desktop", "immutable", "live"],
     "base": "Devuan",
-    "desktopEnvironments": [
-      "Hyprland"
-    ],
+    "desktopEnvironments": ["Hyprland"],
     "packageManager": "apt / deb",
     "initSystem": "OpenRC",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "5.0.0",
     "releaseDate": "2025-11-12",
@@ -2378,15 +1690,7 @@
     ],
     "packageManager": "rpm (APT)",
     "initSystem": "systemd, SysV",
-    "architecture": [
-      "ARM64",
-      "ARMhf",
-      "i586",
-      "mipsel",
-      "ppc64el",
-      "RISC-V",
-      "x86_64"
-    ],
+    "architecture": ["ARM64", "ARMhf", "i586", "mipsel", "ppc64el", "RISC-V", "x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "11.0",
     "releaseDate": "2025-05-01",
@@ -2407,12 +1711,7 @@
     "img": "/repos/openmandriva-lx/logo.png",
     "imgFit": "contain",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "server"
-    ],
+    "tags": ["desktop", "live", "mutable", "server"],
     "base": null,
     "desktopEnvironments": [
       "COSMIC",
@@ -2426,9 +1725,7 @@
     ],
     "packageManager": "rpm",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "23.08",
     "releaseDate": "2023-08-30",
@@ -2448,11 +1745,7 @@
     "longDescription": "MocaccinoOS is an independently-developed Linux distribution that has its origins in source-based Gentoo Linux and Sabayon Linux. It uses a custom-built package manager called \"Luet\", which acts as a front-end for container-based software. The distribution's main features are minimalism and small footprint, ease of use, native vanilla Linux kernels, and support for most important cloud technologies. MocaccinoOS is offered in several variants, including live images with GNOME, KDE Plasma, MATE and Xfce desktops, as well as command-line-only \"Minimal Desktop\" edition.",
     "img": "/repos/mocaccinoos/logo.jpg",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "immutable",
-      "live"
-    ],
+    "tags": ["desktop", "immutable", "live"],
     "base": null,
     "desktopEnvironments": [
       "COSMIC",
@@ -2468,9 +1761,7 @@
     ],
     "packageManager": "luet / flatpak",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "26.06",
     "releaseDate": "2026-06-01",
@@ -2490,21 +1781,12 @@
     "longDescription": "AnduinOS is an Ubuntu-based distribution which provides a GNOME desktop which has been themed and styled to resemble Windows 11. The project provides a smaller ISO file than its parent with each supported language split into a separate ISO. Snap support, which is included in Ubuntu, has been removed from AnduinOS.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "beginner-friendly",
-      "desktop",
-      "live",
-      "mutable"
-    ],
+    "tags": ["beginner-friendly", "desktop", "live", "mutable"],
     "base": "Debian, Ubuntu",
-    "desktopEnvironments": [
-      "GNOME"
-    ],
+    "desktopEnvironments": ["GNOME"],
     "packageManager": "apt / deb, flatpak",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "1.4.0",
     "releaseDate": "2025-10-17",
@@ -2528,20 +1810,12 @@
       "/repos/omarchy/screenshot-2.png",
       "/repos/omarchy/screenshot-3.png"
     ],
-    "tags": [
-      "desktop",
-      "developer",
-      "mutable"
-    ],
+    "tags": ["desktop", "developer", "mutable"],
     "base": "Arch",
-    "desktopEnvironments": [
-      "Hyprland"
-    ],
+    "desktopEnvironments": ["Hyprland"],
     "packageManager": "pacman / pkg",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "3.7.0",
     "releaseDate": "2026-05-04",
@@ -2561,22 +1835,12 @@
     "longDescription": "AV Linux is a versatile, Debian-based distribution featuring a large collection of audio and video production software. Additionally, it also includes a custom kernel with IRQ threading enabled for low-latency audio performance. AV Linux can be run directly from a live DVD or a live USB storage device, though it can also be installed on a hard disk and used as a general-purpose operating system for everyday tasks.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "multimedia",
-      "mutable"
-    ],
+    "tags": ["desktop", "live", "multimedia", "mutable"],
     "base": "Debian (Stable), MX Linux",
-    "desktopEnvironments": [
-      "Enlightenment",
-      "Moksha"
-    ],
+    "desktopEnvironments": ["Enlightenment", "Moksha"],
     "packageManager": "apt / deb, flatpak",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "23.2",
     "releaseDate": "2025-11-28",
@@ -2596,20 +1860,12 @@
     "longDescription": "Vanilla OS, a fixed-release distribution based on Debian (formerly Ubuntu, prior to version 2) with the GNOME desktop, is an immutable operating system. The core parts of the system are locked down to prevent unwanted changes and corruption from third-party applications or a faulty update.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "immutable",
-      "live"
-    ],
+    "tags": ["desktop", "immutable", "live"],
     "base": "Debian",
-    "desktopEnvironments": [
-      "GNOME"
-    ],
+    "desktopEnvironments": ["GNOME"],
     "packageManager": "deb (APT)",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "22.10",
     "releaseDate": "2024-07-28",
@@ -2629,21 +1885,12 @@
     "longDescription": "BigLinux is a Brazilian Linux distribution localised into Brazilian Portuguese (with support for English). It is was originally based on Kubuntu, but starting from 2017 the distribution was re-born based on deepin. It then offered two desktop environments - Cinnamon and Deepin. In 2021 the distribution switched bases and desktop environments again, migrating to Manjaro Linux and using the KDE Plasma desktop.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "age-declaration-(passive)",
-      "desktop",
-      "live",
-      "mutable"
-    ],
+    "tags": ["age-declaration-(passive)", "desktop", "live", "mutable"],
     "base": "Arch, Manjaro",
-    "desktopEnvironments": [
-      "KDE Plasma"
-    ],
+    "desktopEnvironments": ["KDE Plasma"],
     "packageManager": "pacman / pkg, flatpak, snap",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "12.04",
     "releaseDate": "2012-07-28",
@@ -2663,21 +1910,12 @@
     "longDescription": "Linuxfx (also known as Winux or Wubuntu) is a Brazilian Linux distribution based on Ubuntu. It ships with an intuitive Cinnamon desktop user interface designed to facilitate migration of users from Windows. It includes a video management system called Sentinela, a computer vision software with video analytics and software for access control (facial recognition and automatic number plate recognition), object detection, gender, age and mood detection. Other features of the distribution include a new personal assistant, a WX theme for desktop and system applications, and compatibility with software written for Windows (.exe and .msi) through a Wine port. Following the release of Linuxfx 10.6 the distribution became a commercial offering.",
     "img": "/repos/linuxfx/logo.jpg",
     "screenshots": [],
-    "tags": [
-      "beginner-friendly",
-      "desktop",
-      "live",
-      "mutable"
-    ],
+    "tags": ["beginner-friendly", "desktop", "live", "mutable"],
     "base": "Ubuntu (LTS)",
-    "desktopEnvironments": [
-      "KDE Plasma"
-    ],
+    "desktopEnvironments": ["KDE Plasma"],
     "packageManager": "apt / deb",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "11.2.22.04.3",
     "releaseDate": "2022-09-29",
@@ -2698,22 +1936,12 @@
     "img": "/repos/smartos/logo.png",
     "imgFit": "contain",
     "screenshots": [],
-    "tags": [
-      "from-ram",
-      "immutable",
-      "live",
-      "server",
-      "specialist"
-    ],
+    "tags": ["from-ram", "immutable", "live", "server", "specialist"],
     "base": "Solaris",
-    "desktopEnvironments": [
-      "No Desktop"
-    ],
+    "desktopEnvironments": ["No Desktop"],
     "packageManager": "pkgsrc",
     "initSystem": "other",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "",
     "releaseDate": "2026-06-11",
@@ -2733,31 +1961,19 @@
     "longDescription": "Talos is a specialist Linux-based operating system for running Kubernetes, an open-source system for automating deployment, scaling and management of containerised applications. Minimal, immutable and hardened, it does not offer any shell or interactive console; instead, all system management is done via remote Application Programming Interface (API) calls, where messages sent from a client application are protected with mutual Transport Layer Security TLS (mTLS) authentication. Talos also delivers atomic updates, thus maintaining the Linux and Kubernetes versions up-to-date. Talos is developed in the USA by Sidero Labs, Inc.",
     "img": "/repos/talos-linux/logo.png",
     "screenshots": [],
-    "tags": [
-      "immutable",
-      "kubernetes",
-      "developer"
-    ],
+    "tags": ["immutable", "kubernetes", "developer"],
     "base": null,
-    "desktopEnvironments": [
-      "No Desktop"
-    ],
+    "desktopEnvironments": ["No Desktop"],
     "packageManager": "",
     "initSystem": "",
-    "architecture": [
-      "ARM64",
-      "ARMv7",
-      "x86_64"
-    ],
+    "architecture": ["ARM64", "ARMv7", "x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "1.13.0",
     "releaseDate": "2026-04-27",
     "website": "https://www.talos.dev/",
     "docs": "https://www.talos.dev/docs/latest/",
     "download": "https://github.com/siderolabs/talos/releases",
-    "highlights": [
-      "Shellless (no SSH/Bash) atomic OS for deploying Kubernetes nodes."
-    ],
+    "highlights": ["Shellless (no SSH/Bash) atomic OS for deploying Kubernetes nodes."],
     "difficulty": "intermediate"
   },
   {
@@ -2768,22 +1984,12 @@
     "longDescription": "Voyager Live is an Xubuntu-based distribution and live DVD showcasing the Xfce desktop environment. Its features include the Avant Window Navigator or AWN (a dock-like navigation bar), Conky (a program which displays useful information on the desktop), and over 300 photographs and animations that can be used as desktop backgrounds. The project also develops several other editions of Voyager Live - a \"GE\" edition with GNOME Shell, a \"GS\" variant for Gamers, and a separately-maintained flavour based on Debian's \"stable\" branch.",
     "img": "/repos/voyager-live/logo.png",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "large-language-model",
-      "live",
-      "mutable"
-    ],
+    "tags": ["desktop", "large-language-model", "live", "mutable"],
     "base": "Debian, Xubuntu",
-    "desktopEnvironments": [
-      "GNOME",
-      "Xfce"
-    ],
+    "desktopEnvironments": ["GNOME", "Xfce"],
     "packageManager": "apt / deb, flatpak, snap",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "26.04",
     "releaseDate": "2026-04-25",
@@ -2803,32 +2009,19 @@
     "longDescription": "FydeOS, developed by Fyde Innovations, is a lightweight operating system that carries a Linux kernel, a browser platform and a container technology driver. It is very similar to Google ChromeOS in use. FydeOS supports the latest web application standards, and is able to run Android and Linux applications (by activating the included Android and Debian subsystems), providing a Google Chromebook-like experience. Users have a choice to use cloud services provided by Google, services powered by Fyde Innovations, or a local account. FydeOS is based on the open-source ChromiumOS and includes the Chromium browser; it is available free of charge for most standard Intel/AMD personal computers.",
     "img": "/repos/fydeos/logo.png",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "immutable",
-      "live",
-      "old-computers",
-      "raspberry-pi"
-    ],
+    "tags": ["desktop", "immutable", "live", "old-computers", "raspberry-pi"],
     "base": "Gentoo, ChromeOS",
-    "desktopEnvironments": [
-      "ChromeOS Desktop"
-    ],
+    "desktopEnvironments": ["ChromeOS Desktop"],
     "packageManager": "(APK, deb)",
     "initSystem": "",
-    "architecture": [
-      "ARM64",
-      "x86_64"
-    ],
+    "architecture": ["ARM64", "x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "22.0",
     "releaseDate": "2026-01-28",
     "website": "https://fydeos.io/",
     "docs": "https://fydeos.io/help/manual/",
     "download": "https://fydeos.io/download/",
-    "highlights": [
-      "Chromium OS variant with Android and Linux container integration."
-    ],
+    "highlights": ["Chromium OS variant with Android and Linux container integration."],
     "difficulty": "intermediate"
   },
   {
@@ -2839,21 +2032,12 @@
     "longDescription": "GNOME OS is an experimental, immutable Linux distribution that ships the latest in-development GNOME desktop, core applications and stack. It serves as a reference for developers and testers. It is designed around the modern systemd and GNU-based userland built from the Freedesktop SDK. Initially, GNOME OS used a library and set of utilities called OSTree to deploy the root filesystem and manage updates, but later migrated to \"systemd-sysupdate\" which offers enhanced immutability, auto-updating, adaptability, factory reset, uniformity and other modernised security properties. GNOME OS can be loaded as a live image in Boxes, VirtualBox, QEMU and other virtualisation software, but it can also be installed on a standard x86_64 hardware. The distribution does not support traditional package management; however, additional software applications can be installed via the Flatpak utility which is supported out of the box.",
     "img": "/repos/gnome-os/logo.png",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "immutable",
-      "live",
-      "developer"
-    ],
+    "tags": ["desktop", "immutable", "live", "developer"],
     "base": null,
-    "desktopEnvironments": [
-      "GNOME"
-    ],
+    "desktopEnvironments": ["GNOME"],
     "packageManager": "flatpak",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "",
     "releaseDate": "2026-06-01",
@@ -2873,26 +2057,12 @@
     "longDescription": "Synex is a GNU/Linux distribution based on Debian's \"Stable\" branch, developed with the official Debian Live Build tool. It offers four separate desktop options with GNOME, LXDE, KDE Plasma and Xfce, all of which are composed of a rather frugal set of applications in its default state, without any development tools or offices suites. Some of the distribution's main features include Calamares installer with support for both BIOS and UEFI, CUPS integration for printing and network support, out-of-the box support for Flatpak applications, official NVIDIA driver installation assistant with support for both X11 and Wayland, and additional repositories containing Microsoft Edge, OnlyOffice and Zabbix.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "server"
-    ],
+    "tags": ["desktop", "live", "mutable", "server"],
     "base": "Debian (Stable), Debian (Testing)",
-    "desktopEnvironments": [
-      "GNOME",
-      "IceWM",
-      "LXDE",
-      "MATE",
-      "KDE Plasma",
-      "Xfce"
-    ],
+    "desktopEnvironments": ["GNOME", "IceWM", "LXDE", "MATE", "KDE Plasma", "Xfce"],
     "packageManager": "apt / deb, flatpak",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "13",
     "releaseDate": "2025-12-21",
@@ -2912,23 +2082,12 @@
     "longDescription": "CuerdOS is a Debian-based GNU/Linux distribution with focus on stability, efficiency and performance. It comes with a series of optimisations, such as performance and memory consumption improvements. These optimisations are achieved through kernel patching and the Ananicy daemon, the latter of which manages input/output and CPU priorities. The distribution's \"Standard\" product uses Wayland's Sway compositor by default, but separate \"Legacy\" and \"Community\" builds with Budgie, Cinnamon, LXQt, MATE and Xfce desktops are also available.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable"
-    ],
+    "tags": ["desktop", "live", "mutable"],
     "base": "Debian (Stable)",
-    "desktopEnvironments": [
-      "KDE Plasma",
-      "labwc",
-      "Sway",
-      "Xfce"
-    ],
+    "desktopEnvironments": ["KDE Plasma", "labwc", "Sway", "Xfce"],
     "packageManager": "deb, flatpak",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "2.1",
     "releaseDate": "2026-04-01",
@@ -2948,22 +2107,12 @@
     "longDescription": "MagOS Linux is a Russian desktop-oriented distribution based on ROSA, a distribution that was forked from Mandriva Linux in 2011. It uses the RPM package management. MagOS Linux comes with KDE Plasma desktop by default, but it also ships the lightweight LXQt desktop for older and low-specification computers. Besides the standard upstream packages from ROSA, the project also provides its own RPM package repository (with various network and NVIDIA display drivers), as well as separate modules (in XZM format) with extra hardware drivers, server tools, MATE desktop, Wine emulator, Java software and additional web browsers, including Chromium and Yandex.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "from-ram",
-      "live",
-      "mutable"
-    ],
+    "tags": ["desktop", "from-ram", "live", "mutable"],
     "base": "ROSA",
-    "desktopEnvironments": [
-      "KDE Plasma",
-      "LXQt"
-    ],
+    "desktopEnvironments": ["KDE Plasma", "LXQt"],
     "packageManager": "dnf / rpm",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "",
     "releaseDate": "2026-05-24",
@@ -2983,21 +2132,12 @@
     "longDescription": "VailuxOS is a German, desktop-oriented Linux distribution based on Ubuntu's long-term support (LTS) branch or Debian's \"Stable\" branch. The project's primary goal is to make the transition from Windows to Linux as seamless as possible by maintaining familiar ways of working and workflows. The distribution uses the KDE Plasma desktop.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "beginner-friendly",
-      "desktop",
-      "live",
-      "mutable"
-    ],
+    "tags": ["beginner-friendly", "desktop", "live", "mutable"],
     "base": "Debian, Ubuntu (LTS)",
-    "desktopEnvironments": [
-      "KDE Plasma"
-    ],
+    "desktopEnvironments": ["KDE Plasma"],
     "packageManager": "apt / deb, flatpak, snap",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "1.6",
     "releaseDate": "2026-01-05",
@@ -3017,30 +2157,19 @@
     "longDescription": "OmegaLinux is an Arch-based, rolling-release Linux distribution featuring the lightweight LXDE desktop. It is suitable for installation on older computers with as little as 1 GB of memory. OmegaLinux was originally based on Lubuntu, but it was rebuilt on top of an Arch Linux base in February 2026.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "old-computers"
-    ],
+    "tags": ["desktop", "live", "mutable", "old-computers"],
     "base": "Arch",
-    "desktopEnvironments": [
-      "LXDE"
-    ],
+    "desktopEnvironments": ["LXDE"],
     "packageManager": "pacman / pkg",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "2026.02.21",
     "releaseDate": "2026-02-22",
     "website": "https://omega-linux.github.io/page/",
     "docs": "",
     "download": "https://github.com/omega-linux/page/releases",
-    "highlights": [
-      "\"Goodbye Lubuntu\" release. Extremely low hardware requirements (1 GB RAM)."
-    ],
+    "highlights": ["\"Goodbye Lubuntu\" release. Extremely low hardware requirements (1 GB RAM)."],
     "difficulty": "intermediate"
   },
   {
@@ -3051,25 +2180,12 @@
     "longDescription": "AgarimOS is a desktop Linux distribution based on Void. It comes in several popular desktop flavours, including Cinnamon, GNOME, KDE Plasma, LXQt, MATE and Xfce, all with a limited set of applications in their default states. Like its parent, AgarimOS does not use the systemd service manager, relying instead on the runit init scheme. It employs the XBPS package management system, together with a graphical front-end called OctoXBPS. The distribution also includes various optimisations, custom themes and some interesting software selection, such as the WezTerm terminal emulator, the Neofetch system information utility, the hBlock ad blocker, and the aria2 download tool.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable"
-    ],
+    "tags": ["desktop", "live", "mutable"],
     "base": "Void",
-    "desktopEnvironments": [
-      "Cinnamon",
-      "GNOME",
-      "KDE Plasma",
-      "LXQt",
-      "MATE",
-      "Xfce"
-    ],
+    "desktopEnvironments": ["Cinnamon", "GNOME", "KDE Plasma", "LXQt", "MATE", "Xfce"],
     "packageManager": "xbps",
     "initSystem": "runit",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "",
     "releaseDate": "2026-06-01",
@@ -3089,33 +2205,19 @@
     "longDescription": "Gnoppix Linux is a Debian-based distribution which can be run from a USB thumb drive or from a local drive. It is pre-loaded with essential Artificial Intelligence (AI) frameworks, libraries and development tools. It uses several popular desktop environments, including GNOME, KDE Plasma and Xfce. The project is an attempt to revive a Knoppix-based live distribution with the GNOME desktop that was first launched back in 2002.",
     "img": "/repos/gnoppix-linux/logo.png",
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "large-language-model",
-      "live",
-      "mutable",
-      "privacy"
-    ],
+    "tags": ["desktop", "large-language-model", "live", "mutable", "privacy"],
     "base": "Debian (Testing)",
-    "desktopEnvironments": [
-      "GNOME",
-      "KDE Plasma",
-      "Xfce"
-    ],
+    "desktopEnvironments": ["GNOME", "KDE Plasma", "Xfce"],
     "packageManager": "apt / deb, flatpak",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "24.1.15",
     "releaseDate": "2026-05-29",
     "website": "https://gnoppix.org/",
     "docs": "https://wiki.gnoppix.org/",
     "download": "https://gnoppix.org/download",
-    "highlights": [
-      "Privacy-focused with local AI tools, pre-installed LibreWolf browser."
-    ],
+    "highlights": ["Privacy-focused with local AI tools, pre-installed LibreWolf browser."],
     "difficulty": "intermediate"
   },
   {
@@ -3126,21 +2228,12 @@
     "longDescription": "Linux Kodachi is a Debian-based distribution which can be run from a DVD or USB thumb drive. The distribution filters all network traffic through a VPN and the Tor network, obscuring the user's network location. The distribution attempts to clean up after itself, removing traces of its use from the computer.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "live",
-      "mutable",
-      "privacy",
-      "security"
-    ],
+    "tags": ["live", "mutable", "privacy", "security"],
     "base": "Debian (Stable)",
-    "desktopEnvironments": [
-      "Xfce"
-    ],
+    "desktopEnvironments": ["Xfce"],
     "packageManager": "apt / deb",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "8.0",
     "releaseDate": "2021-03-18",
@@ -3160,30 +2253,19 @@
     "longDescription": "DragonOS is a Lubuntu-based desktop distribution which is focused on software defined radio (SDR). The distribution provides a pre-installed suite of the most powerful and accessible open source SDR software. DragonOS has verified support for a range of inexpensive and powerful SDR hardware, including RTL-SDR, HackRF One, LimeSDR, BladeRF, and others.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "specialist"
-    ],
+    "tags": ["desktop", "live", "mutable", "specialist"],
     "base": "Debian, Ubuntu (LTS)",
-    "desktopEnvironments": [
-      "LXQt"
-    ],
+    "desktopEnvironments": ["LXQt"],
     "packageManager": "apt / deb",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "",
     "releaseDate": "2026-03-27",
     "website": "https://sourceforge.net/projects/dragonos-focal/",
     "docs": "https://sourceforge.net/p/dragonos-focal/wiki/",
     "download": "https://sourceforge.net/projects/dragonos-focal/files/",
-    "highlights": [
-      "Deeply integrated driver and software suite for software-defined radio (SDR)."
-    ],
+    "highlights": ["Deeply integrated driver and software suite for software-defined radio (SDR)."],
     "difficulty": "intermediate"
   },
   {
@@ -3194,29 +2276,19 @@
     "longDescription": "TROMjaro is a Manjaro-based Linux distribution with a customised Xfce desktop. Compared to its parent, TROMjaro offers several user-friendly utilities, such as Layout Switcher with six different layouts or Theme Switcher with several accent colours. It also provides various enhancements, including the integration of the Chaotic-AUR repository with pre-built binary packages, a selection of custom wallpapers and icon packs, and extra configuration options in Settings Manager. The distribution comes with support for AppImage files and a heavily-tweaked Firefox browser with custom add-ons.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable"
-    ],
+    "tags": ["desktop", "live", "mutable"],
     "base": "Arch, Manjaro",
-    "desktopEnvironments": [
-      "Xfce"
-    ],
+    "desktopEnvironments": ["Xfce"],
     "packageManager": "pacman / AppImage, flatpak, pkg",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "2026.05.08",
     "releaseDate": "2026-05-08",
     "website": "https://www.tromjaro.com/",
     "docs": "",
     "download": "https://www.tromjaro.com/download/",
-    "highlights": [
-      "Trade-free philosophy. Native emulation of the classic Unity shell interface."
-    ],
+    "highlights": ["Trade-free philosophy. Native emulation of the classic Unity shell interface."],
     "difficulty": "intermediate"
   },
   {
@@ -3227,24 +2299,12 @@
     "longDescription": "HackerOS is a live Linux distribution based on Debian's \"Testing\" branch and designed for regular users, gamers and cybersecurity enthusiasts. Some of its features include an optimised XanMod Linux kernel for faster boot times and reduced resource usage, out-of-the-box support for NVIDIA graphics cards, and a collection of cybersecurity tools, such as enhanced firewalls and intrusion detection software. The distribution uses the KDE Plasma desktop.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "gaming",
-      "live",
-      "mutable",
-      "security"
-    ],
+    "tags": ["desktop", "gaming", "live", "mutable", "security"],
     "base": "Debian (Testing)",
-    "desktopEnvironments": [
-      "GNOME",
-      "KDE Plasma",
-      "Xfce"
-    ],
+    "desktopEnvironments": ["GNOME", "KDE Plasma", "Xfce"],
     "packageManager": "apt / deb, flatpak, snap",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "semi-rolling",
     "latestVersion": "",
     "releaseDate": "2026-05-06",
@@ -3264,12 +2324,7 @@
     "longDescription": "Vendefoul Wolf is a set of lightweight, Devuan-based Linux distributions featuring various popular desktop environments, including Budgie, Cinnamon, KDE Plasma, LXQt, Trinity and Xfce. As the init software, it offers a choice between SysV and runit. Some of the distribution's other main features include the LibreWolf web browser, the Calamares system installer, an application store, and its own repository of software packages. Besides the main edition, Vendefoul Wolf also produces various community spins with alternative desktops and window managers.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "privacy"
-    ],
+    "tags": ["desktop", "live", "mutable", "privacy"],
     "base": "Devuan",
     "desktopEnvironments": [
       "bspwm",
@@ -3286,9 +2341,7 @@
     ],
     "packageManager": "apt / deb, flatpak",
     "initSystem": "OpenRC",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "",
     "releaseDate": "2026-04-15",
@@ -3308,31 +2361,19 @@
     "longDescription": "ArchBang Linux is a lightweight distribution based on Arch Linux. Using the labwc Wayland compositor, it is fast, up-to-date and suitable for both desktop and portable systems. Besides GreenBANG, the project also develops a distribution called SwayBang featuring the Sway Wayland compositor.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "data-rescue",
-      "desktop",
-      "live",
-      "mutable"
-    ],
+    "tags": ["data-rescue", "desktop", "live", "mutable"],
     "base": "Arch",
-    "desktopEnvironments": [
-      "labwc",
-      "mangowm"
-    ],
+    "desktopEnvironments": ["labwc", "mangowm"],
     "packageManager": "pacman / pkg",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "2012.12",
     "releaseDate": "2026-01-10",
     "website": "https://archbang.org/",
     "docs": "https://archbang.org/guide/",
     "download": "http://sourceforge.net/projects/archbang/files/",
-    "highlights": [
-      "Lightweight live system for recovering broken systems based on Arch Linux."
-    ],
+    "highlights": ["Lightweight live system for recovering broken systems based on Arch Linux."],
     "difficulty": "intermediate"
   },
   {
@@ -3343,29 +2384,19 @@
     "longDescription": "pearOS is an Arch-based desktop Linux distribution which features a macOS-like theme and icons on top of the KDE Plasma desktop. Some of the distribution's features include a custom system installer called pearOS Installer, a pearOS welcome application, and the GNOME Files file manager. pearOS comes with various popular desktop, web and multimedia applications, such as the Gwenview image viewer, Firefox web browser, Elisa music player and Kate text editor.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable"
-    ],
+    "tags": ["desktop", "live", "mutable"],
     "base": "Arch",
-    "desktopEnvironments": [
-      "KDE Plasma"
-    ],
+    "desktopEnvironments": ["KDE Plasma"],
     "packageManager": "pacman / pkg",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "rolling",
     "latestVersion": "",
     "releaseDate": "2026-04-08",
     "website": "https://pearos.xyz/",
     "docs": "https://pearos.xyz/install",
     "download": "https://pearos.xyz/downloads",
-    "highlights": [
-      "Built by Alexandru Bălan. Precisely replicates the Apple macOS design."
-    ],
+    "highlights": ["Built by Alexandru Bălan. Precisely replicates the Apple macOS design."],
     "difficulty": "intermediate"
   },
   {
@@ -3376,22 +2407,12 @@
     "longDescription": "iDeal is an MX Linux-based distribution, with various privacy and security settings enabled by default. Privacy and security are the main stated goal of the project, offering to surf, shop, trade and bank online with peace of mind, without advertisements, tracking, logging, bugs, viruses or unwanted disclosure of personal information. iDeal OS was formerly available in two editions, \"Emerald\" and \"Diamond\", but these were merged into a single product in 2026, with the extra features of the \"Diamond\" edition now only available to users who contribute financially to the project.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "privacy",
-      "security"
-    ],
+    "tags": ["desktop", "live", "mutable", "privacy", "security"],
     "base": "Debian (Stable), MX Linux",
-    "desktopEnvironments": [
-      "KDE Plasma"
-    ],
+    "desktopEnvironments": ["KDE Plasma"],
     "packageManager": "apt / deb, flatpak",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "2026.04.03",
     "releaseDate": "2026-04-03",
@@ -3411,30 +2432,19 @@
     "longDescription": "EasyOS is an experimental Linux distribution which uses many of the technologies and package formats pioneered by Puppy Linux. The distribution features custom container technology called Easy Containers which can run applications or the entire desktop environment in a container. Packages, desktop settings, networking and sharing resources over the network can all be controlled through graphical utilities.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "specialist"
-    ],
+    "tags": ["desktop", "live", "mutable", "specialist"],
     "base": null,
-    "desktopEnvironments": [
-      "JWM"
-    ],
+    "desktopEnvironments": ["JWM"],
     "packageManager": "flatpak, PET",
     "initSystem": "BusyBox",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "7.1",
     "releaseDate": "2025-12-21",
     "website": "https://easyos.org/",
     "docs": "https://easyos.org/",
     "download": "http://distro.ibiblio.org/easyos/amd64/releases/",
-    "highlights": [
-      "Frugal 3-file installation, isolated \"Easy Containers\" sandbox."
-    ],
+    "highlights": ["Frugal 3-file installation, isolated \"Easy Containers\" sandbox."],
     "difficulty": "intermediate"
   },
   {
@@ -3445,30 +2455,19 @@
     "longDescription": "Commodore OS Vision is a 64-bit Linux distribution which was originally based on Linux Mint and is now an unofficial spin of MX Linux. This distribution was created for Commodore enthusiasts and people who appreciate a retro style interface. Commodore OS Vision uses the MATE desktop interface and features a retro look and effects. It has a classic Commodore slant with a selection of applications reminiscent of their classic Amiga counterparts.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "gaming",
-      "live",
-      "mutable"
-    ],
+    "tags": ["desktop", "gaming", "live", "mutable"],
     "base": "Debian (Stable), antiX",
-    "desktopEnvironments": [
-      "MATE"
-    ],
+    "desktopEnvironments": ["MATE"],
     "packageManager": "apt / deb, flatpak",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "3.1",
     "releaseDate": "2026-04-30",
     "website": "https://www.commodoreusa.net",
     "docs": "",
     "download": "https://www.commodoreos.net/",
-    "highlights": [
-      "35 GB image with Amiga/C64 retro emulators, games, and Commodore OS BASIC V1."
-    ],
+    "highlights": ["35 GB image with Amiga/C64 retro emulators, games, and Commodore OS BASIC V1."],
     "difficulty": "intermediate"
   },
   {
@@ -3479,21 +2478,12 @@
     "longDescription": "FunOS is an Ubuntu-based Linux distribution which features the JWM graphical user interface. The project is intended to be more lightweight than official Ubuntu community editions while providing the same application compatibility and hardware support.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "old-computers"
-    ],
+    "tags": ["desktop", "live", "mutable", "old-computers"],
     "base": "Debian, Ubuntu",
-    "desktopEnvironments": [
-      "JWM"
-    ],
+    "desktopEnvironments": ["JWM"],
     "packageManager": "apt / deb",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "25.10",
     "releaseDate": "2025-10-14",
@@ -3513,21 +2503,12 @@
     "longDescription": "MiniOS is a Debian-based Linux distribution which strives to be lightweight, modular, versatile and customisable. It comes in three editions, \"Standard\", \"Toolbox\" and \"Ultra\". MiniOS \"Standard\" is a compact system designed for everyday computing tasks, while \"Toolbox\" is designed for maintenance, diagnostics and recovery of computer systems; it provides a rich set of graphical and console tools for working with disks and partitions, network diagnostics and administration, data security, data and password recovery, hardware fault diagnosis and testing, as well as other utilities. Finally, the \"Ultra\" variant of MiniOS provides an extensive set of software tools designed both for maintenance and diagnostics of computer systems and for solving a wide range of general office tasks.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "data-rescue",
-      "desktop",
-      "live",
-      "mutable"
-    ],
+    "tags": ["data-rescue", "desktop", "live", "mutable"],
     "base": "Debian (Stable)",
-    "desktopEnvironments": [
-      "Xfce"
-    ],
+    "desktopEnvironments": ["Xfce"],
     "packageManager": "deb",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "5.0.0",
     "releaseDate": "2025-08-22",
@@ -3547,20 +2528,12 @@
     "longDescription": "MODICIA O.S. is a Linux multimedia distribution designed primarily for musicians, graphic designers and video makers. It is based on Debian's \"stable\" branch, but uses the Cinnamon desktop and a recent Linux kernel. MODICIA O.S. comes with a set of carefully-selected, open-source multimedia software and tools, such as Audacity (audio editor), Brasero (disc-burning utility), Cheese (webcam application), Curlew (multimedia converter), GIMP (graphics editor), HandBrake (video transcoder), Kdenlive (video editor), MediaInfo (tool that provides technical data about media files), mpv (media player), Peek (animated GIF recorder), RawTherapee (photo processor), XnView (image viewer), and many others. The distribution also integrates the OnlyOffice software suite for general office tasks.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "live",
-      "multimedia",
-      "mutable"
-    ],
+    "tags": ["live", "multimedia", "mutable"],
     "base": "Debian (Stable)",
-    "desktopEnvironments": [
-      "Cinnamon"
-    ],
+    "desktopEnvironments": ["Cinnamon"],
     "packageManager": "apt / deb",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "6.12.63",
     "releaseDate": "2026-01-11",
@@ -3580,21 +2553,12 @@
     "longDescription": "NebiOS is an Ubuntu-based desktop Linux distribution with a custom Wayland compositor called NebiDE (based on Wayfire). It features various user interface enhancements, an initial setup module called OOBE, the NebiOS App Runtime (napp-runtime) portable application format with bubblewrap containerization, improved gaming performance with Steam Proton integration, a kernel switcher for easy multi-kernel installation, and the Wine compatibility layer for running some Windows applications. NebiOS is intended as a general-purpose operating system for daily computing tasks, including creative work and gaming.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "gaming",
-      "live",
-      "mutable"
-    ],
+    "tags": ["desktop", "gaming", "live", "mutable"],
     "base": "Ubuntu (LTS)",
-    "desktopEnvironments": [
-      "NebiDE (Wayfire)"
-    ],
+    "desktopEnvironments": ["NebiDE (Wayfire)"],
     "packageManager": "apt / deb, flatpak",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "10.2",
     "releaseDate": "2026-02-25",
@@ -3614,30 +2578,19 @@
     "longDescription": "Besgnulinux is a lightweight, desktop Linux distribution based on Debian's \"stable\" branch. Using the JWM window manager, it is designed to be fast, lightweight and easy to use, suitable for older and low-specification computers. Besgnulinux comes with the Calamares system installer, the Brave web browser, and over 40 custom-built tools to control the systems settings as well as the desktop's look-and-feel.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "old-computers"
-    ],
+    "tags": ["desktop", "live", "mutable", "old-computers"],
     "base": "Debian (Stable)",
-    "desktopEnvironments": [
-      "JWM"
-    ],
+    "desktopEnvironments": ["JWM"],
     "packageManager": "apt / deb",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "4",
     "releaseDate": "2026-05-24",
     "website": "https://besgnulinux.blogspot.com/",
     "docs": "",
     "download": "https://sourceforge.net/projects/besgnulinux/files/",
-    "highlights": [
-      "Suite of 40 custom configuration tools, Conky monitoring, ClamTK antivirus."
-    ],
+    "highlights": ["Suite of 40 custom configuration tools, Conky monitoring, ClamTK antivirus."],
     "difficulty": "intermediate"
   },
   {
@@ -3648,30 +2601,19 @@
     "longDescription": "ZimaOS is an independently-developed, Linux-based operating system for personal servers and network-attached storage (NAS) devices. It features system-level support for remote access, RAID configuration, over-the-air (OTA) updates, and a browser-based user interface for managing the server. It is developed in China by IceWhale Technology Limited, which also produces and sells specialist storage hardware devices called \"ZimaCube\". Besides ZimaOS which is a complete, standalone operating system, the company also produces CasaOS, a lightweight software layer that can be installed on top of an existing Linux installation in order to turn it into a personal server or a NAS.",
     "img": "/repos/zimaos/logo.png",
     "screenshots": [],
-    "tags": [
-      "immutable",
-      "nas",
-      "server"
-    ],
+    "tags": ["immutable", "nas", "server"],
     "base": null,
-    "desktopEnvironments": [
-      "No Desktop",
-      "WebUI"
-    ],
+    "desktopEnvironments": ["No Desktop", "WebUI"],
     "packageManager": "",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "1.6.0",
     "releaseDate": "2026-04-17",
     "website": "https://www.zimaspace.com/docs/zimaos/#ZimaOS",
     "docs": "https://www.zimaspace.com/docs/zimaos/",
     "download": "https://github.com/IceWhaleTech/ZimaOS/releases",
-    "highlights": [
-      "NAS OS. Excludes native application software in favor of Docker, ZVM support."
-    ],
+    "highlights": ["NAS OS. Excludes native application software in favor of Docker, ZVM support."],
     "difficulty": "intermediate"
   },
   {
@@ -3682,24 +2624,12 @@
     "longDescription": "Ultimate Edition, first released in December 2006, was a fork of Ubuntu and Linux Mint though recent versions (starting in 2024) have been based on Arch Linux. The goal of the project is to create a complete, seamlessly integrated, visually stimulating, and easy-to-install operating system. Single-button upgrade is one of several special characteristics of this distribution. Other main features include custom desktop and theme with 3D effects, support for a wide range of networking options, including WiFi and Bluetooth, and integration of many extra applications and package repositories.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "gaming",
-      "live",
-      "mutable"
-    ],
+    "tags": ["desktop", "gaming", "live", "mutable"],
     "base": "Arch",
-    "desktopEnvironments": [
-      "Cinnamon",
-      "KDE Plasma",
-      "MATE",
-      "Xfce"
-    ],
+    "desktopEnvironments": ["Cinnamon", "KDE Plasma", "MATE", "Xfce"],
     "packageManager": "pacman / flatpak, pkg",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "5.5",
     "releaseDate": "2017-06-25",
@@ -3719,21 +2649,12 @@
     "longDescription": "Peppermint OS is a Debian- and Devuan-based (previously a Lubuntu-based) Linux distribution that aims to be fast and easy on system resources. By employing its Site Specific Browser, Peppermint integrates seamlessly with cloud and web-based applications. The distribution's other features include straight forward updates and easy step-by-step installation using the Calamares installer. The distribution once employed a hybrid LXDE/Xfce desktop environment, mixing LXDE's lxsession with Xfce's panel and application menu. Starting in 2022, Peppermint OS shifted to using the Xfce desktop, dropping the LXDE components.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "live",
-      "mutable",
-      "raspberry-pi"
-    ],
+    "tags": ["desktop", "live", "mutable", "raspberry-pi"],
     "base": "Debian (Stable), Devuan",
-    "desktopEnvironments": [
-      "Xfce"
-    ],
+    "desktopEnvironments": ["Xfce"],
     "packageManager": "deb",
     "initSystem": "systemd",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "7",
     "releaseDate": "2016-11-29",
@@ -3753,14 +2674,7 @@
     "longDescription": "Tiny Core Linux is a 16 MB graphical Linux desktop. It is based on a recent Linux kernel, BusyBox, Tiny X, Fltk, and Flwm. The core runs entirely in memory and boots very quickly. The user has complete control over which applications and/or additional hardware to have supported, be it for a desktop, a nettop, an appliance or server; selectable from the project's online repository.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "from-ram",
-      "live",
-      "mutable",
-      "old-computers",
-      "raspberry-pi"
-    ],
+    "tags": ["desktop", "from-ram", "live", "mutable", "old-computers", "raspberry-pi"],
     "base": "Independent (forked from Damn Small)",
     "desktopEnvironments": [
       "dwm",
@@ -3776,19 +2690,14 @@
     ],
     "packageManager": "tce / tar.xz",
     "initSystem": "BusyBox",
-    "architecture": [
-      "i486",
-      "x86_64"
-    ],
+    "architecture": ["i486", "x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "17.0",
     "releaseDate": "2026-02-11",
     "website": "http://www.tinycorelinux.net/",
     "docs": "",
     "download": "http://www.tinycorelinux.net/downloads.html",
-    "highlights": [
-      "Hyper-minimalist system (17 MB). Operates exclusively in RAM."
-    ],
+    "highlights": ["Hyper-minimalist system (17 MB). Operates exclusively in RAM."],
     "difficulty": "intermediate"
   },
   {
@@ -3799,14 +2708,7 @@
     "longDescription": "Exton Linux is a set of over 15 Linux distributions based on Arch Linux, CRUX, Debian, deepin, Fedora, openSUSE, Puppy Linux and Slackware Linux. They are designed to be lightweight, fast and easy to use. Exton Linux comes with popular pre-configured desktop environments and a set of pre-installed software packages, including web browsers, office suites, multimedia players and development tools. It also includes various customization options, such as the ability to change the appearance of the desktop and install additional software packages. Exton Linux is available in several editions, each tailored to a specific use case, such as general-purpose computing, gaming, multimedia or servers.",
     "img": null,
     "screenshots": [],
-    "tags": [
-      "desktop",
-      "from-ram",
-      "gaming",
-      "live",
-      "multimedia",
-      "mutable"
-    ],
+    "tags": ["desktop", "from-ram", "gaming", "live", "multimedia", "mutable"],
     "base": "Arch, CRUX, Debian, deepin, Fedora, Gentoo, openSUSE, Puppy, Slackware",
     "desktopEnvironments": [
       "Budgie",
@@ -3821,9 +2723,7 @@
     ],
     "packageManager": "portage / src",
     "initSystem": "OpenRC",
-    "architecture": [
-      "x86_64"
-    ],
+    "architecture": ["x86_64"],
     "releaseModel": "fixed",
     "latestVersion": "",
     "releaseDate": "2026-06-02",

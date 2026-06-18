@@ -15,6 +15,8 @@ const project = [
   { title: "About", href: "/about" },
   { title: "Support Us", href: "/support" },
   { title: "Contact", href: "/contact" },
+  { title: "Roadmap", href: "/roadmap" },
+  { title: "Changelog", href: "/changelog" },
 ];
 
 const legal = [

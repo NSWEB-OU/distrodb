@@ -66,6 +66,16 @@ const project: { title: string; href: string; description: string }[] = [
     description: "Read more about the project, its goals, and how to contribute.",
   },
   {
+    title: "Roadmap",
+    href: "/roadmap",
+    description: "See what's completed and what's coming next. Updated every week.",
+  },
+  {
+    title: "Changelog",
+    href: "/changelog",
+    description: "A log of every update, new feature, and improvement shipped to DistroDB.",
+  },
+  {
     title: "Support us",
     href: "/support",
     description:
