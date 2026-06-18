@@ -15,14 +15,14 @@ import { buttonVariants } from "@/components/ui/button-variants";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "DistroDB is a modern, open Linux distribution database — a cleaner, faster alternative to DistroWatch with powerful filtering, a distro wizard, and side-by-side comparisons.",
+    "DistroDB is a modern, open Linux distribution database - a cleaner, faster alternative to DistroWatch with powerful filtering, a distro wizard, and side-by-side comparisons.",
   alternates: { canonical: "https://distrodb.xyz/about" },
   openGraph: {
     type: "website",
     url: "https://distrodb.xyz/about",
     title: "About | DistroDB",
     description:
-      "DistroDB is a modern, open Linux distribution database — a cleaner, faster alternative to DistroWatch.",
+      "DistroDB is a modern, open Linux distribution database - a cleaner, faster alternative to DistroWatch.",
     siteName: "DistroDB",
   },
   robots: { index: true, follow: true },
@@ -33,7 +33,7 @@ const features = [
     icon: Search01Icon,
     title: "Powerful search",
     description:
-      "Full-text search across distro names, descriptions, and tags — results update instantly as you type.",
+      "Full-text search across distro names, descriptions, and tags - results update instantly as you type.",
   },
   {
     icon: FilterIcon,
@@ -57,7 +57,7 @@ const features = [
     icon: DatabaseIcon,
     title: "Open data",
     description:
-      "All distro data is stored in a plain JSON file in the repository — easy to audit, contribute to, and extend.",
+      "All distro data is stored in a plain JSON file in the repository - easy to audit, contribute to, and extend.",
   },
 ];
 
@@ -69,7 +69,7 @@ export default function AboutPage() {
         <div className="mt-6 mb-10 space-y-3 text-center">
           <h1 className="text-3xl font-bold tracking-tight">About DistroDB</h1>
           <p className="text-muted-foreground mx-auto max-w-md text-sm">
-            A modern, open alternative to DistroWatch — built for people who care about design,
+            A modern, open alternative to DistroWatch - built for people who care about design,
             speed, and finding the right Linux distro.
           </p>
         </div>
@@ -80,11 +80,11 @@ export default function AboutPage() {
             <span className="text-foreground font-medium">DistroDB</span> was created out of
             frustration with the dated UX of existing Linux distribution indexes. The goal is
             simple: make it fast and pleasant to discover, compare, and choose a Linux distribution
-            — whether you&apos;re a first-time user or a seasoned sysadmin.
+            - whether you&apos;re a first-time user or a seasoned sysadmin.
           </p>
           <p>
-            Every distro page aggregates the key facts you actually need — package manager, init
-            system, release model, desktop environments, architecture support, and more — without
+            Every distro page aggregates the key facts you actually need - package manager, init
+            system, release model, desktop environments, architecture support, and more - without
             the noise. Screenshots are curated to reflect what a real desktop looks like, not
             marketing materials.
           </p>

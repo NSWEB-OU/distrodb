@@ -7,6 +7,8 @@ import { Separator } from "@/components/ui/separator";
 const explore = [
   { title: "Browse Distros", href: "/" },
   { title: "Distro Wizard", href: "/wizard" },
+  { title: "Glossary", href: "/glossary" },
+  { title: "Resources", href: "/resources" },
 ];
 
 const project = [

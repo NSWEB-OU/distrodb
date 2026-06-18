@@ -218,13 +218,13 @@ export const GLOSSARY: Record<string, GlossaryEntry> = {
     label: "dinit",
     category: "init-system",
     description:
-      "A modern, dependency-aware service manager and init system written in C++. Supports parallel startup, service dependencies, and on-demand activation — without the complexity of systemd.",
+      "A modern, dependency-aware service manager and init system written in C++. Supports parallel startup, service dependencies, and on-demand activation - without the complexity of systemd.",
   },
   sysvinit: {
     label: "SysV init",
     category: "init-system",
     description:
-      "The traditional UNIX System V init. Services are controlled by numbered runlevel scripts in /etc/rc.d/. Simple but sequential — largely replaced by systemd and OpenRC on modern distros.",
+      "The traditional UNIX System V init. Services are controlled by numbered runlevel scripts in /etc/rc.d/. Simple but sequential - largely replaced by systemd and OpenRC on modern distros.",
   },
   busybox: {
     label: "BusyBox",
@@ -250,7 +250,7 @@ export const GLOSSARY: Record<string, GlossaryEntry> = {
     label: "DNF / rpm",
     category: "package-manager",
     description:
-      "Dandified YUM — the package manager for Fedora, RHEL, and their derivatives. Installs .rpm packages, handles complex dependency graphs, and supports modules and streams.",
+      "Dandified YUM - the package manager for Fedora, RHEL, and their derivatives. Installs .rpm packages, handles complex dependency graphs, and supports modules and streams.",
   },
   portage: {
     label: "portage",
@@ -286,7 +286,7 @@ export const GLOSSARY: Record<string, GlossaryEntry> = {
     label: "APK",
     category: "package-manager",
     description:
-      "Alpine Package Keeper — the tiny, fast package manager used by Alpine Linux. Designed for minimal footprint and container use; packages are simple tarballs with a dependency manifest.",
+      "Alpine Package Keeper - the tiny, fast package manager used by Alpine Linux. Designed for minimal footprint and container use; packages are simple tarballs with a dependency manifest.",
   },
   zypper: {
     label: "zypper / rpm",
@@ -400,7 +400,7 @@ export const GLOSSARY: Record<string, GlossaryEntry> = {
     label: "Rolling release",
     category: "release-model",
     description:
-      "Software is updated continuously as new versions are published — there are no discrete version numbers to upgrade between. Users always run the latest packages. Examples: Arch Linux, Gentoo, openSUSE Tumbleweed.",
+      "Software is updated continuously as new versions are published - there are no discrete version numbers to upgrade between. Users always run the latest packages. Examples: Arch Linux, Gentoo, openSUSE Tumbleweed.",
   },
   fixed: {
     label: "Fixed release",

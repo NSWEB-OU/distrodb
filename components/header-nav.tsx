@@ -128,6 +128,12 @@ export function HeaderNav() {
             />
           </NavigationMenuItem>
           <NavigationMenuItem>
+            <NavigationMenuLink
+              className={navigationMenuTriggerStyle()}
+              render={<Link href="/resources">Resources</Link>}
+            />
+          </NavigationMenuItem>
+          <NavigationMenuItem>
             <NavigationMenuTrigger>Comparison</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-100 gap-2 md:w-125 md:grid-cols-2 lg:w-150">
@@ -178,6 +184,14 @@ export function HeaderNav() {
               render={
                 <Link href="/glossary" className="hover:bg-muted rounded-sm px-2 py-2 text-sm">
                   Glossary
+                </Link>
+              }
+            />
+            <SheetClose
+              nativeButton={false}
+              render={
+                <Link href="/resources" className="hover:bg-muted rounded-sm px-2 py-2 text-sm">
+                  Resources
                 </Link>
               }
             />

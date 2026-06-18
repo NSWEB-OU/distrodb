@@ -194,7 +194,7 @@ export function DistroGallery({ img, screenshots, name }: DistroGalleryProps) {
             </div>
           </div>
 
-          {/* Scroll container — fills remaining height */}
+          {/* Scroll container - fills remaining height */}
           <div
             ref={scrollRef}
             className="min-h-0 flex-1"

@@ -37,7 +37,7 @@ New distributions should follow this folder-per-slug convention for better maint
 
 ## Current Progress (MVP Phase)
 
-- **Completed:** UI prototype with shadcn/ui and Tailwind. Basic landing page with search bar and distro grid. Distro detail pages (`/distros/[slug]`). VS comparison pages (`/vs/[slug-a]-vs-[slug-b]`). Sitemap (`/sitemap.xml`) and robots (`/robots.txt`) for SEO. **Distro Wizard** (`/wizard`) — 6-question interactive quiz with a client-side scoring algorithm that recommends distros from the local JSON dataset.
+- **Completed:** UI prototype with shadcn/ui and Tailwind. Basic landing page with search bar and distro grid. Distro detail pages (`/distros/[slug]`). VS comparison pages (`/vs/[slug-a]-vs-[slug-b]`). Sitemap (`/sitemap.xml`) and robots (`/robots.txt`) for SEO. **Distro Wizard** (`/wizard`) - 6-question interactive quiz with a client-side scoring algorithm that recommends distros from the local JSON dataset.
 
 ## Routes
 
@@ -48,15 +48,16 @@ New distributions should follow this folder-per-slug convention for better maint
 | `/vs/[slugs]`     | `app/vs/[slugs]/page.tsx`     | Side-by-side comparison, e.g. `/vs/ubuntu-vs-fedora` |
 | `/wizard`         | `app/wizard/page.tsx`         | Interactive 6-step distro recommendation quiz        |
 | `/glossary`       | `app/glossary/page.tsx`       | Tag definitions with anchor links (`/glossary#atomic`) |
+| `/resources`      | `app/resources/page.tsx`      | Curated external links by category (communities, docs, learning, news, tools) |
 | `/sitemap.xml`    | `app/sitemap.ts`              | Auto-generated sitemap (all distros + all VS pairs)  |
 | `/robots.txt`     | `app/robots.ts`               | Robots directives pointing to sitemap                |
 
 ## VS Page Conventions
 
-- URL pattern: `/vs/{slugA}-vs-{slugB}` — slugs must match distro slugs in `lib/data/distros.json`.
+- URL pattern: `/vs/{slugA}-vs-{slugB}` - slugs must match distro slugs in `lib/data/distros.json`.
 - Static generation via `generateStaticParams` using `getAllVsSlugs()` from `lib/distros.ts`.
 - Green highlight (`bg-emerald-500/10 text-emerald-400`) on the winning cell; no highlight on ties or non-comparable fields.
-- Comparison is purely cosmetic/informational — no scoring algorithm.
+- Comparison is purely cosmetic/informational - no scoring algorithm.
 
 ## Conventions
 

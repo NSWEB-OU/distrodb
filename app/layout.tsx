@@ -28,7 +28,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://distrodb.xyz"),
   title: {
-    default: "DistroDB — Linux Distribution Database",
+    default: "DistroDB - Linux Distribution Database",
     template: "%s | DistroDB",
   },
   description:
@@ -48,17 +48,17 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://distrodb.xyz",
     siteName: "DistroDB",
-    title: "DistroDB — Linux Distribution Database",
+    title: "DistroDB - Linux Distribution Database",
     description:
       "Search, compare and explore Linux distributions. Find the perfect Linux distro based on difficulty, release model, desktop environment, and more.",
-    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "DistroDB" }],
+    images: [{ url: "/placeholder.png", width: 1200, height: 630, alt: "DistroDB" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DistroDB — Linux Distribution Database",
+    title: "DistroDB - Linux Distribution Database",
     description:
       "Search, compare and explore Linux distributions. Find the perfect Linux distro for your needs.",
-    images: ["/og-default.png"],
+    images: ["/placeholder.png"],
   },
   robots: {
     index: true,

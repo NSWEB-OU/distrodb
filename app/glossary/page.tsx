@@ -6,9 +6,9 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 
 export const metadata: Metadata = {
-  title: "Glossary — Linux distro tags explained",
+  title: "Glossary - Linux distro tags explained",
   description:
-    "Definitions for every tag used on DistroDB — from atomic updates and immutable systems to source-based packaging and live environments.",
+    "Definitions for every tag used on DistroDB - from atomic updates and immutable systems to source-based packaging and live environments.",
   alternates: { canonical: "https://distrodb.xyz/glossary" },
   openGraph: {
     type: "website",

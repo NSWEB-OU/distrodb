@@ -46,7 +46,7 @@ export async function generateMetadata({
   const b = getDistroBySlug(slugB);
   if (!a || !b) return {};
 
-  const title = `${a.name} vs ${b.name} — Linux Distro Comparison | DistroDB`;
+  const title = `${a.name} vs ${b.name} - Linux Distro Comparison | DistroDB`;
   const description = `Side-by-side comparison of ${a.name} and ${b.name}. Compare package managers, init systems, release models, desktop environments, architecture support and more.`;
   const url = `${BASE_URL}/vs/${slugs}`;
   const image = a.img ? `${BASE_URL}${a.img}` : `${BASE_URL}/og-default.png`;
@@ -95,7 +95,7 @@ function VsJsonLd({ a, b, url }: { a: DistroDetail; b: DistroDetail; url: string
     "@context": "https://schema.org",
     "@type": "WebPage",
     url,
-    name: `${a.name} vs ${b.name} — Linux Distro Comparison`,
+    name: `${a.name} vs ${b.name} - Linux Distro Comparison`,
     description: `Side-by-side comparison of ${a.name} and ${b.name} Linux distributions.`,
     publisher: { "@type": "Organization", name: "DistroDB", url: BASE_URL },
     mainEntity: {
@@ -458,7 +458,7 @@ export default async function VsPage({ params }: { params: Promise<{ slugs: stri
               <ul className="flex flex-col gap-2">
                 {distro.highlights.map((point, i) => (
                   <li key={i} className="flex gap-3 text-sm">
-                    <span className="text-primary mt-0.5 shrink-0">—</span>
+                    <span className="text-primary mt-0.5 shrink-0">-</span>
                     <span className="text-muted-foreground">{point}</span>
                   </li>
                 ))}

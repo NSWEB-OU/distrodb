@@ -30,7 +30,7 @@ export async function generateMetadata({
   const distro = getDistroBySlug(slug);
   if (!distro) return {};
 
-  const title = `${distro.name} Linux — Review, Specs & Download`;
+  const title = `${distro.name} Linux - Review, Specs & Download`;
   const description = `${distro.description} Learn about ${distro.name}'s package manager (${distro.packageManager}), release model (${distro.releaseModel}), desktop environments, and more.`;
   const url = `${BASE_URL}/distros/${distro.slug}`;
   const image = distro.img ? `${BASE_URL}${distro.img}` : `${BASE_URL}/og-default.png`;
@@ -279,7 +279,7 @@ export default async function DistroPage({ params }: { params: Promise<{ slug: s
               <ul className="flex flex-col gap-2">
                 {distro.highlights.map((point, i) => (
                   <li key={i} className="flex gap-3 text-sm">
-                    <span className="text-primary mt-0.5 shrink-0">—</span>
+                    <span className="text-primary mt-0.5 shrink-0">-</span>
                     <span className="text-muted-foreground">{point}</span>
                   </li>
                 ))}
@@ -288,7 +288,7 @@ export default async function DistroPage({ params }: { params: Promise<{ slug: s
           )}
         </div>
 
-        {/* Right sidebar — links */}
+        {/* Right sidebar - links */}
         <div className="flex flex-col gap-4 self-start lg:sticky lg:top-5">
           <Card>
             <CardHeader>
