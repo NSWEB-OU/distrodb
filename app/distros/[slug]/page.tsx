@@ -14,6 +14,7 @@ import { DistroGallery } from "@/components/distro-gallery";
 import { SuggestChangesButton } from "@/components/suggest-changes-button";
 import { TagBadge } from "@/components/tag-badge";
 import { GlossaryBadge } from "@/components/glossary-badge";
+import { cn } from "@/lib/utils";
 
 const BASE_URL = "https://distrodb.xyz";
 
@@ -81,9 +82,9 @@ export async function generateMetadata({
 }
 
 const DIFFICULTY_LABEL: Record<DifficultyLevel, string> = {
-  beginner: "Beginner",
-  intermediate: "Intermediate",
-  advanced: "Advanced",
+  beginner: "beginner",
+  intermediate: "intermediate",
+  advanced: "advanced",
 };
 
 const DIFFICULTY_VARIANT: Record<DifficultyLevel, "default" | "secondary" | "outline"> = {
@@ -93,9 +94,9 @@ const DIFFICULTY_VARIANT: Record<DifficultyLevel, "default" | "secondary" | "out
 };
 
 const RELEASE_LABEL: Record<ReleaseModel, string> = {
-  rolling: "Rolling Release",
-  fixed: "Fixed Release",
-  "semi-rolling": "Semi-Rolling",
+  rolling: "rolling release",
+  fixed: "fixed release",
+  "semi-rolling": "semi-rolling",
 };
 
 function MetaRow({ label, value }: { label: string; value: React.ReactNode }) {
@@ -173,34 +174,9 @@ export default async function DistroPage({ params }: { params: Promise<{ slug: s
       <DistroGallery img={distro.img} screenshots={distro.screenshots} name={distro.name} />
 
       {/* Title + badges */}
-      <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8">
-        <div className="flex flex-col gap-2 lg:col-span-2">
-          <h1 className="text-3xl font-extrabold tracking-tight">{distro.name}</h1>
-          <TypographyLead>{distro.description}</TypographyLead>
-          {/* CTAs */}
-          <div className="mt-2 flex flex-wrap items-center gap-2">
-            <a
-              href={distro.download}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={buttonVariants({ size: "lg" })}
-            >
-              Download {distro.name}
-            </a>
-            <CompareToggleButton
-              slug={distro.slug}
-              name={distro.name}
-              img={distro.img}
-              className="bg-background border-border text-foreground hover:bg-muted hover:text-foreground h-10 px-4 text-sm backdrop-blur-none"
-            />
-            <SuggestChangesButton
-              distroName={distro.name}
-              className="bg-background border-border text-foreground hover:bg-muted hover:text-foreground h-10 px-4 text-sm backdrop-blur-none"
-            />
-          </div>
-        </div>
-
-        <div className="flex flex-wrap content-start gap-2">
+      <div className="mt-6 flex flex-col gap-2">
+        <h1 className="text-3xl font-extrabold tracking-tight">{distro.name}</h1>
+        <div className="flex flex-wrap items-center gap-2">
           <Badge variant={DIFFICULTY_VARIANT[distro.difficulty]}>
             {DIFFICULTY_LABEL[distro.difficulty]}
           </Badge>
@@ -208,10 +184,34 @@ export default async function DistroPage({ params }: { params: Promise<{ slug: s
             label={RELEASE_LABEL[distro.releaseModel]}
             glossaryKey={distro.releaseModel}
           />
-          {distro.tags.map((tag) => (
-            <TagBadge key={tag} tag={tag} />
-          ))}
+          {distro.tags
+            .filter((tag) => !tag.includes(distro.difficulty))
+            .map((tag) => (
+              <TagBadge key={tag} tag={tag} />
+            ))}
         </div>
+        {/* CTAs */}
+        <div className="mt-4 flex flex-wrap items-center gap-2">
+          <a
+            href={distro.download}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(buttonVariants({ size: "lg" }), "h-10 w-full text-sm sm:w-auto")}
+          >
+            Download {distro.name}
+          </a>
+          <CompareToggleButton
+            slug={distro.slug}
+            name={distro.name}
+            img={distro.img}
+            className="bg-background border-border text-foreground hover:bg-muted hover:text-foreground h-10 w-full px-4 text-sm backdrop-blur-none sm:w-auto"
+          />
+          <SuggestChangesButton
+            distroName={distro.name}
+            className="bg-background border-border text-foreground hover:bg-muted hover:text-foreground h-10 w-full px-4 text-sm backdrop-blur-none sm:w-auto"
+          />
+        </div>
+        <TypographyLead className="mt-6">{distro.description}</TypographyLead>
       </div>
 
       <Separator className="my-6" />
