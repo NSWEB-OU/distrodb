@@ -37,20 +37,20 @@ New distributions should follow this folder-per-slug convention for better maint
 
 ## Current Progress (MVP Phase)
 
-- **Completed:** UI prototype with shadcn/ui and Tailwind. Basic landing page with search bar and distro grid. Distro detail pages (`/distros/[slug]`). VS comparison pages (`/vs/[slug-a]-vs-[slug-b]`). Sitemap (`/sitemap.xml`) and robots (`/robots.txt`) for SEO. **Distro Wizard** (`/wizard`) - 6-question interactive quiz with a client-side scoring algorithm that recommends distros from the local JSON dataset.
+- **Completed:** UI prototype with shadcn/ui and Tailwind. Basic landing page with search bar and distro grid. Distro detail pages (`/distros/[slug]`). VS comparison pages (`/vs/[slug-a]-vs-[slug-b]`). Sitemap (`/sitemap.xml`) and robots (`/robots.txt`) for SEO. **Distro Wizard** (`/wizard`) - 6-question interactive quiz with a client-side scoring algorithm that recommends distros from the local JSON dataset. **DistroSea integration** - in-browser test drives for supported distros.
 
 ## Routes
 
-| Route             | File                          | Description                                          |
-| ----------------- | ----------------------------- | ---------------------------------------------------- |
-| `/`               | `app/page.tsx`                | Landing page with search + distro grid               |
-| `/distros/[slug]` | `app/distros/[slug]/page.tsx` | Full distro detail page                              |
-| `/vs/[slugs]`     | `app/vs/[slugs]/page.tsx`     | Side-by-side comparison, e.g. `/vs/ubuntu-vs-fedora` |
-| `/wizard`         | `app/wizard/page.tsx`         | Interactive 6-step distro recommendation quiz        |
-| `/glossary`       | `app/glossary/page.tsx`       | Tag definitions with anchor links (`/glossary#atomic`) |
+| Route             | File                          | Description                                                                   |
+| ----------------- | ----------------------------- | ----------------------------------------------------------------------------- |
+| `/`               | `app/page.tsx`                | Landing page with search + distro grid                                        |
+| `/distros/[slug]` | `app/distros/[slug]/page.tsx` | Full distro detail page                                                       |
+| `/vs/[slugs]`     | `app/vs/[slugs]/page.tsx`     | Side-by-side comparison, e.g. `/vs/ubuntu-vs-fedora`                          |
+| `/wizard`         | `app/wizard/page.tsx`         | Interactive 6-step distro recommendation quiz                                 |
+| `/glossary`       | `app/glossary/page.tsx`       | Tag definitions with anchor links (`/glossary#atomic`)                        |
 | `/resources`      | `app/resources/page.tsx`      | Curated external links by category (communities, docs, learning, news, tools) |
-| `/sitemap.xml`    | `app/sitemap.ts`              | Auto-generated sitemap (all distros + all VS pairs)  |
-| `/robots.txt`     | `app/robots.ts`               | Robots directives pointing to sitemap                |
+| `/sitemap.xml`    | `app/sitemap.ts`              | Auto-generated sitemap (all distros + all VS pairs)                           |
+| `/robots.txt`     | `app/robots.ts`               | Robots directives pointing to sitemap                                         |
 
 ## VS Page Conventions
 
@@ -58,6 +58,13 @@ New distributions should follow this folder-per-slug convention for better maint
 - Static generation via `generateStaticParams` using `getAllVsSlugs()` from `lib/distros.ts`.
 - Green highlight (`bg-emerald-500/10 text-emerald-400`) on the winning cell; no highlight on ties or non-comparable fields.
 - Comparison is purely cosmetic/informational - no scoring algorithm.
+
+## DistroSea Integration
+
+- Supported distros expose an optional `distroSea` slug in `lib/data/distros.json` (the `DistroDetail` type). It maps to a DistroSea entry: `https://distrosea.com/select/<distroSea>/`.
+- When present, the distro page (`/distros/[slug]`) renders a "Try in browser" CTA (next to Download) and a sidebar link, letting users run the distro online via DistroSea.
+- DistroSea slugs differ from our slugs (e.g. `linux-mint` → `linuxmint`, `almalinux-os` → `alma`, `centos` → `centosstream`). Add the field only for distros DistroSea actually hosts; omit otherwise.
+- Distro page CTA hierarchy: primary actions are **Download** + **Try in browser**; **Compare** and **Suggest a change** are demoted to subtle ghost/utility buttons.
 
 ## Conventions
 

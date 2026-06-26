@@ -32,6 +32,8 @@ export type DistroDetail = {
   website: string;
   docs: string;
   download: string;
+  /** DistroSea slug (https://distrosea.com/select/<slug>/) for in-browser test drives. Omit if unsupported. */
+  distroSea?: string;
   highlights: string[];
   difficulty: DifficultyLevel;
 };

@@ -46,21 +46,21 @@ const roadmapItems: RoadmapItem[] = [
     title: "Database review & curation",
     description:
       "Manual audit of the entire distro database - fixing tag inconsistencies, correcting descriptions, updating broken links, and adding high-quality desktop screenshots for every entry.",
-    status: "in-progress",
+    status: "done",
   },
   {
     icon: ComputerIcon,
     title: "DistroSea integration",
     description:
       "Launch a live distro test directly from its page via DistroSea. No download required - try before you commit, straight from the browser.",
-    status: "upcoming",
+    status: "done",
   },
   {
     icon: FilterIcon,
     title: "Distro Wizard improvements",
     description:
       "Sharpen the recommendation algorithm behind the Distro Wizard. Better answer weighting, improved scoring logic, and more accurate results that reflect real-world use cases.",
-    status: "upcoming",
+    status: "in-progress",
   },
   {
     icon: SourceCodeIcon,

@@ -1,0 +1,36 @@
+---
+version: "1.1.0"
+date: "2026-07-03"
+title: "Test-drive distros in your browser"
+tags: ["feature", "ui"]
+---
+
+## What's new
+
+You no longer have to download an ISO, spin up a virtual machine, or dual-boot just to see what a distro feels like. Starting with this release, supported distributions can be launched **right in your browser** — one click, no install, no commitment.
+
+## Try in browser
+
+We've teamed up our database with [DistroSea](https://distrosea.com), which boots real Linux distros in the cloud and streams them to you.
+
+- A new **Try in browser** button now sits next to Download on every supported distro page
+- We've also added it as a quick link in the sidebar, so it's there whether you're skimming the specs or ready to dive in
+- It's live for **56 distributions** so far — Ubuntu, Fedora, Arch, Mint, Debian, openSUSE, Manjaro, Pop!\_OS, and many more
+- Distros that DistroSea doesn't host yet simply won't show the button, so you'll never hit a dead end
+
+It's the fastest way to answer the question everyone actually has: _"but what does it look like?"_
+
+## A tidier distro page
+
+While we were in there, we took a hard look at the buttons crowding the top of each distro page. Three equally-loud buttons next to each other turned out to be three too many.
+
+- **Download** and **Try in browser** are now the clear, primary actions
+- **Compare** and **Suggest a change** have been quieted down into subtle utility buttons, with proper icons so they're still easy to find
+- The whole row breathes a lot better now, on desktop and mobile alike
+
+## Under the hood
+
+- Each distro can now carry an optional DistroSea reference in our dataset, so adding browser support to more distros later is just a one-line change
+- Contributors: if you're adding a distro DistroSea hosts, you can now wire up the test drive yourself — see the updated project notes
+
+As always, if a distro you love is missing its browser button (or anything else looks off), the **Suggest a change** button is right there waiting. Happy distro-hopping.
