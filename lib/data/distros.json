@@ -24,6 +24,7 @@
     "website": "https://www.ubuntu.com/",
     "docs": "https://docs.ubuntu.com/",
     "download": "https://www.ubuntu.com/download/",
+    "distroSea": "ubuntu",
     "highlights": [
       "Ubuntu is an ancient African word, meaning \"humanity to others\".",
       "World standard for server and cloud environments. Native Snap container integration.",
@@ -56,6 +57,7 @@
     "website": "https://linuxmint.com/",
     "docs": "https://community.linuxmint.com/",
     "download": "https://www.linuxmint.com/download.php",
+    "distroSea": "linuxmint",
     "highlights": [
       "Complete absence of forced Snap usage.",
       "Features the native Cinnamon desktop environment, providing a familiar workflow for Windows migrants with nearly zero learning curve.",
@@ -93,6 +95,7 @@
     "website": "https://www.debian.org/",
     "docs": "https://www.debian.org/doc/",
     "download": "https://www.debian.org/CD/",
+    "distroSea": "debian",
     "highlights": [
       "One of the oldest distros, serving as the stability foundation for hundreds of distributions.",
       "The Stable branch undergoes a multi-year freezing and testing phase, making it nearly indestructible and the world standard for production servers",
@@ -137,6 +140,7 @@
     "website": "https://fedoraproject.org/",
     "docs": "https://docs.fedoraproject.org/",
     "download": "https://fedoraproject.org/",
+    "distroSea": "fedora",
     "highlights": [
       "Red Hat's technology proving ground. Latest software stack, out-of-the-box Btrfs support."
     ],
@@ -171,6 +175,7 @@
     "website": "http://www.archlinux.org/",
     "docs": "http://wiki.archlinux.org/",
     "download": "http://www.archlinux.org/download/",
+    "distroSea": "archlinux",
     "highlights": [
       "Implementation of the KISS principle. Access to the AUR (Arch User Repository). Full control over system assembly."
     ],
@@ -205,6 +210,7 @@
     "website": "https://manjaro.org/",
     "docs": "https://wiki.manjaro.org/",
     "download": "https://manjaro.org/products/download/x86",
+    "distroSea": "manjaro",
     "highlights": [
       "Proprietary package testing repositories, MHWD hardware auto-detection utility."
     ],
@@ -230,6 +236,7 @@
     "website": "https://system76.com/pop",
     "docs": "https://support.system76.com/#pop",
     "download": "https://system76.com/pop",
+    "distroSea": "popos",
     "highlights": [
       "Developed by System76. Automatic window tiling, built-in hybrid NVIDIA graphics support."
     ],
@@ -255,6 +262,7 @@
     "website": "https://mxlinux.org/",
     "docs": "https://mxlinux.org/manuals",
     "download": "https://mxlinux.org/download-links#Mirrors",
+    "distroSea": "mxlinux",
     "highlights": [
       "Proprietary MX Tools configuration utilities, lightweight design, exceptional stability."
     ],
@@ -289,6 +297,7 @@
     "website": "https://endeavouros.com/",
     "docs": "https://endeavouros.com/wiki/",
     "download": "https://endeavouros.com/",
+    "distroSea": "endeavouros",
     "highlights": ["User-friendly terminal-oriented Arch with Calamares graphical installer."],
     "difficulty": "intermediate"
   },
@@ -324,6 +333,7 @@
     "website": "https://www.opensuse.org/",
     "docs": "https://en.opensuse.org/Portal:Documentation",
     "download": "https://get.opensuse.org/tumbleweed/",
+    "distroSea": "opensuse",
     "highlights": [
       "Legendary YaST system configurator, Btrfs filesystem snapshots via Snapper.",
       "Bleeding Edge, But Stable: It provides the latest Linux kernels, drivers, and desktop environments (like KDE Plasma and GNOME) mere days after they are officially released.",
@@ -363,6 +373,7 @@
     "website": "https://www.opensuse.org/",
     "docs": "https://en.opensuse.org/Portal:Documentation",
     "download": "https://get.opensuse.org/leap/16.0/",
+    "distroSea": "opensuse",
     "highlights": [
       "Massive Support Windows: Each minor point release gets 24 months of support. The overall major series is built to last for years, giving you a set-and-forget experience.",
       "Stable and Predictable: Leap provides a reliable platform with long-term support, making it ideal for production environments.",
@@ -428,6 +439,7 @@
     "website": "https://nixos.org/",
     "docs": "https://wiki.nixos.org/wiki/NixOS_Wiki",
     "download": "https://nixos.org/download/",
+    "distroSea": "nixos",
     "highlights": ["Fully declarative system state management via the Nix configuration language."],
     "difficulty": "advanced"
   },
@@ -474,6 +486,7 @@
     "website": "https://rockylinux.org/",
     "docs": "https://wiki.rockylinux.org/",
     "download": "https://rockylinux.org/download",
+    "distroSea": "rockylinux",
     "highlights": ["Free 100% compatible RHEL clone, created by CentOS founder Gregory Kurtzer."],
     "difficulty": "intermediate"
   },
@@ -498,6 +511,7 @@
     "website": "https://almalinux.org/",
     "docs": "https://wiki.almalinux.org/",
     "download": "https://almalinux.org/get-almalinux",
+    "distroSea": "alma",
     "highlights": [
       "Independent non-profit distribution created by the community as a free CentOS replacement."
     ],
@@ -523,6 +537,7 @@
     "website": "https://www.centos.org/",
     "docs": "https://docs.centos.org/en-US/docs/",
     "download": "https://www.centos.org/download/",
+    "distroSea": "centosstream",
     "highlights": [
       "Transitioned to RHEL Stream, serving as a testing ground for commercial releases."
     ],
@@ -548,6 +563,7 @@
     "website": "https://bazzite.gg/",
     "docs": "https://docs.bazzite.gg/",
     "download": "https://bazzite.gg/#image-picker",
+    "distroSea": "bazzite",
     "highlights": [
       "Gaming distribution. Perfectly optimized for handheld PCs (Steam Deck, ROG Ally)."
     ],
@@ -592,6 +608,7 @@
     "website": "https://cachyos.org/",
     "docs": "https://wiki.cachyos.org/",
     "download": "https://cachyos.org/download",
+    "distroSea": "cachyos",
     "highlights": [
       "Custom package compilation targeting x86-64-v3/v4 instructions for increased FPS in games."
     ],
@@ -617,6 +634,7 @@
     "website": "https://zorin.com/os/",
     "docs": "https://help.zorin.com/",
     "download": "https://zorinos.com/download",
+    "distroSea": "zorin",
     "highlights": [
       "Zorin Appearance module for precise Windows/macOS interface imitation, Wine integration."
     ],
@@ -642,6 +660,7 @@
     "website": "https://elementary.io/",
     "docs": "https://elementary.io/docs/learning-the-basics",
     "download": "https://elementary.io/",
+    "distroSea": "elementary",
     "highlights": [
       "Unique Pantheon desktop environment built on Vala/GTK. Pay-what-you-want model in AppCenter."
     ],
@@ -667,6 +686,7 @@
     "website": "https://kubuntu.org/",
     "docs": "https://community.kde.org/Kubuntu",
     "download": "https://www.kubuntu.org/getkubuntu",
+    "distroSea": "kubuntu",
     "highlights": ["Official Ubuntu spin with an unmodified KDE Plasma desktop environment."],
     "difficulty": "intermediate"
   },
@@ -690,6 +710,7 @@
     "website": "https://www.xubuntu.org/",
     "docs": "https://docs.xubuntu.org/",
     "download": "https://xubuntu.org/getxubuntu/",
+    "distroSea": "xubuntu",
     "highlights": ["Optimal balance of performance and visual aesthetics on older computers."],
     "difficulty": "intermediate"
   },
@@ -713,6 +734,7 @@
     "website": "https://neon.kde.org/",
     "docs": "https://community.kde.org/Neon",
     "download": "https://neon.kde.org/download",
+    "distroSea": "kdeneon",
     "highlights": [
       "Direct distribution of the latest KDE software from upstream developers on top of a stable LTS base."
     ],
@@ -738,6 +760,7 @@
     "website": "https://lubuntu.me/",
     "docs": "https://help.ubuntu.com/community/Lubuntu/Documentation",
     "download": "https://help.ubuntu.com/community/Lubuntu/GetLubuntu",
+    "distroSea": "lubuntu",
     "highlights": ["Minimalist Qt-based interface, optimized for low-specification computers."],
     "difficulty": "intermediate"
   },
@@ -761,6 +784,7 @@
     "website": "https://tails.net/",
     "docs": "https://tails.net/doc/index.en.html",
     "download": "https://tails.net/install/index.en.html",
+    "distroSea": "tails",
     "highlights": [
       "Live system for bypassing censorship and preserving anonymity. Clears RAM on shutdown."
     ],
@@ -795,6 +819,7 @@
     "website": "https://www.alpinelinux.org/",
     "docs": "https://wiki.alpinelinux.org/",
     "download": "https://alpinelinux.org/downloads",
+    "distroSea": "alpine",
     "highlights": [
       "Built on musl libc and BusyBox. Minimal image size, containerization standard."
     ],
@@ -846,6 +871,7 @@
     "website": "https://www.gentoo.org/",
     "docs": "https://www.gentoo.org/support/documentation/",
     "download": "https://www.gentoo.org/downloads/mirrors/",
+    "distroSea": "gentoo",
     "highlights": [
       "Compiling software from source, deepest system optimization for a specific processor."
     ],
@@ -897,6 +923,7 @@
     "website": "https://voidlinux.org/",
     "docs": "https://docs.voidlinux.org/",
     "download": "https://voidlinux.org/download/",
+    "distroSea": "void",
     "highlights": [
       "Distribution written from scratch. Uses the independent XBPS package manager and runit init system."
     ],
@@ -922,6 +949,7 @@
     "website": "https://getsol.us/",
     "docs": "https://help.getsol.us/",
     "download": "https://getsol.us/download/",
+    "distroSea": "solus",
     "highlights": ["Desktop system developing its own innovative Budgie graphical shell."],
     "difficulty": "beginner"
   },
@@ -945,6 +973,7 @@
     "website": "https://artixlinux.org/",
     "docs": "",
     "download": "https://artixlinux.org/download.php",
+    "distroSea": "artixlinux",
     "highlights": ["Arch Linux without systemd. Offers a choice of five alternative init systems."],
     "difficulty": "intermediate"
   },
@@ -968,6 +997,7 @@
     "website": "http://www.slackware.com/",
     "docs": "http://docs.slackware.com/",
     "download": "http://www.slackware.com/getslack/",
+    "distroSea": "slackware",
     "highlights": ["Oldest active distribution. No automatic dependency resolution."],
     "difficulty": "advanced"
   },
@@ -1000,6 +1030,7 @@
     "website": "https://garudalinux.org/",
     "docs": "https://garudalinux.org/installation",
     "download": "https://garudalinux.org/editions",
+    "distroSea": "garuda",
     "highlights": [
       "Default Btrfs with zstd compression, Zen kernel scheduler for reduced latency."
     ],
@@ -1025,6 +1056,7 @@
     "website": "https://deepin.org/",
     "docs": "https://wiki.deepin.org/",
     "download": "https://www.deepin.org/en/download/",
+    "distroSea": "deepin",
     "highlights": [
       "Chinese national distribution with its own unique DDE desktop environment and utility suite."
     ],
@@ -1050,6 +1082,7 @@
     "website": "https://sparkylinux.org/",
     "docs": "https://wiki.sparkylinux.org/",
     "download": "https://sparkylinux.org/download/",
+    "distroSea": "sparkylinux",
     "highlights": [
       "Offers a choice between Debian's stable and continuously-updated rolling branches."
     ],
@@ -1075,6 +1108,7 @@
     "website": "https://nobaraproject.org/",
     "docs": "https://wiki.nobaraproject.org/",
     "download": "https://nobaraproject.org/download.html",
+    "distroSea": "nobara",
     "highlights": [
       "Developed by GloriousEggroll. Pre-installed kernel latency patches, Proton translators, and GPU drivers."
     ],
@@ -1125,6 +1159,7 @@
     "website": "https://www.pclinuxos.com/",
     "docs": "https://pclosusers.com/",
     "download": "https://ftp.nluug.nl/os/Linux/distr/pclinuxos/iso/",
+    "distroSea": "pclinuxos",
     "highlights": [
       "Traditional distribution without systemd, using an RPM package base with APT manager."
     ],
@@ -1150,6 +1185,7 @@
     "website": "https://antixlinux.com/",
     "docs": "https://download.tuxfamily.org/antix/docs-antiX-17/FAQ/index.html",
     "download": "https://antixlinux.com/antix/download/",
+    "distroSea": "antix",
     "highlights": [
       "Runs without systemd. Optimal for critically outdated systems (Pentium III / 256 MB RAM)."
     ],
@@ -1191,6 +1227,7 @@
     "website": "https://www.mageia.org/",
     "docs": "https://wiki.mageia.org/",
     "download": "https://mageia.org/en/downloads/",
+    "distroSea": "mageia",
     "highlights": [
       "Inherits Mandriva traditions. Mageia Control Center for easy system configuration."
     ],
@@ -1216,6 +1253,7 @@
     "website": "https://devuan.org/",
     "docs": "https://devuan.org/os/documentation/",
     "download": "https://files.devuan.org/",
+    "distroSea": "devuan",
     "highlights": ["Debian fork created in opposition to the widespread adoption of systemd."],
     "difficulty": "intermediate"
   },
@@ -1239,6 +1277,7 @@
     "website": "https://www.linuxliteos.com/",
     "docs": "https://www.linuxliteos.com/manual/",
     "download": "https://www.linuxliteos.com/download.php",
+    "distroSea": "linuxlite",
     "highlights": [
       "Pre-installed Lite Software quick-setup scripts to simplify onboarding for beginners."
     ],
@@ -1289,6 +1328,7 @@
     "website": "https://www.tuxedocomputers.com/os",
     "docs": "",
     "download": "https://os.tuxedocomputers.com/",
+    "distroSea": "tuxedoos",
     "highlights": [
       "Integration with the TUXEDO Control Center hardware software for fan and power management."
     ],
@@ -1387,6 +1427,7 @@
     "website": "https://puppylinux-woof-ce.github.io/",
     "docs": "https://wikka.puppylinux.com/HomePage",
     "download": "https://puppylinux-woof-ce.github.io/index.html#download",
+    "distroSea": "puppylinux",
     "highlights": ["Modular distribution that boots entirely into the host machine's RAM."],
     "difficulty": "intermediate"
   },
@@ -1410,6 +1451,7 @@
     "website": "https://archcraft.io/",
     "docs": "https://archcraft.io/wiki",
     "download": "https://sourceforge.net/projects/archcraft/files/",
+    "distroSea": "archcraft",
     "highlights": [
       "Deep pre-configuration of lightweight window managers, excellent visual design."
     ],
@@ -1511,6 +1553,7 @@
     "website": "https://blendos.co/",
     "docs": "https://blendos.co/faq/",
     "download": "https://blendos.co/download",
+    "distroSea": "blendos",
     "highlights": [
       "Created by Rudra Saraswat. Seamless integration of Ubuntu, Fedora, and Arch packages in a single session."
     ],
@@ -1536,6 +1579,7 @@
     "website": "https://www.bodhilinux.com/",
     "docs": "https://www.bodhilinux.com/w/wiki/",
     "download": "https://www.bodhilinux.com/download/",
+    "distroSea": "bodhi",
     "highlights": [
       "High-efficiency Moksha graphical shell with a unique minimalist pre-configured concept."
     ],
@@ -1561,6 +1605,7 @@
     "website": "https://q4os.org/",
     "docs": "https://q4os.org/documents.html",
     "download": "https://q4os.org/downloads1.html",
+    "distroSea": "q4os",
     "highlights": [
       "Careful integration of the classic Trinity desktop environment, recreating the Windows XP interface."
     ],
@@ -1586,6 +1631,7 @@
     "website": "https://aerynos.com/",
     "docs": "https://aerynos.dev/aerynos/",
     "download": "https://aerynos.com/download",
+    "distroSea": "aerynos",
     "highlights": [
       "Transactional moss package manager. Atomic updates without strict write restrictions to /usr."
     ],
@@ -1611,6 +1657,7 @@
     "website": "http://pika-os.com/",
     "docs": "https://wiki.pika-os.com/en/installation/getting-started",
     "download": "http://pika-os.com/",
+    "distroSea": "pikaos",
     "highlights": [
       "Gaming-focused. Real-time kernel with CFS scheduler patches, fast driver installation."
     ],
@@ -1636,6 +1683,7 @@
     "website": "https://nxos.org/",
     "docs": "https://nxos.org/tutorial/",
     "download": "https://nxos.org/#download",
+    "distroSea": "nitrux",
     "highlights": [
       "Free from systemd. Full dominance of AppImage and Flatpak formats for application software."
     ],
@@ -1724,6 +1772,7 @@
     "website": "https://www.openmandriva.org/",
     "docs": "https://wiki.openmandriva.org/",
     "download": "https://www.openmandriva.org/download",
+    "distroSea": "openmandriva",
     "highlights": [
       "Compiled with LLVM/Clang instead of GCC, increasing performance on Ryzen CPUs."
     ],
@@ -1785,6 +1834,7 @@
     "website": "https://www.anduinos.com/",
     "docs": "https://docs.anduinos.com/",
     "download": "https://download.anduinos.com/",
+    "distroSea": "anduinos",
     "highlights": [
       "Detailed Windows 11 interface replication via 18 GNOME extensions, out-of-the-box Wine support."
     ],
@@ -1864,6 +1914,7 @@
     "website": "https://vanillaos.org/",
     "docs": "https://documentation.vanillaos.org/",
     "download": "https://github.com/Vanilla-OS/os/releases/",
+    "distroSea": "vanillaos",
     "highlights": [
       "Immutability based on A/B transactions (abroot). Package installation into isolated containers via apx."
     ],
@@ -1889,6 +1940,7 @@
     "website": "https://www.biglinux.com.br/",
     "docs": "",
     "download": "https://www.biglinux.com.br/download/",
+    "distroSea": "biglinux",
     "highlights": [
       "Brazilian build. Advanced integration of cloud folders and automatic system backups."
     ],
@@ -1988,6 +2040,7 @@
     "website": "https://voyagerlive.org/",
     "docs": "",
     "download": "https://sourceforge.net/projects/voyagerlive/",
+    "distroSea": "voyager",
     "highlights": [
       "French art distribution with avant-garde Conky widget design and switchable styles."
     ],
@@ -2388,6 +2441,7 @@
     "website": "https://pearos.xyz/",
     "docs": "https://pearos.xyz/install",
     "download": "https://pearos.xyz/downloads",
+    "distroSea": "pearos",
     "highlights": ["Built by Alexandru Bălan. Precisely replicates the Apple macOS design."],
     "difficulty": "intermediate"
   },
@@ -2653,6 +2707,7 @@
     "website": "https://peppermintos.com/",
     "docs": "https://peppermint_os.codeberg.page/html/",
     "download": "https://peppermintos.com/download",
+    "distroSea": "peppermint",
     "highlights": [
       "Minimalist base OS. Proprietary Ice/Kumo app for running websites as isolated web applications."
     ],
@@ -2689,6 +2744,7 @@
     "website": "http://www.tinycorelinux.net/",
     "docs": "",
     "download": "http://www.tinycorelinux.net/downloads.html",
+    "distroSea": "tinycore",
     "highlights": ["Hyper-minimalist system (17 MB). Operates exclusively in RAM."],
     "difficulty": "intermediate"
   },

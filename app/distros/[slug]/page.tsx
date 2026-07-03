@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Download04Icon, PlayIcon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import { getDistroBySlug, getAllSlugs } from "@/lib/distros";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -17,6 +19,7 @@ import { GlossaryBadge } from "@/components/glossary-badge";
 import { cn } from "@/lib/utils";
 
 const BASE_URL = "https://distrodb.xyz";
+const DISTROSEA_BASE = "https://distrosea.com/select";
 
 export async function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
@@ -191,25 +194,48 @@ export default async function DistroPage({ params }: { params: Promise<{ slug: s
             ))}
         </div>
         {/* CTAs */}
-        <div className="mt-4 flex flex-wrap items-center gap-2">
-          <a
-            href={distro.download}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={cn(buttonVariants({ size: "lg" }), "h-10 w-full text-sm sm:w-auto")}
-          >
-            Download {distro.name}
-          </a>
-          <CompareToggleButton
-            slug={distro.slug}
-            name={distro.name}
-            img={distro.img}
-            className="bg-background border-border text-foreground hover:bg-muted hover:text-foreground h-10 w-full px-4 text-sm backdrop-blur-none sm:w-auto"
-          />
-          <SuggestChangesButton
-            distroName={distro.name}
-            className="bg-background border-border text-foreground hover:bg-muted hover:text-foreground h-10 w-full px-4 text-sm backdrop-blur-none sm:w-auto"
-          />
+        <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center">
+          {/* Primary actions */}
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+            <a
+              href={distro.download}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(buttonVariants({ size: "lg" }), "h-10 w-full text-sm sm:w-auto")}
+            >
+              <HugeiconsIcon icon={Download04Icon} />
+              Download {distro.name}
+            </a>
+            {distro.distroSea && (
+              <a
+                href={`${DISTROSEA_BASE}/${distro.distroSea}/`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "lg" }),
+                  "border-primary/40 text-primary hover:bg-primary/10 hover:text-primary h-10 w-full text-sm sm:w-auto"
+                )}
+                title={`Run ${distro.name} in your browser via DistroSea`}
+              >
+                <HugeiconsIcon icon={PlayIcon} />
+                Try in browser
+              </a>
+            )}
+          </div>
+          {/* Secondary / utility actions */}
+          <div className="text-muted-foreground flex items-center gap-1 sm:ml-auto">
+            <CompareToggleButton
+              slug={distro.slug}
+              name={distro.name}
+              img={distro.img}
+              withIcon
+              className="hover:bg-muted hover:text-foreground border-transparent bg-transparent text-current backdrop-blur-none"
+            />
+            <SuggestChangesButton
+              distroName={distro.name}
+              className="hover:bg-muted hover:text-foreground text-current"
+            />
+          </div>
         </div>
         <TypographyLead className="mt-6">{distro.description}</TypographyLead>
       </div>
@@ -318,6 +344,17 @@ export default async function DistroPage({ params }: { params: Promise<{ slug: s
                 Download
                 <span className="text-muted-foreground text-xs">↗</span>
               </a>
+              {distro.distroSea && (
+                <a
+                  href={`${DISTROSEA_BASE}/${distro.distroSea}/`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary border-border flex items-center justify-between border-b px-0 py-3 text-sm transition-colors last:border-0"
+                >
+                  Try in browser
+                  <span className="text-muted-foreground text-xs">↗</span>
+                </a>
+              )}
               <a
                 href={distro.website}
                 target="_blank"
