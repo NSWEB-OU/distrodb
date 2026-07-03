@@ -40,7 +40,7 @@ const STEPS = [
     key: "experience" as const,
     emoji: "🐧",
     question: "What's your Linux origin story?",
-    subtitle: "Be honest — we won't judge",
+    subtitle: "Be honest - we won't judge",
     options: [
       {
         value: "never" as ExperienceLevel,
@@ -266,7 +266,7 @@ function saveRun(answers: WizardAnswers, results: WizardResult[]): void {
     const updated = [run, ...runs].slice(0, MAX_RUNS);
     localStorage.setItem(LS_KEY, JSON.stringify(updated));
   } catch {
-    // quota or private browsing — silently skip
+    // quota or private browsing - silently skip
   }
 }
 
@@ -640,7 +640,7 @@ export function WizardClient() {
 
         {results.length === 0 ? (
           <p className="text-muted-foreground py-8 text-center text-sm">
-            No strong matches found — try different answers.
+            No strong matches found - try different answers.
           </p>
         ) : (
           <div className="space-y-3">

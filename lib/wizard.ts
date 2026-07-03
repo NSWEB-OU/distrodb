@@ -147,7 +147,7 @@ function scoreDistro(
     if (matches.length > 0) {
       score += 25 + Math.min(matches.length - 1, 2) * 5;
       if (desktopStyle === "tiling") {
-        reasons.push(`Ships with ${matches.slice(0, 2).join(" & ")} — perfect for tiling`);
+        reasons.push(`Ships with ${matches.slice(0, 2).join(" & ")} - perfect for tiling`);
       } else if (desktopStyle === "classic") {
         reasons.push(`Classic desktop with ${matches[0]}`);
       } else {
@@ -239,7 +239,7 @@ function scoreDistro(
       }
       if (tags.includes("immutable")) {
         score += 10;
-        reasons.push("Immutable system — hard to break");
+        reasons.push("Immutable system - hard to break");
       }
       break;
     case "some":
@@ -248,7 +248,7 @@ function scoreDistro(
     case "extreme":
       if (tags.includes("source-based")) {
         score += 30;
-        reasons.push("Source-based — compile everything your way");
+        reasons.push("Source-based - compile everything your way");
       }
       if (ARCH_BASES.some((b) => distro.base === b) || distro.slug === "arch-linux") {
         score += 20;
@@ -256,7 +256,7 @@ function scoreDistro(
       }
       if (tags.includes("declarative")) {
         score += 20;
-        reasons.push("Declarative config — reproducible tweaks");
+        reasons.push("Declarative config - reproducible tweaks");
       }
       break;
   }

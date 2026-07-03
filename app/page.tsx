@@ -6,6 +6,7 @@ import ActiveFilters from "@/components/active-filters";
 import { MobileFiltersSheet } from "@/components/mobile-filters-sheet";
 import { getAllDistros } from "@/lib/distros";
 import { applyFilters } from "@/lib/filters";
+import { HomeWidgets } from "@/components/home-widgets";
 
 type PageSearchParams = Promise<{ q?: string; tag?: string | string[] }>;
 
@@ -26,7 +27,8 @@ export default async function Home({ searchParams }: { searchParams: PageSearchP
           distribution for your needs.
         </TypographyLead>
       </section>
-      <div className="bg-background/80 z-100 mx-auto mt-10 max-w-2xl rounded-sm px-6 py-6 backdrop-blur-sm">
+      <HomeWidgets />
+      <div className="bg-background/80 z-100 mx-auto mt-10 max-w-2xl rounded-sm py-6 backdrop-blur-sm md:px-6">
         <Search />
       </div>
       <ActiveFilters />

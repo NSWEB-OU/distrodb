@@ -66,8 +66,8 @@ export default function TermsPage() {
           <section className="flex flex-col gap-3">
             <h2 className="text-base font-semibold">3. Accuracy of Information</h2>
             <p className="text-muted-foreground">
-              The information on the Site — including version numbers, package managers, release
-              models, desktop environments, and download links — is provided for general
+              The information on the Site - including version numbers, package managers, release
+              models, desktop environments, and download links - is provided for general
               informational purposes and is maintained on a best-effort basis.
             </p>
             <p className="text-muted-foreground">
@@ -169,13 +169,13 @@ export default function TermsPage() {
           <section className="flex flex-col gap-3">
             <h2 className="text-base font-semibold">7. Intellectual Property</h2>
             <p className="text-muted-foreground">
-              All original content on the Site — including the DistroDB name, logo, design, and
-              curated text — is owned by <span className="text-foreground">{OPERATOR}</span> and is
+              All original content on the Site - including the DistroDB name, logo, design, and
+              curated text - is owned by <span className="text-foreground">{OPERATOR}</span> and is
               protected by applicable intellectual property laws.
             </p>
             <p className="text-muted-foreground">
-              All Linux distribution names, logos, and trademarks displayed on this Site — including
-              but not limited to Ubuntu, Fedora, Debian, Arch Linux, openSUSE, and others — are the
+              All Linux distribution names, logos, and trademarks displayed on this Site - including
+              but not limited to Ubuntu, Fedora, Debian, Arch Linux, openSUSE, and others - are the
               property of their respective owners (e.g., Canonical Ltd., Red Hat Inc., the Debian
               Project). Their appearance on the Site is for identification and informational
               purposes only.

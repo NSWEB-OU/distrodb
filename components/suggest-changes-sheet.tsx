@@ -146,7 +146,7 @@ export function SuggestChangesSheet({ distroName, open, onOpenChange }: SuggestC
               <Label htmlFor="sc-contact">Contact (optional)</Label>
               <Input
                 id="sc-contact"
-                placeholder="Email or other — only used to follow up"
+                placeholder="Email or other - only used to follow up"
                 value={contact}
                 onChange={(e) => setContact(e.target.value)}
                 maxLength={200}

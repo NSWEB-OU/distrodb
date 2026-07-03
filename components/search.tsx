@@ -64,7 +64,7 @@ const Search = () => {
               ref={inputRef}
               className="h-2 p-6"
               id="input-button-group"
-              placeholder="Type name of Linux distribution..."
+              placeholder="Type name or a tag"
               value={value}
               onChange={handleChange}
             />
