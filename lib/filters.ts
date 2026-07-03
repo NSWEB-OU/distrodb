@@ -211,7 +211,7 @@ export function applyFilters(
     );
   }
 
-  // "all-distros" is a reset — ignore all other tags when it is present
+  // "all-distros" is a reset - ignore all other tags when it is present
   const effectiveTags = activeTags.filter((t) => t !== "all-distros");
 
   if (effectiveTags.length > 0) {

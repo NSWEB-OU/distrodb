@@ -1,0 +1,31 @@
+---
+version: "1.0.1"
+date: "2026-06-26"
+title: "Gallery overhaul"
+tags: ["database", "ui"]
+---
+
+## What's new
+
+This update delivers a major overhaul of the screenshot gallery on distro detail pages and manual review on three most viewed distros.
+
+## Gallery
+
+Desktop controls:
+
+- Toolbar buttons: zoom out, live percentage indicator, zoom in, reset/fit, close
+- Mouse wheel zooms toward the cursor; double-click toggles 1× ⇄ 2.5× at the cursor
+- Click-drag to pan when zoomed; arrow keys navigate; `+`/`-`/`0` for zoom/reset; click background or <kbd>Esc</kbd> to close
+
+Mobile gestures:
+
+- Pinch to zoom toward the pinch midpoint, with simultaneous two-finger pan
+- One-finger pan when zoomed, edge-clamped to image bounds
+- Horizontal swipe (at 1×) navigates prev/next past a 60px threshold, follows the finger, snaps back otherwise
+- Swipe-down-to-dismiss with progressive backdrop fade + image scale-down; closes past threshold, snaps back otherwise
+- Axis is locked on first movement so vertical/horizontal/pinch don't fight each other; tap on background closes
+
+## Distros
+
+- We've carefully reviewed and updated the screenshots for the three most viewed distros: Ubuntu, Linux Mint, and Debian.
+- Updated descriptions and tags for these distros to reflect the latest changes in their respective releases.

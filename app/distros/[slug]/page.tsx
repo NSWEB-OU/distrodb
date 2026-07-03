@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Download04Icon, PlayIcon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import { getDistroBySlug, getAllSlugs } from "@/lib/distros";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,8 +14,12 @@ import { buttonVariants } from "@/components/ui/button-variants";
 import { BackButton } from "@/components/back-button";
 import { DistroGallery } from "@/components/distro-gallery";
 import { SuggestChangesButton } from "@/components/suggest-changes-button";
+import { TagBadge } from "@/components/tag-badge";
+import { GlossaryBadge } from "@/components/glossary-badge";
+import { cn } from "@/lib/utils";
 
 const BASE_URL = "https://distrodb.xyz";
+const DISTROSEA_BASE = "https://distrosea.com/select";
 
 export async function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
@@ -28,7 +34,7 @@ export async function generateMetadata({
   const distro = getDistroBySlug(slug);
   if (!distro) return {};
 
-  const title = `${distro.name} Linux — Review, Specs & Download`;
+  const title = `${distro.name} Linux - Review, Specs & Download`;
   const description = `${distro.description} Learn about ${distro.name}'s package manager (${distro.packageManager}), release model (${distro.releaseModel}), desktop environments, and more.`;
   const url = `${BASE_URL}/distros/${distro.slug}`;
   const image = distro.img ? `${BASE_URL}${distro.img}` : `${BASE_URL}/og-default.png`;
@@ -79,9 +85,9 @@ export async function generateMetadata({
 }
 
 const DIFFICULTY_LABEL: Record<DifficultyLevel, string> = {
-  beginner: "Beginner",
-  intermediate: "Intermediate",
-  advanced: "Advanced",
+  beginner: "beginner",
+  intermediate: "intermediate",
+  advanced: "advanced",
 };
 
 const DIFFICULTY_VARIANT: Record<DifficultyLevel, "default" | "secondary" | "outline"> = {
@@ -91,16 +97,30 @@ const DIFFICULTY_VARIANT: Record<DifficultyLevel, "default" | "secondary" | "out
 };
 
 const RELEASE_LABEL: Record<ReleaseModel, string> = {
-  rolling: "Rolling Release",
-  fixed: "Fixed Release",
-  "semi-rolling": "Semi-Rolling",
+  rolling: "rolling release",
+  fixed: "fixed release",
+  "semi-rolling": "semi-rolling",
 };
 
-function MetaRow({ label, value }: { label: string; value: string }) {
+function MetaRow({ label, value }: { label: string; value: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-0.5">
       <span className="text-muted-foreground text-xs tracking-wider uppercase">{label}</span>
-      <span className="text-sm font-medium">{value}</span>
+      <div className="text-sm font-medium">{value}</div>
+    </div>
+  );
+}
+
+function TechTokenBadges({ value }: { value: string }) {
+  const tokens = value
+    .split(/[,/]+/)
+    .map((s) => s.trim())
+    .filter(Boolean);
+  return (
+    <div className="flex flex-wrap gap-1.5">
+      {tokens.map((token, i) => (
+        <GlossaryBadge key={`${token}-${i}`} label={token} />
+      ))}
     </div>
   );
 }
@@ -157,44 +177,67 @@ export default async function DistroPage({ params }: { params: Promise<{ slug: s
       <DistroGallery img={distro.img} screenshots={distro.screenshots} name={distro.name} />
 
       {/* Title + badges */}
-      <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8">
-        <div className="flex flex-col gap-2 lg:col-span-2">
-          <h1 className="text-3xl font-extrabold tracking-tight">{distro.name}</h1>
-          <TypographyLead>{distro.description}</TypographyLead>
-          {/* CTAs */}
-          <div className="mt-2 flex flex-wrap items-center gap-2">
+      <div className="mt-6 flex flex-col gap-2">
+        <h1 className="text-3xl font-extrabold tracking-tight">{distro.name}</h1>
+        <div className="flex flex-wrap items-center gap-2">
+          <Badge variant={DIFFICULTY_VARIANT[distro.difficulty]}>
+            {DIFFICULTY_LABEL[distro.difficulty]}
+          </Badge>
+          <GlossaryBadge
+            label={RELEASE_LABEL[distro.releaseModel]}
+            glossaryKey={distro.releaseModel}
+          />
+          {distro.tags
+            .filter((tag) => !tag.includes(distro.difficulty))
+            .map((tag) => (
+              <TagBadge key={tag} tag={tag} />
+            ))}
+        </div>
+        {/* CTAs */}
+        <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center">
+          {/* Primary actions */}
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
             <a
               href={distro.download}
               target="_blank"
               rel="noopener noreferrer"
-              className={buttonVariants({ size: "lg" })}
+              className={cn(buttonVariants({ size: "lg" }), "h-10 w-full text-sm sm:w-auto")}
             >
+              <HugeiconsIcon icon={Download04Icon} />
               Download {distro.name}
             </a>
+            {distro.distroSea && (
+              <a
+                href={`${DISTROSEA_BASE}/${distro.distroSea}/`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "lg" }),
+                  "border-primary/40 text-primary hover:bg-primary/10 hover:text-primary h-10 w-full text-sm sm:w-auto"
+                )}
+                title={`Run ${distro.name} in your browser via DistroSea`}
+              >
+                <HugeiconsIcon icon={PlayIcon} />
+                Try in browser
+              </a>
+            )}
+          </div>
+          {/* Secondary / utility actions */}
+          <div className="text-muted-foreground flex items-center gap-1 sm:ml-auto">
             <CompareToggleButton
               slug={distro.slug}
               name={distro.name}
               img={distro.img}
-              className="bg-background border-border text-foreground hover:bg-muted hover:text-foreground h-10 px-4 text-sm backdrop-blur-none"
+              withIcon
+              className="hover:bg-muted hover:text-foreground border-transparent bg-transparent text-current backdrop-blur-none"
             />
             <SuggestChangesButton
               distroName={distro.name}
-              className="bg-background border-border text-foreground hover:bg-muted hover:text-foreground h-10 px-4 text-sm backdrop-blur-none"
+              className="hover:bg-muted hover:text-foreground text-current"
             />
           </div>
         </div>
-
-        <div className="flex flex-wrap content-start gap-2">
-          <Badge variant={DIFFICULTY_VARIANT[distro.difficulty]}>
-            {DIFFICULTY_LABEL[distro.difficulty]}
-          </Badge>
-          <Badge variant="outline">{RELEASE_LABEL[distro.releaseModel]}</Badge>
-          {distro.tags.map((tag) => (
-            <Badge key={tag} variant="secondary">
-              {tag}
-            </Badge>
-          ))}
-        </div>
+        <TypographyLead className="mt-6">{distro.description}</TypographyLead>
       </div>
 
       <Separator className="my-6" />
@@ -211,18 +254,26 @@ export default async function DistroPage({ params }: { params: Promise<{ slug: s
             <CardContent>
               <div className="grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-3">
                 <MetaRow label="Base" value={distro.base ?? "Independent"} />
-                <MetaRow label="Package Manager" value={distro.packageManager} />
-                <MetaRow label="Init System" value={distro.initSystem} />
+                <MetaRow
+                  label="Package Manager"
+                  value={<TechTokenBadges value={distro.packageManager} />}
+                />
+                <MetaRow
+                  label="Init System"
+                  value={<TechTokenBadges value={distro.initSystem} />}
+                />
                 <MetaRow label="Latest Version" value={distro.latestVersion} />
                 <MetaRow label="Release Model" value={RELEASE_LABEL[distro.releaseModel]} />
-                <MetaRow
-                  label="Release Date"
-                  value={new Date(distro.releaseDate).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                />
+                {distro.releaseDate ? (
+                  <MetaRow
+                    label="Release Date"
+                    value={new Date(distro.releaseDate).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  />
+                ) : null}
               </div>
 
               <Separator className="my-5" />
@@ -246,9 +297,7 @@ export default async function DistroPage({ params }: { params: Promise<{ slug: s
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {distro.desktopEnvironments.map((de) => (
-                    <Badge key={de} variant="secondary">
-                      {de}
-                    </Badge>
+                    <GlossaryBadge key={de} label={de} />
                   ))}
                 </div>
               </div>
@@ -270,7 +319,7 @@ export default async function DistroPage({ params }: { params: Promise<{ slug: s
               <ul className="flex flex-col gap-2">
                 {distro.highlights.map((point, i) => (
                   <li key={i} className="flex gap-3 text-sm">
-                    <span className="text-primary mt-0.5 shrink-0">—</span>
+                    <span className="text-primary mt-0.5 shrink-0">-</span>
                     <span className="text-muted-foreground">{point}</span>
                   </li>
                 ))}
@@ -279,7 +328,7 @@ export default async function DistroPage({ params }: { params: Promise<{ slug: s
           )}
         </div>
 
-        {/* Right sidebar — links */}
+        {/* Right sidebar - links */}
         <div className="flex flex-col gap-4 self-start lg:sticky lg:top-5">
           <Card>
             <CardHeader>
@@ -295,6 +344,17 @@ export default async function DistroPage({ params }: { params: Promise<{ slug: s
                 Download
                 <span className="text-muted-foreground text-xs">↗</span>
               </a>
+              {distro.distroSea && (
+                <a
+                  href={`${DISTROSEA_BASE}/${distro.distroSea}/`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary border-border flex items-center justify-between border-b px-0 py-3 text-sm transition-colors last:border-0"
+                >
+                  Try in browser
+                  <span className="text-muted-foreground text-xs">↗</span>
+                </a>
+              )}
               <a
                 href={distro.website}
                 target="_blank"

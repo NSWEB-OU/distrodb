@@ -66,6 +66,16 @@ const project: { title: string; href: string; description: string }[] = [
     description: "Read more about the project, its goals, and how to contribute.",
   },
   {
+    title: "Roadmap",
+    href: "/roadmap",
+    description: "See what's completed and what's coming next. Updated every week.",
+  },
+  {
+    title: "Changelog",
+    href: "/changelog",
+    description: "A log of every update, new feature, and improvement shipped to DistroDB.",
+  },
+  {
     title: "Support us",
     href: "/support",
     description:
@@ -122,6 +132,18 @@ export function HeaderNav() {
             />
           </NavigationMenuItem>
           <NavigationMenuItem>
+            <NavigationMenuLink
+              className={navigationMenuTriggerStyle()}
+              render={<Link href="/glossary">Glossary</Link>}
+            />
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuLink
+              className={navigationMenuTriggerStyle()}
+              render={<Link href="/resources">Resources</Link>}
+            />
+          </NavigationMenuItem>
+          <NavigationMenuItem>
             <NavigationMenuTrigger>Comparison</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-100 gap-2 md:w-125 md:grid-cols-2 lg:w-150">
@@ -164,6 +186,22 @@ export function HeaderNav() {
               render={
                 <Link href={wizardHref} className="hover:bg-muted rounded-sm px-2 py-2 text-sm">
                   Distro wizard
+                </Link>
+              }
+            />
+            <SheetClose
+              nativeButton={false}
+              render={
+                <Link href="/glossary" className="hover:bg-muted rounded-sm px-2 py-2 text-sm">
+                  Glossary
+                </Link>
+              }
+            />
+            <SheetClose
+              nativeButton={false}
+              render={
+                <Link href="/resources" className="hover:bg-muted rounded-sm px-2 py-2 text-sm">
+                  Resources
                 </Link>
               }
             />

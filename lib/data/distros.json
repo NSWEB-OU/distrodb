@@ -3,11 +3,14 @@
     "id": "ubuntu-2604",
     "slug": "ubuntu",
     "name": "Ubuntu",
-    "description": "Ubuntu is a complete desktop Linux operating system, freely available with both community and professional support. The Ubuntu community is built on the ideas enshrined in the Ubuntu Manifesto: that software should be available free of charge, that software tools should be usable by people in their local language and despite any disabilities, and that people should have the freedom to customise and alter their software in whatever way they see fit.",
-    "longDescription": "Ubuntu is a complete desktop Linux operating system, freely available with both community and professional support. The Ubuntu community is built on the ideas enshrined in the Ubuntu Manifesto: that software should be available free of charge, that software tools should be usable by people in their local language and despite any disabilities, and that people should have the freedom to customise and alter their software in whatever way they see fit. \"Ubuntu\" is an ancient African word, meaning \"humanity to others\". The Ubuntu distribution brings the spirit of Ubuntu to the software world.",
-    "img": "/repos/ubuntu/logo.png",
+    "description": "One of the most popular Linux distros, based on Debian and featuring a GNOME desktop. Ubuntu is designed to be easy to use, with a focus on usability and regular releases.",
+    "longDescription": "The distro features a six-month release cycle, with rock-solid long-term support (LTS) versions which are shipped every two years. Canonical provides security updates and support until release reaches its end of support cycle, but this can be extended through the Ubuntu Pro and Expanded Security Maintenance programs. As a traditional mutable distro, it gives you full root control to modify config files and manage packages freely. Ubuntu has different versions, which are Desktop, Server, Core, Cloud and Flavors (basically different setups of default applications and settings). It's the best options for beginners, as it is easy to use and has a large community of users who can provide support and assistance.",
+    "img": "/repos/ubuntu/logo-black.png",
     "screenshots": [
-      "/repos/ubuntu/screenshot-1.png"
+      "/repos/ubuntu/screenshot-1.png",
+      "/repos/ubuntu/screenshot-2.png",
+      "/repos/ubuntu/screenshot-3.png",
+      "/repos/ubuntu/screenshot-4.png"
     ],
     "tags": [
       "beginner-friendly",
@@ -18,10 +21,9 @@
     ],
     "base": "Debian",
     "desktopEnvironments": [
-      "GNOME",
-      "Unity"
+      "GNOME"
     ],
-    "packageManager": "apt / deb, snap",
+    "packageManager": "apt / snap",
     "initSystem": "systemd",
     "architecture": [
       "ARM64",
@@ -37,8 +39,12 @@
     "website": "https://www.ubuntu.com/",
     "docs": "https://docs.ubuntu.com/",
     "download": "https://www.ubuntu.com/download/",
+    "distroSea": "ubuntu",
     "highlights": [
-      "World standard for server and cloud environments. Native Snap container integration."
+      "Ubuntu is an ancient African word, meaning \"humanity to others\".",
+      "World standard for server and cloud environments. Native Snap container integration.",
+      "Canonical's Ubuntu Advantage support program provides enterprise-grade support and services for businesses and organizations using Ubuntu.",
+      "Ubuntu is the most popular distribution for cloud computing, with support for major cloud platforms like AWS, Azure, and Google Cloud and more."
     ],
     "difficulty": "beginner"
   },
@@ -46,11 +52,13 @@
     "id": "linux-mint-223",
     "slug": "linux-mint",
     "name": "Linux Mint",
-    "description": "Linux Mint is an Ubuntu-based distribution whose goal is to provide a classic desktop experience with many convenient, custom tools and optional out-of-the-box multimedia support. It also adds a custom desktop and menus, several unique configuration tools, and a web-based package installation interface.",
-    "longDescription": "Linux Mint is an Ubuntu-based distribution whose goal is to provide a classic desktop experience with many convenient, custom tools and optional out-of-the-box multimedia support. It also adds a custom desktop and menus, several unique configuration tools, and a web-based package installation interface. Linux Mint is compatible with Ubuntu software repositories. Besides its Ubuntu-based flavour, the project also produces a separate \"Debian\" edition (called LMDE), based on the latest stable Debian version.",
-    "img": "/repos/linux-mint/logo.webp",
+    "description": "Linux Mint is a user-friendly and easy-to-use distro, developed by the community and based on Ubuntu. It's a nice entry point for beginners.",
+    "longDescription": "Linux Mint is widely known for its familiar Windows-like interface and experience, which makes it a good candidate for those transitioning from Microsoft's ecosystem. Cinnamon desktop provides a familiar environment, snappy performance, and a range of customization options. It's widely considered the absolute gold standard for a traditional, reliable desktop experience. While the developers are progressively modernizing the core with native Wayland support, the current desktop remains highly optimized, idling at modest hardware requirements. One of the main differences between Ubuntu and Mint is a Snap store which is disabled by default. Instead, Mint relies on a deeply integrated combination of traditional native .deb packages and a fully sandbox-supported Flatpak ecosystem. Besides its Ubuntu-based version, the project also produces a separate \"Debian\" edition, based on the latest stable Debian version. Last but not least, has three different editions: the main one with the Cinnamon desktop, a MATE edition for older hardware and an Xfce edition for even more resource-constrained machines.",
+    "img": "/repos/linux-mint/logo.png",
     "screenshots": [
-      "/repos/linux-mint/screenshot-1.png"
+      "/repos/linux-mint/screenshot-1.png",
+      "/repos/linux-mint/screenshot-2.png",
+      "/repos/linux-mint/screenshot-3.png"
     ],
     "tags": [
       "beginner-friendly",
@@ -64,10 +72,9 @@
       "MATE",
       "Xfce"
     ],
-    "packageManager": "deb, flatpak",
+    "packageManager": "apt, flatpak",
     "initSystem": "systemd",
     "architecture": [
-      "i686",
       "x86_64"
     ],
     "releaseModel": "fixed",
@@ -76,20 +83,25 @@
     "website": "https://linuxmint.com/",
     "docs": "https://community.linuxmint.com/",
     "download": "https://www.linuxmint.com/download.php",
+    "distroSea": "linuxmint",
     "highlights": [
-      "Traditional interface, X-Apps utilities, complete absence of forced Snap usage."
+      "Complete absence of forced Snap usage.",
+      "Features the native Cinnamon desktop environment, providing a familiar workflow for Windows migrants with nearly zero learning curve.",
+      "Includes custom system utilities (like MintBackup, Timeshift integration, and Software Manager) designed for hassle-free maintenance.",
+      "Offers a secondary official version called LMDE (Linux Mint Debian Edition) built directly on Debian stable"
     ],
     "difficulty": "beginner"
   },
   {
-    "id": "debian-13",
+    "id": "debian-13.5",
     "slug": "debian",
     "name": "Debian",
-    "description": "The Debian Project is an association of individuals who have made common cause to create a free operating system. This operating system is called Debian.",
-    "longDescription": "The Debian Project is an association of individuals who have made common cause to create a free operating system. This operating system is called Debian. Debian systems currently use the Linux kernel. Linux is a completely free piece of software started by Linus Torvalds and supported by thousands of programmers worldwide. Of course, the thing that people want is application software: programs to help them get what they want to do done, from editing documents to running a business to playing games to writing more software. Debian comes with over 50,000 packages (precompiled software that is bundled up in a nice format for easy installation on your machine) - all of it free. It's a bit like a tower. At the base is the kernel. On top of that are all the basic tools. Next is all the software that you run on the computer. At the top of the tower is Debian -- carefully organizing and fitting everything so it all works together.",
+    "description": "Debian is a legendary distro for its stability and strict adherence to free software principles. Serving as the upstream foundation for Ubuntu, Mint, and countless others it remains the gold standard for production servers and bulletproof desktop setups",
+    "longDescription": "Debian is entirely independent and developed by a decentralized community of volunteers. Its Stable branch undergoes a notoriously rigorous, multi-year freezing and testing process before release. Instead of relying on other distributions, Debian is a base for a massive portion of the Linux ecosystem. Commercial giants like Ubuntu and community projects like Linux Mint inherit their package bases directly from Debian. Additionally, the distro offers arguably the widest architecture support in the industry. This is a traditional mutable system that natively utilizes the apt package manager. Official repositories host an enormous amount of software, but the clean installation process focuses strictly on vanilla setups of major desktop environments, allowing you to build your ideal workspace from scratch without corporate bloat.",
     "img": "/repos/debian/logo.png",
     "screenshots": [
-      "/repos/debian/screenshot-1.png"
+      "/repos/debian/screenshot-1.png",
+      "/repos/debian/screenshot-2.png"
     ],
     "tags": [
       "desktop",
@@ -99,40 +111,16 @@
     ],
     "base": null,
     "desktopEnvironments": [
-      "AfterStep",
-      "Awesome",
-      "Blackbox",
-      "bspwm",
-      "Budgie",
-      "Cinnamon",
-      "dwm",
-      "Enlightenment",
-      "Fluxbox",
-      "flwm",
-      "FVWM",
       "GNOME",
-      "i3",
-      "IceWM",
-      "JWM",
       "KDE Plasma",
-      "labwc",
-      "Lomiri",
+      "Xfce",
+      "Cinnamon",
+      "MATE",
       "LXDE",
       "LXQt",
-      "MATE",
-      "Metacity",
-      "Openbox",
-      "pekwm",
-      "Qtile",
-      "Ratpoison",
-      "Sway",
-      "TWM",
-      "UKUI",
-      "Wayfire",
-      "WMaker",
-      "Xfce"
+      "Budgie"
     ],
-    "packageManager": "apt / deb",
+    "packageManager": "apt",
     "initSystem": "systemd",
     "architecture": [
       "ARM64",
@@ -143,13 +131,17 @@
       "x86_64"
     ],
     "releaseModel": "fixed",
-    "latestVersion": "13",
-    "releaseDate": "2025-08-09",
+    "latestVersion": "13.5 \"Trixie\"",
+    "releaseDate": "2026-05-16",
     "website": "https://www.debian.org/",
     "docs": "https://www.debian.org/doc/",
     "download": "https://www.debian.org/CD/",
+    "distroSea": "debian",
     "highlights": [
-      "One of the oldest OSes, serving as the stability foundation for hundreds of distributions."
+      "One of the oldest distros, serving as the stability foundation for hundreds of distributions.",
+      "The Stable branch undergoes a multi-year freezing and testing phase, making it nearly indestructible and the world standard for production servers",
+      "Runs natively on an unmatched range of hardware, from standard x86_64 and ARM64 to RISC-V, PowerPC, and IBM zSystems (s390x).",
+      "Zero-bloat vanilla layout"
     ],
     "difficulty": "intermediate"
   },
@@ -202,6 +194,7 @@
     "website": "https://fedoraproject.org/",
     "docs": "https://docs.fedoraproject.org/",
     "download": "https://fedoraproject.org/",
+    "distroSea": "fedora",
     "highlights": [
       "Red Hat's technology proving ground. Latest software stack, out-of-the-box Btrfs support."
     ],
@@ -242,6 +235,7 @@
     "website": "http://www.archlinux.org/",
     "docs": "http://wiki.archlinux.org/",
     "download": "http://www.archlinux.org/download/",
+    "distroSea": "archlinux",
     "highlights": [
       "Implementation of the KISS principle. Access to the AUR (Arch User Repository). Full control over system assembly."
     ],
@@ -286,6 +280,7 @@
     "website": "https://manjaro.org/",
     "docs": "https://wiki.manjaro.org/",
     "download": "https://manjaro.org/products/download/x86",
+    "distroSea": "manjaro",
     "highlights": [
       "Proprietary package testing repositories, MHWD hardware auto-detection utility."
     ],
@@ -298,7 +293,6 @@
     "description": "Pop!_OS is an Ubuntu-based Linux distribution featuring its own GNOME-based desktop environment called COSMIC. It is designed with productivity in mind; it has fluid windows, search navigation via the Super key, workspaces that can hide clutter, and efficient auto-tiling of windows.",
     "longDescription": "Pop!_OS is an Ubuntu-based Linux distribution featuring its own GNOME-based desktop environment called COSMIC. It is designed with productivity in mind; it has fluid windows, search navigation via the Super key, workspaces that can hide clutter, and efficient auto-tiling of windows. The distribution is developed by US-based Linux computer retailer System76.",
     "img": "/repos/pop-os/logo.png",
-    "imgFit": "contain",
     "screenshots": [],
     "tags": [
       "desktop",
@@ -323,6 +317,7 @@
     "website": "https://system76.com/pop",
     "docs": "https://support.system76.com/#pop",
     "download": "https://system76.com/pop",
+    "distroSea": "popos",
     "highlights": [
       "Developed by System76. Automatic window tiling, built-in hybrid NVIDIA graphics support."
     ],
@@ -335,7 +330,9 @@
     "description": "MX Linux, a desktop-oriented Linux distribution based on Debian's \"Stable\" branch, is a cooperative venture between the antiX and former MEPIS Linux communities. Using Xfce as the default desktop (with separate KDE Plasma and Fluxbox editions also available), it is a mid-weight operating system designed to combine an elegant and efficient desktop with simple configuration, high stability, solid performance and medium-sized footprint.",
     "longDescription": "MX Linux, a desktop-oriented Linux distribution based on Debian's \"Stable\" branch, is a cooperative venture between the antiX and former MEPIS Linux communities. Using Xfce as the default desktop (with separate KDE Plasma and Fluxbox editions also available), it is a mid-weight operating system designed to combine an elegant and efficient desktop with simple configuration, high stability, solid performance and medium-sized footprint.",
     "img": "/repos/mx-linux/logo.png",
-    "screenshots": [],
+    "screenshots": [
+      "/repos/mx-linux/screenshot-1.png"
+    ],
     "tags": [
       "desktop",
       "from-ram",
@@ -362,6 +359,7 @@
     "website": "https://mxlinux.org/",
     "docs": "https://mxlinux.org/manuals",
     "download": "https://mxlinux.org/download-links#Mirrors",
+    "distroSea": "mxlinux",
     "highlights": [
       "Proprietary MX Tools configuration utilities, lightweight design, exceptional stability."
     ],
@@ -374,7 +372,9 @@
     "description": "EndeavourOS is a rolling-release Linux distribution based on Arch Linux. The project aims to be a spiritual successor to Antergos, providing an easy setup and a pre-configured desktop environment on an Arch base.",
     "longDescription": "EndeavourOS is a rolling-release Linux distribution based on Arch Linux. The project aims to be a spiritual successor to Antergos, providing an easy setup and a pre-configured desktop environment on an Arch base. EndeavourOS offers both off-line and on-line install options. The off-line installer, Calamares, uses the KDE Plasma desktop by default. The on-line installer can install optional software components, including most popular desktop environments.",
     "img": "/repos/endeavouros/logo.png",
-    "screenshots": [],
+    "screenshots": [
+      "/repos/endeavouros/screenshot-1.png"
+    ],
     "tags": [
       "desktop",
       "live",
@@ -404,6 +404,7 @@
     "website": "https://endeavouros.com/",
     "docs": "https://endeavouros.com/wiki/",
     "download": "https://endeavouros.com/",
+    "distroSea": "endeavouros",
     "highlights": [
       "User-friendly terminal-oriented Arch with Calamares graphical installer."
     ],
@@ -411,11 +412,66 @@
   },
   {
     "id": "opensuse-160",
-    "slug": "opensuse",
-    "name": "openSUSE",
-    "description": "The openSUSE project is a community program sponsored by SUSE Linux and other companies. Promoting the use of Linux everywhere, this program provides free, easy access to openSUSE, a complete Linux distribution.",
+    "slug": "opensuse-tumbleweed",
+    "name": "openSUSE Tumbleweed",
+    "description": "openSUSE Tumbleweed is a flagship Linux distribution from the openSUSE Project. Unlike traditional operating systems that release major versions every few years, Tumbleweed follows a rolling release model.",
     "longDescription": "The openSUSE project is a community program sponsored by SUSE Linux and other companies. Promoting the use of Linux everywhere, this program provides free, easy access to openSUSE, a complete Linux distribution. The openSUSE project has three main goals: make openSUSE the easiest Linux for anyone to obtain and the most widely used Linux distribution; leverage open source collaboration to make openSUSE the world's most usable Linux distribution and desktop environment for new and experienced Linux users; dramatically simplify and open the development and packaging processes to make openSUSE the platform of choice for Linux developers and software vendors.",
-    "img": null,
+    "img": "/repos/opensuse-tumbleweed/logo.png",
+    "screenshots": [],
+    "tags": [
+      "desktop",
+      "live",
+      "mutable",
+      "raspberry-pi",
+      "server",
+      "developer"
+    ],
+    "base": null,
+    "desktopEnvironments": [
+      "Cinnamon",
+      "Enlightenment",
+      "GNOME",
+      "IceWM",
+      "KDE Plasma",
+      "labwc",
+      "LXDE",
+      "LXQt",
+      "MATE",
+      "Wayfire",
+      "Xfce"
+    ],
+    "packageManager": "rpm (zypper)",
+    "initSystem": "systemd",
+    "architecture": [
+      "x86_64",
+      "aarch64",
+      "armv7hl",
+      "ppc64le",
+      "s390x",
+      "riscv64",
+      "IA-32"
+    ],
+    "releaseModel": "rolling",
+    "latestVersion": "-",
+    "releaseDate": null,
+    "website": "https://www.opensuse.org/",
+    "docs": "https://en.opensuse.org/Portal:Documentation",
+    "download": "https://get.opensuse.org/tumbleweed/",
+    "distroSea": "opensuse",
+    "highlights": [
+      "Legendary YaST system configurator, Btrfs filesystem snapshots via Snapper.",
+      "Bleeding Edge, But Stable: It provides the latest Linux kernels, drivers, and desktop environments (like KDE Plasma and GNOME) mere days after they are officially released.",
+      "Automated Testing (openQA): The biggest fear with rolling releases is that an update will break the system. openSUSE combats this with openQA, a massive, fully automated testing framework. "
+    ],
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "opensuse-161",
+    "slug": "opensuse-leap",
+    "name": "openSUSE Leap",
+    "description": "openSUSE Leap is the traditional, regular-release counterpart to Tumbleweed. It shares a common base system with SUSE Linux Enterprise (SLE), making it a great choice for users who want stability and long-term support.",
+    "longDescription": "While Tumbleweed is a constantly moving target with the newest software, Leap is built for predictability, rock-solid stability, and long-term consistency. It follows a standard release cycle where new major versions come out every few years, accompanied by annual \"minor\" point updates (similar to Ubuntu LTS or Rocky Linux). What makes Leap unique in the Linux world is how it is built. It isn't just a community project; it shares its \"DNA\" directly with SUSE Linux Enterprise (SLE), the heavy-duty, commercial operating system used by global banks, data centers, and supercomputers. The openSUSE team takes the exact same core source code and binaries from the enterprise version, adds community packages, desktop environments, and multimedia codecs on top, and packages it as Leap. Because of this, Leap is essentially a free, community-supported enterprise operating system.",
+    "img": "/repos/opensuse-leap/logo.png",
     "screenshots": [],
     "tags": [
       "desktop",
@@ -441,22 +497,22 @@
     "packageManager": "rpm (zypper)",
     "initSystem": "systemd",
     "architecture": [
-      "ARM64",
-      "ARMhf",
-      "i686",
-      "ppc64",
-      "ppc64el",
-      "s390x",
-      "x86_64"
+      "x86_64",
+      "aarch64",
+      "ppc64le",
+      "s390x"
     ],
-    "releaseModel": "rolling",
+    "releaseModel": "fixed",
     "latestVersion": "16.0",
     "releaseDate": "2025-10-01",
     "website": "https://www.opensuse.org/",
     "docs": "https://en.opensuse.org/Portal:Documentation",
-    "download": "https://get.opensuse.org/",
+    "download": "https://get.opensuse.org/leap/16.0/",
+    "distroSea": "opensuse",
     "highlights": [
-      "Legendary YaST system configurator, Btrfs filesystem snapshots via Snapper."
+      "Massive Support Windows: Each minor point release gets 24 months of support. The overall major series is built to last for years, giving you a set-and-forget experience.",
+      "Stable and Predictable: Leap provides a reliable platform with long-term support, making it ideal for production environments.",
+      "Easy Enterprise Migration: If you are a business running Leap on your servers and decide you want official, 24/7 paid tech support, you can migrate the system directly to SUSE Linux Enterprise with a single command-no reinstallation required."
     ],
     "difficulty": "intermediate"
   },
@@ -466,8 +522,7 @@
     "name": "Kali Linux",
     "description": "Kali Linux (formerly known as BackTrack) is a Debian-based distribution with a collection of security and forensics tools. It features timely security updates, support for the ARM architecture, a choice of four popular desktop environments, and seamless upgrades to newer versions.",
     "longDescription": "Kali Linux (formerly known as BackTrack) is a Debian-based distribution with a collection of security and forensics tools. It features timely security updates, support for the ARM architecture, a choice of four popular desktop environments, and seamless upgrades to newer versions.",
-    "img": "/repos/kali-linux/logo.svg",
-    "imgFit": "contain",
+    "img": "/repos/kali-linux/logo.png",
     "screenshots": [],
     "tags": [
       "data-rescue",
@@ -507,7 +562,6 @@
     "description": "NixOS is an independently developed GNU/Linux distribution that aims to improve the state of the art in system configuration management. In NixOS, the entire operating system, including the kernel, applications, system packages and configuration files, are built by the Nix package manager.",
     "longDescription": "NixOS is an independently developed GNU/Linux distribution that aims to improve the state of the art in system configuration management. In NixOS, the entire operating system, including the kernel, applications, system packages and configuration files, are built by the Nix package manager. Nix stores all packages in isolation from each other; as a result there are no /bin, /sbin, /lib or /usr directories and all packages are kept in /nix/store instead. Other innovative features of NixOS include reliable upgrades, rollbacks, reproducible system configurations, source-based model with binaries, and multi-user package management. Although NixOS started as a research project, it is now a functional and usable operating system that includes hardware detection, KDE as the default desktop, and systemd for managing system services.",
     "img": "/repos/nixos/logo.png",
-    "imgFit": "contain",
     "screenshots": [],
     "tags": [
       "declarative",
@@ -545,6 +599,7 @@
     "website": "https://nixos.org/",
     "docs": "https://wiki.nixos.org/wiki/NixOS_Wiki",
     "download": "https://nixos.org/download/",
+    "distroSea": "nixos",
     "highlights": [
       "Fully declarative system state management via the Nix configuration language."
     ],
@@ -619,6 +674,7 @@
     "website": "https://rockylinux.org/",
     "docs": "https://wiki.rockylinux.org/",
     "download": "https://rockylinux.org/download",
+    "distroSea": "rockylinux",
     "highlights": [
       "Free 100% compatible RHEL clone, created by CentOS founder Gregory Kurtzer."
     ],
@@ -659,6 +715,7 @@
     "website": "https://almalinux.org/",
     "docs": "https://wiki.almalinux.org/",
     "download": "https://almalinux.org/get-almalinux",
+    "distroSea": "alma",
     "highlights": [
       "Independent non-profit distribution created by the community as a free CentOS replacement."
     ],
@@ -696,6 +753,7 @@
     "website": "https://www.centos.org/",
     "docs": "https://docs.centos.org/en-US/docs/",
     "download": "https://www.centos.org/download/",
+    "distroSea": "centosstream",
     "highlights": [
       "Transitioned to RHEL Stream, serving as a testing ground for commercial releases."
     ],
@@ -722,7 +780,7 @@
       "GNOME",
       "KDE Plasma"
     ],
-    "packageManager": "flatpak / flatpak, rpm",
+    "packageManager": "flatpak, rpm",
     "initSystem": "systemd",
     "architecture": [
       "x86_64"
@@ -733,6 +791,7 @@
     "website": "https://bazzite.gg/",
     "docs": "https://docs.bazzite.gg/",
     "download": "https://bazzite.gg/#image-picker",
+    "distroSea": "bazzite",
     "highlights": [
       "Gaming distribution. Perfectly optimized for handheld PCs (Steam Deck, ROG Ally)."
     ],
@@ -785,6 +844,7 @@
     "website": "https://cachyos.org/",
     "docs": "https://wiki.cachyos.org/",
     "download": "https://cachyos.org/download",
+    "distroSea": "cachyos",
     "highlights": [
       "Custom package compilation targeting x86-64-v3/v4 instructions for increased FPS in games."
     ],
@@ -820,6 +880,7 @@
     "website": "https://zorin.com/os/",
     "docs": "https://help.zorin.com/",
     "download": "https://zorinos.com/download",
+    "distroSea": "zorin",
     "highlights": [
       "Zorin Appearance module for precise Windows/macOS interface imitation, Wine integration."
     ],
@@ -854,6 +915,7 @@
     "website": "https://elementary.io/",
     "docs": "https://elementary.io/docs/learning-the-basics",
     "download": "https://elementary.io/",
+    "distroSea": "elementary",
     "highlights": [
       "Unique Pantheon desktop environment built on Vala/GTK. Pay-what-you-want model in AppCenter."
     ],
@@ -876,7 +938,7 @@
     "desktopEnvironments": [
       "KDE Plasma"
     ],
-    "packageManager": "apt / deb, snap",
+    "packageManager": "apt / snap",
     "initSystem": "systemd",
     "architecture": [
       "x86_64"
@@ -887,6 +949,7 @@
     "website": "https://kubuntu.org/",
     "docs": "https://community.kde.org/Kubuntu",
     "download": "https://www.kubuntu.org/getkubuntu",
+    "distroSea": "kubuntu",
     "highlights": [
       "Official Ubuntu spin with an unmodified KDE Plasma desktop environment."
     ],
@@ -910,7 +973,7 @@
     "desktopEnvironments": [
       "Xfce"
     ],
-    "packageManager": "apt / deb, snap",
+    "packageManager": "apt / snap",
     "initSystem": "systemd",
     "architecture": [
       "x86_64"
@@ -921,6 +984,7 @@
     "website": "https://www.xubuntu.org/",
     "docs": "https://docs.xubuntu.org/",
     "download": "https://xubuntu.org/getxubuntu/",
+    "distroSea": "xubuntu",
     "highlights": [
       "Optimal balance of performance and visual aesthetics on older computers."
     ],
@@ -956,6 +1020,7 @@
     "website": "https://neon.kde.org/",
     "docs": "https://community.kde.org/Neon",
     "download": "https://neon.kde.org/download",
+    "distroSea": "kdeneon",
     "highlights": [
       "Direct distribution of the latest KDE software from upstream developers on top of a stable LTS base."
     ],
@@ -980,7 +1045,7 @@
     "desktopEnvironments": [
       "LXQt"
     ],
-    "packageManager": "apt / deb, snap",
+    "packageManager": "apt / snap",
     "initSystem": "systemd",
     "architecture": [
       "x86_64"
@@ -991,6 +1056,7 @@
     "website": "https://lubuntu.me/",
     "docs": "https://help.ubuntu.com/community/Lubuntu/Documentation",
     "download": "https://help.ubuntu.com/community/Lubuntu/GetLubuntu",
+    "distroSea": "lubuntu",
     "highlights": [
       "Minimalist Qt-based interface, optimized for low-specification computers."
     ],
@@ -1026,6 +1092,7 @@
     "website": "https://tails.net/",
     "docs": "https://tails.net/doc/index.en.html",
     "download": "https://tails.net/install/index.en.html",
+    "distroSea": "tails",
     "highlights": [
       "Live system for bypassing censorship and preserving anonymity. Clears RAM on shutdown."
     ],
@@ -1075,65 +1142,9 @@
     "website": "https://www.alpinelinux.org/",
     "docs": "https://wiki.alpinelinux.org/",
     "download": "https://alpinelinux.org/downloads",
+    "distroSea": "alpine",
     "highlights": [
       "Built on musl libc and BusyBox. Minimal image size, containerization standard."
-    ],
-    "difficulty": "intermediate"
-  },
-  {
-    "id": "freebsd",
-    "slug": "freebsd",
-    "name": "FreeBSD",
-    "description": "FreeBSD is a UNIX-like operating system for the i386, amd64, IA-64, arm, MIPS, powerpc, ppc64, PC-98 and UltraSPARC platforms based on U.C. Berkeley's \"4.4BSD-Lite\" release, with some \"4.4BSD-Lite2\" enhancements.",
-    "longDescription": "FreeBSD is a UNIX-like operating system for the i386, amd64, IA-64, arm, MIPS, powerpc, ppc64, PC-98 and UltraSPARC platforms based on U.C. Berkeley's \"4.4BSD-Lite\" release, with some \"4.4BSD-Lite2\" enhancements. It is also based indirectly on William Jolitz's port of U.C. Berkeley's \"Net/2\" to the i386, known as \"386BSD\", though very little of the 386BSD code remains. FreeBSD is used by companies, Internet Service Providers, researchers, computer professionals, students and home users all over the world in their work, education and recreation. FreeBSD comes with over 20,000 packages (pre-compiled software that is bundled for easy installation), covering a wide range of areas: from server software, databases and web servers, to desktop software, games, web browsers and business software - all free and easy to install.",
-    "img": "/repos/freebsd/logo.png",
-    "imgFit": "contain",
-    "screenshots": [],
-    "tags": [
-      "desktop",
-      "firewall",
-      "mutable",
-      "raspberry-pi",
-      "server"
-    ],
-    "base": null,
-    "desktopEnvironments": [
-      "Cinnamon",
-      "GNOME",
-      "KDE Plasma",
-      "labwc",
-      "LXQt",
-      "mangowm",
-      "MATE",
-      "Wayfire",
-      "Xfce"
-    ],
-    "packageManager": "txz",
-    "initSystem": "RC",
-    "architecture": [
-      "arm",
-      "ARM64",
-      "armel",
-      "i486",
-      "ia64",
-      "MIPS",
-      "mipsel",
-      "sparc64",
-      "pc98",
-      "PowerPC",
-      "ppc64",
-      "ps3",
-      "x86_64",
-      "xbox"
-    ],
-    "releaseModel": "fixed",
-    "latestVersion": "",
-    "releaseDate": "2026-06-14",
-    "website": "https://www.freebsd.org/",
-    "docs": "https://www.freebsd.org/docs/",
-    "download": "https://docs.freebsd.org/en/books/handbook/mirrors/",
-    "highlights": [
-      "Full-featured non-Linux OS. High-efficiency networking subsystem, ZFS out of the box."
     ],
     "difficulty": "intermediate"
   },
@@ -1188,6 +1199,7 @@
     "website": "https://www.gentoo.org/",
     "docs": "https://www.gentoo.org/support/documentation/",
     "download": "https://www.gentoo.org/downloads/mirrors/",
+    "distroSea": "gentoo",
     "highlights": [
       "Compiling software from source, deepest system optimization for a specific processor."
     ],
@@ -1261,6 +1273,7 @@
     "website": "https://voidlinux.org/",
     "docs": "https://docs.voidlinux.org/",
     "download": "https://voidlinux.org/download/",
+    "distroSea": "void",
     "highlights": [
       "Distribution written from scratch. Uses the independent XBPS package manager and runit init system."
     ],
@@ -1298,6 +1311,7 @@
     "website": "https://getsol.us/",
     "docs": "https://help.getsol.us/",
     "download": "https://getsol.us/download/",
+    "distroSea": "solus",
     "highlights": [
       "Desktop system developing its own innovative Budgie graphical shell."
     ],
@@ -1336,6 +1350,7 @@
     "website": "https://artixlinux.org/",
     "docs": "",
     "download": "https://artixlinux.org/download.php",
+    "distroSea": "artixlinux",
     "highlights": [
       "Arch Linux without systemd. Offers a choice of five alternative init systems."
     ],
@@ -1378,6 +1393,7 @@
     "website": "http://www.slackware.com/",
     "docs": "http://docs.slackware.com/",
     "download": "http://www.slackware.com/getslack/",
+    "distroSea": "slackware",
     "highlights": [
       "Oldest active distribution. No automatic dependency resolution."
     ],
@@ -1419,6 +1435,7 @@
     "website": "https://garudalinux.org/",
     "docs": "https://garudalinux.org/installation",
     "download": "https://garudalinux.org/editions",
+    "distroSea": "garuda",
     "highlights": [
       "Default Btrfs with zstd compression, Zen kernel scheduler for reduced latency."
     ],
@@ -1456,6 +1473,7 @@
     "website": "https://deepin.org/",
     "docs": "https://wiki.deepin.org/",
     "download": "https://www.deepin.org/en/download/",
+    "distroSea": "deepin",
     "highlights": [
       "Chinese national distribution with its own unique DDE desktop environment and utility suite."
     ],
@@ -1493,6 +1511,7 @@
     "website": "https://sparkylinux.org/",
     "docs": "https://wiki.sparkylinux.org/",
     "download": "https://sparkylinux.org/download/",
+    "distroSea": "sparkylinux",
     "highlights": [
       "Offers a choice between Debian's stable and continuously-updated rolling branches."
     ],
@@ -1528,6 +1547,7 @@
     "website": "https://nobaraproject.org/",
     "docs": "https://wiki.nobaraproject.org/",
     "download": "https://nobaraproject.org/download.html",
+    "distroSea": "nobara",
     "highlights": [
       "Developed by GloriousEggroll. Pre-installed kernel latency patches, Proton translators, and GPU drivers."
     ],
@@ -1610,6 +1630,7 @@
     "website": "https://www.pclinuxos.com/",
     "docs": "https://pclosusers.com/",
     "download": "https://ftp.nluug.nl/os/Linux/distr/pclinuxos/iso/",
+    "distroSea": "pclinuxos",
     "highlights": [
       "Traditional distribution without systemd, using an RPM package base with APT manager."
     ],
@@ -1648,6 +1669,7 @@
     "website": "https://antixlinux.com/",
     "docs": "https://download.tuxfamily.org/antix/docs-antiX-17/FAQ/index.html",
     "download": "https://antixlinux.com/antix/download/",
+    "distroSea": "antix",
     "highlights": [
       "Runs without systemd. Optimal for critically outdated systems (Pentium III / 256 MB RAM)."
     ],
@@ -1699,6 +1721,7 @@
     "website": "https://www.mageia.org/",
     "docs": "https://wiki.mageia.org/",
     "download": "https://mageia.org/en/downloads/",
+    "distroSea": "mageia",
     "highlights": [
       "Inherits Mandriva traditions. Mageia Control Center for easy system configuration."
     ],
@@ -1744,6 +1767,7 @@
     "website": "https://devuan.org/",
     "docs": "https://devuan.org/os/documentation/",
     "download": "https://files.devuan.org/",
+    "distroSea": "devuan",
     "highlights": [
       "Debian fork created in opposition to the widespread adoption of systemd."
     ],
@@ -1778,6 +1802,7 @@
     "website": "https://www.linuxliteos.com/",
     "docs": "https://www.linuxliteos.com/manual/",
     "download": "https://www.linuxliteos.com/download.php",
+    "distroSea": "linuxlite",
     "highlights": [
       "Pre-installed Lite Software quick-setup scripts to simplify onboarding for beginners."
     ],
@@ -1846,6 +1871,7 @@
     "website": "https://www.tuxedocomputers.com/os",
     "docs": "",
     "download": "https://os.tuxedocomputers.com/",
+    "distroSea": "tuxedoos",
     "highlights": [
       "Integration with the TUXEDO Control Center hardware software for fan and power management."
     ],
@@ -1985,6 +2011,7 @@
     "website": "https://puppylinux-woof-ce.github.io/",
     "docs": "https://wikka.puppylinux.com/HomePage",
     "download": "https://puppylinux-woof-ce.github.io/index.html#download",
+    "distroSea": "puppylinux",
     "highlights": [
       "Modular distribution that boots entirely into the host machine's RAM."
     ],
@@ -2020,6 +2047,7 @@
     "website": "https://archcraft.io/",
     "docs": "https://archcraft.io/wiki",
     "download": "https://sourceforge.net/projects/archcraft/files/",
+    "distroSea": "archcraft",
     "highlights": [
       "Deep pre-configuration of lightweight window managers, excellent visual design."
     ],
@@ -2159,6 +2187,7 @@
     "website": "https://blendos.co/",
     "docs": "https://blendos.co/faq/",
     "download": "https://blendos.co/download",
+    "distroSea": "blendos",
     "highlights": [
       "Created by Rudra Saraswat. Seamless integration of Ubuntu, Fedora, and Arch packages in a single session."
     ],
@@ -2194,6 +2223,7 @@
     "website": "https://www.bodhilinux.com/",
     "docs": "https://www.bodhilinux.com/w/wiki/",
     "download": "https://www.bodhilinux.com/download/",
+    "distroSea": "bodhi",
     "highlights": [
       "High-efficiency Moksha graphical shell with a unique minimalist pre-configured concept."
     ],
@@ -2230,6 +2260,7 @@
     "website": "https://q4os.org/",
     "docs": "https://q4os.org/documents.html",
     "download": "https://q4os.org/downloads1.html",
+    "distroSea": "q4os",
     "highlights": [
       "Careful integration of the classic Trinity desktop environment, recreating the Windows XP interface."
     ],
@@ -2265,6 +2296,7 @@
     "website": "https://aerynos.com/",
     "docs": "https://aerynos.dev/aerynos/",
     "download": "https://aerynos.com/download",
+    "distroSea": "aerynos",
     "highlights": [
       "Transactional moss package manager. Atomic updates without strict write restrictions to /usr."
     ],
@@ -2303,6 +2335,7 @@
     "website": "http://pika-os.com/",
     "docs": "https://wiki.pika-os.com/en/installation/getting-started",
     "download": "http://pika-os.com/",
+    "distroSea": "pikaos",
     "highlights": [
       "Gaming-focused. Real-time kernel with CFS scheduler patches, fast driver installation."
     ],
@@ -2336,6 +2369,7 @@
     "website": "https://nxos.org/",
     "docs": "https://nxos.org/tutorial/",
     "download": "https://nxos.org/#download",
+    "distroSea": "nitrux",
     "highlights": [
       "Free from systemd. Full dominance of AppImage and Flatpak formats for application software."
     ],
@@ -2439,6 +2473,7 @@
     "website": "https://www.openmandriva.org/",
     "docs": "https://wiki.openmandriva.org/",
     "download": "https://www.openmandriva.org/download",
+    "distroSea": "openmandriva",
     "highlights": [
       "Compiled with LLVM/Clang instead of GCC, increasing performance on Ryzen CPUs."
     ],
@@ -2515,6 +2550,7 @@
     "website": "https://www.anduinos.com/",
     "docs": "https://docs.anduinos.com/",
     "download": "https://download.anduinos.com/",
+    "distroSea": "anduinos",
     "highlights": [
       "Detailed Windows 11 interface replication via 18 GNOME extensions, out-of-the-box Wine support."
     ],
@@ -2620,6 +2656,7 @@
     "website": "https://vanillaos.org/",
     "docs": "https://documentation.vanillaos.org/",
     "download": "https://github.com/Vanilla-OS/os/releases/",
+    "distroSea": "vanillaos",
     "highlights": [
       "Immutability based on A/B transactions (abroot). Package installation into isolated containers via apx."
     ],
@@ -2654,6 +2691,7 @@
     "website": "https://www.biglinux.com.br/",
     "docs": "",
     "download": "https://www.biglinux.com.br/download/",
+    "distroSea": "biglinux",
     "highlights": [
       "Brazilian build. Advanced integration of cloud folders and automatic system backups."
     ],
@@ -2794,6 +2832,7 @@
     "website": "https://voyagerlive.org/",
     "docs": "",
     "download": "https://sourceforge.net/projects/voyagerlive/",
+    "distroSea": "voyager",
     "highlights": [
       "French art distribution with avant-garde Conky widget design and switchable styles."
     ],
@@ -3367,6 +3406,7 @@
     "website": "https://pearos.xyz/",
     "docs": "https://pearos.xyz/install",
     "download": "https://pearos.xyz/downloads",
+    "distroSea": "pearos",
     "highlights": [
       "Built by Alexandru Bălan. Precisely replicates the Apple macOS design."
     ],
@@ -3744,6 +3784,7 @@
     "website": "https://peppermintos.com/",
     "docs": "https://peppermint_os.codeberg.page/html/",
     "download": "https://peppermintos.com/download",
+    "distroSea": "peppermint",
     "highlights": [
       "Minimalist base OS. Proprietary Ice/Kumo app for running websites as isolated web applications."
     ],
@@ -3790,6 +3831,7 @@
     "website": "http://www.tinycorelinux.net/",
     "docs": "",
     "download": "http://www.tinycorelinux.net/downloads.html",
+    "distroSea": "tinycore",
     "highlights": [
       "Hyper-minimalist system (17 MB). Operates exclusively in RAM."
     ],

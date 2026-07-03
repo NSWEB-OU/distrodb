@@ -13,7 +13,7 @@ export default function NotFound() {
             <span className="bg-primary/70 size-3 rounded-full" />
             <span className="size-3 rounded-full bg-emerald-500/70" />
             <span className="text-muted-foreground ml-3 flex-1 text-center font-mono text-xs">
-              bash — distrodb
+              bash - distrodb
             </span>
           </div>
 
@@ -78,10 +78,10 @@ export default function NotFound() {
         {/* Actions */}
         <div className="mt-6 flex items-center justify-center gap-3">
           <Button render={<Link href="/" />} nativeButton={false} variant="default" size="default">
-            cd ~&nbsp;— Return home
+            cd ~&nbsp;- Return home
           </Button>
           <Button render={<Link href="/" />} nativeButton={false} variant="outline" size="default">
-            ls distros — Browse all
+            ls distros - Browse all
           </Button>
         </div>
       </div>

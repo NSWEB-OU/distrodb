@@ -1,11 +1,17 @@
 "use client";
 
+import { GitCompareIcon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import { useCompare, type CompareEntry } from "./compare-provider";
 import { Button } from "./ui/button";
 
-type Props = Omit<CompareEntry, "img"> & { img?: string; className?: string };
+type Props = Omit<CompareEntry, "img"> & {
+  img?: string;
+  className?: string;
+  withIcon?: boolean;
+};
 
-export function CompareToggleButton({ slug, name, img, className }: Props) {
+export function CompareToggleButton({ slug, name, img, className, withIcon = false }: Props) {
   const { toggle, isSelected, canAdd } = useCompare();
   const active = isSelected(slug);
   const disabled = !active && !canAdd;
@@ -33,7 +39,12 @@ export function CompareToggleButton({ slug, name, img, className }: Props) {
         toggle({ slug, name, img });
       }}
     >
-      {active ? "✓ Comparing" : disabled ? "Max 2" : "+ Compare"}
+      {withIcon && <HugeiconsIcon icon={GitCompareIcon} />}
+      {active
+        ? `${withIcon ? "" : "✓ "}Comparing`
+        : disabled
+          ? "Max 2"
+          : `${withIcon ? "" : "+ "}Compare`}
     </Button>
   );
 }

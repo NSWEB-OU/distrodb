@@ -44,7 +44,7 @@ const ways = [
     icon: SourceCodeIcon,
     title: "Contribute code",
     description:
-      "Found a bug? Have a feature idea? The codebase is open on GitHub — pull requests are always welcome.",
+      "Found a bug? Have a feature idea? The codebase is open on GitHub - pull requests are always welcome.",
     ctas: [{ label: "View repository", href: "https://github.com/NSWEB-OU/distrodb", external: true }],
   },
   {

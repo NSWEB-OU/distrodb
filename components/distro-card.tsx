@@ -1,9 +1,9 @@
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
-import { Badge } from "./ui/badge";
 import Image from "next/image";
 import { GridDistro } from "./types/types";
 import Link from "next/link";
 import { CompareToggleButton } from "./compare-toggle-button";
+import { TagBadge } from "./tag-badge";
 
 export const DistroCard = (props: GridDistro & { priority?: boolean }) => {
   const { name, description, tags, img, slug, imgFit = "cover", priority = false } = props;
@@ -41,9 +41,7 @@ export const DistroCard = (props: GridDistro & { priority?: boolean }) => {
         </CardHeader>
         <CardFooter className="flex-wrap gap-2">
           {tags.map((tag) => (
-            <Badge key={tag} variant="secondary">
-              {tag}
-            </Badge>
+            <TagBadge key={tag} tag={tag} />
           ))}
         </CardFooter>
       </Card>

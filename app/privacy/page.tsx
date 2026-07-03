@@ -133,21 +133,21 @@ export default function PrivacyPage() {
             <h2 className="text-base font-semibold">3. Legal Basis for Processing</h2>
             <ul className="text-muted-foreground flex list-none flex-col gap-2">
               <li>
-                <strong className="text-foreground">Contact & suggestion forms</strong> — Art.
+                <strong className="text-foreground">Contact & suggestion forms</strong> - Art.
                 6(1)(b) GDPR: processing is necessary to take steps at your request (responding to
                 your inquiry or acting on your suggestion).
               </li>
               <li>
-                <strong className="text-foreground">IP address for rate limiting</strong> — Art.
+                <strong className="text-foreground">IP address for rate limiting</strong> - Art.
                 6(1)(f) GDPR: our legitimate interest in protecting the service from abuse and
                 ensuring availability for all users.
               </li>
               <li>
-                <strong className="text-foreground">Hosting logs</strong> — Art. 6(1)(f) GDPR:
+                <strong className="text-foreground">Hosting logs</strong> - Art. 6(1)(f) GDPR:
                 legitimate interest in maintaining service security and performance.
               </li>
               <li>
-                <strong className="text-foreground">Analytics (Plausible)</strong> — Art. 6(1)(f)
+                <strong className="text-foreground">Analytics (Plausible)</strong> - Art. 6(1)(f)
                 GDPR: legitimate interest in understanding aggregate, anonymised usage patterns to
                 improve the service. No personal data is processed; IP addresses are never stored.
               </li>
@@ -161,20 +161,20 @@ export default function PrivacyPage() {
             <h2 className="text-base font-semibold">4. Data Retention</h2>
             <ul className="text-muted-foreground flex list-none flex-col gap-2">
               <li>
-                <strong className="text-foreground">Contact & suggestion submissions</strong> —
+                <strong className="text-foreground">Contact & suggestion submissions</strong> -
                 retained in our email inbox for as long as necessary to respond and act on your
                 request, and no longer than 2 years from the date of receipt.
               </li>
               <li>
-                <strong className="text-foreground">IP address (rate limiting)</strong> — held in
+                <strong className="text-foreground">IP address (rate limiting)</strong> - held in
                 server memory for a maximum of 1 hour, then automatically discarded.
               </li>
               <li>
-                <strong className="text-foreground">Hosting logs</strong> — as determined by our
+                <strong className="text-foreground">Hosting logs</strong> - as determined by our
                 hosting provider&apos;s policies.
               </li>
               <li>
-                <strong className="text-foreground">Analytics data (Plausible)</strong> — aggregate
+                <strong className="text-foreground">Analytics data (Plausible)</strong> - aggregate
                 statistics are retained for the lifetime of the account. No individual-level data is
                 stored; all records are anonymised at the point of collection.
               </li>
@@ -257,12 +257,12 @@ export default function PrivacyPage() {
             </p>
             <ul className="text-muted-foreground flex list-none flex-col gap-2">
               <li>
-                <strong className="text-foreground">Theme preference</strong> — stored in{" "}
+                <strong className="text-foreground">Theme preference</strong> - stored in{" "}
                 <code className="bg-muted rounded px-1 py-0.5 text-xs">localStorage</code> to
                 remember whether you prefer dark or light mode. This data never leaves your device.
               </li>
               <li>
-                <strong className="text-foreground">Cookie notice dismissal</strong> — stored in{" "}
+                <strong className="text-foreground">Cookie notice dismissal</strong> - stored in{" "}
                 <code className="bg-muted rounded px-1 py-0.5 text-xs">localStorage</code> to avoid
                 showing the notice again once you have acknowledged it. This data never leaves your
                 device.
@@ -285,27 +285,27 @@ export default function PrivacyPage() {
             </p>
             <ul className="text-muted-foreground flex flex-col gap-1.5">
               <li>
-                <strong className="text-foreground">Access</strong> — request a copy of the personal
+                <strong className="text-foreground">Access</strong> - request a copy of the personal
                 data we hold about you.
               </li>
               <li>
-                <strong className="text-foreground">Rectification</strong> — request correction of
+                <strong className="text-foreground">Rectification</strong> - request correction of
                 inaccurate data.
               </li>
               <li>
-                <strong className="text-foreground">Erasure</strong> — request deletion of your data
+                <strong className="text-foreground">Erasure</strong> - request deletion of your data
                 where there is no overriding legitimate reason to retain it.
               </li>
               <li>
-                <strong className="text-foreground">Restriction</strong> — request that we restrict
+                <strong className="text-foreground">Restriction</strong> - request that we restrict
                 processing of your data in certain circumstances.
               </li>
               <li>
-                <strong className="text-foreground">Portability</strong> — receive your data in a
+                <strong className="text-foreground">Portability</strong> - receive your data in a
                 structured, machine-readable format.
               </li>
               <li>
-                <strong className="text-foreground">Objection</strong> — object to processing based
+                <strong className="text-foreground">Objection</strong> - object to processing based
                 on legitimate interests.
               </li>
             </ul>
