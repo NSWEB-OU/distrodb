@@ -46,7 +46,7 @@ const roadmapItems: RoadmapItem[] = [
     title: "Database review & curation",
     description:
       "Manual audit of the entire distro database - fixing tag inconsistencies, correcting descriptions, updating broken links, and adding high-quality desktop screenshots for every entry.",
-    status: "done",
+    status: "in-progress",
   },
   {
     icon: ComputerIcon,
