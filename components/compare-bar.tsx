@@ -17,6 +17,7 @@ export function CompareBar() {
     if (!ready) return;
     const [a, b] = selected;
     router.push(`/vs/${a.slug}-vs-${b.slug}`);
+    clear();
   };
 
   return (
