@@ -7,6 +7,7 @@ import { MobileFiltersSheet } from "@/components/mobile-filters-sheet";
 import { getAllDistros } from "@/lib/distros";
 import { applyFilters } from "@/lib/filters";
 import { HomeWidgets } from "@/components/home-widgets";
+import { VacationNotice } from "@/components/vacation-notice";
 
 type PageSearchParams = Promise<{ q?: string; tag?: string | string[] }>;
 
@@ -26,6 +27,7 @@ export default async function Home({ searchParams }: { searchParams: PageSearchP
           Linux distros. Search and filter based on your preferences, and discover the perfect Linux
           distribution for your needs.
         </TypographyLead>
+        <VacationNotice />
       </section>
       <HomeWidgets />
       <div className="bg-background/80 z-100 mx-auto mt-10 max-w-2xl rounded-sm py-6 backdrop-blur-sm md:px-6">

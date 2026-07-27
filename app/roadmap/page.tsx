@@ -13,6 +13,7 @@ import {
 } from "@hugeicons/core-free-icons";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
+import { VacationNotice } from "@/components/vacation-notice";
 
 export const metadata: Metadata = {
   title: "Roadmap",
@@ -143,7 +144,9 @@ export default function RoadmapPage() {
           </p>
         </div>
 
-        <Separator className="mb-10" />
+        <VacationNotice />
+
+        <Separator className="mt-10 mb-10" />
 
         {/* Roadmap list */}
         <ol className="relative flex flex-col gap-0">
