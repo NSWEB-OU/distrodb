@@ -37,20 +37,21 @@ New distributions should follow this folder-per-slug convention for better maint
 
 ## Current Progress (MVP Phase)
 
-- **Completed:** UI prototype with shadcn/ui and Tailwind. Basic landing page with search bar and distro grid. Distro detail pages (`/distros/[slug]`). VS comparison pages (`/vs/[slug-a]-vs-[slug-b]`). Sitemap (`/sitemap.xml`) and robots (`/robots.txt`) for SEO. **Distro Wizard** (`/wizard`) - 6-question interactive quiz with a client-side scoring algorithm that recommends distros from the local JSON dataset. **DistroSea integration** - in-browser test drives for supported distros.
+- **Completed:** UI prototype with shadcn/ui and Tailwind. Basic landing page with search bar and distro grid. Distro detail pages (`/distros/[slug]`). VS comparison pages (`/vs/[slug-a]-vs-[slug-b]`). Sitemap (`/sitemap.xml`) and robots (`/robots.txt`) for SEO. **Distro Wizard** (`/wizard`) - 6-question interactive quiz with a client-side scoring algorithm that recommends distros from the local JSON dataset. **DistroSea integration** - in-browser test drives for supported distros. **Popularity** (`/popularity`) - measured distro rankings from external sources (gamers rating via Steam Hardware Survey).
 
 ## Routes
 
-| Route             | File                          | Description                                                                   |
-| ----------------- | ----------------------------- | ----------------------------------------------------------------------------- |
-| `/`               | `app/page.tsx`                | Landing page with search + distro grid                                        |
-| `/distros/[slug]` | `app/distros/[slug]/page.tsx` | Full distro detail page                                                       |
-| `/vs/[slugs]`     | `app/vs/[slugs]/page.tsx`     | Side-by-side comparison, e.g. `/vs/ubuntu-vs-fedora`                          |
-| `/wizard`         | `app/wizard/page.tsx`         | Interactive 6-step distro recommendation quiz                                 |
-| `/glossary`       | `app/glossary/page.tsx`       | Tag definitions with anchor links (`/glossary#atomic`)                        |
-| `/resources`      | `app/resources/page.tsx`      | Curated external links by category (communities, docs, learning, news, tools) |
-| `/sitemap.xml`    | `app/sitemap.ts`              | Auto-generated sitemap (all distros + all VS pairs)                           |
-| `/robots.txt`     | `app/robots.ts`               | Robots directives pointing to sitemap                                         |
+| Route             | File                          | Description                                                                                |
+| ----------------- | ----------------------------- | ------------------------------------------------------------------------------------------ |
+| `/`               | `app/page.tsx`                | Landing page: gradient hero (live distro count, quick-filter chips) + search + distro grid |
+| `/distros/[slug]` | `app/distros/[slug]/page.tsx` | Full distro detail page                                                                    |
+| `/vs/[slugs]`     | `app/vs/[slugs]/page.tsx`     | Side-by-side comparison, e.g. `/vs/ubuntu-vs-fedora`                                       |
+| `/wizard`         | `app/wizard/page.tsx`         | Interactive 6-step distro recommendation quiz                                              |
+| `/glossary`       | `app/glossary/page.tsx`       | Tag definitions with anchor links (`/glossary#atomic`)                                     |
+| `/popularity`     | `app/popularity/page.tsx`     | Measured distro popularity ratings (gamers: Steam Hardware Survey)                         |
+| `/resources`      | `app/resources/page.tsx`      | Curated external links by category (communities, docs, learning, news, tools)              |
+| `/sitemap.xml`    | `app/sitemap.ts`              | Auto-generated sitemap (all distros + all VS pairs)                                        |
+| `/robots.txt`     | `app/robots.ts`               | Robots directives pointing to sitemap                                                      |
 
 ## VS Page Conventions
 
@@ -65,6 +66,15 @@ New distributions should follow this folder-per-slug convention for better maint
 - When present, the distro page (`/distros/[slug]`) renders a "Try in browser" CTA (next to Download) and a sidebar link, letting users run the distro online via DistroSea.
 - DistroSea slugs differ from our slugs (e.g. `linux-mint` → `linuxmint`, `almalinux-os` → `alma`, `centos` → `centosstream`). Add the field only for distros DistroSea actually hosts; omit otherwise.
 - Distro page CTA hierarchy: primary actions are **Download** + **Try in browser**; **Compare** and **Suggest a change** are demoted to subtle ghost/utility buttons.
+
+## Popularity Ratings
+
+- Goal: honest, measured "popularity" per audience instead of Distrowatch-style page hits. Each rating is a signal for one audience, never overall market share.
+- **Gamers rating** (`lib/steam-survey.ts`): server-side `fetch` of the Steam Hardware Survey Linux page, cached daily via `next: { revalidate: 86400 }`. Parses the survey HTML, maps raw OS labels to DistroDB slugs via an ordered substring matcher, aggregates versions of the same distro (share and month-over-month change summed), drops non-distro rows (runtimes, `Freedesktop SDK`, `Other`), and sorts by descending share. Each distro exposes a `change` field (net trend in percentage points) rendered as an up/down badge.
+- Labels with no distro page (e.g. `SteamOS`) map to `slug: null` and render as non-linked rows. Shares are % of Steam's Linux users only.
+- Rendered by the async server component `components/gamers-rating.tsx` on `/popularity`. Returns `null` (widget hidden) if the fetch/parse fails, so the page degrades gracefully.
+- A compact top-5 variant (`components/gamers-rating-mini.tsx`) sits on the home page below `HomeWidgets` (matching the changelog card style, `max-w-2xl`) and links to `/popularity`.
+- Planned second rating: enterprise/business (server-side signal from Docker Hub pull counts + web-server share).
 
 ## Conventions
 
