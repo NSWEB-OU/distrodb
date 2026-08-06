@@ -111,16 +111,20 @@ export default function PrivacyPage() {
 
               <div className="border-border flex flex-col gap-1.5 rounded-sm border p-4">
                 <p className="text-muted-foreground text-xs font-medium tracking-wider uppercase">
-                  Analytics (Plausible)
+                  Analytics (self-hosted Umami)
                 </p>
                 <p className="text-muted-foreground">
-                  We use Plausible Analytics to understand how visitors interact with the site in
-                  aggregate. Plausible is{" "}
+                  We use a self-hosted instance of Umami Analytics to understand how visitors
+                  interact with the site in aggregate. Umami is{" "}
                   <strong className="text-foreground">cookie-free</strong> and collects{" "}
-                  <strong className="text-foreground">no personally identifiable information</strong>.
-                  The data recorded per page view includes: page URL, referrer, browser type,
+                  <strong className="text-foreground">
+                    no personally identifiable information
+                  </strong>
+                  . The data recorded per page view includes: page URL, referrer, browser type,
                   operating system, device type, and country (derived from the IP address, which is
-                  never stored or logged by Plausible). See §5 for details.
+                  hashed and never stored or logged by Umami). Because it is self-hosted by us, this
+                  data never passes through or is shared with any third-party analytics provider.
+                  See §5 for details.
                 </p>
               </div>
             </div>
@@ -147,9 +151,10 @@ export default function PrivacyPage() {
                 legitimate interest in maintaining service security and performance.
               </li>
               <li>
-                <strong className="text-foreground">Analytics (Plausible)</strong> - Art. 6(1)(f)
-                GDPR: legitimate interest in understanding aggregate, anonymised usage patterns to
-                improve the service. No personal data is processed; IP addresses are never stored.
+                <strong className="text-foreground">Analytics (self-hosted Umami)</strong> - Art.
+                6(1)(f) GDPR: legitimate interest in understanding aggregate, anonymised usage
+                patterns to improve the service. No personal data is processed; IP addresses are
+                never stored.
               </li>
             </ul>
           </section>
@@ -174,7 +179,7 @@ export default function PrivacyPage() {
                 hosting provider&apos;s policies.
               </li>
               <li>
-                <strong className="text-foreground">Analytics data (Plausible)</strong> - aggregate
+                <strong className="text-foreground">Analytics data (Umami)</strong> - aggregate
                 statistics are retained for the lifetime of the account. No individual-level data is
                 stored; all records are anonymised at the point of collection.
               </li>
@@ -225,18 +230,21 @@ export default function PrivacyPage() {
                 </p>
               </div>
               <div className="border-border flex flex-col gap-1 rounded-sm border p-4">
-                <p className="text-xs font-medium">Plausible Analytics (privacy-friendly analytics)</p>
+                <p className="text-xs font-medium">
+                  Umami Analytics (self-hosted, privacy-friendly analytics)
+                </p>
                 <p className="text-muted-foreground text-xs">
-                  We use Plausible Analytics to collect anonymised, aggregate usage statistics.
-                  Plausible does not use cookies, does not store IP addresses, and does not track
-                  visitors across websites. All data is processed in the EU. See{" "}
+                  We run our own self-hosted instance of Umami Analytics to collect anonymised,
+                  aggregate usage statistics. Because it is self-hosted by us, this data is not
+                  shared with any third-party analytics company. Umami does not use cookies and does
+                  not store raw IP addresses or other identifiers. See{" "}
                   <a
-                    href="https://plausible.io/privacy"
+                    href="https://umami.is/docs/privacy-policy"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-foreground underline underline-offset-4"
                   >
-                    plausible.io/privacy
+                    umami.is/docs/privacy-policy
                   </a>
                   .
                 </p>
@@ -250,10 +258,10 @@ export default function PrivacyPage() {
           <section className="flex flex-col gap-3">
             <h2 className="text-base font-semibold">6. Cookies &amp; Tracking</h2>
             <p className="text-muted-foreground">
-              DistroDB does not use advertising or any third-party tracking cookies. We use{" "}
-              <strong className="text-foreground">Plausible Analytics</strong>, which is entirely
-              cookie-free and does not place any cookies in your browser. The only data stored in
-              your browser is:
+              DistroDB does not use advertising or any third-party tracking cookies. We use a{" "}
+              <strong className="text-foreground">self-hosted instance of Umami Analytics</strong>,
+              which is entirely cookie-free and does not place any cookies in your browser. The only
+              data stored in your browser is:
             </p>
             <ul className="text-muted-foreground flex list-none flex-col gap-2">
               <li>

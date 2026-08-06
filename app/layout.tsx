@@ -77,8 +77,8 @@ export default function RootLayout({
       <head>
         <Script
           defer
-          data-domain="distrodb.xyz"
-          src="https://plausible.io/js/script.js"
+          data-website-id="dfb0252b-506d-4fb4-bc2f-d3c9b9c09028"
+          src="https://umami.nsweb.space/script.js"
           strategy="afterInteractive"
         />
       </head>
