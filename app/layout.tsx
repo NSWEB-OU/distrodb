@@ -77,7 +77,7 @@ export default function RootLayout({
       <head>
         <Script
           defer
-          data-website-id="dfb0252b-506d-4fb4-bc2f-d3c9b9c09028"
+          data-website-id="09c23d72-f673-4bfd-a04e-fdee82562da5"
           src="https://umami.nsweb.space/script.js"
           strategy="afterInteractive"
         />
