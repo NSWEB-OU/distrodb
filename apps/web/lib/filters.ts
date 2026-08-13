@@ -29,7 +29,7 @@ export const FILTER_GROUPS: FilterGroup[] = [
         match: (d) => {
           const cutoff = new Date();
           cutoff.setFullYear(cutoff.getFullYear() - 1);
-          return new Date(d.releaseDate) >= cutoff;
+          return new Date(d.releaseDate ?? 0) >= cutoff;
         },
       },
     ],

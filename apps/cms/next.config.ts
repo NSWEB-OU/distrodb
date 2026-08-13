@@ -24,7 +24,9 @@ const nextConfig: NextConfig = {
     return webpackConfig
   },
   turbopack: {
-    root: path.resolve(dirname),
+    // Monorepo root (two levels up from apps/cms), so Turbopack can see
+    // dependencies hoisted to the workspace root node_modules.
+    root: path.resolve(dirname, '../..'),
   },
 }
 

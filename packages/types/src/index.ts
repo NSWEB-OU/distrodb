@@ -28,7 +28,7 @@ export type DistroDetail = {
   architecture: string[];
   releaseModel: ReleaseModel;
   latestVersion: string;
-  releaseDate: string;
+  releaseDate: string | null;
   website: string;
   docs: string;
   download: string;

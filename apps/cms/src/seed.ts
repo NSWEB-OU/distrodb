@@ -4,6 +4,7 @@
  *
  * Usage: pnpm --filter @distrodb/cms seed
  */
+import 'dotenv/config'
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import { readFile } from 'fs/promises'

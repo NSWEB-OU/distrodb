@@ -69,7 +69,7 @@ export async function generateMetadata({
           alt: `${distro.name} screenshot`,
         },
       ],
-      publishedTime: distro.releaseDate,
+      publishedTime: distro.releaseDate ?? undefined,
     },
     twitter: {
       card: "summary_large_image",

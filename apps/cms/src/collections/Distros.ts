@@ -70,12 +70,10 @@ export const Distros: CollectionConfig = {
     {
       name: 'packageManager',
       type: 'text',
-      required: true,
     },
     {
       name: 'initSystem',
       type: 'text',
-      required: true,
     },
     {
       name: 'architecture',
@@ -91,14 +89,12 @@ export const Distros: CollectionConfig = {
     {
       name: 'latestVersion',
       type: 'text',
-      required: true,
     },
     {
       name: 'releaseDate',
       type: 'text',
-      required: true,
       admin: {
-        description: 'ISO date string (YYYY-MM-DD).',
+        description: 'ISO date string (YYYY-MM-DD). Omit for rolling releases with no fixed date.',
       },
     },
     {
@@ -109,7 +105,6 @@ export const Distros: CollectionConfig = {
     {
       name: 'docs',
       type: 'text',
-      required: true,
     },
     {
       name: 'download',

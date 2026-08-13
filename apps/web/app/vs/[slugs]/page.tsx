@@ -171,8 +171,8 @@ const ROWS: RowConfig[] = [
       });
     },
     highlight: (a, b) => {
-      const da = new Date(a.releaseDate).getTime();
-      const db = new Date(b.releaseDate).getTime();
+      const da = new Date(a.releaseDate ?? 0).getTime();
+      const db = new Date(b.releaseDate ?? 0).getTime();
       return da > db ? "a" : db > da ? "b" : "both";
     },
   },

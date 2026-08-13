@@ -1,5 +1,3 @@
-version: "3"
-
 # Local Postgres for Payload dev. Run `docker compose up -d` from apps/cms,
 # then `pnpm dev:cms` from the repo root (matches DATABASE_URL in .env).
 services:
