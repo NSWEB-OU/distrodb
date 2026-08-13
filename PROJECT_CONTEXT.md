@@ -12,57 +12,74 @@ DistroDB (distrodb.xyz) is a modern, aesthetically pleasing alternative to Distr
 
 ## Tech Stack
 
-- **Framework:** Next.js 16+ (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS 4, shadcn/ui
+- **Monorepo:** pnpm workspaces (`apps/*`, `packages/*`).
+- **Web app** (`apps/web`): Next.js 16+ (App Router), TypeScript, Tailwind CSS 4, shadcn/ui.
+- **CMS** (`apps/cms`): Payload CMS 3 (Next.js-based), PostgreSQL via `@payloadcms/db-postgres`, runs standalone on port 3001.
+- **Shared packages:** `@distrodb/types` (domain types, e.g. `DistroDetail`), `@distrodb/config` (shared tsconfig/eslint presets).
 - **Icons:** Hugeicons
 - **Primitive Components:** @base-ui/react
 
-## Data Strategy (Planned)
+## Monorepo Structure
 
-- **Local Data:** Store distribution data in a large JSON structure or Markdown files (e.g., `/content/distros/`) for maximum speed and simplicity.
-- **Server Components:** Use React Server Components to read data directly from disk (`fs.readFile`) during the request.
-- **Search API:** Simple API endpoint (`/api/search`) for "live search" functionality on the frontend.
-- **Wizard API:** API endpoint (`/api/wizard`) to process quiz answers and calculate the "match".
+```
+apps/
+  web/   - the public Next.js site (distrodb.xyz)
+  cms/   - Payload CMS (admin at :3001/admin, REST API at :3001/api)
+packages/
+  types/  - @distrodb/types, shared domain types
+  config/ - @distrodb/config, shared tsconfig.base.json + eslint preset
+```
+
+- Root scripts: `pnpm dev` (runs both apps in parallel), `pnpm dev:web`, `pnpm dev:cms`, `pnpm build`, `pnpm lint`.
+- `apps/cms` needs a running Postgres instance; `apps/cms/docker-compose.yml` provides one for local dev (`docker compose up -d` from `apps/cms`). Connection string lives in `apps/cms/.env` (`DATABASE_URL`).
+- `apps/web` reads distro data from the CMS's REST API at build/request time via `CMS_URL` (defaults to `http://localhost:3001`), so the CMS must be running for `apps/web` to build or serve `/`, `/distros/[slug]`, `/vs/[slugs]`, `/glossary`, `/wizard`, and the gamers rating widget.
+
+## Data Strategy
+
+- **Source of truth:** the `distros` collection in Payload CMS (Postgres-backed), defined in `apps/cms/src/collections/Distros.ts`, mirroring the `DistroDetail` shape from `@distrodb/types`.
+- `apps/web/lib/data/distros.json` is now only the historical seed source, consumed once by `apps/cms/src/seed.ts` (`pnpm --filter @distrodb/cms seed`) to populate Postgres. It is not read by the app at runtime anymore.
+- **Data access:** `apps/web/lib/distros.ts` fetches from the CMS REST API (`GET /api/distros`) with `next: { revalidate: 3600 }`; all helpers (`getAllDistros`, `getDistroBySlug`, `getAllSlugs`, `getAllVsSlugs`) are now `async`.
+- **Client-side usage:** the Distro Wizard (`app/wizard/wizard-client.tsx`) scores results entirely client-side for instant feedback, so `app/wizard/page.tsx` (server component) fetches the distro list once and passes it down as a prop; `getWizardResults(answers, distros, topN)` takes distros as a parameter instead of fetching itself.
+- **Search API:** Simple API endpoint (`/api/search`) for "live search" functionality on the frontend (planned).
 
 ## Asset Structure
 
-To maintain a clean and contributable project, all distribution assets are stored in the `public/repos/` folder:
+To maintain a clean and contributable project, all distribution assets are stored in `apps/web/public/repos/`:
 
-- **Path:** `public/repos/[slug]/`
-- **Main Image:** `logo.[extension]` (linked via `img` in `distros.json`)
-- **Screenshots:** `screenshot-1.[extension]`, `screenshot-2.[extension]`, etc. (linked via `screenshots` array in `distros.json`)
+- **Path:** `apps/web/public/repos/[slug]/`
+- **Main Image:** `logo.[extension]` (linked via the `img` field on the CMS `distros` collection)
+- **Screenshots:** `screenshot-1.[extension]`, `screenshot-2.[extension]`, etc. (linked via the `screenshots` field)
 
-New distributions should follow this folder-per-slug convention for better maintainability and ease of pull requests.
+Images stay as static files served by `apps/web` (not Payload uploads) - the CMS only stores the path string (e.g. `/repos/ubuntu/logo.png`). New distributions should follow this folder-per-slug convention for better maintainability and ease of pull requests.
 
 ## Current Progress (MVP Phase)
 
-- **Completed:** UI prototype with shadcn/ui and Tailwind. Basic landing page with search bar and distro grid. Distro detail pages (`/distros/[slug]`). VS comparison pages (`/vs/[slug-a]-vs-[slug-b]`). Sitemap (`/sitemap.xml`) and robots (`/robots.txt`) for SEO. **Distro Wizard** (`/wizard`) - 6-question interactive quiz with a client-side scoring algorithm that recommends distros from the local JSON dataset. **DistroSea integration** - in-browser test drives for supported distros. **Popularity** (`/popularity`) - measured distro rankings from external sources (gamers rating via Steam Hardware Survey).
+- **Completed:** UI prototype with shadcn/ui and Tailwind. Basic landing page with search bar and distro grid. Distro detail pages (`/distros/[slug]`). VS comparison pages (`/vs/[slug-a]-vs-[slug-b]`). Sitemap (`/sitemap.xml`) and robots (`/robots.txt`) for SEO. **Distro Wizard** (`/wizard`) - 6-question interactive quiz with a client-side scoring algorithm over distros fetched server-side from the CMS. **DistroSea integration** - in-browser test drives for supported distros. **Popularity** (`/popularity`) - measured distro rankings from external sources (gamers rating via Steam Hardware Survey). **Payload CMS** (`apps/cms`) - Postgres-backed `distros` collection is now the source of truth for distro data.
 
 ## Routes
 
-| Route             | File                          | Description                                                                                |
-| ----------------- | ----------------------------- | ------------------------------------------------------------------------------------------ |
-| `/`               | `app/page.tsx`                | Landing page: gradient hero (live distro count, quick-filter chips) + search + distro grid |
-| `/distros/[slug]` | `app/distros/[slug]/page.tsx` | Full distro detail page                                                                    |
-| `/vs/[slugs]`     | `app/vs/[slugs]/page.tsx`     | Side-by-side comparison, e.g. `/vs/ubuntu-vs-fedora`                                       |
-| `/wizard`         | `app/wizard/page.tsx`         | Interactive 6-step distro recommendation quiz                                              |
-| `/glossary`       | `app/glossary/page.tsx`       | Tag definitions with anchor links (`/glossary#atomic`)                                     |
-| `/popularity`     | `app/popularity/page.tsx`     | Measured distro popularity ratings (gamers: Steam Hardware Survey)                         |
-| `/resources`      | `app/resources/page.tsx`      | Curated external links by category (communities, docs, learning, news, tools)              |
-| `/sitemap.xml`    | `app/sitemap.ts`              | Auto-generated sitemap (all distros + all VS pairs)                                        |
-| `/robots.txt`     | `app/robots.ts`               | Robots directives pointing to sitemap                                                      |
+| Route             | File                                   | Description                                                                                |
+| ----------------- | -------------------------------------- | ------------------------------------------------------------------------------------------ |
+| `/`               | `apps/web/app/page.tsx`                | Landing page: gradient hero (live distro count, quick-filter chips) + search + distro grid |
+| `/distros/[slug]` | `apps/web/app/distros/[slug]/page.tsx` | Full distro detail page                                                                    |
+| `/vs/[slugs]`     | `apps/web/app/vs/[slugs]/page.tsx`     | Side-by-side comparison, e.g. `/vs/ubuntu-vs-fedora`                                       |
+| `/wizard`         | `apps/web/app/wizard/page.tsx`         | Interactive 6-step distro recommendation quiz                                              |
+| `/glossary`       | `apps/web/app/glossary/page.tsx`       | Tag definitions with anchor links (`/glossary#atomic`)                                     |
+| `/popularity`     | `apps/web/app/popularity/page.tsx`     | Measured distro popularity ratings (gamers: Steam Hardware Survey)                         |
+| `/resources`      | `apps/web/app/resources/page.tsx`      | Curated external links by category (communities, docs, learning, news, tools)              |
+| `/sitemap.xml`    | `apps/web/public/sitemap.xml`          | Sitemap (all distros + all VS pairs)                                                       |
+| `/robots.txt`     | `apps/web/app/robots.ts`               | Robots directives pointing to sitemap                                                      |
 
 ## VS Page Conventions
 
-- URL pattern: `/vs/{slugA}-vs-{slugB}` - slugs must match distro slugs in `lib/data/distros.json`.
+- URL pattern: `/vs/{slugA}-vs-{slugB}` - slugs must match distro slugs in the CMS `distros` collection.
 - Static generation via `generateStaticParams` using `getAllVsSlugs()` from `lib/distros.ts`.
 - Green highlight (`bg-emerald-500/10 text-emerald-400`) on the winning cell; no highlight on ties or non-comparable fields.
 - Comparison is purely cosmetic/informational - no scoring algorithm.
 
 ## DistroSea Integration
 
-- Supported distros expose an optional `distroSea` slug in `lib/data/distros.json` (the `DistroDetail` type). It maps to a DistroSea entry: `https://distrosea.com/select/<distroSea>/`.
+- Supported distros expose an optional `distroSea` slug on the CMS `distros` collection (the `DistroDetail` type). It maps to a DistroSea entry: `https://distrosea.com/select/<distroSea>/`.
 - When present, the distro page (`/distros/[slug]`) renders a "Try in browser" CTA (next to Download) and a sidebar link, letting users run the distro online via DistroSea.
 - DistroSea slugs differ from our slugs (e.g. `linux-mint` → `linuxmint`, `almalinux-os` → `alma`, `centos` → `centosstream`). Add the field only for distros DistroSea actually hosts; omit otherwise.
 - Distro page CTA hierarchy: primary actions are **Download** + **Try in browser**; **Compare** and **Suggest a change** are demoted to subtle ghost/utility buttons.
@@ -80,5 +97,6 @@ New distributions should follow this folder-per-slug convention for better maint
 
 - Follow Next.js App Router best practices.
 - Use explicit typing; avoid `any`.
-- Keep business logic in `src/common/utils` (or `lib/` as per current structure).
+- Keep business logic in `lib/` within each app.
+- Shared types/config go in `packages/types` and `packages/config`, imported via the `@distrodb/*` workspace protocol - don't duplicate them per-app.
 - Export DTOs/Types via `index.ts` in respective folders.

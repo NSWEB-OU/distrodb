@@ -1,0 +1,23 @@
+version: "3"
+
+# Local Postgres for Payload dev. Run `docker compose up -d` from apps/cms,
+# then `pnpm dev:cms` from the repo root (matches DATABASE_URL in .env).
+services:
+  postgres:
+    restart: unless-stopped
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: distrodb_cms
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  pgdata:
+
+  data:
+  # pgdata:
+  node_modules:

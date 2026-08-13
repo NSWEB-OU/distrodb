@@ -4,10 +4,10 @@ To add a new distribution or update existing assets, follow this directory struc
 
 ## Directory Structure
 
-Each distribution must have its own folder inside `public/repos/`, named after its `slug` defined in `lib/data/distros.json`.
+Each distribution must have its own folder inside `apps/web/public/repos/`, named after its `slug` in the CMS `distros` collection.
 
 ```text
-public/repos/[slug]/
+apps/web/public/repos/[slug]/
 ├── logo.png (or .webp, .svg, .jpg)
 ├── screenshot-1.webp
 ├── screenshot-2.webp
@@ -21,9 +21,9 @@ public/repos/[slug]/
     - **Format**: `.webp` is highly recommended for performance.
     - **Resolution**: 16:9 aspect ratio (e.g., 1920x1080) is preferred.
 
-## Updating distros.json
+## Updating distro data
 
-Ensure the paths in `lib/data/distros.json` match your files:
+Distro data now lives in Payload CMS (Postgres), not `distros.json` - that file is kept only as the original seed source. Add or edit a distro via the CMS admin at `http://localhost:3001/admin` (collection: **Distros**), making sure the `img`/`screenshots` paths match your files:
 
 ```json
 {
@@ -39,15 +39,14 @@ Follow these steps to add a new distribution to the database:
 
 ### 1. Create Asset Folder
 
-Create a folder in `public/repos/[slug]/` and add the `logo` and `screenshots` as described in the sections above.
+Create a folder in `apps/web/public/repos/[slug]/` and add the `logo` and `screenshots` as described in the sections above.
 
-### 2. Update `lib/data/distros.json`
+### 2. Add the distro in the CMS
 
-Add a new entry to the JSON array. All fields are required unless specified as optional.
+Add a new entry in the **Distros** collection at `http://localhost:3001/admin`. All fields are required unless specified as optional (field names match below):
 
 ```json
 {
-  "id": "unique-id-123", // Unique identifier (usually slug + version)
   "slug": "my-distro", // URL-friendly name
   "name": "My Distribution", // Display name
   "description": "Short desc...", // One-sentence summary
@@ -63,7 +62,7 @@ Add a new entry to the JSON array. All fields are required unless specified as o
   "packageManager": "apt", // Main package manager
   "initSystem": "systemd", // Init system used
   "architecture": ["x86_64"], // Supported architectures
-  "releaseModel": "fixed", // "fixed" or "rolling"
+  "releaseModel": "fixed", // "fixed", "rolling", or "semi-rolling"
   "latestVersion": "1.0", // Current version
   "releaseDate": "2026-01-01", // ISO date
   "website": "https://...", // Official site
@@ -76,4 +75,4 @@ Add a new entry to the JSON array. All fields are required unless specified as o
 
 ## Example
 
-See the `public/repos/_example/` folder for a reference implementation.
+See the `apps/web/public/repos/_example/` folder for a reference implementation.
