@@ -1,47 +1,20 @@
 # Distribution Asset Guidelines
 
-To add a new distribution or update existing assets, follow this directory structure and naming convention.
+To add a new distribution or update existing assets, use the CMS admin.
 
-## Directory Structure
+## Logo & Screenshots
 
-Each distribution must have its own folder inside `apps/web/public/repos/`, named after its `slug` in the CMS `distros` collection.
+Logos and screenshots are Payload uploads (`media` collection), stored in S3-compatible object storage - not files in the repo. To add/update them:
 
-```text
-apps/web/public/repos/[slug]/
-├── logo.png (or .webp, .svg, .jpg)
-├── screenshot-1.webp
-├── screenshot-2.webp
-└── ...
-```
-
-## Naming Conventions
-
-1.  **Logo**: Name it `logo.[extension]`. Supports `.png`, `.webp`, `.svg`, `.jpg`. High-quality transparent PNGs or SVGs are preferred.
-2.  **Screenshots**: Name them sequentially: `screenshot-1.[ext]`, `screenshot-2.[ext]`, etc.
-    - **Format**: `.webp` is highly recommended for performance.
-    - **Resolution**: 16:9 aspect ratio (e.g., 1920x1080) is preferred.
+1.  Open the CMS admin at `http://localhost:3001/admin`, open the distro's entry in **Distros**.
+2.  Use the `img` field to upload a logo (`.png`, `.webp`, `.svg`, `.jpg`; transparent PNG/SVG preferred).
+3.  Use the `screenshots` field to upload one or more screenshots (`.webp` recommended, 16:9 aspect ratio e.g. 1920x1080).
 
 ## Updating distro data
 
-Distro data now lives in Payload CMS (Postgres), not `distros.json` - that file is kept only as the original seed source. Add or edit a distro via the CMS admin at `http://localhost:3001/admin` (collection: **Distros**), making sure the `img`/`screenshots` paths match your files:
-
-```json
-{
-  "slug": "my-distro",
-  "img": "/repos/my-distro/logo.png",
-  "screenshots": ["/repos/my-distro/screenshot-1.webp", "/repos/my-distro/screenshot-2.webp"]
-}
-```
+Distro data lives in Payload CMS (Postgres), not `distros.json` - that file is kept only as the original seed source. Add or edit a distro via the CMS admin at `http://localhost:3001/admin` (collection: **Distros**).
 
 ## Contributing a New Distribution
-
-Follow these steps to add a new distribution to the database:
-
-### 1. Create Asset Folder
-
-Create a folder in `apps/web/public/repos/[slug]/` and add the `logo` and `screenshots` as described in the sections above.
-
-### 2. Add the distro in the CMS
 
 Add a new entry in the **Distros** collection at `http://localhost:3001/admin`. All fields are required unless specified as optional (field names match below):
 
@@ -51,11 +24,7 @@ Add a new entry in the **Distros** collection at `http://localhost:3001/admin`. 
   "name": "My Distribution", // Display name
   "description": "Short desc...", // One-sentence summary
   "longDescription": "Full...", // Detailed overview
-  "img": "/repos/slug/logo.png", // Path to logo
-  "screenshots": [
-    // Array of screenshot paths
-    "/repos/slug/screenshot-1.webp"
-  ],
+  // img/screenshots: upload via the admin UI, not set as JSON paths
   "tags": ["desktop", "live"], // Categories
   "base": "Debian", // Base distribution (or null)
   "desktopEnvironments": ["GNOME"], // List of available DEs
@@ -73,6 +42,6 @@ Add a new entry in the **Distros** collection at `http://localhost:3001/admin`. 
 }
 ```
 
-## Example
+## Legacy Assets
 
-See the `apps/web/public/repos/_example/` folder for a reference implementation.
+Existing distro images were originally stored in `apps/web/public/repos/[slug]/`. They're migrated into the `media` collection via `pnpm --filter @distrodb/cms migrate:media` (see `apps/cms/src/scripts/migrate-media-to-s3.ts`), which uploads each file and deletes the local copy once linked. The `apps/web/public/repos/_example/` folder remains only as a historical reference.

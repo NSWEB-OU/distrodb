@@ -16,7 +16,7 @@ import { DistroGallery } from "@/components/distro-gallery";
 import { SuggestChangesButton } from "@/components/suggest-changes-button";
 import { TagBadge } from "@/components/tag-badge";
 import { GlossaryBadge } from "@/components/glossary-badge";
-import { cn } from "@/lib/utils";
+import { cn, toAbsoluteUrl } from "@/lib/utils";
 
 const BASE_URL = "https://distrodb.xyz";
 const DISTROSEA_BASE = "https://distrosea.com/select";
@@ -38,7 +38,7 @@ export async function generateMetadata({
   const title = `${distro.name} Linux - Review, Specs & Download`;
   const description = `${distro.description} Learn about ${distro.name}'s package manager (${distro.packageManager}), release model (${distro.releaseModel}), desktop environments, and more.`;
   const url = `${BASE_URL}/distros/${distro.slug}`;
-  const image = distro.img ? `${BASE_URL}${distro.img}` : `${BASE_URL}/og-default.png`;
+  const image = toAbsoluteUrl(BASE_URL, distro.img) ?? `${BASE_URL}/og-default.png`;
 
   return {
     title,
@@ -138,7 +138,7 @@ function DistroJsonLd({ distro }: { distro: DistroDetail }) {
     downloadUrl: distro.download,
     softwareVersion: distro.latestVersion,
     datePublished: distro.releaseDate,
-    image: distro.img ? `https://distrodb.xyz${distro.img}` : undefined,
+    image: toAbsoluteUrl("https://distrodb.xyz", distro.img),
     publisher: {
       "@type": "Organization",
       name: "DistroDB",

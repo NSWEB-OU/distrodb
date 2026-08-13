@@ -44,13 +44,18 @@ packages/
 
 ## Asset Structure
 
-To maintain a clean and contributable project, all distribution assets are stored in `apps/web/public/repos/`:
+Distro logos and screenshots are Payload uploads (`media` collection, `apps/cms/src/collections/Media.ts`), backed by S3-compatible object storage:
 
-- **Path:** `apps/web/public/repos/[slug]/`
-- **Main Image:** `logo.[extension]` (linked via the `img` field on the CMS `distros` collection)
-- **Screenshots:** `screenshot-1.[extension]`, `screenshot-2.[extension]`, etc. (linked via the `screenshots` field)
-
-Images stay as static files served by `apps/web` (not Payload uploads) - the CMS only stores the path string (e.g. `/repos/ubuntu/logo.png`). New distributions should follow this folder-per-slug convention for better maintainability and ease of pull requests.
+- **Storage:** `@payloadcms/storage-s3`, wired in `apps/cms/src/payload.config.ts`. Only enabled when `S3_BUCKET` is set (`apps/cms/.env`: `S3_BUCKET`, `S3_REGION`, `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY`, optional `S3_ENDPOINT` for non-AWS providers). Without a bucket configured, uploads fall back to local disk (dev-only). `disablePayloadAccessControl: true` is set so media URLs point straight at the bucket instead of proxying through the CMS server - this requires the bucket to allow public `s3:GetObject` (bucket policy below); the CMS's own `S3_ACCESS_KEY_ID`/`S3_SECRET_ACCESS_KEY` are only used server-side for uploads (Put/Delete), never exposed to visitors.
+- **Bucket setup (AWS S3):**
+  1. Create the bucket in the region set as `S3_REGION`. Keep "Block all public access" ON except for "Block public access to buckets and objects granted through new public bucket **policies**" and "...through **any** public bucket policies" (uncheck those two so the policy below can apply); leave the public-ACL options blocked since no ACLs are used.
+  2. Add a bucket policy scoped to read-only: `{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":"*","Action":"s3:GetObject","Resource":"arn:aws:s3:::<bucket>/*"}]}`.
+  3. Create an IAM user (or role) for the CMS with a policy scoped to just this bucket: `s3:PutObject`, `s3:GetObject`, `s3:DeleteObject` on `arn:aws:s3:::<bucket>/*`. Use its access key/secret as `S3_ACCESS_KEY_ID`/`S3_SECRET_ACCESS_KEY`.
+  4. Restart the CMS after editing `.env` (env vars are read at process start).
+  - For production-grade delivery (caching, no public bucket), front the bucket with CloudFront using Origin Access Control instead of a public bucket policy, and point `NEXT_PUBLIC_MEDIA_HOSTNAME` at the CloudFront domain.
+- **Distro fields:** `img` (single upload) and `screenshots` (`hasMany` upload) on the `distros` collection are relations to `media`, editable per-distro in the admin UI - no more manual file drops into the repo.
+- **Web consumption:** `apps/web/lib/distros.ts` fetches distros with `depth=1` and flattens the populated media docs down to plain URL strings, so `DistroDetail.img`/`screenshots` (from `@distrodb/types`) stay `string`/`string[]` for the rest of the app. `apps/web/next.config.ts` allow-lists the bucket (or CloudFront) hostname for `next/image` via `NEXT_PUBLIC_MEDIA_HOSTNAME` (e.g. `<bucket>.s3.<region>.amazonaws.com`) - must be set or `next/image` will reject the S3 URLs.
+- **Legacy migration:** `apps/web/public/repos/[slug]/logo.*` and `screenshot-*.*` files are the historical source. `pnpm --filter @distrodb/cms migrate:media` (`apps/cms/src/scripts/migrate-media-to-s3.ts`) uploads each file into `media`, links it to the matching distro, and deletes the local file once linked. Run once after seeding a fresh DB and after S3 credentials are configured.
 
 ## Current Progress (MVP Phase)
 

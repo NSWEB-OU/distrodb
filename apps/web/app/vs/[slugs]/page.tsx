@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { DistroDetail, DifficultyLevel, ReleaseModel } from "@/components/types/types";
+import { toAbsoluteUrl } from "@/lib/utils";
 
 const BASE_URL = "https://distrodb.xyz";
 
@@ -48,7 +49,7 @@ export async function generateMetadata({
   const title = `${a.name} vs ${b.name} - Linux Distro Comparison | DistroDB`;
   const description = `Side-by-side comparison of ${a.name} and ${b.name}. Compare package managers, init systems, release models, desktop environments, architecture support and more.`;
   const url = `${BASE_URL}/vs/${slugs}`;
-  const image = a.img ? `${BASE_URL}${a.img}` : `${BASE_URL}/og-default.png`;
+  const image = toAbsoluteUrl(BASE_URL, a.img) ?? `${BASE_URL}/og-default.png`;
 
   return {
     title,

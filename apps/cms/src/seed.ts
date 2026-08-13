@@ -22,7 +22,9 @@ const seed = async () => {
   const distros = JSON.parse(raw) as DistroDetail[]
 
   for (const distro of distros) {
-    const { id: _legacyId, ...data } = distro
+    // img/screenshots are Payload upload relations now, not path strings -
+    // populated separately by `pnpm --filter @distrodb/cms migrate:media`.
+    const { id: _legacyId, img: _img, screenshots: _screenshots, ...data } = distro
     const existing = await payload.find({
       collection: 'distros',
       where: { slug: { equals: distro.slug } },

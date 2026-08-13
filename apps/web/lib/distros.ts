@@ -2,21 +2,40 @@ import type { DistroDetail } from "@distrodb/types";
 
 const CMS_URL = process.env.CMS_URL ?? "http://localhost:3001";
 
-type PayloadListResponse = {
-  docs: (DistroDetail & { id: string | number })[];
+// img/screenshots are Payload upload relations (media collection); with
+// depth=1 the API returns the populated media doc instead of just its id.
+type MediaDoc = { url?: string | null };
+type PayloadDistro = Omit<DistroDetail, "img" | "screenshots" | "id"> & {
+  id: string | number;
+  img?: MediaDoc | number | string | null;
+  screenshots?: (MediaDoc | number | string)[] | null;
 };
+
+type PayloadListResponse = {
+  docs: PayloadDistro[];
+};
+
+function mediaUrl(media: MediaDoc | number | string | null | undefined): string | undefined {
+  if (media && typeof media === "object") return media.url ?? undefined;
+  return undefined;
+}
 
 // Cached per request/revalidate window; Next.js dedupes identical fetch calls
 // automatically, so repeated calls below don't cause N+1 requests.
 async function fetchDistros(): Promise<DistroDetail[]> {
-  const res = await fetch(`${CMS_URL}/api/distros?limit=1000&depth=0`, {
+  const res = await fetch(`${CMS_URL}/api/distros?limit=1000&depth=1&sort=createdAt`, {
     next: { revalidate: 3600 },
   });
   if (!res.ok) {
     throw new Error(`Failed to fetch distros from CMS: ${res.status} ${res.statusText}`);
   }
   const { docs } = (await res.json()) as PayloadListResponse;
-  return docs.map((doc) => ({ ...doc, id: String(doc.id) }));
+  return docs.map((doc) => ({
+    ...doc,
+    id: String(doc.id),
+    img: mediaUrl(doc.img),
+    screenshots: (doc.screenshots ?? []).map(mediaUrl).filter((url): url is string => Boolean(url)),
+  }));
 }
 
 export async function getAllDistros(): Promise<DistroDetail[]> {

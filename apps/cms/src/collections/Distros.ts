@@ -1,8 +1,8 @@
 import type { CollectionConfig } from 'payload'
 
-// Mirrors the DistroDetail shape in @distrodb/types. Screenshots/logo stay as
-// static paths served from apps/web/public/repos (see PROJECT_CONTEXT.md
-// Asset Structure) rather than Payload uploads, so existing assets don't move.
+// Mirrors the DistroDetail shape in @distrodb/types. Logo/screenshots are
+// Payload uploads (media collection, S3-backed) - see PROJECT_CONTEXT.md
+// Asset Structure. apps/web resolves these relations to plain URL strings.
 export const Distros: CollectionConfig = {
   slug: 'distros',
   admin: {
@@ -37,9 +37,10 @@ export const Distros: CollectionConfig = {
     },
     {
       name: 'img',
-      type: 'text',
+      type: 'upload',
+      relationTo: 'media',
       admin: {
-        description: "Path under /repos/[slug]/ in the web app's public folder.",
+        description: 'Logo/cover image for the distro.',
       },
     },
     {
@@ -50,8 +51,12 @@ export const Distros: CollectionConfig = {
     },
     {
       name: 'screenshots',
-      type: 'text',
+      type: 'upload',
+      relationTo: 'media',
       hasMany: true,
+      admin: {
+        description: 'Screenshots shown in the distro gallery.',
+      },
     },
     {
       name: 'tags',

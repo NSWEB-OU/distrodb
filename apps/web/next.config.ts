@@ -1,9 +1,14 @@
 import type { NextConfig } from "next";
 
+// Set to the bucket's public hostname once S3 media is live, e.g.
+// "my-bucket.s3.us-east-1.amazonaws.com" (see apps/cms S3_BUCKET/S3_REGION).
+const mediaHostname = process.env.NEXT_PUBLIC_MEDIA_HOSTNAME;
+
 const nextConfig: NextConfig = {
   transpilePackages: ["@distrodb/types"],
   images: {
     formats: ["image/webp", "image/avif"],
+    remotePatterns: mediaHostname ? [{ protocol: "https", hostname: mediaHostname }] : [],
 
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
