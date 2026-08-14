@@ -1,0 +1,14 @@
+{
+  "name": "@distrodb/config",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "tsconfig.base.json",
+    "eslint-preset.mjs"
+  ],
+  "dependencies": {
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "eslint-config-prettier": "^10.1.8"
+  }
+}

@@ -14,10 +14,13 @@ A modern, aesthetically pleasing alternative to Distrowatch. DistroDB aims to pr
 
 ## 🚀 Getting Started
 
+This is a pnpm monorepo: `apps/web` (the Next.js site) and `apps/cms` (Payload CMS, Postgres-backed).
+
 ### Prerequisites
 
 - Node.js 20+
 - pnpm (recommended) or npm
+- PostgreSQL (for `apps/cms`) - `docker compose up -d` from `apps/cms` starts one locally
 
 ### Installation
 
@@ -34,13 +37,21 @@ A modern, aesthetically pleasing alternative to Distrowatch. DistroDB aims to pr
    pnpm install
    ```
 
-3. Start the development server:
+3. Start Postgres and the CMS, then seed it once:
 
    ```bash
-   pnpm run dev
+   cd apps/cms && docker compose up -d && cd ../..
+   pnpm dev:cms      # in one terminal, leave running
+   pnpm --filter @distrodb/cms seed   # one-off, populates distros from the legacy JSON
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. Start both apps (or just `pnpm dev:web` if the CMS is already running):
+
+   ```bash
+   pnpm dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) for the site and [http://localhost:3001/admin](http://localhost:3001/admin) for the CMS.
 
 ## 🤝 Contributing
 
