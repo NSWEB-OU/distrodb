@@ -29,7 +29,7 @@
     "cross-env": "^7.0.3",
     "dotenv": "16.4.7",
     "graphql": "^16.8.1",
-    "next": "16.3.0",
+    "next": "16.3.1",
     "payload": "3.88.0",
     "react": "19.2.6",
     "react-dom": "19.2.6",
@@ -45,12 +45,12 @@
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "4.5.2",
     "eslint": "^9.16.0",
-    "eslint-config-next": "16.3.0",
+    "eslint-config-next": "16.3.1",
     "jsdom": "28.0.0",
     "prettier": "^3.4.2",
     "typescript": "5.7.3",
     "vite-tsconfig-paths": "6.0.5",
-    "vitest": "4.0.18"
+    "vitest": "4.1.10"
   },
   "engines": {
     "node": "^18.20.2 || >=20.9.0",
