@@ -33,7 +33,7 @@
     "payload": "3.88.0",
     "react": "19.2.6",
     "react-dom": "19.2.6",
-    "sharp": "0.34.2",
+    "sharp": "^0.35.3",
     "tsx": "4.22.4",
     "@payloadcms/db-postgres": "3.88.0"
   },
