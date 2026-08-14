@@ -36,7 +36,7 @@ async function uploadFile(
   payload: Awaited<ReturnType<typeof getPayload>>,
   filePath: string,
   alt: string,
-): Promise<number | string | null> {
+): Promise<number | null> {
   const filename = path.basename(filePath)
   const mimeType = mimeTypeFor(filename)
   if (!mimeType) {
@@ -96,14 +96,14 @@ const migrate = async () => {
 
     const uploadedFilePaths: string[] = []
 
-    let logoId: number | string | null = null
+    let logoId: number | null = null
     if (logoFile) {
       const filePath = path.join(distroDir, logoFile)
       logoId = await uploadFile(payload, filePath, `${distro.name} logo`)
       if (logoId !== null) uploadedFilePaths.push(filePath)
     }
 
-    const screenshotIds: (number | string)[] = []
+    const screenshotIds: number[] = []
     for (const [index, file] of screenshotFiles.entries()) {
       const filePath = path.join(distroDir, file)
       const id = await uploadFile(payload, filePath, `${distro.name} screenshot ${index + 1}`)

@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { checkRateLimit } from "@/lib/rate-limit";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const TO_EMAIL = process.env.SUGGEST_TO_EMAIL ?? "";
 const FROM_EMAIL = process.env.SUGGEST_FROM_EMAIL ?? "";
 
@@ -58,6 +56,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Server misconfiguration." }, { status: 500 });
   }
 
+  // Constructed here (not at module scope) so RESEND_API_KEY is only needed at runtime, not build time.
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const { error } = await resend.emails.send({
     from: FROM_EMAIL,
     to: TO_EMAIL,

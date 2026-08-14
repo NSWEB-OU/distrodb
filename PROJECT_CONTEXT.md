@@ -34,9 +34,19 @@ packages/
 - `apps/cms` needs a running Postgres instance; `apps/cms/docker-compose.yml` provides one for local dev (`docker compose up -d` from `apps/cms`). Connection string lives in `apps/cms/.env` (`DATABASE_URL`).
 - `apps/web` reads distro data from the CMS's REST API at build/request time via `CMS_URL` (defaults to `http://localhost:3001`), so the CMS must be running for `apps/web` to build or serve `/`, `/distros/[slug]`, `/vs/[slugs]`, `/glossary`, `/wizard`, and the gamers rating widget.
 
+## Deployment (Docker)
+
+- **Images:** `apps/cms/Dockerfile` and `apps/web/Dockerfile` are pnpm-workspace-aware; build with the **repo root** as context, e.g. `docker build -f apps/web/Dockerfile .`.
+  - `apps/cms/Dockerfile` ships a full (non-standalone) install - deliberately, so the seed scripts (`tsx` + `src/*.ts`, both moved to "dependencies") can run inside the built image, e.g. `docker compose run --rm cms pnpm run seed`.
+  - `apps/web/Dockerfile` uses Next's `output: "standalone"` (`apps/web/next.config.ts`, with `outputFileTracingRoot` set to the monorepo root) for a minimal runtime image.
+- **Build-time CMS dependency:** `apps/web` statically generates several pages (`/glossary`, `/distros/[slug]`, `/vs/[slugs]`, etc.) from the CMS REST API at build time, so `CMS_URL` must point at an already-running, reachable CMS when building the web image (passed as a Docker build `ARG`/`ENV`). `getAllSlugs`/`getAllVsSlugs` (used only by `generateStaticParams`) degrade gracefully to on-demand rendering if the CMS is unreachable at build time, but fully static pages like `/glossary` cannot - build them only after the CMS is up.
+- **Production stack:** `docker-compose.prod.yml` (repo root) runs Postgres + CMS + web on one Docker network for a self-hosted VPS (e.g. Coolify); see its header comment for the required two-phase `up` order (CMS first, then web) and required env vars (`.env.example` at repo root).
+- **S3 is mandatory in production:** `apps/cms/src/payload.config.ts` throws at runtime (not at `next build`, detected via `NEXT_PHASE`) if `NODE_ENV=production` and `S3_BUCKET` isn't set - local-disk media storage is dev-only.
+
 ## Data Strategy
 
 - **Source of truth:** the `distros` collection in Payload CMS (Postgres-backed), defined in `apps/cms/src/collections/Distros.ts`, mirroring the `DistroDetail` shape from `@distrodb/types`.
+- **Roadmap:** the `roadmap` collection (`apps/cms/src/collections/Roadmap.ts`), mirroring `RoadmapItemDetail` from `@distrodb/types` (title, description, status, icon key, optional quarter, `order` for manual display ordering). `apps/web/lib/roadmap.ts` fetches it via `GET /api/roadmap?sort=order` (`revalidate: 3600`); `/roadmap` maps each item's `icon` key to a Hugeicon component via a lookup table. Seeded once via `pnpm --filter @distrodb/cms seed:roadmap` (`apps/cms/src/seed-roadmap.ts`).
 - `apps/web/lib/data/distros.json` is now only the historical seed source, consumed once by `apps/cms/src/seed.ts` (`pnpm --filter @distrodb/cms seed`) to populate Postgres. It is not read by the app at runtime anymore.
 - **Data access:** `apps/web/lib/distros.ts` fetches from the CMS REST API (`GET /api/distros`) with `next: { revalidate: 3600 }`; all helpers (`getAllDistros`, `getDistroBySlug`, `getAllSlugs`, `getAllVsSlugs`) are now `async`.
 - **Client-side usage:** the Distro Wizard (`app/wizard/wizard-client.tsx`) scores results entirely client-side for instant feedback, so `app/wizard/page.tsx` (server component) fetches the distro list once and passes it down as a prop; `getWizardResults(answers, distros, topN)` takes distros as a parameter instead of fetching itself.
@@ -72,6 +82,7 @@ Distro logos and screenshots are Payload uploads (`media` collection, `apps/cms/
 | `/glossary`       | `apps/web/app/glossary/page.tsx`       | Tag definitions with anchor links (`/glossary#atomic`)                                     |
 | `/popularity`     | `apps/web/app/popularity/page.tsx`     | Measured distro popularity ratings (gamers: Steam Hardware Survey)                         |
 | `/resources`      | `apps/web/app/resources/page.tsx`      | Curated external links by category (communities, docs, learning, news, tools)              |
+| `/roadmap`        | `apps/web/app/roadmap/page.tsx`        | Project roadmap timeline, backed by the CMS `roadmap` collection                           |
 | `/sitemap.xml`    | `apps/web/public/sitemap.xml`          | Sitemap (all distros + all VS pairs)                                                       |
 | `/robots.txt`     | `apps/web/app/robots.ts`               | Robots directives pointing to sitemap                                                      |
 

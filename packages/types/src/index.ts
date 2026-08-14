@@ -37,3 +37,30 @@ export type DistroDetail = {
   highlights: string[];
   difficulty: DifficultyLevel;
 };
+
+export type RoadmapStatus = "done" | "in-progress" | "upcoming" | "planned";
+
+export type RoadmapIcon =
+  | "database"
+  | "computer"
+  | "filter"
+  | "source-code"
+  | "star"
+  | "rocket"
+  | "idea"
+  | "chart"
+  | "shield"
+  | "global"
+  | "target"
+  | "flag"
+  | "puzzle";
+
+export type RoadmapItemDetail = {
+  id: string;
+  icon: RoadmapIcon;
+  title: string;
+  description: string;
+  status: RoadmapStatus;
+  quarter?: string;
+  order: number;
+};

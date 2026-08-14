@@ -48,8 +48,16 @@ export async function getDistroBySlug(slug: string): Promise<DistroDetail | unde
 }
 
 export async function getAllSlugs(): Promise<string[]> {
-  const distros = await fetchDistros();
-  return distros.map((d) => d.slug);
+  try {
+    const distros = await fetchDistros();
+    return distros.map((d) => d.slug);
+  } catch (error) {
+    // Only used by generateStaticParams (distros/[slug], vs/[slugs]); if the
+    // CMS isn't reachable at build time, skip pre-rendering and fall back to
+    // on-demand rendering at runtime instead of failing the whole build.
+    console.warn("getAllSlugs: CMS unreachable, skipping static pre-render -", error);
+    return [];
+  }
 }
 
 export async function getAllVsSlugs(): Promise<{ slugs: string }[]> {

@@ -4,17 +4,30 @@ import { s3Storage } from '@payloadcms/storage-s3'
 import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
+import { PHASE_PRODUCTION_BUILD } from 'next/constants'
 import sharp from 'sharp'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { Distros } from './collections/Distros'
+import { Roadmap } from './collections/Roadmap'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 // S3 storage is only enabled once a bucket is configured; otherwise Media
 // falls back to local disk storage (useful for local dev without credentials).
+// In production, local disk is not durable across deploys, so require S3 -
+// but not during `next build` itself, where env vars are runtime-only anyway
+// (NEXT_PHASE is set by Next.js for the build phase, see next/constants).
+if (
+  process.env.NODE_ENV === 'production' &&
+  process.env.NEXT_PHASE !== PHASE_PRODUCTION_BUILD &&
+  !process.env.S3_BUCKET
+) {
+  throw new Error('S3_BUCKET is required in production (see PROJECT_CONTEXT.md Asset Structure).')
+}
+
 const s3Plugin = process.env.S3_BUCKET
   ? [
       s3Storage({
@@ -45,7 +58,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Distros],
+  collections: [Users, Media, Distros, Roadmap],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

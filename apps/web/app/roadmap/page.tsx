@@ -6,14 +6,24 @@ import {
   FilterIcon,
   SourceCodeIcon,
   StarIcon,
+  RocketIcon,
+  Idea01Icon,
+  ChartIcon,
+  Shield01Icon,
+  GlobalIcon,
+  Target01Icon,
+  Flag01Icon,
+  PuzzleIcon,
   Tick02Icon,
   Loading01Icon,
   Clock01Icon,
   Calendar01Icon,
 } from "@hugeicons/core-free-icons";
+import type { RoadmapIcon, RoadmapStatus } from "@distrodb/types";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { VacationNotice } from "@/components/vacation-notice";
+import { getRoadmapItems } from "@/lib/roadmap";
 
 export const metadata: Metadata = {
   title: "Roadmap",
@@ -31,54 +41,21 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-type RoadmapStatus = "done" | "in-progress" | "upcoming" | "planned";
-
-interface RoadmapItem {
-  icon: IconSvgElement;
-  title: string;
-  description: string;
-  status: RoadmapStatus;
-  quarter?: string;
-}
-
-const roadmapItems: RoadmapItem[] = [
-  {
-    icon: DatabaseIcon,
-    title: "Database review & curation",
-    description:
-      "Manual audit of the entire distro database - fixing tag inconsistencies, correcting descriptions, updating broken links, and adding high-quality desktop screenshots for every entry.",
-    status: "in-progress",
-  },
-  {
-    icon: ComputerIcon,
-    title: "DistroSea integration",
-    description:
-      "Launch a live distro test directly from its page via DistroSea. No download required - try before you commit, straight from the browser.",
-    status: "done",
-  },
-  {
-    icon: FilterIcon,
-    title: "Distro Wizard improvements",
-    description:
-      "Sharpen the recommendation algorithm behind the Distro Wizard. Better answer weighting, improved scoring logic, and more accurate results that reflect real-world use cases.",
-    status: "in-progress",
-  },
-  {
-    icon: SourceCodeIcon,
-    title: "100 more distros",
-    description:
-      "Expand the database with 100 additional Linux distributions - covering more niche, regional, and specialized distros that deserve a proper home in the catalog.",
-    status: "upcoming",
-  },
-  {
-    icon: StarIcon,
-    title: "Ratings & reviews",
-    description:
-      "A community-driven rating and review system. Users will be able to rate distributions and share short written reviews to help others make informed decisions.",
-    status: "planned",
-    quarter: "Q4",
-  },
-];
+const iconMap: Record<RoadmapIcon, IconSvgElement> = {
+  database: DatabaseIcon,
+  computer: ComputerIcon,
+  filter: FilterIcon,
+  "source-code": SourceCodeIcon,
+  star: StarIcon,
+  rocket: RocketIcon,
+  idea: Idea01Icon,
+  chart: ChartIcon,
+  shield: Shield01Icon,
+  global: GlobalIcon,
+  target: Target01Icon,
+  flag: Flag01Icon,
+  puzzle: PuzzleIcon,
+};
 
 const statusConfig = {
   done: {
@@ -120,7 +97,8 @@ const statusConfig = {
   }
 >;
 
-export default function RoadmapPage() {
+export default async function RoadmapPage() {
+  const roadmapItems = await getRoadmapItems();
   const completedCount = roadmapItems.filter((i) => i.status === "done").length;
 
   return (
@@ -144,8 +122,6 @@ export default function RoadmapPage() {
           </p>
         </div>
 
-        <VacationNotice />
-
         <Separator className="mt-10 mb-10" />
 
         {/* Roadmap list */}
@@ -155,7 +131,7 @@ export default function RoadmapPage() {
             const isLast = index === roadmapItems.length - 1;
 
             return (
-              <li key={item.title} className="relative flex gap-5 pb-8 last:pb-0">
+              <li key={item.id} className="relative flex gap-5 pb-8 last:pb-0">
                 {/* Timeline spine */}
                 <div className="relative flex flex-col items-center">
                   <div
@@ -178,7 +154,7 @@ export default function RoadmapPage() {
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex items-center gap-2">
                         <HugeiconsIcon
-                          icon={item.icon}
+                          icon={iconMap[item.icon]}
                           size="1rem"
                           className="text-foreground mt-0.5 shrink-0"
                         />
