@@ -2,8 +2,6 @@
 
 A modern, aesthetically pleasing alternative to Distrowatch. DistroDB aims to provide comprehensive information about Linux distributions with a focus on UI/UX, powerful search/filtering, and a personalized recommendation engine.
 
-![DistroDB Preview](public/distrodb/mainpage.png)
-
 ## ✨ Main Features
 
 - **Visual Discovery**: Clean, card-based design with high-quality screenshots and native dark mode.
