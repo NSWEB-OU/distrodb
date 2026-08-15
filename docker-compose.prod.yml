@@ -1,16 +1,22 @@
-# Production stack for a self-hosted VPS (e.g. Coolify): Postgres + CMS + web,
-# all on one Docker network. Requires a `.env` next to this file (see
-# .env.example) or the platform injecting the same variables.
+# Production stack for a self-hosted VPS: Postgres + CMS + web, all on one
+# Docker network. Requires a `.env` next to this file (see .env.example) or
+# the platform injecting the same variables.
 #
-# apps/web statically generates pages (glossary, distros/[slug], vs/[slugs],
-# etc.) at build time from the CMS's REST API, so the CMS must already be up
-# and reachable at CMS_URL *before* web is built - bring it up in two steps:
+# apps/web statically generates pages (glossary, roadmap, distros/[slug],
+# vs/[slugs], etc.) at build time from the CMS's REST API, so the CMS must
+# already be up and reachable at CMS_URL *before* web is built - bring it up
+# in two steps:
 #
 #   docker compose -f docker-compose.prod.yml up -d --build postgres cms
 #   # wait until the cms container is healthy, then optionally seed it:
 #   docker compose -f docker-compose.prod.yml run --rm cms pnpm run seed
 #   docker compose -f docker-compose.prod.yml run --rm cms pnpm run seed:roadmap
 #   docker compose -f docker-compose.prod.yml up -d --build web
+#
+# On Coolify (or similar platforms that build every service in a compose file
+# in one shot), this two-phase order can't be guaranteed with a single combined
+# stack - use docker-compose.cms.yml and docker-compose.web.yml as two separate
+# resources instead.
 
 
 services:
