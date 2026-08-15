@@ -26,7 +26,7 @@ export default async function GlossaryPage() {
 
   const distrosByTag = new Map<string, { name: string; slug: string }[]>();
   for (const distro of allDistros) {
-    for (const tag of distro.tags) {
+    for (const tag of new Set(distro.tags)) {
       if (!distrosByTag.has(tag)) distrosByTag.set(tag, []);
       distrosByTag.get(tag)!.push({ name: distro.name, slug: distro.slug });
     }
