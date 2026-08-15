@@ -9,10 +9,7 @@ const dirname = path.dirname(fileURLToPath(import.meta.url));
 const mediaHostname = process.env.NEXT_PUBLIC_MEDIA_HOSTNAME;
 
 const nextConfig: NextConfig = {
-  // Standalone output for Docker (apps/web/Dockerfile) - traces only the
-  // node_modules this app actually needs into .next/standalone.
   output: "standalone",
-  // Monorepo root, so file tracing correctly resolves hoisted workspace deps.
   outputFileTracingRoot: path.resolve(dirname, "../.."),
   transpilePackages: ["@distrodb/types"],
   images: {

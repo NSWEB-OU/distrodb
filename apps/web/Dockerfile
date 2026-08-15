@@ -13,6 +13,13 @@ RUN pnpm install --frozen-lockfile
 ARG CMS_URL
 ENV CMS_URL=${CMS_URL}
 RUN pnpm --filter @distrodb/web build
+# Next's standalone tracer only copies @swc/helpers' cjs/ folder, but its own
+# require-hook.js also resolves the esm/ variant at runtime (dynamically, so
+# the tracer can't detect it statically) - copy the full package in to fill
+# the gap left in the standalone output's node_modules.
+RUN for dir in apps/web/.next/standalone/node_modules/.pnpm/@swc+helpers@*/node_modules/@swc/helpers; do \
+      cp -rL apps/web/node_modules/@swc/helpers/. "$dir/"; \
+    done
 
 
 FROM node:22-alpine AS runner
