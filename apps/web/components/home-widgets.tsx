@@ -1,8 +1,9 @@
 import { getChangelogEntries } from "@/lib/changelog";
 import { HomeWidgetsClient } from "@/components/home-widgets-client";
 
-export function HomeWidgets() {
-  const raw = getChangelogEntries()[0] ?? null;
+export async function HomeWidgets() {
+  const entries = await getChangelogEntries();
+  const raw = entries[0] ?? null;
 
   const latest = raw
     ? {
