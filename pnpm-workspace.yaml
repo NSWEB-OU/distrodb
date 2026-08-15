@@ -28,6 +28,7 @@ allowBuilds:
   msw: true
   sharp: true
   unrs-resolver: true
+verifyDepsBeforeRun: false
 ignoredBuiltDependencies:
   - msw
   - sharp
