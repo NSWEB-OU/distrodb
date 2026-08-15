@@ -214,22 +214,6 @@ export default function PrivacyPage() {
                 </p>
               </div>
               <div className="border-border flex flex-col gap-1 rounded-sm border p-4">
-                <p className="text-xs font-medium">Hosting provider</p>
-                <p className="text-muted-foreground text-xs">
-                  DistroDB is hosted on Vercel. Vercel processes request data (including IP
-                  addresses) as part of providing hosting infrastructure. See{" "}
-                  <a
-                    href="https://vercel.com/legal/privacy-policy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-foreground underline underline-offset-4"
-                  >
-                    vercel.com/legal/privacy-policy
-                  </a>
-                  .
-                </p>
-              </div>
-              <div className="border-border flex flex-col gap-1 rounded-sm border p-4">
                 <p className="text-xs font-medium">
                   Umami Analytics (self-hosted, privacy-friendly analytics)
                 </p>
@@ -276,11 +260,6 @@ export default function PrivacyPage() {
                 device.
               </li>
             </ul>
-            <p className="text-muted-foreground">
-              Our hosting provider (Vercel) may set strictly necessary technical cookies for routing
-              or security purposes. These cookies do not track you across sites and do not require
-              your consent under the ePrivacy Directive.
-            </p>
           </section>
 
           <Separator />
