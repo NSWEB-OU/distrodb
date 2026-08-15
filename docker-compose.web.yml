@@ -7,6 +7,10 @@
 # on that resource), e.g. https://cms.yourdomain.com - "http://cms:3001" only
 # resolves within docker-compose.prod.yml's single combined stack.
 #
+# Don't publish a host port here - assign this resource its own domain/FQDN on
+# port 3000 via Coolify's proxy instead of hardcoding one, to avoid clashing
+# with other resources on the same server.
+#
 # For manual single-VPS docker compose deployments (no Coolify), use
 # docker-compose.prod.yml instead - it runs both halves on one shared network.
 
@@ -23,5 +27,3 @@ services:
       CMS_URL: ${CMS_URL:?Set CMS_URL to the reachable cms resource URL}
       NEXT_PUBLIC_MEDIA_HOSTNAME: ${NEXT_PUBLIC_MEDIA_HOSTNAME:?Set NEXT_PUBLIC_MEDIA_HOSTNAME}
       RESEND_API_KEY: ${RESEND_API_KEY:-}
-    ports:
-      - "3000:3000"
