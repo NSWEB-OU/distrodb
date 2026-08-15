@@ -64,3 +64,16 @@ export type RoadmapItemDetail = {
   quarter?: string;
   order: number;
 };
+
+export type ChangelogTag = "database" | "ui" | "feature" | "fix" | "roadmap" | "performance";
+
+export type ChangelogEntryDetail = {
+  id: string;
+  slug: string;
+  version: string;
+  date: string;
+  title: string;
+  tags: ChangelogTag[];
+  /** Markdown body, rendered via next-mdx-remote (apps/web/lib/changelog.ts). */
+  content: string;
+};

@@ -11,6 +11,7 @@ import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { Distros } from './collections/Distros'
 import { Roadmap } from './collections/Roadmap'
+import { Changelog } from './collections/Changelog'
 import { migrations } from './migrations'
 
 const filename = fileURLToPath(import.meta.url)
@@ -59,7 +60,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Distros, Roadmap],
+  collections: [Users, Media, Distros, Roadmap, Changelog],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

@@ -74,6 +74,9 @@ importers:
       graphql:
         specifier: ^16.8.1
         version: 16.13.0
+      gray-matter:
+        specifier: ^4.0.3
+        version: 4.0.3
       next:
         specifier: 16.3.1
         version: 16.3.1(@babel/core@7.29.7)(@playwright/test@1.58.2)(@types/node@22.19.9)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(sass@1.77.4)
@@ -156,9 +159,6 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      gray-matter:
-        specifier: ^4.0.3
-        version: 4.0.3
       next:
         specifier: 16.3.1
         version: 16.3.1(@babel/core@7.29.7)(@playwright/test@1.58.2)(@types/node@20.19.35)(babel-plugin-macros@3.1.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(sass@1.77.4)

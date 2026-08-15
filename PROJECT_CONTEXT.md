@@ -47,6 +47,7 @@ packages/
 
 - **Source of truth:** the `distros` collection in Payload CMS (Postgres-backed), defined in `apps/cms/src/collections/Distros.ts`, mirroring the `DistroDetail` shape from `@distrodb/types`.
 - **Roadmap:** the `roadmap` collection (`apps/cms/src/collections/Roadmap.ts`), mirroring `RoadmapItemDetail` from `@distrodb/types` (title, description, status, icon key, optional quarter, `order` for manual display ordering). `apps/web/lib/roadmap.ts` fetches it via `GET /api/roadmap?sort=order` (`revalidate: 3600`); `/roadmap` maps each item's `icon` key to a Hugeicon component via a lookup table. Seeded once via `pnpm --filter @distrodb/cms seed:roadmap` (`apps/cms/src/seed-roadmap.ts`).
+- **Changelog:** the `changelog` collection (`apps/cms/src/collections/Changelog.ts`), mirroring `ChangelogEntryDetail` from `@distrodb/types` (slug, version, date, title, tags, and `content` as a Payload `code` field with `language: "markdown"` for convenient Markdown editing in the admin UI). `apps/web/lib/changelog.ts` fetches it via `GET /api/changelog?sort=-date` (`revalidate: 3600`); `/changelog` renders `content` with `next-mdx-remote` (`apps/web/mdx-components.tsx`) exactly as before. `apps/web/content/changelog/*.mdx` is now only the historical seed source, migrated once via `pnpm --filter @distrodb/cms seed:changelog` (`apps/cms/src/seed-changelog.ts`); it is not read by the app at runtime anymore.
 - `apps/web/lib/data/distros.json` is now only the historical seed source, consumed once by `apps/cms/src/seed.ts` (`pnpm --filter @distrodb/cms seed`) to populate Postgres. It is not read by the app at runtime anymore.
 - **Data access:** `apps/web/lib/distros.ts` fetches from the CMS REST API (`GET /api/distros`) with `next: { revalidate: 3600 }`; all helpers (`getAllDistros`, `getDistroBySlug`, `getAllSlugs`, `getAllVsSlugs`) are now `async`.
 - **Client-side usage:** the Distro Wizard (`app/wizard/wizard-client.tsx`) scores results entirely client-side for instant feedback, so `app/wizard/page.tsx` (server component) fetches the distro list once and passes it down as a prop; `getWizardResults(answers, distros, topN)` takes distros as a parameter instead of fetching itself.
@@ -73,18 +74,19 @@ Distro logos and screenshots are Payload uploads (`media` collection, `apps/cms/
 
 ## Routes
 
-| Route             | File                                   | Description                                                                                |
-| ----------------- | -------------------------------------- | ------------------------------------------------------------------------------------------ |
-| `/`               | `apps/web/app/page.tsx`                | Landing page: gradient hero (live distro count, quick-filter chips) + search + distro grid |
-| `/distros/[slug]` | `apps/web/app/distros/[slug]/page.tsx` | Full distro detail page                                                                    |
-| `/vs/[slugs]`     | `apps/web/app/vs/[slugs]/page.tsx`     | Side-by-side comparison, e.g. `/vs/ubuntu-vs-fedora`                                       |
-| `/wizard`         | `apps/web/app/wizard/page.tsx`         | Interactive 6-step distro recommendation quiz                                              |
-| `/glossary`       | `apps/web/app/glossary/page.tsx`       | Tag definitions with anchor links (`/glossary#atomic`)                                     |
-| `/popularity`     | `apps/web/app/popularity/page.tsx`     | Measured distro popularity ratings (gamers: Steam Hardware Survey)                         |
-| `/resources`      | `apps/web/app/resources/page.tsx`      | Curated external links by category (communities, docs, learning, news, tools)              |
-| `/roadmap`        | `apps/web/app/roadmap/page.tsx`        | Project roadmap timeline, backed by the CMS `roadmap` collection                           |
-| `/sitemap.xml`    | `apps/web/public/sitemap.xml`          | Sitemap (all distros + all VS pairs)                                                       |
-| `/robots.txt`     | `apps/web/app/robots.ts`               | Robots directives pointing to sitemap                                                      |
+| Route             | File                                   | Description                                                                                  |
+| ----------------- | -------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `/`               | `apps/web/app/page.tsx`                | Landing page: gradient hero (live distro count, quick-filter chips) + search + distro grid   |
+| `/distros/[slug]` | `apps/web/app/distros/[slug]/page.tsx` | Full distro detail page                                                                      |
+| `/vs/[slugs]`     | `apps/web/app/vs/[slugs]/page.tsx`     | Side-by-side comparison, e.g. `/vs/ubuntu-vs-fedora`                                         |
+| `/wizard`         | `apps/web/app/wizard/page.tsx`         | Interactive 6-step distro recommendation quiz                                                |
+| `/glossary`       | `apps/web/app/glossary/page.tsx`       | Tag definitions with anchor links (`/glossary#atomic`)                                       |
+| `/popularity`     | `apps/web/app/popularity/page.tsx`     | Measured distro popularity ratings (gamers: Steam Hardware Survey)                           |
+| `/resources`      | `apps/web/app/resources/page.tsx`      | Curated external links by category (communities, docs, learning, news, tools)                |
+| `/roadmap`        | `apps/web/app/roadmap/page.tsx`        | Project roadmap timeline, backed by the CMS `roadmap` collection                             |
+| `/changelog`      | `apps/web/app/changelog/page.tsx`      | Release changelog, backed by the CMS `changelog` collection                                  |
+| `/sitemap.xml`    | `apps/web/app/sitemap.ts`              | Sitemap (Next.js `MetadataRoute.Sitemap` convention; all static routes + distros + VS pairs) |
+| `/robots.txt`     | `apps/web/app/robots.ts`               | Robots directives pointing to sitemap                                                        |
 
 ## VS Page Conventions
 

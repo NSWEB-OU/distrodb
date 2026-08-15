@@ -46,8 +46,8 @@ function formatDate(dateStr: string): string {
   });
 }
 
-export default function ChangelogPage() {
-  const entries = getChangelogEntries();
+export default async function ChangelogPage() {
+  const entries = await getChangelogEntries();
   const components = useMDXComponents({});
 
   return (

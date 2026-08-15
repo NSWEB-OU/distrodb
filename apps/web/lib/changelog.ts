@@ -1,39 +1,20 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
+import type { ChangelogEntryDetail } from "@distrodb/types";
 
-const CHANGELOG_DIR = path.join(process.cwd(), "content", "changelog");
+const CMS_URL = process.env.CMS_URL ?? "http://localhost:3001";
 
-export interface ChangelogEntry {
-  slug: string;
-  version: string;
-  date: string;
-  title: string;
-  tags: string[];
-  content: string;
-}
+type PayloadChangelogEntry = Omit<ChangelogEntryDetail, "id"> & { id: string | number };
 
-export function getChangelogEntries(): ChangelogEntry[] {
-  if (!fs.existsSync(CHANGELOG_DIR)) return [];
+type PayloadListResponse = {
+  docs: PayloadChangelogEntry[];
+};
 
-  const files = fs
-    .readdirSync(CHANGELOG_DIR)
-    .filter((f) => f.endsWith(".mdx"))
-    .sort()
-    .reverse(); // newest first
-
-  return files.map((filename) => {
-    const slug = filename.replace(/\.mdx$/, "");
-    const raw = fs.readFileSync(path.join(CHANGELOG_DIR, filename), "utf-8");
-    const { data, content } = matter(raw);
-
-    return {
-      slug,
-      version: data.version as string,
-      date: data.date as string,
-      title: data.title as string,
-      tags: (data.tags as string[]) ?? [],
-      content,
-    };
+export async function getChangelogEntries(): Promise<ChangelogEntryDetail[]> {
+  const res = await fetch(`${CMS_URL}/api/changelog?limit=100&sort=-date`, {
+    next: { revalidate: 3600 },
   });
+  if (!res.ok) {
+    throw new Error(`Failed to fetch changelog from CMS: ${res.status} ${res.statusText}`);
+  }
+  const { docs } = (await res.json()) as PayloadListResponse;
+  return docs.map((doc) => ({ ...doc, id: String(doc.id) }));
 }
