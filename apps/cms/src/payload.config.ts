@@ -11,6 +11,7 @@ import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { Distros } from './collections/Distros'
 import { Roadmap } from './collections/Roadmap'
+import { migrations } from './migrations'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -68,6 +69,9 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URL || '',
     },
+    // In dev, schema is auto-pushed; in production, `payload migrate` (run before
+    // `next start`, see apps/cms/Dockerfile) applies these instead - see src/migrations.
+    prodMigrations: migrations,
   }),
   sharp,
   plugins: [...s3Plugin],

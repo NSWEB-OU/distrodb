@@ -25,5 +25,8 @@ WORKDIR /repo/apps/cms
 EXPOSE 3001
 ENV PORT=3001
 
-CMD ["pnpm", "start"]
+# Applies src/migrations (payload.config.ts prodMigrations) before starting -
+# NODE_ENV=production skips the dev-only auto schema push, so without this the
+# database never gets its tables on a fresh deploy.
+CMD ["sh", "-c", "pnpm payload migrate && pnpm start"]
 
