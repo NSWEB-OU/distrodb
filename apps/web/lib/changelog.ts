@@ -10,7 +10,7 @@ type PayloadListResponse = {
 
 export async function getChangelogEntries(): Promise<ChangelogEntryDetail[]> {
   const res = await fetch(`${CMS_URL}/api/changelog?limit=100&sort=-date`, {
-    next: { revalidate: 3600 },
+    next: { revalidate: 3600, tags: ["changelog"] },
   });
   if (!res.ok) {
     throw new Error(`Failed to fetch changelog from CMS: ${res.status} ${res.statusText}`);

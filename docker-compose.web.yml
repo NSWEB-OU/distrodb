@@ -11,6 +11,11 @@
 # port 3000 via Coolify's proxy instead of hardcoding one, to avoid clashing
 # with other resources on the same server.
 #
+# REVALIDATE_SECRET (optional): must match the cms resource's REVALIDATE_SECRET
+# (see docker-compose.cms.yml) so saving/deleting in the admin UI can trigger
+# /api/revalidate here immediately instead of waiting out the 1h ISR window.
+# Leave unset to disable.
+#
 # For manual single-VPS docker compose deployments (no Coolify), use
 # docker-compose.prod.yml instead - it runs both halves on one shared network.
 
@@ -27,3 +32,4 @@ services:
       CMS_URL: ${CMS_URL:?Set CMS_URL to the reachable cms resource URL}
       NEXT_PUBLIC_MEDIA_HOSTNAME: ${NEXT_PUBLIC_MEDIA_HOSTNAME:?Set NEXT_PUBLIC_MEDIA_HOSTNAME}
       RESEND_API_KEY: ${RESEND_API_KEY:-}
+      REVALIDATE_SECRET: ${REVALIDATE_SECRET:-}

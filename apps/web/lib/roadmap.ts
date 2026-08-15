@@ -10,7 +10,7 @@ type PayloadListResponse = {
 
 export async function getRoadmapItems(): Promise<RoadmapItemDetail[]> {
   const res = await fetch(`${CMS_URL}/api/roadmap?limit=100&sort=order`, {
-    next: { revalidate: 3600 },
+    next: { revalidate: 3600, tags: ["roadmap"] },
   });
   if (!res.ok) {
     throw new Error(`Failed to fetch roadmap from CMS: ${res.status} ${res.statusText}`);

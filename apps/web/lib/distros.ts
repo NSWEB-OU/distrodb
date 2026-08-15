@@ -24,7 +24,7 @@ function mediaUrl(media: MediaDoc | number | string | null | undefined): string 
 // automatically, so repeated calls below don't cause N+1 requests.
 async function fetchDistros(): Promise<DistroDetail[]> {
   const res = await fetch(`${CMS_URL}/api/distros?limit=1000&depth=1&sort=createdAt`, {
-    next: { revalidate: 3600 },
+    next: { revalidate: 3600, tags: ["distros"] },
   });
   if (!res.ok) {
     throw new Error(`Failed to fetch distros from CMS: ${res.status} ${res.statusText}`);

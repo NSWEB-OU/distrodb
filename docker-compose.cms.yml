@@ -11,6 +11,11 @@
 # container port via its own network, and hardcoding one risks clashing with
 # other resources on the same server.
 #
+# WEB_URL/REVALIDATE_SECRET (optional): set WEB_URL to the web resource's
+# domain/FQDN and REVALIDATE_SECRET to the same value as the web resource's, so
+# saving/deleting in the admin UI revalidates the web app's cache immediately
+# instead of waiting out its 1h ISR window. Leave both unset to disable.
+#
 # For manual single-VPS docker compose deployments (no Coolify), use
 # docker-compose.prod.yml instead - it runs both halves on one shared network.
 
@@ -37,6 +42,8 @@ services:
       PAYLOAD_SECRET: ${PAYLOAD_SECRET:?Set PAYLOAD_SECRET}
       NODE_ENV: production
       PORT: 3001
+      REVALIDATE_SECRET: ${REVALIDATE_SECRET:-}
+      WEB_URL: ${WEB_URL:-}
       S3_BUCKET: ${S3_BUCKET:?Set S3_BUCKET}
       S3_REGION: ${S3_REGION:?Set S3_REGION}
       S3_ACCESS_KEY_ID: ${S3_ACCESS_KEY_ID:?Set S3_ACCESS_KEY_ID}

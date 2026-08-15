@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { revalidateAfterChange, revalidateAfterDelete } from '../hooks/revalidate'
 
 // Mirrors ChangelogEntryDetail in @distrodb/types. `content` is raw Markdown,
 // rendered on the frontend via next-mdx-remote (apps/web/lib/changelog.ts).
@@ -11,6 +12,10 @@ export const Changelog: CollectionConfig = {
   defaultSort: '-date',
   access: {
     read: () => true,
+  },
+  hooks: {
+    afterChange: [revalidateAfterChange('changelog')],
+    afterDelete: [revalidateAfterDelete('changelog')],
   },
   fields: [
     {

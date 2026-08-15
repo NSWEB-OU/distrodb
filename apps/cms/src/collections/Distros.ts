@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { revalidateAfterChange, revalidateAfterDelete } from '../hooks/revalidate'
 
 // Mirrors the DistroDetail shape in @distrodb/types. Logo/screenshots are
 // Payload uploads (media collection, S3-backed) - see PROJECT_CONTEXT.md
@@ -11,6 +12,10 @@ export const Distros: CollectionConfig = {
   },
   access: {
     read: () => true,
+  },
+  hooks: {
+    afterChange: [revalidateAfterChange('distros')],
+    afterDelete: [revalidateAfterDelete('distros')],
   },
   fields: [
     {

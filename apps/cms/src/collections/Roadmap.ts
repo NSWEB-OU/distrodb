@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { revalidateAfterChange, revalidateAfterDelete } from '../hooks/revalidate'
 
 // Mirrors RoadmapItemDetail in @distrodb/types. `order` drives display order
 // on the public /roadmap page (ascending); admin list is sorted by it too.
@@ -11,6 +12,10 @@ export const Roadmap: CollectionConfig = {
   defaultSort: 'order',
   access: {
     read: () => true,
+  },
+  hooks: {
+    afterChange: [revalidateAfterChange('roadmap')],
+    afterDelete: [revalidateAfterDelete('roadmap')],
   },
   fields: [
     {
