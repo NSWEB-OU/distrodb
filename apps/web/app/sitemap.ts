@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getAllSlugs, getAllVsSlugs } from "@/lib/distros";
+import { getAllSlugs } from "@/lib/distros";
 
 const BASE_URL = "https://distrodb.xyz";
 
@@ -34,7 +34,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
   );
 
-  const [slugs, vsSlugs] = await Promise.all([getAllSlugs(), getAllVsSlugs()]);
+  const slugs = await getAllSlugs();
 
   const distroEntries: MetadataRoute.Sitemap = slugs.map((slug) => ({
     url: `${BASE_URL}/distros/${slug}`,
@@ -43,12 +43,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  const vsEntries: MetadataRoute.Sitemap = vsSlugs.map(({ slugs }) => ({
-    url: `${BASE_URL}/vs/${slugs}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.4,
-  }));
-
-  return [...staticEntries, ...distroEntries, ...vsEntries];
+  return [...staticEntries, ...distroEntries];
 }
