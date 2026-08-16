@@ -1,13 +1,16 @@
 /**
  * One-off migration: repeated Coolify redeploys re-ran the seed, duplicating
- * the `highlights` array on every distro. Dedupes each distro's highlights
- * (order-preserving, exact string match) and re-saves only changed docs.
+ * hasMany text arrays on every distro. Dedupes each distro's `highlights`,
+ * `tags`, `architecture`, and `desktopEnvironments` (order-preserving, exact
+ * string match) and re-saves only changed docs.
  *
  * Usage: pnpm --filter @distrodb/cms dedupe:highlights
  */
 import 'dotenv/config'
 import { getPayload } from 'payload'
 import config from '@payload-config'
+
+const FIELDS_TO_DEDUPE = ['highlights', 'tags', 'architecture', 'desktopEnvironments'] as const
 
 const dedupeHighlights = async () => {
   const payload = await getPayload({ config })
@@ -21,18 +24,26 @@ const dedupeHighlights = async () => {
   let updated = 0
 
   for (const distro of distros) {
-    const highlights = distro.highlights ?? []
-    const deduped = [...new Set(highlights)]
+    const data: Record<string, string[]> = {}
 
-    if (deduped.length !== highlights.length) {
+    for (const field of FIELDS_TO_DEDUPE) {
+      const values = distro[field] ?? []
+      const deduped = [...new Set(values)]
+
+      if (deduped.length !== values.length) {
+        data[field] = deduped
+        payload.logger.info(
+          `Deduped ${distro.slug}.${field}: ${values.length} -> ${deduped.length}`,
+        )
+      }
+    }
+
+    if (Object.keys(data).length > 0) {
       await payload.update({
         collection: 'distros',
         id: distro.id,
-        data: { highlights: deduped },
+        data,
       })
-      payload.logger.info(
-        `Deduped ${distro.slug}: ${highlights.length} -> ${deduped.length} highlights`,
-      )
       updated++
     }
   }
