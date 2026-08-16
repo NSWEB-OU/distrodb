@@ -12,6 +12,7 @@
     "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
     "lint": "cross-env NODE_OPTIONS=--no-deprecation eslint .",
     "migrate:media": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/migrate-media-to-s3.ts",
+    "dedupe:highlights": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/dedupe-highlights.ts",
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
     "seed": "cross-env NODE_OPTIONS=--no-deprecation tsx src/seed.ts",
     "seed:roadmap": "cross-env NODE_OPTIONS=--no-deprecation tsx src/seed-roadmap.ts",
