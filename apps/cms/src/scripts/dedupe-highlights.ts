@@ -27,7 +27,9 @@ const dedupeHighlights = async () => {
     const data: Record<string, string[]> = {}
 
     for (const field of FIELDS_TO_DEDUPE) {
-      const values = distro[field] ?? []
+      // payload-types.ts is gitignored/regenerated on demand, so cast explicitly
+      // instead of relying on it being present at typecheck time.
+      const values = (distro[field] as string[] | null | undefined) ?? []
       const deduped = [...new Set(values)]
 
       if (deduped.length !== values.length) {
