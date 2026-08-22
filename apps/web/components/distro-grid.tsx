@@ -42,7 +42,16 @@ export function DistroGrid({ distros }: DistroGridProps) {
   if (distros.length === 0) {
     return (
       <p className="text-muted-foreground col-span-full py-12 text-center">
-        No distributions match your filters.
+        No distributions match your filters. Can&apos;t find one you&apos;re looking for?{" "}
+        <a
+          href="https://github.com/NSWEB-OU/distrodb/issues/new?template=new-distro.yml"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-foreground underline underline-offset-2"
+        >
+          Suggest it
+        </a>
+        .
       </p>
     );
   }

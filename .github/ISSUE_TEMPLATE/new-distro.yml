@@ -1,0 +1,172 @@
+name: 🐧 Add a new distribution
+description: Suggest a Linux distribution that isn't in DistroDB yet.
+title: "[New Distro]: "
+labels: ["new-distro", "data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping grow DistroDB! Distro data now lives in our Payload CMS (Postgres),
+        not in a repo file, so it can't be added via a normal pull request. Fill out this form
+        instead - a maintainer will review it and add the entry to the CMS.
+
+        Fields below match the **Distros** collection. Leave a field blank if it doesn't apply
+        (e.g. `base` for an independent distro).
+
+  - type: input
+    id: name
+    attributes:
+      label: Distribution name
+      description: Display name, e.g. "Nobara Linux"
+      placeholder: My Distribution
+    validations:
+      required: true
+
+  - type: input
+    id: slug
+    attributes:
+      label: Suggested slug
+      description: URL-friendly identifier, lowercase, hyphen-separated
+      placeholder: my-distribution
+    validations:
+      required: true
+
+  - type: input
+    id: description
+    attributes:
+      label: Short description
+      description: One sentence summary shown on the distro card
+    validations:
+      required: true
+
+  - type: textarea
+    id: longDescription
+    attributes:
+      label: Full description
+      description: A few paragraphs describing the distro, its goals, and target audience
+    validations:
+      required: true
+
+  - type: input
+    id: base
+    attributes:
+      label: Base distribution
+      description: What it's built on, if anything (e.g. Debian, Arch, Fedora). Leave blank if independent.
+
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: "Comma-separated, e.g.: desktop, live, beginner, for-gamers. See /glossary for the existing tag vocabulary."
+
+  - type: input
+    id: desktopEnvironments
+    attributes:
+      label: Desktop environments
+      description: Comma-separated, e.g. GNOME, KDE Plasma, XFCE
+
+  - type: input
+    id: packageManager
+    attributes:
+      label: Package manager
+      placeholder: apt, dnf, pacman, etc.
+    validations:
+      required: true
+
+  - type: input
+    id: initSystem
+    attributes:
+      label: Init system
+      placeholder: systemd, runit, OpenRC, etc.
+    validations:
+      required: true
+
+  - type: input
+    id: architecture
+    attributes:
+      label: Supported architectures
+      description: Comma-separated, e.g. x86_64, ARM64
+    validations:
+      required: true
+
+  - type: dropdown
+    id: releaseModel
+    attributes:
+      label: Release model
+      options:
+        - fixed
+        - rolling
+        - semi-rolling
+    validations:
+      required: true
+
+  - type: input
+    id: latestVersion
+    attributes:
+      label: Latest version
+
+  - type: input
+    id: releaseDate
+    attributes:
+      label: Latest release date
+      description: ISO format, e.g. 2026-01-01
+
+  - type: dropdown
+    id: difficulty
+    attributes:
+      label: Difficulty
+      options:
+        - beginner
+        - intermediate
+        - advanced
+    validations:
+      required: true
+
+  - type: textarea
+    id: highlights
+    attributes:
+      label: Highlights
+      description: Optional - key features, one per line
+
+  - type: input
+    id: website
+    attributes:
+      label: Official website
+      placeholder: "https://..."
+    validations:
+      required: true
+
+  - type: input
+    id: docs
+    attributes:
+      label: Documentation link
+      placeholder: "https://..."
+
+  - type: input
+    id: download
+    attributes:
+      label: Download page
+      placeholder: "https://..."
+    validations:
+      required: true
+
+  - type: input
+    id: distroSea
+    attributes:
+      label: DistroSea slug (optional)
+      description: If this distro can be test-driven at distrosea.com, its slug there (may differ from ours)
+
+  - type: textarea
+    id: assets
+    attributes:
+      label: Logo & screenshots
+      description: >
+        Drag and drop a logo (transparent PNG/SVG preferred) and 1-3 screenshots (16:9, .webp
+        preferred) directly into this textarea - GitHub will upload them and insert links you
+        can leave in place.
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else?
+      description: Sources, why this distro is worth adding, corrections to the above, etc.

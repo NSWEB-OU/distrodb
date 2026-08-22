@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 💬 Quick correction (in-app)
+    url: https://distrodb.xyz/
+    about: Open the distro's page on distrodb.xyz and use the "Suggest a change" button - fastest way to fix a single field.
+  - name: 📮 Contact the team
+    url: https://distrodb.xyz/contact
+    about: General questions, feedback, or anything that doesn't fit the templates above.

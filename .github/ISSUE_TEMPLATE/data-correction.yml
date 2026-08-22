@@ -1,0 +1,52 @@
+name: ✏️ Fix distro data
+description: Report incorrect or outdated info on an existing distribution.
+title: "[Correction]: "
+labels: ["correction", "data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Spotted something wrong on a distro page (wrong version, dead link, outdated package
+        manager, etc.)? You can either use the **"Suggest a change"** button on that distro's
+        page (fastest, goes straight to the maintainers) or file it here for a public paper
+        trail / if it affects multiple distros or fields.
+
+  - type: input
+    id: distro
+    attributes:
+      label: Distribution
+      description: Name or slug of the distro, e.g. "Fedora Workstation" or `fedora`
+    validations:
+      required: true
+
+  - type: input
+    id: field
+    attributes:
+      label: Field to correct
+      description: e.g. "Latest version", "Package manager", "Website link"
+    validations:
+      required: true
+
+  - type: input
+    id: current
+    attributes:
+      label: Current (incorrect) value
+
+  - type: input
+    id: correct
+    attributes:
+      label: Correct value
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: Source / reference
+      description: Link backing up the correction (release notes, official docs, etc.)
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Anything else that helps a maintainer verify and apply the fix

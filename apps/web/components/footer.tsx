@@ -9,6 +9,10 @@ const explore = [
   { title: "Distro Wizard", href: "/wizard" },
   { title: "Glossary", href: "/glossary" },
   { title: "Resources", href: "/resources" },
+  {
+    title: "Add a Distro",
+    href: "https://github.com/NSWEB-OU/distrodb/issues/new?template=new-distro.yml",
+  },
 ];
 
 const project = [
@@ -80,6 +84,8 @@ export function Footer() {
                 <li key={item.title}>
                   <Link
                     href={item.href}
+                    target={item.href.startsWith("http") ? "_blank" : undefined}
+                    rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="text-muted-foreground hover:text-foreground text-sm transition-colors"
                   >
                     {item.title}

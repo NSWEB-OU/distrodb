@@ -132,7 +132,7 @@ export default function SupportPage() {
           </p>
           <div className="flex items-center gap-3">
             <Link
-              href="https://github.com/distrodb"
+              href="https://github.com/NSWEB-OU/distrodb"
               target="_blank"
               rel="noopener noreferrer"
               className={buttonVariants({ variant: "outline", size: "sm" })}

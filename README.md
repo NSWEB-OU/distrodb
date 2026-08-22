@@ -55,9 +55,11 @@ This is a pnpm monorepo: `apps/web` (the Next.js site) and `apps/cms` (Payload C
 
 We love contributions! Whether you're fixing a bug, adding a new feature, or simply adding a Linux distribution that we missed.
 
-### Adding a Distribution
+### Adding or Fixing a Distribution
 
-To add a new distro (data + images), please follow our **[Asset & Data Contribution Guide](CONTRIBUTING.md)**.
+Distro data lives in Payload CMS, not this repo, so it can't be changed via a normal PR - see our
+**[Contribution Guide](CONTRIBUTING.md)** for how to submit a new distro or a data correction
+(GitHub issue forms, or the "Suggest a change" button on distrodb.xyz).
 
 ### Code Contributions
 
