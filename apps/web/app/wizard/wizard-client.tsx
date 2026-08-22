@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import type { DistroDetail } from "@/components/types/types";
+import { recordWizardClick } from "@/lib/wizard-feedback";
 import {
   type WizardAnswers,
   type WizardResult,
@@ -399,14 +400,27 @@ function OptionButton({
   );
 }
 
-function ResultCard({ result, rank }: { result: WizardResult; rank: number }) {
-  const { distro, score, reasons } = result;
+function ResultCard({
+  result,
+  rank,
+  answers,
+}: {
+  result: WizardResult;
+  rank: number;
+  answers: WizardAnswers;
+}) {
+  const { distro, score, reasons, confidence } = result;
   const isTop = rank === 0;
+  const confidenceLabel =
+    confidence >= 70 ? "High confidence" : confidence >= 40 ? "Some confidence" : null;
 
   return (
     <Link
       href={`/distros/${distro.slug}`}
       className="h-full w-full transition-transform hover:scale-98"
+      onClick={() =>
+        recordWizardClick({ distroSlug: distro.slug, rank, score, confidence, answers })
+      }
     >
       <Card
         className={cn(
@@ -446,8 +460,13 @@ function ResultCard({ result, rank }: { result: WizardResult; rank: number }) {
           <CardDescription className="line-clamp-2">{distro.description}</CardDescription>
         </CardHeader>
 
-        {reasons.length > 0 && (
+        {(reasons.length > 0 || confidenceLabel) && (
           <CardFooter className="flex-wrap gap-1.5">
+            {confidenceLabel && (
+              <Badge variant="outline" className="text-[10px]">
+                {confidenceLabel}
+              </Badge>
+            )}
             {reasons.map((r) => (
               <Badge key={r} variant="secondary" className="text-[10px]">
                 {r}
@@ -466,7 +485,13 @@ type PartialAnswers = Partial<WizardAnswers>;
 
 type Screen = "history" | "quiz" | "results";
 
-export function WizardClient({ distros }: { distros: DistroDetail[] }) {
+export function WizardClient({
+  distros,
+  gamerRanks,
+}: {
+  distros: DistroDetail[];
+  gamerRanks?: Record<string, number>;
+}) {
   const searchParams = useSearchParams();
   const [, startTransition] = useTransition();
 
@@ -490,7 +515,7 @@ export function WizardClient({ distros }: { distros: DistroDetail[] }) {
   const [results, setResults] = useState<WizardResult[] | null>(() => {
     const parsed = parseAnswersFromParams(searchParams);
     if (ANSWER_KEYS.every((k) => parsed[k] !== undefined)) {
-      return getWizardResults(parsed as WizardAnswers, distros, 5);
+      return getWizardResults(parsed as WizardAnswers, distros, 5, gamerRanks);
     }
     return null;
   });
@@ -530,7 +555,7 @@ export function WizardClient({ distros }: { distros: DistroDetail[] }) {
     } else {
       startTransition(() => {
         const finalAnswers = answers as WizardAnswers;
-        const res = getWizardResults(finalAnswers, distros, 5);
+        const res = getWizardResults(finalAnswers, distros, 5, gamerRanks);
         saveRun(finalAnswers, res);
         setSavedRuns(loadRuns());
         setResults(res);
@@ -558,7 +583,7 @@ export function WizardClient({ distros }: { distros: DistroDetail[] }) {
   }
 
   function handleSelectRun(run: SavedRun) {
-    const res = getWizardResults(run.answers, distros, 5);
+    const res = getWizardResults(run.answers, distros, 5, gamerRanks);
     setAnswers(run.answers);
     setResults(res);
     setScreen("results");
@@ -601,7 +626,12 @@ export function WizardClient({ distros }: { distros: DistroDetail[] }) {
         ) : (
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {results.map((result, i) => (
-              <ResultCard key={result.distro.id} result={result} rank={i} />
+              <ResultCard
+                key={result.distro.id}
+                result={result}
+                rank={i}
+                answers={answers as WizardAnswers}
+              />
             ))}
           </div>
         )}

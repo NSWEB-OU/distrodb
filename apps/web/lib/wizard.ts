@@ -27,8 +27,36 @@ export type WizardResult = {
 
 // ─── Scoring ─────────────────────────────────────────────────────────────────
 
-const CLASSIC_DES = ["Cinnamon", "MATE", "Xfce", "KDE Plasma", "Trinity", "LXQt", "LXDE", "IceWM"];
-const MODERN_DES = ["GNOME", "KDE Plasma", "COSMIC", "Budgie", "Deepin", "Pantheon", "Unity"];
+const CLASSIC_DES = [
+  "Cinnamon",
+  "MATE",
+  "Xfce",
+  "KDE Plasma",
+  "KDE",
+  "Trinity",
+  "LXQt",
+  "LXDE",
+  "IceWM",
+  "Openbox",
+  "Fluxbox",
+  "FVWM",
+  "Blackbox",
+  "WMaker",
+  "JWM",
+  "Gershwin",
+];
+const MODERN_DES = [
+  "GNOME",
+  "KDE Plasma",
+  "COSMIC",
+  "Budgie",
+  "Deepin",
+  "Pantheon",
+  "Unity",
+  "Enlightenment",
+  "Moksha (Enlightenment)",
+  "ChromeOS Desktop",
+];
 const TILING_DES = [
   "i3",
   "Hyprland",
@@ -42,14 +70,38 @@ const TILING_DES = [
   "niri",
   "Wayfire",
   "labwc",
+  "Noctalia",
 ];
-const ARCH_BASES = ["Arch", "Arch Linux"];
-const NEWBIE_FRIENDLY_BASES = ["Ubuntu", "Ubuntu (LTS)", "Fedora", "Debian (Stable)", "Debian"];
+const HEAVY_DES = ["GNOME", "KDE Plasma", "COSMIC", "Deepin"];
+const ARCH_BASE_FAMILY = "arch";
+const NEWBIE_FRIENDLY_BASE_FAMILIES = ["ubuntu", "fedora", "debian"];
+
+// `base` is a free-text, comma-separated string (e.g. "Debian, Ubuntu (LTS)") - match per segment
+// instead of the whole string, otherwise multi-base distros never match.
+function hasBaseFamily(base: string | null, family: string): boolean {
+  if (!base) return false;
+  return base
+    .toLowerCase()
+    .split(",")
+    .some((part) => part.trim().startsWith(family));
+}
 
 function scoreDistro(
   distro: DistroDetail,
   answers: WizardAnswers
 ): { score: number; reasons: string[]; confidence: number } {
+  // Hard filter: explicit architecture data that excludes ARM means genuinely incompatible,
+  // not just a weaker match - don't let other dimensions outweigh it.
+  if (
+    answers.hardware === "arm" &&
+    distro.architecture.length > 0 &&
+    !distro.architecture.some(
+      (a) => a.toLowerCase().includes("arm") || a.toLowerCase().includes("aarch")
+    )
+  ) {
+    return { score: 0, reasons: [], confidence: 0 };
+  }
+
   let score = 0;
   const reasons: string[] = [];
   let confidence = 0;
@@ -128,7 +180,7 @@ function scoreDistro(
         reasons.push("Up-to-date toolchains");
         confidence += 10;
       }
-      if (NEWBIE_FRIENDLY_BASES.some((b) => distro.base?.startsWith(b.split(" ")[0]) ?? false)) {
+      if (NEWBIE_FRIENDLY_BASE_FAMILIES.some((family) => hasBaseFamily(distro.base, family))) {
         score += 8;
         confidence += 5;
       }
@@ -166,7 +218,7 @@ function scoreDistro(
       } else {
         reasons.push(`Modern desktop with ${matches[0]}`);
       }
-    } else if (desktopStyle === "tiling" && ARCH_BASES.some((b) => distro.base === b)) {
+    } else if (desktopStyle === "tiling" && hasBaseFamily(distro.base, ARCH_BASE_FAMILY)) {
       // Arch-based distros can easily install tiling WMs
       score += 10;
       confidence += 5;
@@ -179,7 +231,7 @@ function scoreDistro(
   const { hardware } = answers;
 
   switch (hardware) {
-    case "ancient":
+    case "ancient": {
       if (tags.includes("old-computers") || tags.includes("netbooks")) {
         score += 40;
         reasons.push("Runs great on older hardware");
@@ -190,13 +242,15 @@ function scoreDistro(
         reasons.push("Can boot from RAM");
         confidence += 10;
       }
-      if (
-        ["GNOME", "KDE Plasma", "COSMIC"].some((de) => desktopEnvironments.includes(de)) &&
-        !tags.includes("old-computers")
-      ) {
-        score -= 10;
+      // Only penalize when there's no lightweight option at all.
+      const heavyOnly =
+        desktopEnvironments.length > 0 && desktopEnvironments.every((de) => HEAVY_DES.includes(de));
+      if (heavyOnly && !tags.includes("old-computers") && !tags.includes("from-ram")) {
+        score -= 30;
+        reasons.push("Heavy desktop may struggle on old hardware");
       }
       break;
+    }
     case "arm":
       if (
         distro.architecture.some(
@@ -258,26 +312,95 @@ function scoreDistro(
   return { score: Math.max(0, score), reasons: uniqueReasons, confidence: normalizedConfidence };
 }
 
+// Mirrors the best-case bonus per branch in scoreDistro above - keep the two in sync.
+function maxAttainableScore(answers: WizardAnswers): number {
+  let max = 0;
+
+  switch (answers.experience) {
+    case "never":
+    case "tried":
+      max += 40;
+      break;
+    case "used":
+      max += 30;
+      break;
+    case "daily":
+      max += 25; // 15 base + 10 rolling bonus
+      break;
+  }
+
+  switch (answers.lifestyle) {
+    case "gaming":
+      max += 45;
+      break;
+    case "server":
+      max += 45;
+      break;
+    case "privacy":
+      max += 50;
+      break;
+    case "coding":
+      max += 28; // 10 + 10 + 8
+      break;
+    case "general":
+      max += 30; // 20 + 10
+      break;
+  }
+
+  max += answers.desktopStyle === "anything" ? 10 : 35;
+
+  switch (answers.hardware) {
+    case "ancient":
+      max += 55; // 40 + 15
+      break;
+    case "arm":
+      max += 60; // 40 + 20
+      break;
+    case "modern":
+      max += 8;
+      break;
+    case "new-ish":
+      max += 0;
+      break;
+  }
+
+  max += 30; // best case is always a perfect release-model match
+
+  return max;
+}
+
 // ─── Public API ───────────────────────────────────────────────────────────────
 
 export function getWizardResults(
   answers: WizardAnswers,
   distros: DistroDetail[],
-  topN = 5
+  topN = 5,
+  gamerRanks?: Record<string, number>
 ): WizardResult[] {
+  const ceiling = maxAttainableScore(answers);
+
   const scored = distros
     .map((distro) => {
       const { score, reasons, confidence } = scoreDistro(distro, answers);
       return { distro, score, reasons, confidence } satisfies WizardResult;
     })
     .filter((r) => r.score > 0)
-    .sort((a, b) => b.score - a.score)
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      if (b.confidence !== a.confidence) return b.confidence - a.confidence;
+      if (answers.lifestyle === "gaming" && gamerRanks) {
+        const rankA = gamerRanks[a.distro.slug] ?? Infinity;
+        const rankB = gamerRanks[b.distro.slug] ?? Infinity;
+        if (rankA !== rankB) return rankA - rankB;
+      }
+      return a.distro.name.localeCompare(b.distro.name);
+    })
     .slice(0, topN);
 
-  // Normalize scores to a 0-100 percentage relative to the top match
-  const maxScore = scored[0]?.score ?? 1;
+  // Normalize against the best case achievable for these answers, not the top result -
+  // otherwise a weak match set always reads as a 100% match.
   return scored.map((r) => ({
     ...r,
-    score: Math.round((r.score / maxScore) * 100),
+    score: Math.min(100, Math.round((r.score / ceiling) * 100)),
   }));
 }

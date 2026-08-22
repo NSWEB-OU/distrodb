@@ -12,6 +12,7 @@ import { Media } from './collections/Media'
 import { Distros } from './collections/Distros'
 import { Roadmap } from './collections/Roadmap'
 import { Changelog } from './collections/Changelog'
+import { WizardFeedback } from './collections/WizardFeedback'
 import { migrations } from './migrations'
 
 const filename = fileURLToPath(import.meta.url)
@@ -60,7 +61,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Distros, Roadmap, Changelog],
+  collections: [Users, Media, Distros, Roadmap, Changelog, WizardFeedback],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

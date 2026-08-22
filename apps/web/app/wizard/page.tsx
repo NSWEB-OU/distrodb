@@ -5,6 +5,7 @@ import { MagicWand01Icon } from "@hugeicons/core-free-icons";
 import { WizardClient, TOTAL_STEPS } from "./wizard-client";
 import { TypographyLead } from "@/components/text";
 import { getAllDistros } from "@/lib/distros";
+import { getGamersRating } from "@/lib/steam-survey";
 
 export const metadata: Metadata = {
   title: "Distro Wizard - Find Your Perfect Linux Distribution",
@@ -31,7 +32,13 @@ export const metadata: Metadata = {
 };
 
 export default async function WizardPage() {
-  const distros = await getAllDistros();
+  const [distros, gamersRating] = await Promise.all([getAllDistros(), getGamersRating()]);
+  // Used to break gaming-lifestyle ties toward distros popular with Steam Linux users.
+  const gamerRanks = gamersRating
+    ? Object.fromEntries(
+        gamersRating.distros.filter((d) => d.slug).map((d) => [d.slug as string, d.rank])
+      )
+    : undefined;
 
   return (
     <main className="flex min-h-screen flex-col items-center p-4 pt-14">
@@ -61,7 +68,7 @@ export default async function WizardPage() {
 
       <div className="mt-10 w-full">
         <Suspense fallback={null}>
-          <WizardClient distros={distros} />
+          <WizardClient distros={distros} gamerRanks={gamerRanks} />
         </Suspense>
       </div>
     </main>
