@@ -45,7 +45,7 @@ const features = [
     icon: ComputerIcon,
     title: "Distro Wizard",
     description:
-      "Answer 6 questions about your use case and experience level and get personalized distribution recommendations.",
+      "Answer a few questions about your use case and experience level and get personalized distribution recommendations.",
   },
   {
     icon: GitCompareIcon,

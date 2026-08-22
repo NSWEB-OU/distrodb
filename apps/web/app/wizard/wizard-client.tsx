@@ -4,10 +4,11 @@ import { useState, useTransition, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { ArrowLeft02Icon, ArrowRight01Icon, StarIcon } from "@hugeicons/core-free-icons";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { buttonVariants } from "@/components/ui/button-variants";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import type { DistroDetail } from "@/components/types/types";
 import {
   type WizardAnswers,
@@ -17,7 +18,6 @@ import {
   type DesktopStyle,
   type HardwareAge,
   type UpdateFrequency,
-  type TinkerLevel,
   getWizardResults,
 } from "@/lib/wizard";
 
@@ -71,7 +71,7 @@ const STEPS = [
     ],
   },
   {
-    key: "useCase" as const,
+    key: "lifestyle" as const,
     emoji: "🎯",
     question: "Your computer is primarily for...",
     subtitle: "Pick the one that fits best",
@@ -200,36 +200,9 @@ const STEPS = [
       },
     ],
   },
-  {
-    key: "tinkering" as const,
-    emoji: "🔧",
-    question: "Your ideal relationship with your OS:",
-    subtitle: "Be honest with yourself",
-    options: [
-      {
-        value: "none" as TinkerLevel,
-        emoji: "🛋️",
-        label: "Set it and forget it",
-        description: "Install once, use forever, update occasionally. I have a life outside Linux.",
-      },
-      {
-        value: "some" as TinkerLevel,
-        emoji: "🔩",
-        label: "Occasional tweaks",
-        description: "I like customizing but don't want to spend weekends on config files.",
-      },
-      {
-        value: "extreme" as TinkerLevel,
-        emoji: "🧪",
-        label: "I will rice this thing",
-        description:
-          "Dotfiles on GitHub, custom kernel patches, 4 hours configuring colors. Worth it.",
-      },
-    ],
-  },
 ] satisfies Step<keyof WizardAnswers>[];
 
-const TOTAL_STEPS = STEPS.length;
+export const TOTAL_STEPS = STEPS.length;
 const ANSWER_KEYS = STEPS.map((s) => s.key);
 const LS_KEY = "wizard-runs";
 const MAX_RUNS = 10;
@@ -331,9 +304,12 @@ function HistoryScreen({
       </div>
 
       <div className="flex gap-2 pt-2">
-        <Button variant="default" size="sm" onClick={onNewQuiz} className="flex-1">
+        <button
+          onClick={onNewQuiz}
+          className="flex-1 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-2 text-center font-mono text-sm font-medium text-white shadow-sm transition-shadow hover:shadow-md hover:shadow-amber-500/20"
+        >
           Start new quiz
-        </Button>
+        </button>
       </div>
     </div>
   );
@@ -354,16 +330,22 @@ function parseAnswersFromParams(params: URLSearchParams): PartialAnswers {
 
 function ProgressBar({ current, total }: { current: number; total: number }) {
   return (
-    <div className="flex w-full items-center gap-2">
+    <div className="flex w-full items-center gap-3">
+      <span className="inline-flex w-fit shrink-0 items-center gap-1.5 rounded-full border border-amber-500/30 bg-amber-500/5 px-3 py-1 font-mono text-xs">
+        <span className="relative flex size-1.5">
+          <span className="absolute inline-flex size-full animate-ping rounded-full bg-amber-500 opacity-75" />
+          <span className="relative inline-flex size-1.5 rounded-full bg-amber-500" />
+        </span>
+        <span className="text-muted-foreground">
+          Question <span className="text-foreground font-medium">{current}</span>/{total}
+        </span>
+      </span>
       <div className="bg-border h-1 flex-1 overflow-hidden rounded-full">
         <div
-          className="bg-primary h-full transition-all duration-500 ease-out"
+          className="h-full rounded-full bg-gradient-to-r from-amber-500 to-orange-500 transition-all duration-500 ease-out"
           style={{ width: `${(current / total) * 100}%` }}
         />
       </div>
-      <span className="text-muted-foreground shrink-0 text-xs tabular-nums">
-        {current}/{total}
-      </span>
     </div>
   );
 }
@@ -386,10 +368,10 @@ function OptionButton({
       onClick={onClick}
       className={cn(
         "group w-full rounded-none border p-4 text-left transition-all duration-150",
-        "hover:border-primary/60 hover:bg-primary/5 cursor-pointer",
+        "cursor-pointer hover:border-amber-500/60 hover:bg-amber-500/5",
         "focus-visible:ring-ring focus-visible:ring-1 focus-visible:outline-none",
         selected
-          ? "border-primary bg-primary/10 text-foreground"
+          ? "text-foreground border-amber-500 bg-amber-500/10"
           : "border-border bg-card text-card-foreground"
       )}
     >
@@ -400,7 +382,7 @@ function OptionButton({
           <p className="text-muted-foreground mt-0.5 text-xs leading-relaxed">{description}</p>
         </div>
         {selected && (
-          <div className="bg-primary ml-auto flex size-4 shrink-0 items-center justify-center rounded-full">
+          <div className="ml-auto flex size-4 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-amber-500 to-orange-500">
             <svg className="text-primary-foreground size-2.5" fill="none" viewBox="0 0 10 8">
               <path
                 d="M1 4l3 3 5-6"
@@ -417,91 +399,64 @@ function OptionButton({
   );
 }
 
-function ScoreBar({ score }: { score: number }) {
-  const color =
-    score >= 80
-      ? "bg-emerald-500"
-      : score >= 60
-        ? "bg-primary"
-        : score >= 40
-          ? "bg-amber-500"
-          : "bg-muted-foreground";
-
-  return (
-    <div className="flex items-center gap-2">
-      <div className="bg-border h-1.5 flex-1 overflow-hidden rounded-full">
-        <div
-          className={cn("h-full rounded-full transition-all duration-700 ease-out", color)}
-          style={{ width: `${score}%` }}
-        />
-      </div>
-      <span className="text-muted-foreground w-8 text-right font-mono text-xs tabular-nums">
-        {score}%
-      </span>
-    </div>
-  );
-}
-
 function ResultCard({ result, rank }: { result: WizardResult; rank: number }) {
   const { distro, score, reasons } = result;
   const isTop = rank === 0;
 
   return (
-    <div
-      className={cn(
-        "rounded-none border p-4 transition-all",
-        isTop ? "border-primary bg-primary/5" : "border-border bg-card"
-      )}
+    <Link
+      href={`/distros/${distro.slug}`}
+      className="h-full w-full transition-transform hover:scale-98"
     >
-      <div className="flex items-start gap-4">
-        {distro.img ? (
-          <div className="border-border relative aspect-video w-24 shrink-0 overflow-hidden rounded-none border">
-            <Image src={distro.img} alt={distro.name} fill className="object-cover" sizes="96px" />
-          </div>
-        ) : (
-          <div className="bg-muted border-border flex aspect-video w-24 shrink-0 items-center justify-center rounded-none border">
-            <span className="text-muted-foreground text-xs">No img</span>
-          </div>
+      <Card
+        className={cn(
+          "relative flex h-full w-full flex-col overflow-hidden pt-0",
+          isTop && "ring-2 ring-amber-500/50"
         )}
-
-        <div className="min-w-0 flex-1">
-          <div className="flex flex-wrap items-center gap-2">
-            {isTop && (
-              <Badge variant="default" className="text-[10px]">
-                Best match
-              </Badge>
-            )}
-            <h3 className="text-sm font-semibold">{distro.name}</h3>
-          </div>
-
-          <ScoreBar score={score} />
-
-          <p className="text-muted-foreground mt-2 line-clamp-2 text-xs leading-relaxed">
-            {distro.description}
-          </p>
-
-          {reasons.length > 0 && (
-            <div className="mt-2 flex flex-wrap gap-1.5">
-              {reasons.map((r) => (
-                <span
-                  key={r}
-                  className="bg-secondary text-secondary-foreground border-border/50 rounded-none border px-1.5 py-0.5 text-[10px]"
-                >
-                  {r}
-                </span>
-              ))}
+      >
+        <div className="relative aspect-video w-full overflow-hidden">
+          {distro.img ? (
+            <Image
+              src={distro.img}
+              alt={distro.name}
+              fill
+              className="object-cover"
+              sizes="(max-width: 640px) 100vw, 50vw"
+            />
+          ) : (
+            <div className="bg-muted flex h-full w-full items-center justify-center">
+              <span className="text-muted-foreground text-xs">No image</span>
             </div>
           )}
+
+          {isTop && (
+            <span className="absolute top-2 left-2 inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 px-2 py-0.5 font-mono text-[10px] font-medium text-white shadow-sm">
+              <HugeiconsIcon icon={StarIcon} size="0.6875rem" />
+              Best match
+            </span>
+          )}
+
+          <span className="absolute top-2 right-2 rounded-full border border-white/20 bg-black/60 px-2 py-0.5 font-mono text-[10px] font-medium text-white backdrop-blur-sm">
+            {score}% match
+          </span>
         </div>
 
-        <Link
-          href={`/distros/${distro.slug}`}
-          className="text-primary shrink-0 text-xs underline underline-offset-2 hover:no-underline"
-        >
-          View →
-        </Link>
-      </div>
-    </div>
+        <CardHeader className="flex-1">
+          <CardTitle>{distro.name}</CardTitle>
+          <CardDescription className="line-clamp-2">{distro.description}</CardDescription>
+        </CardHeader>
+
+        {reasons.length > 0 && (
+          <CardFooter className="flex-wrap gap-1.5">
+            {reasons.map((r) => (
+              <Badge key={r} variant="secondary" className="text-[10px]">
+                {r}
+              </Badge>
+            ))}
+          </CardFooter>
+        )}
+      </Card>
+    </Link>
   );
 }
 
@@ -630,7 +585,7 @@ export function WizardClient({ distros }: { distros: DistroDetail[] }) {
   // ── Results screen ─────────────────────────────────────────────────────────
   if (screen === "results" && results !== null) {
     return (
-      <div className="mx-auto w-full max-w-2xl space-y-4">
+      <div className="mx-auto w-full max-w-3xl space-y-4">
         <div className="space-y-1 text-center">
           <p className="text-3xl">🎉</p>
           <h2 className="text-xl font-semibold">Your distro matches</h2>
@@ -644,23 +599,23 @@ export function WizardClient({ distros }: { distros: DistroDetail[] }) {
             No strong matches found - try different answers.
           </p>
         ) : (
-          <div className="space-y-3">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {results.map((result, i) => (
               <ResultCard key={result.distro.id} result={result} rank={i} />
             ))}
           </div>
         )}
 
-        <div className="flex gap-2 pt-2">
-          <Button variant="outline" size="sm" onClick={handleRestart} className="flex-1">
+        <div className="mx-auto flex max-w-md gap-2 pt-2">
+          <button
+            onClick={handleRestart}
+            className="border-border bg-muted/40 text-muted-foreground hover:text-foreground flex-1 rounded-full border px-3 py-2 text-center font-mono text-sm transition-colors hover:border-amber-500/40 hover:bg-amber-500/5"
+          >
             Start over
-          </Button>
+          </button>
           <Link
             href="/"
-            className={cn(
-              buttonVariants({ variant: "default", size: "sm" }),
-              "flex-1 justify-center"
-            )}
+            className="flex-1 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 px-3 py-2 text-center font-mono text-sm font-medium text-white shadow-sm transition-shadow hover:shadow-md hover:shadow-amber-500/20"
           >
             Browse all distros
           </Link>
@@ -695,21 +650,30 @@ export function WizardClient({ distros }: { distros: DistroDetail[] }) {
         ))}
       </div>
 
-      <div className="flex items-center gap-2">
-        {stepIndex > 0 && (
-          <Button variant="outline" size="sm" onClick={handleBack}>
+      <div className="flex items-center gap-4">
+        {stepIndex > 0 ? (
+          <button
+            onClick={handleBack}
+            className="text-muted-foreground hover:text-foreground flex cursor-pointer items-center gap-1 font-mono text-xs transition-colors"
+          >
+            <HugeiconsIcon icon={ArrowLeft02Icon} size="0.75rem" />
             Back
-          </Button>
+          </button>
+        ) : (
+          <span />
         )}
-        <Button
-          variant="default"
-          size="sm"
+        <button
           onClick={handleNext}
           disabled={!isAnswered}
-          className="ml-auto"
+          className="group ml-auto inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-2 font-mono text-sm font-medium text-white shadow-sm transition-shadow hover:shadow-md hover:shadow-amber-500/20 disabled:pointer-events-none disabled:opacity-50"
         >
-          {stepIndex === TOTAL_STEPS - 1 ? "Find my distros →" : "Next →"}
-        </Button>
+          {stepIndex === TOTAL_STEPS - 1 ? "Find my distros" : "Next"}
+          <HugeiconsIcon
+            icon={ArrowRight01Icon}
+            size="1rem"
+            className="transition-transform group-hover:translate-x-0.5"
+          />
+        </button>
       </div>
     </div>
   );

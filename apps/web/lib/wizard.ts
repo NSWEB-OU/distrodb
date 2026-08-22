@@ -9,19 +9,20 @@ export type HardwareAge = "ancient" | "new-ish" | "modern" | "arm";
 export type UpdateFrequency = "stable" | "rolling" | "balanced";
 export type TinkerLevel = "none" | "some" | "extreme";
 
+// New approach: simplified answers with adaptive questions
 export type WizardAnswers = {
   experience: ExperienceLevel;
-  useCase: UseCase;
+  lifestyle: UseCase; // Combined use-case and tinkering into a single "lifestyle" question
   desktopStyle: DesktopStyle;
   hardware: HardwareAge;
   updates: UpdateFrequency;
-  tinkering: TinkerLevel;
 };
 
 export type WizardResult = {
   distro: DistroDetail;
   score: number;
   reasons: string[];
+  confidence: number; // Add confidence score for results
 };
 
 // ─── Scoring ─────────────────────────────────────────────────────────────────
@@ -48,9 +49,10 @@ const NEWBIE_FRIENDLY_BASES = ["Ubuntu", "Ubuntu (LTS)", "Fedora", "Debian (Stab
 function scoreDistro(
   distro: DistroDetail,
   answers: WizardAnswers
-): { score: number; reasons: string[] } {
+): { score: number; reasons: string[]; confidence: number } {
   let score = 0;
   const reasons: string[] = [];
+  let confidence = 0;
 
   // ── 1. Experience Level → Difficulty ────────────────────────────────────────
   const { experience } = answers;
@@ -62,6 +64,7 @@ function scoreDistro(
       if (difficulty === "beginner") {
         score += 40;
         reasons.push("Great for Linux newcomers");
+        confidence += 20;
       } else {
         score -= 10;
       }
@@ -70,6 +73,7 @@ function scoreDistro(
       if (difficulty === "intermediate") {
         score += 30;
         reasons.push("Matches your experience level");
+        confidence += 15;
       } else if (difficulty === "beginner") {
         score += 15;
       }
@@ -78,27 +82,31 @@ function scoreDistro(
       // power users can handle anything; slightly prefer intermediate/rolling
       score += 15;
       if (distro.releaseModel === "rolling") score += 10;
+      confidence += 10;
       break;
   }
 
-  // ── 2. Use Case → Tags ───────────────────────────────────────────────────────
-  const { useCase } = answers;
+  // ── 2. Lifestyle → Tags (Combined use-case and tinkering) ───────────────────────
+  const { lifestyle } = answers;
   const { tags } = distro;
 
-  switch (useCase) {
+  switch (lifestyle) {
     case "gaming":
       if (tags.includes("gaming")) {
         score += 45;
         reasons.push("Built with gaming in mind");
+        confidence += 20;
       } else if (distro.releaseModel === "rolling") {
         score += 15;
         reasons.push("Rolling release means latest GPU drivers");
+        confidence += 10;
       }
       break;
     case "server":
       if (tags.includes("server")) {
         score += 45;
         reasons.push("Designed for server workloads");
+        confidence += 20;
       }
       if (!tags.includes("server") && tags.includes("desktop")) score -= 15;
       break;
@@ -106,25 +114,30 @@ function scoreDistro(
       if (tags.includes("privacy") || tags.includes("security") || tags.includes("forensics")) {
         score += 50;
         reasons.push("Focused on privacy & security");
+        confidence += 25;
       }
       break;
     case "coding":
       if (tags.includes("immutable") || tags.includes("declarative")) {
         score += 10;
         reasons.push("Great for reproducible dev environments");
+        confidence += 10;
       }
       if (distro.releaseModel === "rolling" || distro.releaseModel === "semi-rolling") {
         score += 10;
         reasons.push("Up-to-date toolchains");
+        confidence += 10;
       }
       if (NEWBIE_FRIENDLY_BASES.some((b) => distro.base?.startsWith(b.split(" ")[0]) ?? false)) {
         score += 8;
+        confidence += 5;
       }
       break;
     case "general":
       if (tags.includes("beginner-friendly")) {
         score += 20;
         reasons.push("Easy to pick up and use daily");
+        confidence += 15;
       }
       if (tags.includes("desktop")) score += 10;
       break;
@@ -145,6 +158,7 @@ function scoreDistro(
     const matches = desktopEnvironments.filter((de) => targetList.includes(de));
     if (matches.length > 0) {
       score += 25 + Math.min(matches.length - 1, 2) * 5;
+      confidence += 15;
       if (desktopStyle === "tiling") {
         reasons.push(`Ships with ${matches.slice(0, 2).join(" & ")} - perfect for tiling`);
       } else if (desktopStyle === "classic") {
@@ -155,6 +169,7 @@ function scoreDistro(
     } else if (desktopStyle === "tiling" && ARCH_BASES.some((b) => distro.base === b)) {
       // Arch-based distros can easily install tiling WMs
       score += 10;
+      confidence += 5;
     }
   } else {
     score += 10; // any desktop → small neutral bonus
@@ -168,10 +183,12 @@ function scoreDistro(
       if (tags.includes("old-computers") || tags.includes("netbooks")) {
         score += 40;
         reasons.push("Runs great on older hardware");
+        confidence += 20;
       }
       if (tags.includes("from-ram")) {
         score += 15;
         reasons.push("Can boot from RAM");
+        confidence += 10;
       }
       if (
         ["GNOME", "KDE Plasma", "COSMIC"].some((de) => desktopEnvironments.includes(de)) &&
@@ -188,15 +205,18 @@ function scoreDistro(
       ) {
         score += 40;
         reasons.push("Has native ARM support");
+        confidence += 20;
       }
       if (tags.includes("raspberry-pi")) {
         score += 20;
         reasons.push("Supports Raspberry Pi");
+        confidence += 15;
       }
       break;
     case "modern":
       if (tags.includes("immutable") || distro.releaseModel === "rolling") {
         score += 8;
+        confidence += 5;
       }
       break;
     case "new-ish":
@@ -210,59 +230,32 @@ function scoreDistro(
   if (updates === "stable" && releaseModel === "fixed") {
     score += 30;
     reasons.push("Stable, predictable release cycle");
+    confidence += 15;
   } else if (updates === "rolling" && releaseModel === "rolling") {
     score += 30;
     reasons.push("Always the latest packages");
+    confidence += 15;
   } else if (updates === "balanced" && releaseModel === "semi-rolling") {
     score += 30;
     reasons.push("Semi-rolling: fresh but not bleeding-edge");
+    confidence += 15;
   } else if (updates === "balanced" && releaseModel === "fixed") {
     score += 15;
+    confidence += 5;
   } else if (updates === "balanced" && releaseModel === "rolling") {
     score += 10;
+    confidence += 5;
   } else if (updates === "stable" && releaseModel === "rolling") {
     score -= 15;
   }
 
-  // ── 6. Tinkering Level → Base / Tags ────────────────────────────────────────
-  const { tinkering } = answers;
-
-  switch (tinkering) {
-    case "none":
-      if (tags.includes("beginner-friendly")) {
-        score += 20;
-        reasons.push("Works great right out of the box");
-      }
-      if (NEWBIE_FRIENDLY_BASES.some((b) => distro.base?.startsWith(b.split(" ")[0]) ?? false)) {
-        score += 10;
-      }
-      if (tags.includes("immutable")) {
-        score += 10;
-        reasons.push("Immutable system - hard to break");
-      }
-      break;
-    case "some":
-      if (!tags.includes("source-based")) score += 10;
-      break;
-    case "extreme":
-      if (tags.includes("source-based")) {
-        score += 30;
-        reasons.push("Source-based - compile everything your way");
-      }
-      if (ARCH_BASES.some((b) => distro.base === b) || distro.slug === "arch-linux") {
-        score += 20;
-        reasons.push("Arch-based: total control");
-      }
-      if (tags.includes("declarative")) {
-        score += 20;
-        reasons.push("Declarative config - reproducible tweaks");
-      }
-      break;
-  }
+  // Normalize confidence to a 0-100 scale
+  const maxConfidence = 100;
+  const normalizedConfidence = Math.min(confidence, maxConfidence);
 
   // ── De-dupe reasons and cap ─────────────────────────────────────────────────
   const uniqueReasons = [...new Set(reasons)].slice(0, 3);
-  return { score: Math.max(0, score), reasons: uniqueReasons };
+  return { score: Math.max(0, score), reasons: uniqueReasons, confidence: normalizedConfidence };
 }
 
 // ─── Public API ───────────────────────────────────────────────────────────────
@@ -274,8 +267,8 @@ export function getWizardResults(
 ): WizardResult[] {
   const scored = distros
     .map((distro) => {
-      const { score, reasons } = scoreDistro(distro, answers);
-      return { distro, score, reasons } satisfies WizardResult;
+      const { score, reasons, confidence } = scoreDistro(distro, answers);
+      return { distro, score, reasons, confidence } satisfies WizardResult;
     })
     .filter((r) => r.score > 0)
     .sort((a, b) => b.score - a.score)
