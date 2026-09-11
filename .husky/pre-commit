@@ -1,1 +1,3 @@
+command -v pnpm >/dev/null 2>&1 || export PATH="$HOME/.local/share/pnpm/bin:$PATH"
+
 pnpm exec lint-staged
