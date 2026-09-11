@@ -16,6 +16,7 @@ import { DistroGallery } from "@/components/distro-gallery";
 import { SuggestChangesButton } from "@/components/suggest-changes-button";
 import { TagBadge } from "@/components/tag-badge";
 import { GlossaryBadge } from "@/components/glossary-badge";
+import { VerificationBadge } from "@/components/verification-badge";
 import { cn, toAbsoluteUrl } from "@/lib/utils";
 
 const BASE_URL = "https://distrodb.xyz";
@@ -181,6 +182,7 @@ export default async function DistroPage({ params }: { params: Promise<{ slug: s
       <div className="mt-6 flex flex-col gap-2">
         <h1 className="text-3xl font-extrabold tracking-tight">{distro.name}</h1>
         <div className="flex flex-wrap items-center gap-2">
+          <VerificationBadge verified={distro.verified} updatedAt={distro.updatedAt} />
           <Badge variant={DIFFICULTY_VARIANT[distro.difficulty]}>
             {DIFFICULTY_LABEL[distro.difficulty]}
           </Badge>

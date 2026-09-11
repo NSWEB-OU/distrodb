@@ -7,9 +7,11 @@ import { Button } from "./ui/button";
 import { Kbd, KbdGroup } from "./ui/kbd";
 import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePlatform } from "@/hooks/use-platform";
 
 const Search = () => {
   const inputRef = useRef<HTMLInputElement>(null);
+  const platform = usePlatform();
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -69,7 +71,7 @@ const Search = () => {
               onChange={handleChange}
             />
             <KbdGroup className="absolute top-4 right-4 hidden md:flex">
-              <Kbd>⌘</Kbd>
+              <Kbd>{platform === "mac" ? "⌘" : "Ctrl"}</Kbd>
               <Kbd>K</Kbd>
             </KbdGroup>
           </div>

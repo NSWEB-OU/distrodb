@@ -4,9 +4,20 @@ import { GridDistro } from "./types/types";
 import Link from "next/link";
 import { CompareToggleButton } from "./compare-toggle-button";
 import { TagBadge } from "./tag-badge";
+import { VerificationBadge } from "./verification-badge";
 
 export const DistroCard = (props: GridDistro & { priority?: boolean }) => {
-  const { name, description, tags, img, slug, imgFit = "cover", priority = false } = props;
+  const {
+    name,
+    description,
+    tags,
+    img,
+    slug,
+    imgFit = "cover",
+    priority = false,
+    verified,
+    updatedAt,
+  } = props;
   const isContain = imgFit === "contain";
 
   return (
@@ -30,6 +41,9 @@ export const DistroCard = (props: GridDistro & { priority?: boolean }) => {
             quality={75}
             priority={priority}
           />
+          <div className="absolute top-2 left-2 z-30">
+            <VerificationBadge verified={verified} updatedAt={updatedAt} variant="floating" />
+          </div>
           <div className="absolute top-2 right-2 z-30">
             <CompareToggleButton slug={slug} name={name} img={img} />
           </div>
