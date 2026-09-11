@@ -6,6 +6,8 @@ export type GridDistro = {
   tags: string[];
   img: string | undefined;
   imgFit?: "cover" | "contain";
+  verified: boolean;
+  updatedAt: string;
 };
 
 export type ReleaseModel = "rolling" | "fixed" | "semi-rolling";
@@ -36,6 +38,8 @@ export type DistroDetail = {
   distroSea?: string;
   highlights: string[];
   difficulty: DifficultyLevel;
+  verified: boolean;
+  updatedAt: string;
 };
 
 export type RoadmapStatus = "done" | "in-progress" | "upcoming" | "planned";

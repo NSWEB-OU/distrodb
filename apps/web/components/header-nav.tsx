@@ -15,16 +15,48 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
+  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionPanel,
+} from "@/components/ui/accordion";
+import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { buttonVariants } from "@/components/ui/button-variants";
-import { HugeiconsIcon } from "@hugeicons/react";
-import { GithubIcon, HeartAddIcon, Menu01Icon } from "@hugeicons/core-free-icons";
+import { cn } from "@/lib/utils";
+import { HugeiconsIcon, type IconSvgElement } from "@hugeicons/react";
+import {
+  GithubIcon,
+  HeartAddIcon,
+  Menu01Icon,
+  MagicWand01Icon,
+  Book02Icon,
+  FolderLibraryIcon,
+  ChartIncreaseIcon,
+  InformationCircleIcon,
+  Flag02Icon,
+  Notebook01Icon,
+  CustomerService01Icon,
+  ShieldIcon,
+  LegalDocument01Icon,
+} from "@hugeicons/core-free-icons";
+
+type IconType = IconSvgElement;
 
 const wizardHref = "/wizard";
+
+const primaryLinks: { title: string; href: string; icon: IconType }[] = [
+  { title: "Distro wizard", href: wizardHref, icon: MagicWand01Icon },
+  { title: "Glossary", href: "/glossary", icon: Book02Icon },
+  { title: "Resources", href: "/resources", icon: FolderLibraryIcon },
+  { title: "Popularity", href: "/popularity", icon: ChartIncreaseIcon },
+];
 
 const comparisons: { title: string; href: string; description: string }[] = [
   {
@@ -59,98 +91,53 @@ const comparisons: { title: string; href: string; description: string }[] = [
   },
 ];
 
-const project: { title: string; href: string; description: string }[] = [
+const projectLinks: { title: string; href: string; description: string; icon: IconType }[] = [
   {
     title: "About",
     href: "/about",
-    description: "Read more about the project, its goals, and how to contribute.",
+    description: "The project, its goals, and how to contribute.",
+    icon: InformationCircleIcon,
   },
   {
     title: "Roadmap",
     href: "/roadmap",
-    description: "See what's completed and what's coming next. Updated every week.",
+    description: "What's completed and what's coming next.",
+    icon: Flag02Icon,
   },
   {
     title: "Changelog",
     href: "/changelog",
-    description: "A log of every update, new feature, and improvement shipped to DistroDB.",
+    description: "Every update and improvement shipped to DistroDB.",
+    icon: Notebook01Icon,
   },
-  {
-    title: "Support us",
-    href: "/support",
-    description:
-      "Support the project through donations, sponsorships, or contributing to the codebase.",
-  },
-  {
-    title: "Contact",
-    href: "/contact",
-    description: "Get in touch with the team for inquiries, support, or feedback.",
-  },
-  {
-    title: "Privacy Policy",
-    href: "/privacy",
-    description: "Read our privacy policy to understand how we handle your data.",
-  },
-  {
-    title: "Terms of Service",
-    href: "/terms",
-    description:
-      "Read our terms of service to understand the rules and regulations for using our platform.",
-  },
+];
+
+const supportLinks: { title: string; href: string; icon: IconType }[] = [
+  { title: "Support us", href: "/support", icon: HeartAddIcon },
+  { title: "Contact", href: "/contact", icon: CustomerService01Icon },
+];
+
+const legalLinks: { title: string; href: string; icon: IconType }[] = [
+  { title: "Privacy Policy", href: "/privacy", icon: ShieldIcon },
+  { title: "Terms of Service", href: "/terms", icon: LegalDocument01Icon },
 ];
 
 export function HeaderNav() {
   return (
-    <div className="flex items-center">
-      {/* Icon links */}
-      <div className="hidden items-center gap-1 md:flex">
-        <Link
-          href="https://github.com/NSWEB-OU/distrodb"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub repository"
-          className={buttonVariants({ variant: "ghost", size: "icon-sm" })}
-        >
-          <HugeiconsIcon icon={GithubIcon} size="1.125rem" />
-        </Link>
-        <Link
-          href="/support"
-          aria-label="Support us"
-          className={buttonVariants({ variant: "ghost", size: "icon-sm" })}
-        >
-          <HugeiconsIcon icon={HeartAddIcon} size="1.125rem" />
-        </Link>
-      </div>
-
+    <div className="flex items-center gap-1">
       {/* Desktop navigation */}
-      <NavigationMenu className="hidden md:flex">
+      <NavigationMenu className="hidden flex-none md:flex">
         <NavigationMenuList>
+          {primaryLinks.map((link) => (
+            <NavigationMenuItem key={link.title}>
+              <NavigationMenuLink
+                className={navigationMenuTriggerStyle()}
+                render={<Link href={link.href}>{link.title}</Link>}
+              />
+            </NavigationMenuItem>
+          ))}
           <NavigationMenuItem>
-            <NavigationMenuLink
-              className={navigationMenuTriggerStyle()}
-              render={<Link href={wizardHref}>Distro wizard</Link>}
-            />
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              className={navigationMenuTriggerStyle()}
-              render={<Link href="/glossary">Glossary</Link>}
-            />
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              className={navigationMenuTriggerStyle()}
-              render={<Link href="/resources">Resources</Link>}
-            />
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              className={navigationMenuTriggerStyle()}
-              render={<Link href="/popularity">Popularity</Link>}
-            />
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Comparison</NavigationMenuTrigger>
+            <NavigationMenuTrigger>Comparisons</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-100 gap-2 md:w-125 md:grid-cols-2 lg:w-150">
                 {comparisons.map((item) => (
@@ -164,17 +151,70 @@ export function HeaderNav() {
           <NavigationMenuItem>
             <NavigationMenuTrigger>Project</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid w-100 gap-2 md:w-125 md:grid-cols-2 lg:w-150">
-                {project.map((project) => (
-                  <ListItem key={project.title} title={project.title} href={project.href}>
-                    {project.description}
-                  </ListItem>
-                ))}
-              </ul>
+              <div className="grid w-100 grid-cols-1 gap-4 p-1 sm:w-120 sm:grid-cols-[1.3fr_1fr] md:w-135 lg:w-150">
+                <div>
+                  <p className="text-muted-foreground mb-1 px-2 text-xs font-medium tracking-wider uppercase">
+                    Project
+                  </p>
+                  <ul className="flex flex-col gap-1">
+                    {projectLinks.map((item) => (
+                      <ListItem
+                        key={item.title}
+                        title={item.title}
+                        href={item.href}
+                        icon={item.icon}
+                      >
+                        {item.description}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </div>
+                <div className="flex flex-col">
+                  <p className="text-muted-foreground mb-1 px-2 text-xs font-medium tracking-wider uppercase">
+                    Support
+                  </p>
+                  <ul className="flex flex-col">
+                    {supportLinks.map((item) => (
+                      <CompactListItem
+                        key={item.title}
+                        title={item.title}
+                        href={item.href}
+                        icon={item.icon}
+                      />
+                    ))}
+                  </ul>
+                  <Separator className="my-2" />
+                  <ul className="flex flex-col">
+                    {legalLinks.map((item) => (
+                      <li key={item.title}>
+                        <NavigationMenuLink
+                          className="text-muted-foreground hover:text-foreground text-xs"
+                          render={<Link href={item.href}>{item.title}</Link>}
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </NavigationMenuContent>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
+
+      <Separator orientation="vertical" className="mx-1 hidden md:block" />
+
+      {/* Icon links */}
+      <div className="hidden items-center gap-1 md:flex">
+        <Link
+          href="https://github.com/NSWEB-OU/distrodb"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub repository"
+          className={buttonVariants({ variant: "ghost", size: "icon-sm" })}
+        >
+          <HugeiconsIcon icon={GithubIcon} size="1.125rem" />
+        </Link>
+      </div>
 
       {/* Mobile navigation */}
       <Sheet>
@@ -186,82 +226,79 @@ export function HeaderNav() {
           <SheetHeader>
             <SheetTitle>Navigation</SheetTitle>
           </SheetHeader>
-          <nav className="flex flex-col gap-4 overflow-y-auto px-4 pb-4">
-            <SheetClose
-              nativeButton={false}
-              render={
-                <Link href={wizardHref} className="hover:bg-muted rounded-sm px-2 py-2 text-sm">
-                  Distro wizard
-                </Link>
-              }
-            />
-            <SheetClose
-              nativeButton={false}
-              render={
-                <Link href="/glossary" className="hover:bg-muted rounded-sm px-2 py-2 text-sm">
-                  Glossary
-                </Link>
-              }
-            />
-            <SheetClose
-              nativeButton={false}
-              render={
-                <Link href="/resources" className="hover:bg-muted rounded-sm px-2 py-2 text-sm">
-                  Resources
-                </Link>
-              }
-            />
-            <SheetClose
-              nativeButton={false}
-              render={
-                <Link href="/popularity" className="hover:bg-muted rounded-sm px-2 py-2 text-sm">
-                  Popularity
-                </Link>
-              }
-            />
-            <div>
-              <p className="text-muted-foreground mb-1 text-xs font-medium tracking-wider uppercase">
-                Comparison
-              </p>
-              <div className="flex flex-col">
-                {comparisons.map((item) => (
-                  <SheetClose
-                    key={item.title}
-                    nativeButton={false}
-                    render={
-                      <Link
-                        href={item.href}
-                        className="hover:bg-muted rounded-sm px-2 py-2 text-sm"
-                      >
-                        {item.title}
-                      </Link>
-                    }
-                  />
-                ))}
-              </div>
+          <nav className="flex flex-1 flex-col overflow-y-auto px-4 pb-4">
+            <div className="flex flex-col gap-1">
+              {primaryLinks.map((link) => (
+                <MobileLink key={link.title} href={link.href} title={link.title} icon={link.icon} />
+              ))}
             </div>
-            <div>
-              <p className="text-muted-foreground mb-1 text-xs font-medium tracking-wider uppercase">
-                Project
-              </p>
-              <div className="flex flex-col">
-                {project.map((item) => (
-                  <SheetClose
-                    key={item.title}
-                    nativeButton={false}
-                    render={
-                      <Link
+
+            <Accordion className="mt-3">
+              <AccordionItem value="comparisons">
+                <AccordionTrigger>Comparisons</AccordionTrigger>
+                <AccordionPanel>
+                  <div className="flex flex-col gap-0.5">
+                    {comparisons.map((item) => (
+                      <MobileLink key={item.title} href={item.href} title={item.title} compact />
+                    ))}
+                  </div>
+                </AccordionPanel>
+              </AccordionItem>
+              <AccordionItem value="project">
+                <AccordionTrigger>Project</AccordionTrigger>
+                <AccordionPanel>
+                  <div className="flex flex-col gap-0.5">
+                    {projectLinks.map((item) => (
+                      <MobileLink
+                        key={item.title}
                         href={item.href}
-                        className="hover:bg-muted rounded-sm px-2 py-2 text-sm"
-                      >
-                        {item.title}
-                      </Link>
-                    }
-                  />
-                ))}
-              </div>
-            </div>
+                        title={item.title}
+                        description={item.description}
+                        icon={item.icon}
+                      />
+                    ))}
+                    <Separator className="my-1.5" />
+                    {supportLinks.map((item) => (
+                      <MobileLink
+                        key={item.title}
+                        href={item.href}
+                        title={item.title}
+                        icon={item.icon}
+                      />
+                    ))}
+                    <Separator className="my-1.5" />
+                    <div className="flex flex-col">
+                      {legalLinks.map((item) => (
+                        <MobileLink
+                          key={item.title}
+                          href={item.href}
+                          title={item.title}
+                          compact
+                          muted
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </AccordionPanel>
+              </AccordionItem>
+            </Accordion>
           </nav>
+          <SheetFooter className="border-border border-t pt-3">
+            <SheetClose
+              nativeButton={false}
+              render={
+                <Link
+                  href="https://github.com/NSWEB-OU/distrodb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:bg-muted hover:text-foreground flex items-center gap-2.5 rounded-none px-2 py-2 text-sm"
+                >
+                  <HugeiconsIcon icon={GithubIcon} size="1.125rem" />
+                  GitHub repository
+                </Link>
+              }
+            />
+          </SheetFooter>
         </SheetContent>
       </Sheet>
     </div>
@@ -272,13 +309,19 @@ function ListItem({
   title,
   children,
   href,
+  icon,
   ...props
-}: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
+}: React.ComponentPropsWithoutRef<"li"> & { href: string; icon?: IconType }) {
   return (
     <li {...props}>
       <NavigationMenuLink
         render={
           <Link href={href}>
+            {icon && (
+              <span className="bg-muted text-muted-foreground mt-0.5 flex size-7 shrink-0 items-center justify-center self-start [&_svg]:size-3.5">
+                <HugeiconsIcon icon={icon} />
+              </span>
+            )}
             <div className="flex flex-col gap-1 text-sm">
               <div className="leading-none font-medium">{title}</div>
               <div className="text-muted-foreground line-clamp-2">{children}</div>
@@ -287,5 +330,64 @@ function ListItem({
         }
       />
     </li>
+  );
+}
+
+function CompactListItem({ title, href, icon }: { title: string; href: string; icon: IconType }) {
+  return (
+    <li>
+      <NavigationMenuLink
+        render={
+          <Link href={href}>
+            <HugeiconsIcon icon={icon} />
+            {title}
+          </Link>
+        }
+      />
+    </li>
+  );
+}
+
+function MobileLink({
+  href,
+  title,
+  icon,
+  description,
+  compact,
+  muted,
+}: {
+  href: string;
+  title: string;
+  icon?: IconType;
+  description?: string;
+  compact?: boolean;
+  muted?: boolean;
+}) {
+  return (
+    <SheetClose
+      nativeButton={false}
+      render={
+        <Link
+          href={href}
+          className={cn(
+            "hover:bg-muted flex items-center gap-2.5 rounded-none px-2 text-sm",
+            compact ? "py-1.5" : "py-2",
+            muted && "text-muted-foreground text-xs"
+          )}
+        >
+          {icon && !compact && (
+            <span className="bg-muted text-muted-foreground flex size-7 shrink-0 items-center justify-center [&_svg]:size-3.5">
+              <HugeiconsIcon icon={icon} />
+            </span>
+          )}
+          <span className="flex flex-col">
+            <span className={cn("leading-none", !muted && "font-medium")}>{title}</span>
+            {description && (
+              <span className="text-muted-foreground mt-1 text-xs leading-snug">{description}</span>
+            )}
+          </span>
+        </Link>
+      }
+    />
   );
 }

@@ -25,6 +25,7 @@ import { Kbd, KbdGroup } from "./ui/kbd";
 import { useCallback } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { FILTER_GROUPS } from "@/lib/filters";
+import { usePlatform } from "@/hooks/use-platform";
 
 const FILTER_ICONS: Partial<Record<string, IconSvgElement>> = {
   "all-distros": List,
@@ -74,6 +75,7 @@ const SearchSidebar = ({ className }: { className?: string }) => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
+  const platform = usePlatform();
 
   const selectedTags = searchParams.getAll("tag");
 
@@ -134,7 +136,7 @@ const SearchSidebar = ({ className }: { className?: string }) => {
       <SidebarItem id="search-with-shortcut">
         Search with
         <KbdGroup>
-          <Kbd>⌘</Kbd>
+          <Kbd>{platform === "mac" ? "⌘" : "Ctrl"}</Kbd>
           <Kbd>K</Kbd>
         </KbdGroup>
       </SidebarItem>

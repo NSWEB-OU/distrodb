@@ -8,7 +8,7 @@ export const Distros: CollectionConfig = {
   slug: 'distros',
   admin: {
     useAsTitle: 'name',
-    defaultColumns: ['name', 'slug', 'difficulty', 'releaseModel'],
+    defaultColumns: ['name', 'slug', 'verified', 'difficulty', 'releaseModel'],
   },
   access: {
     read: () => true,
@@ -18,6 +18,16 @@ export const Distros: CollectionConfig = {
     afterDelete: [revalidateAfterDelete('distros')],
   },
   fields: [
+    {
+      name: 'verified',
+      type: 'checkbox',
+      defaultValue: false,
+      admin: {
+        position: 'sidebar',
+        description:
+          'Check this once an admin has manually gone through this entry and confirmed the information is accurate. Unchecked entries show a "Needs moderation" badge on the site. Toggling this (or editing any other field) updates the "last changed" date shown in the verified badge tooltip.',
+      },
+    },
     {
       name: 'slug',
       type: 'text',
